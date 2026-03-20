@@ -1,304 +1,677 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-variant": "#192830",
+              "on-secondary-fixed": "#32433b",
+              "surface-tint": "#abcec1",
+              "on-primary-fixed": "#25453b",
+              "surface": "#0a0f12",
+              "surface-container-low": "#0d1418",
+              "surface-bright": "#1c2e38",
+              "on-secondary-fixed-variant": "#4e5f57",
+              "outline-variant": "#3b4a53",
+              "secondary-fixed": "#d4e7dc",
+              "secondary-container": "#2e3f37",
+              "error": "#ee7d77",
+              "surface-container-highest": "#192830",
+              "tertiary-container": "#dfefe6",
+              "on-primary-fixed-variant": "#416257",
+              "on-background": "#d7e8f2",
+              "on-primary": "#26463c",
+              "on-primary-container": "#b4d8ca",
+              "error-container": "#7f2927",
+              "background": "#0a0f12",
+              "tertiary": "#eefdf4",
+              "primary-fixed": "#c6eadc",
+              "on-error": "#490106",
+              "on-surface-variant": "#9dadb7",
+              "surface-container-lowest": "#000000",
+              "surface-container-high": "#152128",
+              "outline": "#687881",
+              "on-tertiary-fixed-variant": "#58665f",
+              "secondary-fixed-dim": "#c6d9ce",
+              "surface-dim": "#0a0f12",
+              "on-secondary-container": "#b1c4b9",
+              "inverse-surface": "#f6fafe",
+              "error-dim": "#bb5551",
+              "inverse-primary": "#45655b",
+              "tertiary-fixed": "#e2f2e9",
+              "secondary": "#90a298",
+              "inverse-on-surface": "#515659",
+              "primary-dim": "#9dc0b3",
+              "surface-container": "#111b20",
+              "primary": "#abcec1",
+              "on-surface": "#d7e8f2",
+              "on-tertiary-fixed": "#3c4943",
+              "tertiary-fixed-dim": "#d4e3db",
+              "primary-fixed-dim": "#b8dccf",
+              "primary-container": "#2d4d43",
+              "tertiary-dim": "#d4e3db",
+              "on-tertiary-container": "#4c5a53",
+              "on-secondary": "#13231d",
+              "on-error-container": "#ff9993",
+              "on-tertiary": "#54625b",
+              "secondary-dim": "#90a298"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+</script>
+<style>
+        body {
+            background-color: #0a0f12;
+            color: #d7e8f2;
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .technical-gradient {
+            background: linear-gradient(135deg, #abcec1 0%, #9dc0b3 100%);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(171, 206, 193, 0.15);
+        }
+        .page { display: none; }
+        .page.active { display: block; }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+</style>
 <title>Adam Sapiecha — Portfolio</title>
-
-<link rel="stylesheet" href="style.css">
 </head>
+<body class="bg-surface selection:bg-primary-container selection:text-on-primary-container">
 
-<body>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0a0f12]/60 backdrop-blur-xl dark:bg-[#0a0f12]/60 flex justify-between items-center px-6 md:px-12 py-6 max-w-full mx-auto">
+<div class="text-xl font-bold tracking-tighter text-[#abcec1] dark:text-[#abcec1]">
+            ADAM<span class="text-primary">.</span>
+        </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-[12px] font-bold text-[#abcec1] border-b-2 border-[#abcec1] pb-1 nav-link active" href="#main" data-page="main">Główna</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-[12px] font-bold text-[#d7e8f2]/60 hover:text-[#d7e8f2] transition-colors nav-link" href="#projects" data-page="projects">Moje projekty</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-[12px] font-bold text-[#d7e8f2]/60 hover:text-[#d7e8f2] transition-colors nav-link" href="#about" data-page="about">O mnie</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-[12px] font-bold text-[#d7e8f2]/60 hover:text-[#d7e8f2] transition-colors nav-link" href="#contact" data-page="contact">Kontakt</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="material-symbols-outlined text-[#abcec1] hover:bg-[#1c2e38] p-2 transition-all duration-300">terminal</button>
+<button class="technical-gradient text-on-primary px-5 py-2 rounded-lg font-label text-[12px] uppercase tracking-widest font-bold active:scale-95 duration-200">Resume</button>
+</div>
+</nav>
 
-<!-- ================= HEADER ================= -->
-<header class="container topbar">
+<main>
 
-  <div class="brand">
-    ADAM<span class="accent">.</span>
-  </div>
+<!-- ================== PAGE: GŁÓWNA (MAIN) ================== -->
+<section id="main" class="page active pt-32 pb-24">
+<div class="px-6 md:px-12 max-w-7xl mx-auto mb-32">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<div class="lg:col-span-8">
+<span class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container font-label text-[10px] tracking-[0.2em] uppercase mb-6">System Architecture</span>
+<h1 class="font-headline text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-on-surface leading-[0.9] mb-8">
+                        Crafting digital <br/><span class="text-primary italic">foundations</span>
+</h1>
+<p class="font-body text-on-surface-variant text-lg md:text-xl max-w-2xl leading-relaxed mb-12">
+                        I build resilient software ecosystems where performance meets aesthetic precision. A full-stack engineer focused on the intersection of modern architecture and developer experience.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="technical-gradient text-on-primary px-8 py-4 rounded-lg font-label uppercase tracking-widest font-bold">Inicjuj Projekt</button>
+<button class="border border-outline-variant hover:bg-surface-container-high text-on-surface px-8 py-4 rounded-lg font-label uppercase tracking-widest font-bold transition-all">Stos Technologiczny</button>
+</div>
+</div>
+<div class="lg:col-span-4 hidden lg:block">
+<div class="w-full aspect-square bg-surface-container-low relative overflow-hidden">
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, #abcec1 1px, transparent 0); background-size: 24px 24px;"></div>
+<div class="absolute bottom-0 right-0 p-8">
+<div class="text-[120px] font-headline font-extrabold text-surface-container-high leading-none select-none">AS</div>
+</div>
+<img alt="Architectural abstract composition" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQThHZ0MhLBXYKj8SU3o0iuAPQIYniIcGIVihcJPUvrcIbdON4VBu9p_tGSiUWNPxcl04uZrBtxJpX9i5dUaJ87-YZOWdqMV3ZU2LgavL2jaSpbD6L1ynMpKbX8vP1c0wxRu_V48ciX0BDcDMhD0GVTCjpKx4SaN4ppWSwsxHMyHgHFzne--bJh8r3Vs0Rj_dkF8iaEYaNk6LoRvb5HHZtkhagPOIg4w-W2Qo4zNCSjWGw2KKFzXUQRLHx2APSxQd36qLf1QwzZH0"/>
+</div>
+</div>
+</div>
+</section>
 
-  <nav class="tabs">
-    <button class="tab-btn active" data-tab="main">Main</button>
-    <button class="tab-btn" data-tab="experience">Experience</button>
-    <button class="tab-btn" data-tab="projects">Projects</button>
-  </nav>
+<!-- Technical Expertise Bento Grid -->
+<section class="px-6 md:px-12 max-w-7xl mx-auto mb-32">
+<div class="flex items-end justify-between mb-12">
+<div>
+<h2 class="font-headline text-3xl font-bold tracking-tight text-on-surface mb-2 uppercase">Specjalizacja Techniczna</h2>
+<div class="h-1 w-24 technical-gradient"></div>
+</div>
+<div class="text-on-surface-variant font-label text-xs tracking-widest uppercase hidden md:block">01 // Expertise</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Frontend -->
+<div class="bg-surface-container-low p-8 relative group transition-all duration-500 hover:bg-surface-container-high">
+<div class="flex justify-between items-start mb-16">
+<span class="material-symbols-outlined text-primary text-4xl">window</span>
+<span class="text-outline-variant font-headline text-4xl opacity-20">01</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-4 uppercase tracking-wider">Frontend</h3>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed mb-8">
+                        Architecting interfaces that prioritize user clarity and motion consistency using Next.js, TypeScript, and high-end design systems.
+                    </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-highest text-primary font-label text-[9px] uppercase tracking-tighter">React</span>
+<span class="px-2 py-1 bg-surface-container-highest text-primary font-label text-[9px] uppercase tracking-tighter">Tailwind</span>
+<span class="px-2 py-1 bg-surface-container-highest text-primary font-label text-[9px] uppercase tracking-tighter">Framer</span>
+</div>
+</div>
+<!-- Backend -->
+<div class="bg-surface-container-low p-8 relative group transition-all duration-500 hover:bg-surface-container-high">
+<div class="flex justify-between items-start mb-16">
+<span class="material-symbols-outlined text-primary text-4xl">database</span>
+<span class="text-outline-variant font-headline text-4xl opacity-20">02</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-4 uppercase tracking-wider">Backend</h3>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed mb-8">
+                        Designing scalable distributed systems and high-concurrency APIs focusing on data integrity and low-latency throughput.
+                    </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-highest text-primary font-label text-[9px] uppercase tracking-tighter">Node.js</span>
+<span class="px-2 py-1 bg-surface-container-highest text-primary font-label text-[9px] uppercase tracking-tighter">Python</span>
+<span class="px-2 py-1 bg-surface-container-highest text-primary font-label text-[9px] uppercase tracking-tighter">PostgreSQL</span>
+</div>
+</div>
+<!-- DevOps -->
+<div class="bg-surface-container-low p-8 relative group transition-all duration-500 hover:bg-surface-container-high">
+<div class="flex justify-between items-start mb-16">
+<span class="material-symbols-outlined text-primary text-4xl">terminal</span>
+<span class="text-outline-variant font-headline text-4xl opacity-20">03</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-4 uppercase tracking-wider">DevOps</h3>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed mb-8">
+                        Automating the delivery pipeline with containerization and cloud-native strategies to ensure continuous, resilient deployment.
+                    </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-surface-container-highest text-primary font-label text-[9px] uppercase tracking-tighter">Docker</span>
+<span class="px-2 py-1 bg-surface-container-highest text-primary font-label text-[9px] uppercase tracking-tighter">AWS</span>
+<span class="px-2 py-1 bg-surface-container-highest text-primary font-label text-[9px] uppercase tracking-tighter">Linux</span>
+</div>
+</div>
+</div>
+</section>
 
+<!-- Selected Projects Horizontal Scroll Feel -->
+<section class="mb-32">
+<div class="px-6 md:px-12 max-w-7xl mx-auto mb-12 flex justify-between items-center">
+<h2 class="font-headline text-3xl font-bold tracking-tight text-on-surface uppercase">Wybrane Projekty</h2>
+<a class="text-primary font-label text-xs tracking-widest uppercase hover:underline nav-link cursor-pointer" data-page="projects" href="#projects">Zobacz wszystkie</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant/10">
+<!-- Project 1 -->
+<div class="bg-surface p-12 hover:bg-surface-container-low transition-all duration-500 group">
+<div class="mb-8 overflow-hidden aspect-video bg-surface-container-high">
+<img alt="Medical Client Portal" class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdU9y650hl4-0C680o3elC52fkb4C5hrwCxI4LQJQZCBi9-JfkID5YFcZX3kMpOxu9fhssdnaxn3QEVaa1CtTdzNUhaNBpe-Vqd7tyqoZHs0k-n4xA0B_fSyUUVQ44Vz2_HIR8jiA0NJPkHmuDeM7p9GQ45d_hMhOKRI8lguxdMEzz2ZUquJqBtjDFoPka0K0rMjgL895KpspgIB3IFxis51bcgaqrDsgN8tuBvfEqYspJ3n_9e36W5_R_WlX-vqiPuXUU4WhlQZA"/>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<span class="text-primary font-label text-[10px] tracking-widest uppercase mb-2 block">Medycyna // 2024</span>
+<h3 class="font-headline text-2xl font-bold text-on-surface uppercase">Fundacja Sorno</h3>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">north_east</button>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="bg-surface p-12 hover:bg-surface-container-low transition-all duration-500 group border-l border-outline-variant/10">
+<div class="mb-8 overflow-hidden aspect-video bg-surface-container-high">
+<img alt="AI Posture System" class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ71XGES9SoJfzFyqqC8njE_FV6dBtcPMZ2JtPPbJJZJBB3ydkcw11tqLoT0Taits2jUk69mzN44CKxM-R8QXIV64ECOFY14C1lCwWcMhu-g_Gid5kBwcCEKxp_GLW0XmgB_TUWTHMrLv6-_HrhgNSMnYIaAAIl_bS1h94hzBS_tBTZ3aPIzIgAw5DeB5nF72mWetwxm3RaFPDj2ufhYwns5_IMn20O4hcoRhIkrnwP6QxTR_DLPpSi5Mv4JIgCEOnz_Ze9Wh8-bs"/>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<span class="text-primary font-label text-[10px] tracking-widest uppercase mb-2 block">AI // 2024</span>
+<h3 class="font-headline text-2xl font-bold text-on-surface uppercase">Analiza Postawy</h3>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">north_east</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA / Footer Transition -->
+<section class="px-6 md:px-12 max-w-7xl mx-auto py-32 border-t border-outline-variant/20">
+<div class="text-center">
+<h2 class="font-headline text-4xl md:text-6xl font-bold tracking-tighter text-on-surface mb-8 uppercase">Gotowy na nową strukturę?</h2>
+<p class="font-body text-on-surface-variant text-lg max-w-xl mx-auto mb-12">
+                    Obecnie przyjmuję nowe zlecenia na systemy wysokiej dostępności i nowoczesne platformy webowe.
+                </p>
+<a class="inline-flex items-center gap-4 text-primary font-headline text-xl font-bold uppercase tracking-widest group nav-link cursor-pointer" data-page="contact" href="#contact">
+                    Rozpocznij rozmowę
+                    <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+</div>
+</section>
+
+<!-- ================== PAGE: PROJEKTY (PROJECTS) ================== -->
+<section id="projects" class="page pt-32 pb-24 px-12 max-w-7xl mx-auto hidden">
+<!-- Hero Header -->
+<header class="mb-24 relative">
+<div class="absolute -left-12 top-0 w-1 h-32 bg-primary/20"></div>
+<p class="font-label text-xs tracking-[0.2em] uppercase text-primary mb-4">ARCHIVE / VERSION 2.4.0</p>
+<h1 class="font-headline text-6xl md:text-8xl font-bold tracking-tighter text-on-surface max-w-4xl leading-[0.9]">
+                ARCHITEKTURA <br/> PROJEKTÓW <br/> <span class="text-primary text-glow">CYFROWYCH.</span>
+</h1>
+<div class="mt-12 flex items-center gap-4 text-outline text-xs font-label uppercase tracking-widest">
+<span>Total entries: 06</span>
+<div class="w-12 h-[1px] bg-outline-variant"></div>
+<span>Status: Fully Compiled</span>
+</div>
 </header>
 
+<!-- Projects Bento Grid -->
+<div class="bento-grid">
+<!-- Project Card 1: Large Featured -->
+<article class="col-span-12 md:col-span-8 group bg-surface-container-low p-8 border-none relative overflow-hidden flex flex-col justify-between min-h-[480px]">
+<div class="absolute top-0 right-0 p-4">
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">north_east</span>
+</div>
+<div>
+<div class="flex gap-2 mb-6">
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-label px-3 py-1 uppercase tracking-tighter">Python</span>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-label px-3 py-1 uppercase tracking-tighter">Computer Vision</span>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-label px-3 py-1 uppercase tracking-tighter">AI</span>
+</div>
+<h2 class="font-headline text-4xl font-bold text-on-surface mb-4 leading-tight">AI Posture Analysis</h2>
+<p class="text-on-surface-variant max-w-lg leading-relaxed text-sm">Computer vision system analyzing posture using depth camera data with YOLOv8-Pose for real-time detection and diagnostic reporting.</p>
+</div>
+<div class="mt-8 relative h-48 bg-surface-container-highest overflow-hidden">
+<img alt="Posture Analysis Visual" class="w-full h-full object-cover opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDDtBhrYQ8IDzXWgz4kgIhrs3dvT8j-kCUVBPlvIfG9iAM-q2DdreXtETF8f631KslrfEBszYU5LwuCdQ1RZmZY6oUuAth2pNO6TRQxPPoeoBz_vS_5dJBF86TJbiFx8PYBHn5OzXPjogs-0lSETInOBAjo48XDLXG7JTYHkiSH-MBrQhWy5pnnrvvnykEUWyZCd8SniIXoPW92vaT-92htL5pHDu3t6tTbDlfh4JxB6gbXMW_uZNp69rYCLTIFrGOThwTgirAGFI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+</div>
+</article>
+<!-- Project Card 2: Medium Vertical -->
+<article class="col-span-12 md:col-span-4 bg-surface-container-high p-8 flex flex-col justify-between group hover:bg-surface-bright transition-colors duration-300">
+<div>
+<span class="text-[10px] font-label text-primary/60 tracking-widest uppercase mb-8 block">Project 02</span>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-4">Medical Portal</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Fullstack platform delivering medical results and managing subscriptions with Stripe integration.</p>
+<div class="flex flex-wrap gap-2">
+<span class="text-[10px] font-label text-primary border border-primary/20 px-2 py-0.5">FastAPI</span>
+<span class="text-[10px] font-label text-primary border border-primary/20 px-2 py-0.5">Stripe</span>
+<span class="text-[10px] font-label text-primary border border-primary/20 px-2 py-0.5">Firebase</span>
+</div>
+</div>
+<div class="pt-12 flex justify-end">
+<span class="material-symbols-outlined text-4xl text-outline-variant font-light group-hover:text-primary group-hover:translate-x-1 transition-all">arrow_right_alt</span>
+</div>
+</article>
+<!-- Project Card 3: Small Horizontal -->
+<article class="col-span-12 md:col-span-5 bg-surface-container-highest p-6 flex gap-6 items-center group cursor-pointer">
+<div class="w-24 h-24 bg-surface-container-low shrink-0 overflow-hidden">
+<img alt="RAG Systems" class="w-full h-full object-cover opacity-30 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqzuS_DB8eclkg8YeT2ze78t9AcfakPB_zNup1ET7VkClQYLTmpAP5kC9WxuWEeukj23gsOxt0f1ZuzlCEFrh6aAt1HhYhD16M7-5bmIPqtrkm9_pPnAakYF6YtCjfer644raHCVN0477uWh-bTCIJrTGmupc0JChNWs54g8Z66dybx5hCK38t3I_TPZ1NIF7y0PJX6ztHgu7r4zbdUZ4IZEC4Smkkc8vRDb6tcnrjvCAche0EiSB7v2zzW2dE27ELT0SU6gdFcvM"/>
+</div>
+<div>
+<h4 class="font-headline text-lg font-bold text-on-surface mb-1">RAG Systems</h4>
+<p class="text-xs text-on-surface-variant mb-3">Retrieval augmented generation experiments.</p>
+<span class="text-[10px] font-label uppercase text-primary">LLM / Embeddings</span>
+</div>
+</article>
+<!-- Project Card 4: Long Textual -->
+<article class="col-span-12 md:col-span-7 bg-surface-container-low p-8 relative overflow-hidden group">
+<div class="flex justify-between items-start mb-12">
+<div class="space-y-1">
+<h4 class="font-headline text-xl font-bold text-on-surface">Automation & Data</h4>
+<p class="text-xs font-label text-outline uppercase tracking-wider">Tikrow - Data Processing</p>
+</div>
+<span class="bg-secondary-container text-on-secondary-container text-[9px] font-bold px-2 py-1 uppercase">Active</span>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<p class="text-sm text-on-surface-variant leading-relaxed">Automated data processing pipelines, ML model development, and API integrations for data-intensive applications.</p>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="w-1.5 h-1.5 bg-primary"></span>
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface">Data Automation</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="w-1.5 h-1.5 bg-primary"></span>
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface">ML Models</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="w-1.5 h-1.5 bg-primary"></span>
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface">Production Ready</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Project Card 5: Visual Feature -->
+<article class="col-span-12 md:col-span-6 bg-surface-container-high relative min-h-[320px] group overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="API Integration Visual" class="w-full h-full object-cover opacity-20 grayscale transition-all duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7PTJVo-IGdZLUfqprnrcAf_VrMrDPpCvtPqK4yhHKi_3benGTv5jpDmUMfRgGYUtg1QIPUliDxTG7D95MQEvERzaS4RaN2aYYx1el0WDiHAE1A3ed5MSu72gFFImvBmv8VFlzri744zU7lvSbmFXwV0EacH_mdzT1rAbv4PvRjeAY_jKWjhZh8rxoFeP2rEyk0oSEvpAMa8mZohmghxob11YLp5B_nJHupu_9cW-3Gh6mSoNKtmHqYLVpXd4cmreBzskSURuTqm4"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-high via-surface-container-high/60 to-transparent"></div>
+</div>
+<div class="relative z-10 p-10 h-full flex flex-col justify-end">
+<h4 class="font-headline text-3xl font-bold text-on-surface mb-2">Advanced Integrations</h4>
+<p class="text-on-surface-variant text-sm max-w-sm mb-6">REST APIs, third-party service integrations, and data flow optimization.</p>
+<div class="flex gap-4">
+<span class="text-[10px] font-label text-primary">APIs</span>
+<span class="text-[10px] font-label text-primary">Integration</span>
+<span class="text-[10px] font-label text-primary">Database</span>
+</div>
+</div>
+</article>
+<!-- Project Card 6: Technical Documentation -->
+<article class="col-span-12 md:col-span-6 bg-surface-container-lowest p-10 border-l-4 border-primary/20 flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary mb-6" data-weight="fill">terminal</span>
+<h4 class="font-headline text-xl font-bold text-on-surface mb-4">Experience Across Stack</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed italic mb-8">"Full-stack development spanning frontend, backend, DevOps, and cloud infrastructure across multiple languages and frameworks."</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex gap-2 flex-wrap">
+<span class="text-[9px] bg-surface-container-high text-primary px-2 py-1 uppercase font-bold">Python</span>
+<span class="text-[9px] bg-surface-container-high text-primary px-2 py-1 uppercase font-bold">JavaScript</span>
+<span class="text-[9px] bg-surface-container-high text-primary px-2 py-1 uppercase font-bold">SQL</span>
+<span class="text-[9px] bg-surface-container-high text-primary px-2 py-1 uppercase font-bold">Docker</span>
+</div>
+</div>
+</article>
+</div>
+</section>
 
-<!-- ================= CONTENT ================= -->
-<main class="container">
-
-<!-- ================================================= -->
-<!-- ================= MAIN TAB ======================= -->
-<!-- ================================================= -->
-
-<section id="main" class="tab active">
-
-<div class="hero">
-
-<div class="hero-left">
-
-<h1 class="hero-title">
-Hello, I'm <span class="accent">Adam</span>
+<!-- ================== PAGE: O MNIE (ABOUT) ================== -->
+<section id="about" class="page pt-32 pb-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto hidden">
+<!-- Hero Section: Identity -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-32 items-end">
+<div class="lg:col-span-8">
+<p class="font-label text-primary text-xs tracking-[0.2em] uppercase mb-4">Architect / Full-Stack Engineer</p>
+<h1 class="font-headline text-6xl md:text-8xl font-bold tracking-tighter leading-none mb-8 text-on-surface">
+                    Building systems that <span class="text-primary">breathe.</span>
 </h1>
-
-<p class="hero-subtitle">
-AI & Backend Developer • Computer Science Student
-</p>
-
-<p class="hero-text">
-Computer Science student at the Polish-Japanese Academy of Information Technology
-focused on backend engineering, artificial intelligence and cloud systems.
-I build complete solutions combining APIs, machine learning and scalable architecture.
-</p>
-
-<div class="cta">
-<a class="btn" href="mailto:adam.sapiecha05@gmail.com">Contact me</a>
-<button class="btn ghost" data-jump="projects">View Projects</button>
+<p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed">
+                    Based in Warsaw, I design and engineer high-performance digital environments. My approach blends structural integrity with aesthetic precision, treating every codebase like a living blueprint.
+                </p>
 </div>
-
-<div class="contact-mini">
-<a target="_blank" href="https://github.com/Adam-Sapiecha">GitHub</a>
-<span>•</span>
-<a href="mailto:adam.sapiecha05@gmail.com">Email</a>
-<span>•</span>
-<a href="tel:+48507593289">+48 507 593 289</a>
+<div class="lg:col-span-4 flex justify-end">
+<div class="relative w-full aspect-square bg-surface-container-high overflow-hidden group">
+<img alt="Portrait of the architect" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzhGKi1eOLhJNmXIL4a6W5_VpwopRkhQYp_80jszPoHNpBs4N-qCFmFZgddFSAEVrk_RPpkTD6aDQsjIoxqG-1oZE5emHN0ACPGJOS3emTvsRQpeLeeRsewYBubFte5mHAnD2WaYosd2fa9LtA9kMJcu54aC6mu--1dXnAkiM5oXTTaD8zxuowBtoQUEF-5bhqrOgOAZSfx2zjhCHMhVLbSxcKaHPTaH2YDFwo91G2ETF8CXi1nxg1oosGwsN9ZOSlw9VuMx_smo0"/>
+<div class="absolute inset-0 border border-primary/20 pointer-events-none"></div>
 </div>
-
 </div>
-
-<div class="hero-right">
-<img src="assets/me.jpg" class="hero-photo" alt="Profile photo">
+</section>
+<!-- Technical Arsenal: Bento Grid -->
+<section class="mb-32">
+<div class="flex items-center space-x-4 mb-12">
+<h2 class="font-headline text-2xl font-bold uppercase tracking-tight">Technical Arsenal</h2>
+<div class="h-px flex-grow bg-outline-variant/30"></div>
 </div>
-
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<!-- Core Languages -->
+<div class="md:col-span-2 bg-surface-container-low p-8 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-8xl" data-icon="terminal">terminal</span>
 </div>
-
-
-<!-- ABOUT -->
-<div class="card">
-<h2>About Me</h2>
-
-<p>
-I specialize in backend systems and AI-powered applications.
-My work connects software engineering with machine learning,
-especially RAG systems, computer vision and data automation.
-</p>
-
-<p>
-I enjoy designing structured architectures with clear separation of logic,
-strong validation and scalable APIs. Most projects I build are complete
-end-to-end systems where I handle both architecture and implementation.
-</p>
-
-<p>
-Currently seeking opportunities as a Junior AI, Backend or Fullstack Developer
-where I can contribute to real production systems and continue growing as an engineer.
-</p>
-</div>
-
-
-<!-- EDUCATION -->
-<div class="card">
-<h2>Education</h2>
-
-<strong>Polish-Japanese Academy of Information Technology (PJATK)</strong><br>
-B.Sc. Computer Science — Engineering Degree<br>
-<span class="muted">09/2023 – Present</span>
-
-<ul>
-<li>Software engineering and backend development</li>
-<li>Artificial intelligence and machine learning</li>
-<li>Cloud computing and distributed systems</li>
-<li>Linux, databases and networking fundamentals</li>
+<h3 class="font-headline text-primary text-xs font-bold uppercase tracking-widest mb-6">01 // Core Languages</h3>
+<ul class="space-y-4">
+<li class="flex justify-between items-end border-b border-outline-variant/10 pb-1">
+<span class="font-headline text-xl">TypeScript</span>
+<span class="font-label text-[10px] text-on-surface-variant">ADVANCED</span>
+</li>
+<li class="flex justify-between items-end border-b border-outline-variant/10 pb-1">
+<span class="font-headline text-xl">Rust</span>
+<span class="font-label text-[10px] text-on-surface-variant">INTERMEDIATE</span>
+</li>
+<li class="flex justify-between items-end border-b border-outline-variant/10 pb-1">
+<span class="font-headline text-xl">Python</span>
+<span class="font-label text-[10px] text-on-surface-variant">ADVANCED</span>
+</li>
 </ul>
 </div>
-
-
-<div class="below-hero">
-
-<div class="card">
-<h2>Core Skills</h2>
-<div class="chips">
-<span>Python</span>
-<span>FastAPI</span>
-<span>Node.js</span>
-<span>SQL</span>
-<span>Docker</span>
-<span>Linux</span>
-<span>REST API</span>
-<span>Git</span>
+<!-- Ecosystem -->
+<div class="md:col-span-1 bg-surface-container-highest p-8">
+<h3 class="font-headline text-primary text-xs font-bold uppercase tracking-widest mb-6">02 // Ecosystem</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-bright text-[10px] font-bold tracking-tighter uppercase">React.js</span>
+<span class="px-3 py-1 bg-surface-bright text-[10px] font-bold tracking-tighter uppercase">Next.js</span>
+<span class="px-3 py-1 bg-surface-bright text-[10px] font-bold tracking-tighter uppercase">Node.js</span>
+<span class="px-3 py-1 bg-surface-bright text-[10px] font-bold tracking-tighter uppercase">PostgreSQL</span>
+<span class="px-3 py-1 bg-surface-bright text-[10px] font-bold tracking-tighter uppercase">Docker</span>
 </div>
 </div>
-
-<div class="card">
-<h2>AI & Cloud</h2>
-<div class="chips">
-<span>RAG Systems</span>
-<span>Embeddings</span>
-<span>YOLOv8</span>
-<span>PyTorch</span>
-<span>OpenVINO</span>
-<span>AWS</span>
-<span>GCP</span>
-<span>Firebase</span>
+<!-- Design Specs -->
+<div class="md:col-span-1 bg-surface-container-low p-8 border-l border-primary/10">
+<h3 class="font-headline text-primary text-xs font-bold uppercase tracking-widest mb-6">03 // Design Specs</h3>
+<div class="space-y-3">
+<p class="text-[10px] leading-tight text-on-surface-variant uppercase tracking-widest">Architectural UI/UX</p>
+<p class="text-[10px] leading-tight text-on-surface-variant uppercase tracking-widest">Motion Systems</p>
+<p class="text-[10px] leading-tight text-on-surface-variant uppercase tracking-widest">Brand Identity</p>
 </div>
 </div>
-
 </div>
-
+</section>
+<!-- Experience Timeline: Git Layout -->
+<section class="mb-32">
+<div class="flex items-center space-x-4 mb-12">
+<h2 class="font-headline text-2xl font-bold uppercase tracking-tight">Experience Timeline</h2>
+<div class="h-px flex-grow bg-outline-variant/30"></div>
+</div>
+<div class="relative pl-8 md:pl-0">
+<!-- Timeline Central Line -->
+<div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-outline-variant/20 -translate-x-1/2 hidden md:block"></div>
+<div class="space-y-16">
+<!-- Commit 1 -->
+<div class="relative flex flex-col md:flex-row items-start md:items-center">
+<div class="md:w-1/2 md:pr-12 text-left md:text-right mb-4 md:mb-0">
+<span class="font-label text-primary text-[10px] tracking-widest uppercase">Aug 2023 — Present</span>
+<h4 class="font-headline text-2xl font-bold mt-1">Lead System Architect</h4>
+<p class="text-on-surface-variant text-sm mt-2">Engineering modular design systems and distributed architectures for high-growth startups.</p>
+</div>
+<div class="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background -translate-x-1/2 z-10"></div>
+<div class="md:w-1/2 md:pl-12">
+<div class="bg-surface-container-low p-4 rounded-lg inline-flex items-center space-x-3 group cursor-default">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="commit">commit</span>
+<code class="text-[10px] text-on-surface-variant font-mono">commit f9e82a1</code>
+<span class="text-[10px] text-on-secondary-container bg-secondary-container px-2 py-0.5 rounded uppercase">Main</span>
+</div>
+</div>
+</div>
+<!-- Commit 2 -->
+<div class="relative flex flex-col md:flex-row-reverse items-start md:items-center">
+<div class="md:w-1/2 md:pl-12 mb-4 md:mb-0">
+<span class="font-label text-primary text-[10px] tracking-widest uppercase">Jan 2021 — July 2023</span>
+<h4 class="font-headline text-2xl font-bold mt-1">Senior Frontend Engineer</h4>
+<p class="text-on-surface-variant text-sm mt-2">Spearheaded the migration to headless commerce, improving performance metrics by 40%.</p>
+</div>
+<div class="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-outline border-4 border-background -translate-x-1/2 z-10"></div>
+<div class="md:w-1/2 md:pr-12 text-left md:text-right">
+<div class="bg-surface-container-low p-4 rounded-lg inline-flex items-center space-x-3 group cursor-default">
+<span class="material-symbols-outlined text-outline text-sm" data-icon="merge">merge</span>
+<code class="text-[10px] text-on-surface-variant font-mono">merge branch 'feature/scale'</code>
+</div>
+</div>
+</div>
+<!-- Commit 3 -->
+<div class="relative flex flex-col md:flex-row items-start md:items-center">
+<div class="md:w-1/2 md:pr-12 text-left md:text-right mb-4 md:mb-0">
+<span class="font-label text-primary text-[10px] tracking-widest uppercase">2019 — 2020</span>
+<h4 class="font-headline text-2xl font-bold mt-1">Full-Stack Developer</h4>
+<p class="text-on-surface-variant text-sm mt-2">Developing robust API layers and intuitive user interfaces for data-intensive applications.</p>
+</div>
+<div class="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-outline border-4 border-background -translate-x-1/2 z-10"></div>
+<div class="md:w-1/2 md:pl-12">
+<div class="bg-surface-container-low p-4 rounded-lg inline-flex items-center space-x-3 group cursor-default">
+<span class="material-symbols-outlined text-outline text-sm" data-icon="rocket_launch">rocket_launch</span>
+<code class="text-[10px] text-on-surface-variant font-mono">init project_omega</code>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Aesthetic Interlude -->
+<section class="mb-32 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="h-64 bg-surface-container-highest overflow-hidden relative">
+<img alt="Architectural structure" class="w-full h-full object-cover grayscale opacity-30 hover:opacity-50 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX7Nk8kfl_2fLkp_xRaypLm4XF5motTbpAV0rbqfufMhoUi_CyG91LFdRLIAajkfbO75ap1Cw_92K23jSg2r_eRJD6cnP5WQgqymgJ_cpqXY9safsDAurAgTzNIk4GU8ptlDV78mbd-D2bqwbYwou5tDBVeoL39ZKYdWae-bieBnN7bxBuDz8pFGDyds5Rcfqj-JXxz0jrHAsBF_9eoeEdbxQ_s8plzAknEyjY_371E7VwccN3ADwvDnVlQzdJ8T6Jzjhzl1vvYC8"/>
+<div class="absolute bottom-4 left-4 font-label text-[10px] tracking-widest uppercase text-primary">Structural Integrity</div>
+</div>
+<div class="h-64 bg-surface-container-highest overflow-hidden relative">
+<img alt="Clean code interface" class="w-full h-full object-cover grayscale opacity-30 hover:opacity-50 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA24E0Few1An3bzejU_MtU0r2zaFGVhR9rFI_zLNJyfM_xT_5b2GMRuboJsoJHJBqACc3rPbm2eTIGs7kje2Ntql9Y22RP4GsGVGv9908d6_2oiF1X8m1Wj0p3m3wtMolc95z-aVvkr6g5SY7jibMv6Mioax3_aYHwUbOSMRLZyOcPQm3M4Yn1qYfVPharCfIJ8h-DzfdCfXXAlp5dlMuNvl7BEFy0TE5nyK8AQbPYALFANbVXXP-H80db7tvbgpgCY42-XfDPplyY"/>
+<div class="absolute bottom-4 left-4 font-label text-[10px] tracking-widest uppercase text-primary">Clean Implementation</div>
+</div>
+<div class="h-64 bg-surface-container-highest overflow-hidden relative">
+<img alt="Minimal workspace" class="w-full h-full object-cover grayscale opacity-30 hover:opacity-50 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaCSphzx5o_dGrG7atKCiC5IuG_nxGVUQXgz0kDOgDClSIdYniWwzga1lNrdFOiMmjWT-RI_jWpZHovRWnZAKFq8LRLTyhfL22rru500Lf3MXmfiE8hLWL7-iZL_0V3L7ODACgYmWRKITWWjTwt2k34S-WyOzOVFkbzUVswc_CszPHoTMuPVOOL_jeYkdNMSILVMoxDLrHQ95ebCi1-fvXQC7tP-nzSA_4-fwaTm_1ANmIPp0oGJfb36MZEXc7womoqRxY9KBAtJo"/>
+<div class="absolute bottom-4 left-4 font-label text-[10px] tracking-widest uppercase text-primary">Precision Space</div>
+</div>
+</section>
+<!-- Final Call Action -->
+<section class="bg-surface-container-low p-12 lg:p-24 border border-outline-variant/10 relative overflow-hidden">
+<div class="relative z-10 max-w-2xl">
+<h3 class="font-headline text-4xl font-bold mb-6">Ready to build the next monolith?</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed">I'm currently accepting select projects for Q4 2024. If you have a vision that requires technical depth and architectural precision, let's connect.</p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-headline text-sm font-bold uppercase tracking-widest hover:bg-primary-dim transition-all">Start Project</button>
+<button class="border border-outline-variant px-8 py-3 rounded-lg font-headline text-sm font-bold uppercase tracking-widest hover:bg-surface-variant transition-all">View Archive</button>
+</div>
+</div>
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+</section>
 </section>
 
-
-<!-- ================================================= -->
-<!-- ================= EXPERIENCE ===================== -->
-<!-- ================================================= -->
-
-<section id="experience" class="tab">
-
-<div class="card">
-<h2>Professional Experience</h2>
-
-<div class="item">
-<div class="item-top">
-<strong>Fullstack Developer — Fundacja Sorno</strong>
-<span class="muted">08/2024 – Present</span>
+<!-- ================== PAGE: KONTAKT (CONTACT) ================== -->
+<section id="contact" class="page pt-32 pb-20 px-6 md:px-12 max-w-7xl mx-auto hidden">
+<!-- Header Section -->
+<header class="mb-16">
+<div class="inline-block px-3 py-1 mb-4 bg-secondary-container text-on-secondary-container font-headline text-[10px] tracking-widest uppercase">
+                Status: Available for hire
+            </div>
+<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter text-on-surface mb-6">
+                Let's <span class="text-primary italic">initialize</span> a conversation.
+            </h1>
+<p class="text-on-surface-variant max-w-xl text-lg leading-relaxed">
+                Whether you have a technical challenge, a project proposal, or just want to discuss the future of the web—the terminal is open.
+            </p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left: Contact Form -->
+<section class="lg:col-span-7 bg-surface-container-high p-8 md:p-12 relative overflow-hidden">
+<!-- Decorative Grid Background -->
+<div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(circle, #abcec1 1px, transparent 1px); background-size: 20px 20px;"></div>
+<form class="relative z-10 space-y-8" id="contactFormElement">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="font-headline text-[10px] uppercase tracking-widest text-primary font-bold">01_Sender Name</label>
+<input class="w-full bg-surface-container-highest border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-on-surface placeholder:text-outline-variant/50 py-4 font-body" placeholder="ARCHITECT_01" type="text" name="name" required/>
 </div>
-
-<p>
-Designed and developed a medical platform delivering patient test results
-and handling subscription payments.
-</p>
-
-<ul>
-<li>Designed backend architecture for web and mobile applications</li>
-<li>Implemented REST APIs using FastAPI and Node.js</li>
-<li>Integrated Stripe payment and subscription workflows</li>
-<li>Managed cloud integrations and databases (Firebase, MongoDB, GCP)</li>
-<li>Maintained system stability and feature development</li>
-</ul>
+<div class="space-y-2">
+<label class="font-headline text-[10px] uppercase tracking-widest text-primary font-bold">02_Return Path</label>
+<input class="w-full bg-surface-container-highest border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-on-surface placeholder:text-outline-variant/50 py-4 font-body" placeholder="dev@network.sys" type="email" name="email" required/>
 </div>
-
-
-<div class="item">
-<div class="item-top">
-<strong>QA Tester / Data Analyst — Tikrow</strong>
-<span class="muted">07/2025 – Present</span>
 </div>
-
-<p>
-Worked on data automation and AI-assisted product development.
-</p>
-
-<ul>
-<li>Automated data processing pipelines in Python</li>
-<li>Developed ML models detecting patterns and anomalies</li>
-<li>Worked with API integrations and datasets</li>
-<li>Modeled workflows supporting new features</li>
-</ul>
+<div class="space-y-2">
+<label class="font-headline text-[10px] uppercase tracking-widest text-primary font-bold">03_Payload Subject</label>
+<input class="w-full bg-surface-container-highest border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-on-surface placeholder:text-outline-variant/50 py-4 font-body" placeholder="Request for Collaboration" type="text" name="subject" required/>
 </div>
-
+<div class="space-y-2">
+<label class="font-headline text-[10px] uppercase tracking-widest text-primary font-bold">04_Message Buffer</label>
+<textarea class="w-full bg-surface-container-highest border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-on-surface placeholder:text-outline-variant/50 py-4 font-body resize-none" placeholder="System logs or greetings go here..." rows="5" name="message" required></textarea>
 </div>
-
+<div class="flex items-center justify-between pt-4">
+<div class="hidden md:block font-headline text-[10px] text-outline-variant uppercase">
+                            Buffer: 1024KB / Ready to Send
+                        </div>
+<button type="submit" class="bg-gradient-to-br from-primary to-primary-dim text-on-primary px-10 py-4 font-headline font-bold uppercase tracking-widest flex items-center gap-3 active:scale-95 transition-all duration-200">
+                            Transmit Data
+                            <span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</form>
+<p id="formMessage" class="hidden text-primary text-sm mt-4 text-center"></p>
 </section>
-
-
-<!-- ================================================= -->
-<!-- ================= PROJECTS ======================= -->
-<!-- ================================================= -->
-
-<section id="projects" class="tab">
-
-<div class="card">
-<h2>Projects</h2>
-
-
-<div class="project">
-<div class="project-top">
-<h3>AI Posture Analysis System</h3>
+<!-- Right: Meta Info & System Status -->
+<aside class="lg:col-span-5 space-y-8">
+<!-- System Status Panel -->
+<div class="bg-surface-container-low p-8 border-l border-primary/20">
+<h2 class="font-headline text-[10px] uppercase tracking-[0.2em] text-outline-variant mb-6 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+                        Network Infrastructure Status
+                    </h2>
+<div class="space-y-6">
+<div class="flex justify-between items-end border-b border-outline-variant/20 pb-2">
+<div>
+<div class="text-[10px] text-outline-variant font-headline uppercase">Location</div>
+<div class="font-headline text-lg text-on-surface tracking-tight">Warsaw, PL [EU-CENTRAL-1]</div>
 </div>
-
-<p class="muted">
-Computer vision system analyzing posture using depth camera data.
-</p>
-
-<ul>
-<li>Processed spatial data from Luxonis OAK-D camera</li>
-<li>Implemented pose detection using YOLOv8-Pose and BlazePose</li>
-<li>Detected posture asymmetry and deviations</li>
-<li>Generated diagnostic reports</li>
-</ul>
-
-<div class="chips">
-<span>Python</span>
-<span>YOLOv8</span>
-<span>PyTorch</span>
-<span>Computer Vision</span>
+<span class="material-symbols-outlined text-primary">public</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/20 pb-2">
+<div>
+<div class="text-[10px] text-outline-variant font-headline uppercase">Uptime</div>
+<div class="font-headline text-lg text-on-surface tracking-tight">99.982%</div>
+</div>
+<span class="material-symbols-outlined text-primary">bolt</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/20 pb-2">
+<div>
+<div class="text-[10px] text-outline-variant font-headline uppercase">Latency</div>
+<div class="font-headline text-lg text-on-surface tracking-tight">14ms</div>
+</div>
+<span class="material-symbols-outlined text-primary">speed</span>
 </div>
 </div>
-
-
-<div class="project">
-<div class="project-top">
-<h3>Medical Client Portal</h3>
 </div>
-
-<p class="muted">
-Fullstack platform delivering medical results and managing subscriptions.
-</p>
-
-<ul>
-<li>Designed backend architecture and API layer</li>
-<li>Integrated Stripe payments and subscriptions</li>
-<li>Implemented authentication and cloud storage</li>
-<li>Deployed scalable cloud infrastructure</li>
-</ul>
-
-<div class="chips">
-<span>FastAPI</span>
-<span>Node.js</span>
-<span>Stripe</span>
-<span>Firebase</span>
+<!-- Social Links Grid -->
+<div class="grid grid-cols-2 gap-4">
+<a class="group bg-surface-container-highest p-6 hover:bg-surface-bright transition-all duration-300" href="https://github.com/Adam-Sapiecha" target="_blank">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">share</span>
 </div>
+<div class="font-headline text-[10px] text-outline-variant uppercase">GitHub</div>
+<div class="text-on-surface font-headline font-bold tracking-tight">/architect_dev</div>
+</a>
+<a class="group bg-surface-container-highest p-6 hover:bg-surface-bright transition-all duration-300" href="https://linkedin.com" target="_blank">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">person_add</span>
 </div>
-
-
-<div class="project">
-<div class="project-top">
-<h3>RAG & AI Agents Experiments</h3>
+<div class="font-headline text-[10px] text-outline-variant uppercase">LinkedIn</div>
+<div class="text-on-surface font-headline font-bold tracking-tight">/connect</div>
+</a>
 </div>
-
-<p class="muted">
-Experiments with Retrieval Augmented Generation and AI agent workflows.
-</p>
-
-<ul>
-<li>Built embedding pipelines and vector retrieval systems</li>
-<li>Designed agent-based workflows</li>
-<li>Integrated LLM reasoning with external knowledge</li>
-</ul>
-
-<div class="chips">
-<span>RAG</span>
-<span>Embeddings</span>
-<span>LLM</span>
-<span>Vector DB</span>
+<!-- Minimal Map Placeholder -->
+<div class="h-48 bg-surface-container-lowest relative overflow-hidden border border-outline-variant/10">
+<div class="absolute inset-0 opacity-20">
+<img alt="Abstract topographical map with geometric nodes" class="w-full h-full object-cover grayscale brightness-50 contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCac6RbMlj6HP2DvZ_VmLdmE4O1Nc1RSTSvbS_ztwGQEQ50CcS8KdGkzymJdpy5PlZpFpdjLmm0Akn2AewNJMMVbnqN4_jW73E-mrERqJGg8DPzMIljR6qiJkwvJ30AKc-t43X_Ptzyfj9PkIppOESnIt0dqwWcHAqM_bCSWoSUhYcaoZmG6GTi7C1SOJSWF-EWnjbT-C0my7jmTh7k_RLQ5A_JWXWvGc9ekOmmQIhTVxHmIUVtIxWcX_Ywo81axm3VIshycM-f1-Q"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-[10px] font-headline font-bold uppercase text-on-surface tracking-widest">Active Node: Warsaw</span>
 </div>
 </div>
-
+</aside>
 </div>
-
 </section>
 
 </main>
 
-
-<!-- ================= FOOTER ================= -->
-<footer class="container footer">
-© <span id="year"></span> Adam Sapiecha
+<!-- Footer -->
+<footer class="w-full border-t border-[#3b4a53]/20 bg-[#000000] dark:bg-[#000000] flex flex-col md:flex-row justify-between items-center px-12 py-8">
+<div class="font-['Inter'] text-xs tracking-widest uppercase text-[#d7e8f2]/40 mb-4 md:mb-0">
+            © 2024 ADAM SAPIECHA. ALL RIGHTS RESERVED.
+        </div>
+<div class="flex space-x-12">
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-[#d7e8f2]/40 hover:text-[#abcec1] transition-colors" href="https://github.com/Adam-Sapiecha" target="_blank">Github</a>
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-[#d7e8f2]/40 hover:text-[#abcec1] transition-colors" href="#">LinkedIn</a>
+<a class="font-['Inter'] text-xs tracking-widest uppercase text-[#d7e8f2]/40 hover:text-[#abcec1] transition-colors" href="https://github.com/Adam-Sapiecha" target="_blank">Source</a>
+</div>
 </footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>

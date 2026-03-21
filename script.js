@@ -1,11 +1,9 @@
 const STORAGE_KEY = "portfolio-language";
 const body = document.body;
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinksContainer = document.querySelector("#nav-links");
 const languageButtons = Array.from(document.querySelectorAll(".lang-btn"));
+const menuToggle = document.querySelector("[data-menu-toggle]");
+const mobileNav = document.querySelector("[data-mobile-nav]");
 const pageKey = body.dataset.page;
-const revealNodes = Array.from(document.querySelectorAll("[data-reveal]"));
-const accordionButtons = Array.from(document.querySelectorAll("[data-accordion-toggle]"));
 
 function getInitialLanguage() {
   const stored = localStorage.getItem(STORAGE_KEY);
@@ -18,7 +16,9 @@ function applyLanguage(lang) {
 
   languageButtons.forEach((button) => {
     const selected = button.dataset.lang === lang;
-    button.classList.toggle("is-selected", selected);
+    button.classList.toggle("border-primary", selected);
+    button.classList.toggle("text-primary", selected);
+    button.classList.toggle("text-on-surface-variant", !selected);
     button.setAttribute("aria-pressed", String(selected));
   });
 
@@ -32,59 +32,20 @@ function applyLanguage(lang) {
   }
 }
 
-function closeMenu() {
-  if (!menuToggle || !navLinksContainer) {
-    return;
-  }
-
-  navLinksContainer.classList.remove("open");
-  menuToggle.setAttribute("aria-expanded", "false");
-  document.body.classList.remove("menu-open");
-}
-
-function setupNavigation() {
+function setupActiveNav() {
   document.querySelectorAll("[data-nav]").forEach((link) => {
-    link.classList.toggle("is-active", link.dataset.nav === pageKey);
-    link.addEventListener("click", closeMenu);
+    const active = link.dataset.nav === pageKey;
+    link.classList.toggle("text-primary", active);
+    link.classList.toggle("border-b-2", active);
+    link.classList.toggle("border-primary", active);
+    link.classList.toggle("pb-1", active);
+    link.classList.toggle("text-on-surface-variant", !active);
   });
 }
 
-function setupReveal() {
-  if (!("IntersectionObserver" in window)) {
-    revealNodes.forEach((node) => node.classList.add("is-visible"));
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.16, rootMargin: "0px 0px -40px 0px" }
-  );
-
-  revealNodes.forEach((node) => observer.observe(node));
-}
-
-function toggleAccordion(button) {
-  const item = button.closest(".accordion-item");
-  if (!item) {
-    return;
-  }
-
-  const expanded = item.classList.toggle("is-open");
-  button.setAttribute("aria-expanded", String(expanded));
-}
-
-if (menuToggle && navLinksContainer) {
+if (menuToggle && mobileNav) {
   menuToggle.addEventListener("click", () => {
-    const isOpen = navLinksContainer.classList.toggle("open");
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-    document.body.classList.toggle("menu-open", isOpen);
+    mobileNav.classList.toggle("hidden");
   });
 }
 
@@ -94,12 +55,5 @@ languageButtons.forEach((button) => {
   });
 });
 
-accordionButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    toggleAccordion(button);
-  });
-});
-
-setupNavigation();
-setupReveal();
+setupActiveNav();
 applyLanguage(getInitialLanguage());

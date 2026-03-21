@@ -1,263 +1,238 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html class="dark" lang="pl">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Portfolio Adama Sapiechy - full-stack developera, tworzacego aplikacje webowe, backend i rozwiazania AI."
-  />
-  <title>Adam Sapiecha - Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="style.css" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-dim": "#00ec90",
+            "on-error": "#490006",
+            "surface-bright": "#262c36",
+            "secondary-fixed-dim": "#37d4ff",
+            "on-secondary-container": "#eef9ff",
+            "surface-container-low": "#0f141a",
+            "on-background": "#f1f3fc",
+            "on-primary-fixed": "#004627",
+            "primary-container": "#00fc9a",
+            "tertiary-container": "#7000ff",
+            "on-secondary": "#004050",
+            "on-tertiary-fixed": "#1f0052",
+            "on-tertiary": "#290067",
+            "inverse-primary": "#006d40",
+            "on-primary-fixed-variant": "#00653b",
+            "surface-container-lowest": "#000000",
+            "error-container": "#9f0519",
+            "surface": "#0a0e14",
+            "on-secondary-fixed": "#003a48",
+            "secondary-fixed": "#80deff",
+            "surface-container": "#151a21",
+            "primary-fixed-dim": "#00ec90",
+            "tertiary-fixed": "#bda1ff",
+            "secondary": "#00cffc",
+            "surface-dim": "#0a0e14",
+            "inverse-on-surface": "#51555c",
+            "secondary-dim": "#00c0ea",
+            "on-tertiary-container": "#f8f1ff",
+            "secondary-container": "#00677f",
+            "on-tertiary-fixed-variant": "#4700a7",
+            "surface-container-highest": "#20262f",
+            "tertiary-fixed-dim": "#b190ff",
+            "outline": "#72757d",
+            "surface-variant": "#20262f",
+            "background": "#0a0e14",
+            "tertiary-dim": "#874cff",
+            "on-surface-variant": "#a8abb3",
+            "surface-container-high": "#1b2028",
+            "error": "#ff716c",
+            "on-primary-container": "#005b34",
+            "tertiary": "#ac89ff",
+            "outline-variant": "#44484f",
+            "on-error-container": "#ffa8a3",
+            "primary-fixed": "#00fc9a",
+            "error-dim": "#d7383b",
+            "on-secondary-fixed-variant": "#00586d",
+            "surface-tint": "#a1ffc2",
+            "on-surface": "#f1f3fc",
+            "inverse-surface": "#f8f9ff",
+            "primary": "#a1ffc2",
+            "on-primary": "#00643a"
+          },
+          fontFamily: {
+            "headline": ["Space Grotesk"],
+            "body": ["Inter"],
+            "label": ["Space Grotesk"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+    .glass-card {
+      background: rgba(32, 38, 47, 0.4);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(68, 72, 79, 0.15);
+    }
+    .tonal-shift {
+      transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    }
+    .tonal-shift:hover {
+      transform: translateY(-4px);
+    }
+  </style>
 </head>
-<body data-page="home" data-title-pl="Adam Sapiecha - Strona glowna" data-title-en="Adam Sapiecha - Home">
-  <div class="site-shell">
-    <header class="site-header">
-      <nav class="nav container" aria-label="Main navigation">
-        <a class="brand" href="index.html">Adam<span>.</span></a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-pl="Menu" data-en="Menu">Menu</button>
-        <div class="nav-links" id="nav-links">
-          <a data-nav="home" href="index.html" data-pl="Start" data-en="Home">Start</a>
-          <a data-nav="projects" href="projects.html" data-pl="Projekty" data-en="Projects">Projekty</a>
-          <a data-nav="about" href="about.html" data-pl="O mnie" data-en="About">O mnie</a>
-          <a data-nav="contact" href="contact.html" data-pl="Kontakt" data-en="Contact">Kontakt</a>
-          <a class="nav-cta" href="assets/Adam_Sapiecha_CV.pdf" target="_blank" rel="noreferrer" data-pl="Pobierz CV" data-en="Download CV">Pobierz CV</a>
-        </div>
-        <div class="lang-switch" aria-label="Language switcher">
-          <button class="lang-btn" type="button" data-lang="pl">PL</button>
-          <button class="lang-btn" type="button" data-lang="en">EN</button>
-        </div>
-      </nav>
-    </header>
+<body class="bg-surface text-on-background font-body selection:bg-primary-container selection:text-on-primary-container" data-page="home" data-title-pl="Adam Sapiecha - Glowna" data-title-en="Adam Sapiecha - Home">
+  <nav class="fixed top-0 z-50 w-full bg-[#0a0e14]/80 backdrop-blur-xl shadow-[0_0_20px_rgba(0,255,156,0.1)]">
+    <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-8">
+      <div class="font-['Space_Grotesk'] text-xl font-bold tracking-tighter text-[#00FF9C]">Adam Sapiecha</div>
+      <div class="hidden items-center space-x-8 font-['Space_Grotesk'] tracking-tight md:flex">
+        <a data-nav="home" class="transition-colors duration-200 hover:text-[#00FF9C]" href="index.html" data-pl="Glowna" data-en="Home">Glowna</a>
+        <a data-nav="projects" class="transition-colors duration-200 hover:text-[#00FF9C]" href="projects.html" data-pl="Projekty i praca" data-en="Projects and work">Projekty i praca</a>
+        <a data-nav="about" class="transition-colors duration-200 hover:text-[#00FF9C]" href="about.html" data-pl="O mnie" data-en="About me">O mnie</a>
+        <a data-nav="contact" class="transition-colors duration-200 hover:text-[#00FF9C]" href="contact.html" data-pl="Kontakt" data-en="Contact">Kontakt</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button class="lang-btn border border-outline-variant px-3 py-2 text-xs uppercase tracking-[0.2em] text-on-surface-variant" data-lang="pl" type="button">PL</button>
+        <button class="lang-btn border border-outline-variant px-3 py-2 text-xs uppercase tracking-[0.2em] text-on-surface-variant" data-lang="en" type="button">EN</button>
+        <button class="material-symbols-outlined text-primary md:hidden" data-menu-toggle type="button">menu</button>
+        <a class="hidden bg-primary px-6 py-2 text-sm font-bold uppercase tracking-widest text-on-primary md:block" href="assets/Adam_Sapiecha_CV.pdf" target="_blank" rel="noreferrer" data-pl="Resume" data-en="Resume">Resume</a>
+      </div>
+    </div>
+    <div class="hidden border-t border-outline-variant/30 bg-surface-container-low px-8 py-4 md:hidden" data-mobile-nav>
+      <div class="flex flex-col gap-4 font-['Space_Grotesk'] tracking-tight">
+        <a data-nav="home" href="index.html" data-pl="Glowna" data-en="Home">Glowna</a>
+        <a data-nav="projects" href="projects.html" data-pl="Projekty i praca" data-en="Projects and work">Projekty i praca</a>
+        <a data-nav="about" href="about.html" data-pl="O mnie" data-en="About me">O mnie</a>
+        <a data-nav="contact" href="contact.html" data-pl="Kontakt" data-en="Contact">Kontakt</a>
+      </div>
+    </div>
+  </nav>
 
-    <main class="page-layout">
-      <section class="container hero-layout" data-reveal="up">
-        <div class="hero-photo-card" data-reveal="left">
-          <div class="photo-placeholder">
-            <span data-pl="Miejsce na zdjecie" data-en="Photo placeholder">Miejsce na zdjecie</span>
+  <main class="pt-20">
+    <section class="mx-auto flex min-h-screen max-w-7xl items-center px-8 py-24">
+      <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
+        <div class="space-y-8 lg:col-span-7">
+          <div class="space-y-4">
+            <span class="font-label text-sm uppercase tracking-[0.2em] text-primary" data-pl="IT Specialist and Developer" data-en="IT Specialist and Developer">IT Specialist and Developer</span>
+            <h1 class="font-headline text-6xl font-bold leading-[0.9] tracking-tighter text-on-surface md:text-8xl" data-pl="Buduje rzeczy, ktore maja byc czytelne, stabilne i naprawde przydatne." data-en="I build things that are meant to be clear, stable, and genuinely useful.">Buduje rzeczy, ktore maja byc czytelne, stabilne i naprawde przydatne.</h1>
+            <p class="max-w-2xl text-lg leading-relaxed text-on-surface-variant" data-pl="Lacze development, QA, dane i AI. Najlepiej odnajduje sie tam, gdzie trzeba cos przemyslec od poczatku do konca, dobrze wdrozyc i potem spokojnie utrzymac." data-en="I combine development, QA, data, and AI. I do my best work where something needs to be thought through from end to end, implemented well, and then maintained without drama.">Lacze development, QA, dane i AI. Najlepiej odnajduje sie tam, gdzie trzeba cos przemyslec od poczatku do konca, dobrze wdrozyc i potem spokojnie utrzymac.</p>
           </div>
-        </div>
-
-        <div class="hero-stack">
-          <section class="hero-copy" data-reveal="right">
-            <p class="eyebrow" data-pl="Adam Sapiecha" data-en="Adam Sapiecha">Adam Sapiecha</p>
-            <h1 data-pl="Web, backend i AI zrobione tak, zeby dalo sie z tego normalnie korzystac." data-en="Web, backend, and AI built in a way that people can actually use.">Web, backend i AI zrobione tak, zeby dalo sie z tego normalnie korzystac.</h1>
-            <p class="lead" data-pl="Najlepiej czuje sie przy projektach, ktore trzeba dobrze przemyslec, zbudowac bez chaosu i potem spokojnie rozwijac. Pracuje przekrojowo: od logiki systemu i integracji po interfejs i elementy AI." data-en="I do my best work on projects that need to be thought through properly, built without chaos, and then developed further without drama. I work across the stack: system logic, integrations, interface work, and AI components.">Najlepiej czuje sie przy projektach, ktore trzeba dobrze przemyslec, zbudowac bez chaosu i potem spokojnie rozwijac. Pracuje przekrojowo: od logiki systemu i integracji po interfejs i elementy AI.</p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="projects.html" data-pl="Zobacz projekty" data-en="View projects">Zobacz projekty</a>
-              <a class="button button-secondary" href="contact.html" data-pl="Skontaktuj sie" data-en="Get in touch">Skontaktuj sie</a>
+          <div class="grid grid-cols-1 gap-8 pt-8 md:grid-cols-2">
+            <div class="space-y-4">
+              <h3 class="border-l-2 border-primary-container pl-4 text-xs uppercase tracking-widest text-on-surface-variant font-label" data-pl="Edukacja" data-en="Education">Edukacja</h3>
+              <div class="space-y-2">
+                <p class="font-bold text-on-surface" data-pl="Polsko-Japonska Akademia Technik Komputerowych" data-en="Polish-Japanese Academy of Information Technology">Polsko-Japonska Akademia Technik Komputerowych</p>
+                <p class="text-sm text-on-surface-variant" data-pl="Informatyka, inzynier" data-en="Computer Science, Engineer">Informatyka, inzynier</p>
+                <p class="font-mono text-xs text-primary" data-pl="2023 - obecnie" data-en="2023 - present">2023 - obecnie</p>
+              </div>
             </div>
-          </section>
-
-          <aside class="hero-side" data-reveal="right">
-            <p class="meta-kicker" data-pl="Na szybko" data-en="Quick facts">Na szybko</p>
-            <div class="quick-points">
-              <span class="meta-pill" data-pl="Warszawa" data-en="Warsaw">Warszawa</span>
-              <span class="meta-pill">Python / JS</span>
-              <span class="meta-pill" data-pl="AI i dane" data-en="AI and data">AI i dane</span>
+            <div class="space-y-4">
+              <h3 class="border-l-2 border-secondary pl-4 text-xs uppercase tracking-widest text-on-surface-variant font-label" data-pl="Doswiadczenie" data-en="Experience">Doswiadczenie</h3>
+              <div class="space-y-2">
+                <p class="font-bold text-on-surface">Fundacja Sorno / Tikrow</p>
+                <p class="text-sm text-on-surface-variant" data-pl="Fullstack Developer, QA, analiza danych" data-en="Fullstack Developer, QA, data analysis">Fullstack Developer, QA, analiza danych</p>
+                <p class="font-mono text-xs text-secondary" data-pl="2024 - obecnie" data-en="2024 - present">2024 - obecnie</p>
+              </div>
             </div>
-            <ul class="stats-list">
-              <li>
-                <strong data-pl="Obecnie" data-en="Currently">Obecnie</strong>
-                <div data-pl="Fundacja Sorno i Tikrow" data-en="Fundacja Sorno and Tikrow">Fundacja Sorno i Tikrow</div>
-              </li>
-              <li>
-                <strong data-pl="Najmocniejsze obszary" data-en="Strongest areas">Najmocniejsze obszary</strong>
-                <div data-pl="Backend, API, dane, AI" data-en="Backend, APIs, data, AI">Backend, API, dane, AI</div>
-              </li>
-              <li>
-                <strong data-pl="Tryb pracy" data-en="Work style">Tryb pracy</strong>
-                <div data-pl="Od pomyslu do wdrozenia" data-en="From concept to delivery">Od pomyslu do wdrozenia</div>
-              </li>
-            </ul>
-          </aside>
-        </div>
-      </section>
-
-      <section class="container section" data-reveal="up">
-        <div class="section-shell green">
-          <div class="section-heading">
-            <p class="eyebrow" data-pl="W skrocie" data-en="In short">W skrocie</p>
-            <h2 data-pl="Najwazniejsze rzeczy bez sciany tekstu." data-en="The important stuff without a wall of text.">Najwazniejsze rzeczy bez sciany tekstu.</h2>
-          </div>
-          <div class="cards-grid">
-            <article class="surface accent" data-reveal="up">
-              <h3 data-pl="Co robie" data-en="What I do">Co robie</h3>
-              <p data-pl="Buduje aplikacje webowe i backendowe, pracuje z API, danymi i automatyzacja, a kiedy ma to sens - dokladam AI." data-en="I build web and backend applications, work with APIs, data, and automation, and when it makes sense, I add AI on top.">Buduje aplikacje webowe i backendowe, pracuje z API, danymi i automatyzacja, a kiedy ma to sens - dokladam AI.</p>
-              <div class="chips">
-                <span class="chip">Python</span>
-                <span class="chip">FastAPI</span>
-                <span class="chip">AI</span>
-              </div>
-            </article>
-            <article class="surface blue" data-reveal="up">
-              <h3 data-pl="Jak pracuje" data-en="How I work">Jak pracuje</h3>
-              <p data-pl="Lobie rozumiec po co cos powstaje. Dzieki temu latwiej dowiezc rozwiazanie, ktore jest sensowne technicznie i nieprzekombinowane." data-en="I like understanding why something is being built. That makes it easier to deliver something technically sound without overcomplicating it.">Lobie rozumiec po co cos powstaje. Dzieki temu latwiej dowiezc rozwiazanie, ktore jest sensowne technicznie i nieprzekombinowane.</p>
-              <div class="chips">
-                <span class="chip">Architektura</span>
-                <span class="chip">Implementacja</span>
-                <span class="chip">Utrzymanie</span>
-              </div>
-            </article>
-            <article class="surface warm" data-reveal="up">
-              <h3 data-pl="Na czym mi zalezy" data-en="What matters to me">Na czym mi zalezy</h3>
-              <p data-pl="Najbardziej cenie rozwiazania, ktore sa czytelne, stabilne i po prostu przydatne. Mniej popisu, wiecej porzadnej roboty." data-en="I care most about solutions that are clear, stable, and actually useful. Less show, more solid work.">Najbardziej cenie rozwiazania, ktore sa czytelne, stabilne i po prostu przydatne. Mniej popisu, wiecej porzadnej roboty.</p>
-              <div class="chips">
-                <span class="chip">Jakosc</span>
-                <span class="chip">Prostota</span>
-                <span class="chip">Rozwoj</span>
-              </div>
-            </article>
           </div>
         </div>
-      </section>
-
-      <section class="container section" data-reveal="up">
-        <div class="section-shell blue">
-          <div class="section-heading">
-            <p class="eyebrow">Work experience</p>
-            <h2 data-pl="Kliknij i rozwin szczegoly." data-en="Click to expand the details.">Kliknij i rozwin szczegoly.</h2>
+        <div class="relative lg:col-span-5">
+          <div class="group relative aspect-[4/5] overflow-hidden rounded-sm bg-surface-container-high">
+            <div class="flex h-full w-full items-center justify-center border border-outline-variant/40 bg-[radial-gradient(circle_at_top,_rgba(0,255,156,0.18),_transparent_35%),linear-gradient(180deg,#1b2028_0%,#11161d_100%)] text-on-surface-variant">
+              <span class="font-label text-xs uppercase tracking-[0.3em]" data-pl="Miejsce na zdjecie" data-en="Photo placeholder">Miejsce na zdjecie</span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+            <div class="absolute -bottom-4 -right-4 h-32 w-32 border-b-2 border-r-2 border-primary-container opacity-50"></div>
           </div>
-          <div class="accordion-group">
-            <article class="accordion-item blue is-open" data-reveal="up">
-              <button class="accordion-toggle" type="button" data-accordion-toggle aria-expanded="true">
-                <div class="accordion-summary">
-                  <p class="accordion-meta">08.2024 - obecnie</p>
-                  <h3>Fundacja Sorno</h3>
-                  <p data-pl="Portal klienta do wynikow badan, dokumentacji i platnosci." data-en="Client portal for medical results, documentation, and payments.">Portal klienta do wynikow badan, dokumentacji i platnosci.</p>
-                </div>
-                <span class="accordion-icon">+</span>
-              </button>
-              <div class="accordion-panel">
-                <div class="accordion-panel-inner">
-                  <div class="accordion-content">
-                    <p data-pl="To projekt, w ktorym odpowiadalem szeroko: od rozmow o wymaganiach i architekturze po implementacje i utrzymanie." data-en="This was a project where I had broad ownership: from requirements and architecture to implementation and maintenance.">To projekt, w ktorym odpowiadalem szeroko: od rozmow o wymaganiach i architekturze po implementacje i utrzymanie.</p>
-                    <ul class="accordion-list">
-                      <li data-pl="Backend do aplikacji mobilnej i webowej oraz logika uzytkownikow i dokumentacji." data-en="Backend for the mobile and web app plus user and documentation logic.">Backend do aplikacji mobilnej i webowej oraz logika uzytkownikow i dokumentacji.</li>
-                      <li data-pl="Integracje platnosci, subskrypcji, bazy danych i uslug chmurowych." data-en="Integrations for payments, subscriptions, database, and cloud services.">Integracje platnosci, subskrypcji, bazy danych i uslug chmurowych.</li>
-                      <li data-pl="Automatyzacja sortowania wynikow badan i dalsze utrzymanie systemu." data-en="Automation for sorting test results and continued maintenance of the system.">Automatyzacja sortowania wynikow badan i dalsze utrzymanie systemu.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="accordion-item green" data-reveal="up">
-              <button class="accordion-toggle" type="button" data-accordion-toggle aria-expanded="false">
-                <div class="accordion-summary">
-                  <p class="accordion-meta">07.2025 - obecnie</p>
-                  <h3>Tikrow</h3>
-                  <p data-pl="QA, analiza danych i modele ML wspierajace procesy." data-en="QA, data analysis, and ML models supporting processes.">QA, analiza danych i modele ML wspierajace procesy.</p>
-                </div>
-                <span class="accordion-icon">+</span>
-              </button>
-              <div class="accordion-panel">
-                <div class="accordion-panel-inner">
-                  <div class="accordion-content">
-                    <p data-pl="Tutaj siedze blizej procesow, danych i jakości dzialania systemu. To bardziej analityczna robota niz klasyczny dev." data-en="Here I work closer to processes, data, and system quality. It is more analytical work than classic development.">Tutaj siedze blizej procesow, danych i jakosci dzialania systemu. To bardziej analityczna robota niz klasyczny dev.</p>
-                    <ul class="accordion-list">
-                      <li data-pl="Weryfikacja procesow w CRM, obiegu zlecen i finansach." data-en="Verification of processes across CRM, order flow, and finance.">Weryfikacja procesow w CRM, obiegu zlecen i finansach.</li>
-                      <li data-pl="Tworzenie modeli ML do wykrywania wzorcow i anomalii." data-en="Building ML models to detect patterns and anomalies.">Tworzenie modeli ML do wykrywania wzorcow i anomalii.</li>
-                      <li data-pl="Wsparcie modelowania procesow pod nowe funkcje." data-en="Supporting process modeling for new features.">Wsparcie modelowania procesow pod nowe funkcje.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="container section" data-reveal="up">
-        <div class="section-shell warm">
-          <div class="section-heading">
-            <p class="eyebrow" data-pl="Edukacja i kursy" data-en="Education and courses">Edukacja i kursy</p>
-            <h2 data-pl="Krotko, ale z mozliwoscia rozwiniecia." data-en="Compact first, expandable when needed.">Krotko, ale z mozliwoscia rozwiniecia.</h2>
-          </div>
-          <div class="accordion-group">
-            <article class="accordion-item warm is-open" data-reveal="up">
-              <button class="accordion-toggle" type="button" data-accordion-toggle aria-expanded="true">
-                <div class="accordion-summary">
-                  <p class="accordion-meta">09.2023 - obecnie</p>
-                  <h3 data-pl="PJATK - Informatyka" data-en="PJAIT - Computer Science">PJATK - Informatyka</h3>
-                  <p data-pl="Studia inzynierskie i techniczne zaplecze pod backend, dane i AI." data-en="Engineering studies and technical foundations for backend, data, and AI work.">Studia inzynierskie i techniczne zaplecze pod backend, dane i AI.</p>
-                </div>
-                <span class="accordion-icon">+</span>
-              </button>
-              <div class="accordion-panel">
-                <div class="accordion-panel-inner">
-                  <div class="accordion-content">
-                    <ul class="accordion-list">
-                      <li data-pl="Praca z C++, C#, Java, Python, SQL, Docker, Git, REST API i .NET." data-en="Work with C++, C#, Java, Python, SQL, Docker, Git, REST APIs, and .NET.">Praca z C++, C#, Java, Python, SQL, Docker, Git, REST API i .NET.</li>
-                      <li data-pl="Projekty z danych, klasyfikacji i trenowania modeli." data-en="Projects around data, classification, and model training.">Projekty z danych, klasyfikacji i trenowania modeli.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="accordion-item blue" data-reveal="up">
-              <button class="accordion-toggle" type="button" data-accordion-toggle aria-expanded="false">
-                <div class="accordion-summary">
-                  <p class="accordion-meta">AWS Academy</p>
-                  <h3 data-pl="Cloud Foundations i Cloud Developing" data-en="Cloud Foundations and Cloud Developing">Cloud Foundations i Cloud Developing</h3>
-                  <p data-pl="Serverless, AWS SDK i podstawy sensownej pracy z chmura." data-en="Serverless, AWS SDK, and practical cloud fundamentals.">Serverless, AWS SDK i podstawy sensownej pracy z chmura.</p>
-                </div>
-                <span class="accordion-icon">+</span>
-              </button>
-              <div class="accordion-panel">
-                <div class="accordion-panel-inner">
-                  <div class="accordion-content">
-                    <ul class="accordion-list">
-                      <li>Lambda, API Gateway, DynamoDB, S3</li>
-                      <li data-pl="Podstawy projektowania rozwiazan serverless." data-en="Foundations of designing serverless solutions.">Podstawy projektowania rozwiazan serverless.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="accordion-item green" data-reveal="up">
-              <button class="accordion-toggle" type="button" data-accordion-toggle aria-expanded="false">
-                <div class="accordion-summary">
-                  <p class="accordion-meta">11.2024</p>
-                  <h3 data-pl="RAG i budowa agentow AI" data-en="RAG and AI agents">RAG i budowa agentow AI</h3>
-                  <p data-pl="Embeddingi, bazy wektorowe i skladanie sensownego przeplywu informacji." data-en="Embeddings, vector databases, and building a sensible information flow.">Embeddingi, bazy wektorowe i skladanie sensownego przeplywu informacji.</p>
-                </div>
-                <span class="accordion-icon">+</span>
-              </button>
-              <div class="accordion-panel">
-                <div class="accordion-panel-inner">
-                  <div class="accordion-content">
-                    <ul class="accordion-list">
-                      <li data-pl="Projektowanie agentow opartych na kontrolowanej bazie wiedzy." data-en="Designing agents grounded in a controlled knowledge base.">Projektowanie agentow opartych na kontrolowanej bazie wiedzy.</li>
-                      <li data-pl="Laczenie RAG, modeli jezykowych i warstwy kontekstowej." data-en="Combining RAG, language models, and context orchestration.">Laczenie RAG, modeli jezykowych i warstwy kontekstowej.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <p data-pl="(c) 2026 Adam Sapiecha. Wszelkie prawa zastrzezone." data-en="(c) 2026 Adam Sapiecha. All rights reserved.">(c) 2026 Adam Sapiecha. Wszelkie prawa zastrzezone.</p>
-        <div class="footer-links">
-          <a href="https://github.com/Adam-Sapiecha" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="contact.html" data-pl="Kontakt" data-en="Contact">Kontakt</a>
         </div>
       </div>
-    </footer>
-  </div>
+    </section>
+
+    <section class="bg-surface-container-low px-8 py-32">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-20 flex flex-col items-end justify-between gap-8 md:flex-row">
+          <div class="max-w-2xl">
+            <h2 class="mb-6 font-headline text-5xl font-bold" data-pl="Szybki przeglad" data-en="Quick overview">Szybki przeglad</h2>
+            <p class="text-lg text-on-surface-variant" data-pl="Bez wielkiej sciany tekstu. Najwazniejsze rzeczy o tym, jak pracuje i gdzie czuje sie najmocniej." data-en="No giant wall of text. Just the key things about how I work and where I feel strongest.">Bez wielkiej sciany tekstu. Najwazniejsze rzeczy o tym, jak pracuje i gdzie czuje sie najmocniej.</p>
+          </div>
+          <div class="flex gap-4">
+            <div class="h-px w-24 self-center bg-outline-variant"></div>
+            <span class="font-mono text-sm text-primary">PROFILE_V3</span>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div class="tonal-shift rounded-sm border-l-4 border-primary-container bg-surface-container p-8">
+            <h3 class="mb-4 font-headline text-3xl font-bold" data-pl="Backend i logika" data-en="Backend and logic">Backend i logika</h3>
+            <p class="leading-relaxed text-on-surface-variant" data-pl="Najlepiej czuje sie przy API, systemach i danych. Lubie, kiedy wszystko ma sens, jest uporzadkowane i da sie to rozwijac bez chaosu." data-en="I feel strongest around APIs, systems, and data. I like when things make sense, stay organized, and can grow without chaos.">Najlepiej czuje sie przy API, systemach i danych. Lubie, kiedy wszystko ma sens, jest uporzadkowane i da sie to rozwijac bez chaosu.</p>
+          </div>
+          <div class="tonal-shift rounded-sm border-l-4 border-secondary bg-surface-container p-8">
+            <h3 class="mb-4 font-headline text-3xl font-bold" data-pl="AI i automatyzacja" data-en="AI and automation">AI i automatyzacja</h3>
+            <p class="leading-relaxed text-on-surface-variant" data-pl="Interesuja mnie praktyczne rozwiazania AI. Najbardziej wtedy, kiedy model jest tylko czescia sensownego calego procesu." data-en="I am interested in practical AI solutions, especially when the model is just one part of a sensible end-to-end process.">Interesuja mnie praktyczne rozwiazania AI. Najbardziej wtedy, kiedy model jest tylko czescia sensownego calego procesu.</p>
+          </div>
+          <div class="tonal-shift rounded-sm border-l-4 border-tertiary bg-surface-container p-8">
+            <h3 class="mb-4 font-headline text-3xl font-bold" data-pl="Sposob pracy" data-en="Way of working">Sposob pracy</h3>
+            <p class="leading-relaxed text-on-surface-variant" data-pl="Wole dowozic konkrety niz opowiadac o nich za dlugo. Czysta komunikacja, sensowna implementacja i spokojne poprawki maja dla mnie wieksza wartosc niz pozowanie." data-en="I would rather deliver something solid than talk around it for too long. Clear communication, sensible implementation, and calm iteration matter more to me than posing.">Wole dowozic konkrety niz opowiadac o nich za dlugo. Czysta komunikacja, sensowna implementacja i spokojne poprawki maja dla mnie wieksza wartosc niz pozowanie.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-8 py-32">
+      <h2 class="mb-12 font-label text-xs uppercase tracking-[0.4em] text-primary" data-pl="Kursy i rozwoj" data-en="Courses and growth">Kursy i rozwoj</h2>
+      <div class="grid h-auto grid-cols-1 gap-4 md:h-[480px] md:grid-cols-4 md:grid-rows-2">
+        <div class="group relative overflow-hidden rounded-sm bg-surface-container-high p-12 md:col-span-2 md:row-span-2">
+          <div class="absolute inset-0 opacity-20">
+            <div class="h-full w-full bg-[radial-gradient(circle_at_top_left,_rgba(0,255,156,0.4),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(0,207,252,0.3),_transparent_30%)]"></div>
+          </div>
+          <div class="relative z-10 space-y-4">
+            <h3 class="font-headline text-4xl font-bold" data-pl="AWS, RAG i AI Agents" data-en="AWS, RAG, and AI Agents">AWS, RAG i AI Agents</h3>
+            <p class="max-w-md text-on-surface-variant" data-pl="AWS Academy i szkolenie z RAG oraz agentow AI najmocniej rozbudowaly moje zaplecze cloudowe i praktyczne podejscie do AI." data-en="AWS Academy and the RAG plus AI agents training gave me the biggest boost in cloud foundations and practical AI thinking.">AWS Academy i szkolenie z RAG oraz agentow AI najmocniej rozbudowaly moje zaplecze cloudowe i praktyczne podejscie do AI.</p>
+          </div>
+        </div>
+        <div class="flex flex-col justify-between rounded-sm border-t border-outline-variant bg-surface-container p-8">
+          <span class="material-symbols-outlined text-secondary text-4xl">cloud</span>
+          <h4 class="font-headline text-xl font-bold">AWS Academy</h4>
+        </div>
+        <div class="flex flex-col justify-between rounded-sm border-t border-outline-variant bg-surface-container p-8">
+          <span class="material-symbols-outlined text-tertiary text-4xl">neurology</span>
+          <h4 class="font-headline text-xl font-bold">RAG / AI Agents</h4>
+        </div>
+        <div class="flex items-center justify-between rounded-sm bg-primary-container p-8 md:col-span-2">
+          <div class="text-on-primary-container">
+            <h4 class="font-headline text-2xl font-bold" data-pl="Ucze sie na biezaco" data-en="Always learning">Ucze sie na biezaco</h4>
+            <p class="font-medium opacity-80" data-pl="Najbardziej cenie rozwoj, ktory da sie szybko przekuc w praktyke." data-en="I value growth most when it can quickly turn into practical work.">Najbardziej cenie rozwoj, ktory da sie szybko przekuc w praktyke.</p>
+          </div>
+          <span class="material-symbols-outlined text-6xl opacity-20 text-on-primary-container">bolt</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="w-full border-t border-[#1b2028] bg-[#0a0e14] py-12">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-8 md:flex-row">
+      <div class="font-['Inter'] text-sm uppercase tracking-widest text-[#f1f3fc]/50" data-pl="Copyright 2026 Adam Sapiecha. Zrobione porzadnie." data-en="Copyright 2026 Adam Sapiecha. Built properly.">Copyright 2026 Adam Sapiecha. Zrobione porzadnie.</div>
+      <div class="flex gap-8">
+        <a class="font-['Inter'] text-sm uppercase tracking-widest text-[#f1f3fc]/50 opacity-80 transition-colors hover:text-[#00FF9C] hover:opacity-100" href="https://github.com/Adam-Sapiecha" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="font-['Inter'] text-sm uppercase tracking-widest text-[#f1f3fc]/50 opacity-80 transition-colors hover:text-[#00FF9C] hover:opacity-100" href="contact.html">LinkedIn</a>
+        <a class="font-['Inter'] text-sm uppercase tracking-widest text-[#f1f3fc]/50 opacity-80 transition-colors hover:text-[#00FF9C] hover:opacity-100" href="assets/Adam_Sapiecha_CV.pdf" target="_blank" rel="noreferrer">CV</a>
+      </div>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>

@@ -39,15 +39,32 @@
     .material-symbols-outlined {
       font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
     }
-    .tonal-shift {
-      transition: background-color 0.3s ease, transform 0.3s ease;
+    .project-card {
+      border: 1px solid rgba(68, 72, 79, 0.45);
+      background: rgba(21, 26, 33, 0.9);
+      transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
     }
-    .tonal-shift:hover {
+    .project-card:hover {
       transform: translateY(-4px);
+      border-color: rgba(0, 252, 154, 0.45);
+    }
+    .project-card summary {
+      list-style: none;
+      cursor: pointer;
+    }
+    .project-card summary::-webkit-details-marker {
+      display: none;
+    }
+    .project-card[open] {
+      background: rgba(27, 32, 40, 0.96);
+      border-color: rgba(0, 252, 154, 0.5);
+    }
+    .timeline-line {
+      background: linear-gradient(180deg, rgba(0, 252, 154, 0.5), rgba(0, 207, 252, 0.12));
     }
   </style>
 </head>
-<body class="bg-surface text-on-background font-body" data-page="projects" data-title-pl="Adam Sapiecha - Projekty" data-title-en="Adam Sapiecha - Projects">
+<body class="bg-surface text-on-background font-body" data-page="projects" data-title-pl="Adam Sapiecha - Projekty i praca" data-title-en="Adam Sapiecha - Projects and work">
   <nav class="fixed top-0 z-50 w-full bg-[#0a0e14]/80 backdrop-blur-xl shadow-[0_0_20px_rgba(0,255,156,0.1)]">
     <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-8">
       <div class="font-['Space_Grotesk'] text-xl font-bold tracking-tighter text-[#00FF9C]">Adam Sapiecha</div>
@@ -74,75 +91,400 @@
   </nav>
 
   <main class="pt-20">
-    <section class="bg-surface-container-low px-8 py-32">
+    <section class="px-8 py-24">
       <div class="mx-auto max-w-7xl">
-        <div class="mb-20 flex flex-col items-end justify-between gap-8 md:flex-row">
-          <div class="max-w-2xl">
-            <h1 class="mb-6 font-headline text-5xl font-bold" data-pl="Wybrane projekty" data-en="Selected projects">Wybrane projekty</h1>
-            <p class="text-lg text-on-surface-variant" data-pl="Tutaj sa rzeczy, przy ktorych faktycznie odpowiadalem za realna prace: backend, integracje, testy, dane i wdrozenia. To glownie projekty z etapow przed rozpoczeciem pracy w Samsung R&D Institute 1 kwietnia 2026." data-en="These are the projects where I was responsible for real delivery: backend, integrations, testing, data, and deployment. They mainly come from the period before I start at Samsung R&D Institute on April 1, 2026.">Tutaj sa rzeczy, przy ktorych faktycznie odpowiadalem za realna prace: backend, integracje, testy, dane i wdrozenia. To glownie projekty z etapow przed rozpoczeciem pracy w Samsung R&D Institute 1 kwietnia 2026.</p>
+        <div class="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+          <div class="space-y-6">
+            <span class="font-label text-sm uppercase tracking-[0.25em] text-primary" data-pl="Projekty, praca, rozwoj" data-en="Projects, work, growth">Projekty, praca, rozwoj</span>
+            <h1 class="font-headline text-5xl font-bold leading-[0.92] tracking-tighter md:text-7xl" data-pl="Rzeczy, ktore zrobilem i za ktore faktycznie odpowiadalem." data-en="Work I actually built and owned.">Rzeczy, ktore zrobilem i za ktore faktycznie odpowiadalem.</h1>
+            <p class="max-w-3xl text-lg leading-relaxed text-on-surface-variant" data-pl="Ta strona zbiera w jednym miejscu moje role, glownie projekty produkcyjne i techniczne case'y, plus kursy, ktore realnie wplynely na to, jak projektuje systemy. Od 1 kwietnia 2026 zaczynam w Samsung R&amp;D Institute jako Automotive Software Tester with Python, a projekty ponizej obejmuja glownie okres przed ta data." data-en="This page brings together my roles, production work, technical case studies, and the courses that genuinely shaped how I design systems. Starting April 1, 2026, I join Samsung R&amp;D Institute as an Automotive Software Tester with Python, and the projects below mainly cover the period before that date.">Ta strona zbiera w jednym miejscu moje role, glownie projekty produkcyjne i techniczne case'y, plus kursy, ktore realnie wplynely na to, jak projektuje systemy. Od 1 kwietnia 2026 zaczynam w Samsung R&amp;D Institute jako Automotive Software Tester with Python, a projekty ponizej obejmuja glownie okres przed ta data.</p>
           </div>
-          <div class="flex gap-4">
-            <div class="h-px w-24 self-center bg-outline-variant"></div>
-            <span class="font-mono text-sm text-primary">PROJECT_ARCHIVE</span>
+          <div class="rounded-sm border border-outline-variant/40 bg-[radial-gradient(circle_at_top_left,_rgba(0,252,154,0.18),_transparent_40%),linear-gradient(180deg,#161b22_0%,#0d1117_100%)] p-8">
+            <p class="mb-3 font-label text-xs uppercase tracking-[0.22em] text-on-surface-variant" data-pl="Na dzis" data-en="As of today">Na dzis</p>
+            <p class="font-headline text-3xl font-bold text-on-background">Samsung R&amp;D Institute</p>
+            <p class="mt-2 text-on-surface-variant" data-pl="Automotive Software Tester with Python" data-en="Automotive Software Tester with Python">Automotive Software Tester with Python</p>
+            <p class="mt-4 font-mono text-xs uppercase tracking-[0.18em] text-primary" data-pl="start: 1 kwietnia 2026" data-en="start: April 1, 2026">start: 1 kwietnia 2026</p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
-          <div class="group">
-            <div class="tonal-shift space-y-6 rounded-sm border-l-4 border-primary-container bg-surface-container p-8 hover:bg-surface-container-high">
-              <div class="flex items-start justify-between">
-                <span class="font-mono text-xs text-primary-container">01 / FUNDACJA SORNO</span>
-                <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">terminal</span>
+    <section class="bg-surface-container-low px-8 py-24">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-14 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h2 class="font-headline text-4xl font-bold" data-pl="Doswiadczenie" data-en="Work experience">Doswiadczenie</h2>
+            <p class="mt-3 max-w-2xl text-on-surface-variant" data-pl="Chronologia rol i obszarow, w ktorych pracowalem. Samsung jest kolejnym krokiem od 1 kwietnia 2026, a ponizsze projekty wynikaja glownie z prac wykonanych wczesniej." data-en="A quick timeline of the roles and areas I worked in. Samsung is the next step starting on April 1, 2026, while the projects below mostly come from work done before that.">Chronologia rol i obszarow, w ktorych pracowalem. Samsung jest kolejnym krokiem od 1 kwietnia 2026, a ponizsze projekty wynikaja glownie z prac wykonanych wczesniej.</p>
+          </div>
+          <span class="font-mono text-sm text-primary">WORK_TIMELINE</span>
+        </div>
+        <div class="grid gap-6 lg:grid-cols-[0.18fr_1fr]">
+          <div class="hidden lg:flex lg:justify-center">
+            <div class="timeline-line mt-3 h-full w-px"></div>
+          </div>
+          <div class="grid gap-6 md:grid-cols-3">
+            <article class="rounded-sm border border-primary/30 bg-surface-container p-7">
+              <p class="font-mono text-xs uppercase tracking-[0.18em] text-primary" data-pl="od 1 kwietnia 2026" data-en="starting April 1, 2026">od 1 kwietnia 2026</p>
+              <h3 class="mt-4 font-headline text-2xl font-bold">Samsung R&amp;D Institute</h3>
+              <p class="mt-2 text-on-surface-variant" data-pl="Automotive Software Tester with Python" data-en="Automotive Software Tester with Python">Automotive Software Tester with Python</p>
+              <p class="mt-4 text-sm leading-relaxed text-on-surface-variant" data-pl="Nowy etap skoncentrowany na testowaniu software'u automotive, pracy z Pythonem i jakosci systemow na poziomie bliskim produktowi." data-en="A new stage focused on automotive software testing, Python-based work, and quality across product-level systems.">Nowy etap skoncentrowany na testowaniu software'u automotive, pracy z Pythonem i jakosci systemow na poziomie bliskim produktowi.</p>
+            </article>
+            <article class="rounded-sm border border-outline-variant/40 bg-surface-container p-7">
+              <p class="font-mono text-xs uppercase tracking-[0.18em] text-secondary" data-pl="2024 - 31 marca 2026" data-en="2024 - March 31, 2026">2024 - 31 marca 2026</p>
+              <h3 class="mt-4 font-headline text-2xl font-bold">Fundacja Sorno</h3>
+              <p class="mt-2 text-on-surface-variant" data-pl="Fullstack Developer" data-en="Fullstack Developer">Fullstack Developer</p>
+              <p class="mt-4 text-sm leading-relaxed text-on-surface-variant" data-pl="Praca nad systemem medycznym end-to-end: backend, frontend, integracje, platnosci, dane i kontakt z klientem." data-en="Work on an end-to-end medical system: backend, frontend, integrations, payments, data, and direct client communication.">Praca nad systemem medycznym end-to-end: backend, frontend, integracje, platnosci, dane i kontakt z klientem.</p>
+            </article>
+            <article class="rounded-sm border border-outline-variant/40 bg-surface-container p-7">
+              <p class="font-mono text-xs uppercase tracking-[0.18em] text-tertiary" data-pl="2024 - 31 marca 2026" data-en="2024 - March 31, 2026">2024 - 31 marca 2026</p>
+              <h3 class="mt-4 font-headline text-2xl font-bold">Tikrow</h3>
+              <p class="mt-2 text-on-surface-variant" data-pl="QA Tester i analiza danych" data-en="QA Tester and data analysis">QA Tester i analiza danych</p>
+              <p class="mt-4 text-sm leading-relaxed text-on-surface-variant" data-pl="QA wspierany analiza danych i modelami ML, z mocnym wejsciem w API, logike systemu i wykrywanie wzorcow." data-en="QA supported by data analysis and ML models, with hands-on work in APIs, system logic, and pattern detection.">QA wspierany analiza danych i modelami ML, z mocnym wejsciem w API, logike systemu i wykrywanie wzorcow.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-8 py-24">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-14 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h2 class="font-headline text-4xl font-bold" data-pl="Archiwum projektow" data-en="Project archive">Archiwum projektow</h2>
+            <p class="mt-3 max-w-3xl text-on-surface-variant" data-pl="Kazda karta otwiera sie po kliknieciu. Na wierzchu jest szybki opis, a w srodku zakres, impact i stack, zeby mozna bylo przeskanowac wszystko bez ton tekstu." data-en="Each card expands on click. The top shows the quick version, and inside you get scope, impact, and stack so the whole page stays readable.">Kazda karta otwiera sie po kliknieciu. Na wierzchu jest szybki opis, a w srodku zakres, impact i stack, zeby mozna bylo przeskanowac wszystko bez ton tekstu.</p>
+          </div>
+          <span class="font-mono text-sm text-primary">PROJECT_ARCHIVE</span>
+        </div>
+        <div class="grid gap-6 xl:grid-cols-2">
+          <details class="project-card rounded-sm p-7" open>
+            <summary class="space-y-4">
+              <div class="flex items-start justify-between gap-6">
+                <div>
+                  <p class="font-mono text-xs uppercase tracking-[0.18em] text-primary-container">Fundacja Sorno / Medtech</p>
+                  <h3 class="mt-3 font-headline text-3xl font-bold" data-pl="Portal klienta + backend systemu" data-en="Client portal and backend system">Portal klienta + backend systemu</h3>
+                </div>
+                <span class="material-symbols-outlined text-primary">unfold_more</span>
               </div>
-              <h3 class="font-headline text-3xl font-bold" data-pl="Portal klienta i backend systemu" data-en="Client portal and backend system">Portal klienta i backend systemu</h3>
-              <p class="font-mono text-xs text-on-surface-variant" data-pl="do 31 marca 2026" data-en="through March 31, 2026">do 31 marca 2026</p>
-              <p class="leading-relaxed text-on-surface-variant" data-pl="Projekt od zbierania wymagan po utrzymanie. Odpowiadalem za backend, integracje, obieg danych, dokumentacje medyczna i logike najwazniejszych procesow." data-en="A project that ran from requirements through maintenance. I owned backend work, integrations, data flow, medical documentation handling, and the logic behind key processes.">Projekt od zbierania wymagan po utrzymanie. Odpowiadalem za backend, integracje, obieg danych, dokumentacje medyczna i logike najwazniejszych procesow.</p>
-              <div class="flex flex-wrap gap-2 pt-4">
+              <p class="text-on-surface-variant" data-pl="End-to-end system do obslugi wynikow badan, uzytkownikow i platnosci." data-en="An end-to-end system for handling test results, users, and payments.">End-to-end system do obslugi wynikow badan, uzytkownikow i platnosci.</p>
+            </summary>
+            <div class="mt-6 space-y-6 border-t border-outline-variant/40 pt-6">
+              <p class="leading-relaxed text-on-surface-variant" data-pl="Zaprojektowalem i wdrozylem kompletny system, ktory obslugiwal caly proces: od zbierania wymagan, przez przetwarzanie danych, az po publikacje wynikow badan. System zarzadza dokumentacja medyczna, uzytkownikami oraz platnosciami i dziala jako stabilne rozwiazanie produkcyjne." data-en="I designed and delivered a complete system that handled the full flow: from gathering requirements, through data processing, to publishing medical test results. The system manages medical documentation, users, and payments and runs as a stable production solution.">Zaprojektowalem i wdrozylem kompletny system, ktory obslugiwal caly proces: od zbierania wymagan, przez przetwarzanie danych, az po publikacje wynikow badan. System zarzadza dokumentacja medyczna, uzytkownikami oraz platnosciami i dziala jako stabilne rozwiazanie produkcyjne.</p>
+              <div class="grid gap-6 md:grid-cols-2">
+                <div>
+                  <p class="mb-3 font-label text-xs uppercase tracking-[0.18em] text-primary" data-pl="Impact" data-en="Impact">Impact</p>
+                  <ul class="space-y-2 text-sm text-on-surface-variant">
+                    <li data-pl="automatyzacja publikacji wynikow badan" data-en="automation of medical results publishing">automatyzacja publikacji wynikow badan</li>
+                    <li data-pl="pelna obsluga uzytkownika: konto, dokumenty, platnosci" data-en="full user handling: accounts, documents, payments">pelna obsluga uzytkownika: konto, dokumenty, platnosci</li>
+                    <li data-pl="stabilny backend dla aplikacji mobilnej i webowej" data-en="stable backend for mobile and web applications">stabilny backend dla aplikacji mobilnej i webowej</li>
+                    <li data-pl="realne wdrozenie produkcyjne" data-en="real production deployment">realne wdrozenie produkcyjne</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="mb-3 font-label text-xs uppercase tracking-[0.18em] text-secondary" data-pl="Zakres" data-en="Scope">Zakres</p>
+                  <ul class="space-y-2 text-sm text-on-surface-variant">
+                    <li data-pl="projekt architektury systemu" data-en="system architecture design">projekt architektury systemu</li>
+                    <li data-pl="backend: FastAPI i Node.js" data-en="backend: FastAPI and Node.js">backend: FastAPI i Node.js</li>
+                    <li data-pl="integracje: Stripe, Firebase, MongoDB, GCP" data-en="integrations: Stripe, Firebase, MongoDB, GCP">integracje: Stripe, Firebase, MongoDB, GCP</li>
+                    <li data-pl="walidacja danych i obsluga bledow" data-en="data validation and error handling">walidacja danych i obsluga bledow</li>
+                    <li data-pl="analiza wymagan i kontakt z klientem" data-en="requirements analysis and client communication">analiza wymagan i kontakt z klientem</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">Python</span>
                 <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">FastAPI</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">Node.js</span>
                 <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">Firebase</span>
                 <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">MongoDB</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">GCP</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">Stripe</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">REST API</span>
               </div>
             </div>
-          </div>
+          </details>
 
-          <div class="group">
-            <div class="tonal-shift space-y-6 rounded-sm border-l-4 border-secondary bg-surface-container p-8 hover:bg-surface-container-high">
-              <div class="flex items-start justify-between">
-                <span class="font-mono text-xs text-secondary">02 / TIKROW</span>
-                <span class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary">monitoring</span>
+          <details class="project-card rounded-sm p-7">
+            <summary class="space-y-4">
+              <div class="flex items-start justify-between gap-6">
+                <div>
+                  <p class="font-mono text-xs uppercase tracking-[0.18em] text-primary-container">Mobile / Medtech</p>
+                  <h3 class="mt-3 font-headline text-3xl font-bold" data-pl="Aplikacja mobilna do wydawania wynikow badan" data-en="Mobile app for delivering medical test results">Aplikacja mobilna do wydawania wynikow badan</h3>
+                </div>
+                <span class="material-symbols-outlined text-primary">unfold_more</span>
               </div>
-              <h3 class="font-headline text-3xl font-bold" data-pl="QA, dane i jakosc systemu" data-en="QA, data, and system quality">QA, dane i jakosc systemu</h3>
-              <p class="font-mono text-xs text-on-surface-variant" data-pl="do 31 marca 2026" data-en="through March 31, 2026">do 31 marca 2026</p>
-              <p class="leading-relaxed text-on-surface-variant" data-pl="Tutaj moja rola byla bardziej przekrojowa. Analiza danych, testowanie, sprawdzanie API i szukanie wzorcow, ktore pozwalaly szybciej wykrywac problemy." data-en="This role was more cross-functional. I worked on data analysis, testing, API checks, and finding patterns that made issues easier to detect early.">Tutaj moja rola byla bardziej przekrojowa. Analiza danych, testowanie, sprawdzanie API i szukanie wzorcow, ktore pozwalaly szybciej wykrywac problemy.</p>
-              <div class="flex flex-wrap gap-2 pt-4">
+              <p class="text-on-surface-variant" data-pl="Aplikacja mobilna dla uzytkownikow do odbioru wynikow badan i zarzadzania dokumentami." data-en="A mobile app for users to access medical test results and manage documents.">Aplikacja mobilna dla uzytkownikow do odbioru wynikow badan i zarzadzania dokumentami.</p>
+            </summary>
+            <div class="mt-6 space-y-6 border-t border-outline-variant/40 pt-6">
+              <p class="leading-relaxed text-on-surface-variant" data-pl="Stworzylem aplikacje mobilna zintegrowana z backendem systemu medycznego, umozliwiajaca uzytkownikom szybki i bezpieczny dostep do wynikow badan, dokumentow oraz statusow w czasie rzeczywistym. Kluczowe bylo zapewnienie spojnosci danych i prostego UX." data-en="I built a mobile app integrated with the medical system backend, giving users fast and secure access to medical results, documents, and real-time statuses. A key part of the work was keeping the data consistent and the UX simple.">Stworzylem aplikacje mobilna zintegrowana z backendem systemu medycznego, umozliwiajaca uzytkownikom szybki i bezpieczny dostep do wynikow badan, dokumentow oraz statusow w czasie rzeczywistym. Kluczowe bylo zapewnienie spojnosci danych i prostego UX.</p>
+              <div class="grid gap-6 md:grid-cols-2">
+                <div>
+                  <p class="mb-3 font-label text-xs uppercase tracking-[0.18em] text-primary" data-pl="Impact" data-en="Impact">Impact</p>
+                  <ul class="space-y-2 text-sm text-on-surface-variant">
+                    <li data-pl="szybki dostep do wynikow badan dla uzytkownikow" data-en="fast access to medical results for users">szybki dostep do wynikow badan dla uzytkownikow</li>
+                    <li data-pl="ograniczenie potrzeby kontaktu manualnego" data-en="reduced need for manual contact">ograniczenie potrzeby kontaktu manualnego</li>
+                    <li data-pl="spojnosc danych miedzy aplikacja a backendem" data-en="data consistency between the app and backend">spojnosc danych miedzy aplikacja a backendem</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="mb-3 font-label text-xs uppercase tracking-[0.18em] text-secondary" data-pl="Zakres" data-en="Scope">Zakres</p>
+                  <ul class="space-y-2 text-sm text-on-surface-variant">
+                    <li data-pl="integracja z backend API" data-en="backend API integration">integracja z backend API</li>
+                    <li data-pl="obsluga uzytkownika i danych" data-en="user and data handling">obsluga uzytkownika i danych</li>
+                    <li data-pl="synchronizacja danych" data-en="data synchronization">synchronizacja danych</li>
+                    <li data-pl="projekt przeplywu uzytkownika" data-en="user flow design">projekt przeplywu uzytkownika</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">Flutter</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">Firebase</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">REST API</span>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-card rounded-sm p-7">
+            <summary class="space-y-4">
+              <div class="flex items-start justify-between gap-6">
+                <div>
+                  <p class="font-mono text-xs uppercase tracking-[0.18em] text-secondary">Tikrow / QA + Data</p>
+                  <h3 class="mt-3 font-headline text-3xl font-bold" data-pl="QA + analiza danych" data-en="QA + data analysis">QA + analiza danych</h3>
+                </div>
+                <span class="material-symbols-outlined text-secondary">unfold_more</span>
+              </div>
+              <p class="text-on-surface-variant" data-pl="QA wspierany analiza danych i modelami ML trenowanymi pod konkretne przypadki." data-en="QA supported by data analysis and ML models trained for concrete cases.">QA wspierany analiza danych i modelami ML trenowanymi pod konkretne przypadki.</p>
+            </summary>
+            <div class="mt-6 space-y-6 border-t border-outline-variant/40 pt-6">
+              <p class="leading-relaxed text-on-surface-variant" data-pl="To byla rola laczaca QA, analize danych i AI. Oprocz testowania systemu pracowalem bezposrednio na danych i API, wykorzystujac wlasne modele ML trenowane pod konkretne przypadki, jak wykrywanie anomalii i wzorcow. Dzieki temu problemy dalo sie znajdowac szybciej i precyzyjniej niz w klasycznym QA." data-en="This role combined QA, data analysis, and AI. Beyond testing the system, I worked directly on data and APIs, using my own ML models trained for concrete cases such as anomaly and pattern detection. That made it possible to find issues faster and more precisely than in classic QA alone.">To byla rola laczaca QA, analize danych i AI. Oprocz testowania systemu pracowalem bezposrednio na danych i API, wykorzystujac wlasne modele ML trenowane pod konkretne przypadki, jak wykrywanie anomalii i wzorcow. Dzieki temu problemy dalo sie znajdowac szybciej i precyzyjniej niz w klasycznym QA.</p>
+              <div class="grid gap-6 md:grid-cols-2">
+                <div>
+                  <p class="mb-3 font-label text-xs uppercase tracking-[0.18em] text-primary" data-pl="Najwazniejsze" data-en="Highlights">Najwazniejsze</p>
+                  <ul class="space-y-2 text-sm text-on-surface-variant">
+                    <li data-pl="trenowanie modeli ML pod konkretne przypadki biznesowe" data-en="training ML models for concrete business cases">trenowanie modeli ML pod konkretne przypadki biznesowe</li>
+                    <li data-pl="wykrywanie anomalii i wzorcow w danych systemowych" data-en="detecting anomalies and patterns in system data">wykrywanie anomalii i wzorcow w danych systemowych</li>
+                    <li data-pl="analiza danych zamiast czysto manualnego QA" data-en="data analysis instead of purely manual QA">analiza danych zamiast czysto manualnego QA</li>
+                    <li data-pl="praca bezposrednio na API i logice systemu" data-en="direct work with APIs and system logic">praca bezposrednio na API i logice systemu</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="mb-3 font-label text-xs uppercase tracking-[0.18em] text-secondary" data-pl="Impact i zakres" data-en="Impact and scope">Impact i zakres</p>
+                  <ul class="space-y-2 text-sm text-on-surface-variant">
+                    <li data-pl="szybsze wykrywanie bledow i niespojnosci" data-en="faster detection of bugs and inconsistencies">szybsze wykrywanie bledow i niespojnosci</li>
+                    <li data-pl="poprawa jakosci danych i logiki systemu" data-en="better data quality and stronger system logic">poprawa jakosci danych i logiki systemu</li>
+                    <li data-pl="automatyzacja czesci analizy QA" data-en="automation of part of the QA analysis">automatyzacja czesci analizy QA</li>
+                    <li data-pl="testowanie API, analiza danych, budowa modeli ML, wykrywanie wzorcow" data-en="API testing, data analysis, ML model building, and pattern detection">testowanie API, analiza danych, budowa modeli ML, wykrywanie wzorcow</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2">
                 <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">Python</span>
                 <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">API</span>
-                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">QA</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">SQL</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">Custom ML</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">Postman</span>
               </div>
             </div>
-          </div>
+          </details>
 
-          <div class="group md:col-span-2">
-            <div class="tonal-shift grid gap-8 rounded-sm border-l-4 border-tertiary bg-surface-container p-8 hover:bg-surface-container-high md:grid-cols-[1.2fr_0.8fr]">
-              <div class="space-y-6">
-                <div class="flex items-start justify-between">
-                  <span class="font-mono text-xs text-tertiary">03 / COMPUTER VISION</span>
-                  <span class="material-symbols-outlined text-on-surface-variant group-hover:text-tertiary">neurology</span>
+          <details class="project-card rounded-sm p-7">
+            <summary class="space-y-4">
+              <div class="flex items-start justify-between gap-6">
+                <div>
+                  <p class="font-mono text-xs uppercase tracking-[0.18em] text-tertiary">AI / Computer Vision</p>
+                  <h3 class="mt-3 font-headline text-3xl font-bold" data-pl="System analizy wad postawy" data-en="Posture analysis system">System analizy wad postawy</h3>
                 </div>
-                <h3 class="font-headline text-3xl font-bold" data-pl="System analizy wad postawy" data-en="Posture analysis system">System analizy wad postawy</h3>
-                <p class="leading-relaxed text-on-surface-variant" data-pl="Projekt laczyl AI, kamere glebi i przetwarzanie obrazu. Najciekawsze bylo spiecie modelu z praktycznym przeplywem danych i realnym wykorzystaniem wyniku." data-en="This project combined AI, depth camera input, and image processing. The most interesting part was connecting the model to a practical data flow and a genuinely useful outcome.">Projekt laczyl AI, kamere glebi i przetwarzanie obrazu. Najciekawsze bylo spiecie modelu z praktycznym przeplywem danych i realnym wykorzystaniem wyniku.</p>
+                <span class="material-symbols-outlined text-tertiary">unfold_more</span>
               </div>
-              <div class="rounded-sm border border-outline-variant/40 bg-[radial-gradient(circle_at_top_left,_rgba(172,137,255,0.25),_transparent_40%),linear-gradient(180deg,#1b2028_0%,#11161d_100%)] p-8">
-                <p class="mb-4 font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant" data-pl="Stack" data-en="Stack">Stack</p>
-                <div class="flex flex-wrap gap-2">
-                  <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">YOLOv8</span>
-                  <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">BlazePose</span>
-                  <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">OpenVINO</span>
-                  <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">Intel RealSense</span>
+              <p class="text-on-surface-variant" data-pl="System AI analizujacy postawe czlowieka na podstawie obrazu i danych 3D." data-en="An AI system that analyzes human posture based on image data and 3D input.">System AI analizujacy postawe czlowieka na podstawie obrazu i danych 3D.</p>
+            </summary>
+            <div class="mt-6 space-y-6 border-t border-outline-variant/40 pt-6">
+              <p class="leading-relaxed text-on-surface-variant" data-pl="Projekt laczyl AI, hardware i przetwarzanie obrazu. System wykorzystywal kamere glebi oraz modele detekcji punktow ciala, takie jak YOLOv8 i BlazePose, aby analizowac asymetrie i odchylenia postawy oraz generowac raporty wspierajace diagnostyke i badania przesiewowe." data-en="This project combined AI, hardware, and image processing. The system used a depth camera together with body keypoint detection models such as YOLOv8 and BlazePose to analyze asymmetry and posture deviations and generate reports supporting diagnostics and screening.">Projekt laczyl AI, hardware i przetwarzanie obrazu. System wykorzystywal kamere glebi oraz modele detekcji punktow ciala, takie jak YOLOv8 i BlazePose, aby analizowac asymetrie i odchylenia postawy oraz generowac raporty wspierajace diagnostyke i badania przesiewowe.</p>
+              <div class="grid gap-6 md:grid-cols-2">
+                <div>
+                  <p class="mb-3 font-label text-xs uppercase tracking-[0.18em] text-primary" data-pl="Impact" data-en="Impact">Impact</p>
+                  <ul class="space-y-2 text-sm text-on-surface-variant">
+                    <li data-pl="zastosowanie AI w diagnostyce" data-en="AI applied in diagnostics">zastosowanie AI w diagnostyce</li>
+                    <li data-pl="analiza danych przestrzennych 3D" data-en="3D spatial data analysis">analiza danych przestrzennych 3D</li>
+                    <li data-pl="automatyzacja oceny postawy" data-en="automation of posture assessment">automatyzacja oceny postawy</li>
+                  </ul>
                 </div>
+                <div>
+                  <p class="mb-3 font-label text-xs uppercase tracking-[0.18em] text-secondary" data-pl="Zakres" data-en="Scope">Zakres</p>
+                  <ul class="space-y-2 text-sm text-on-surface-variant">
+                    <li data-pl="integracja kamery OAK-D" data-en="OAK-D camera integration">integracja kamery OAK-D</li>
+                    <li data-pl="przetwarzanie obrazu i danych" data-en="image and data processing">przetwarzanie obrazu i danych</li>
+                    <li data-pl="implementacja modeli AI" data-en="AI model implementation">implementacja modeli AI</li>
+                    <li data-pl="analiza i raportowanie wynikow" data-en="analysis and reporting of results">analiza i raportowanie wynikow</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">Python</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">YOLOv8</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">BlazePose</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">OpenVINO</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">PyTorch</span>
               </div>
             </div>
+          </details>
+
+          <details class="project-card rounded-sm p-7">
+            <summary class="space-y-4">
+              <div class="flex items-start justify-between gap-6">
+                <div>
+                  <p class="font-mono text-xs uppercase tracking-[0.18em] text-primary-container">AI / Multi-agent</p>
+                  <h3 class="mt-3 font-headline text-3xl font-bold" data-pl="Dual-Agent Support Chatbot" data-en="Dual-Agent Support Chatbot">Dual-Agent Support Chatbot</h3>
+                </div>
+                <span class="material-symbols-outlined text-primary">unfold_more</span>
+              </div>
+              <p class="text-on-surface-variant" data-pl="Chatbot AI z architektura multi-agentowa i RAG." data-en="An AI chatbot built around a multi-agent architecture and RAG.">Chatbot AI z architektura multi-agentowa i RAG.</p>
+            </summary>
+            <div class="mt-6 space-y-6 border-t border-outline-variant/40 pt-6">
+              <p class="leading-relaxed text-on-surface-variant" data-pl="System chatbotowy, w ktorym rozni agenci, na przyklad techniczny i billingowy, wspolpracuja, aby rozwiazac problem uzytkownika. Wykorzystywal RAG, embeddingi i baze wiedzy, aby odpowiadac na podstawie realnych danych i minimalizowac halucynacje modelu." data-en="A chatbot system where different agents, such as technical and billing agents, cooperate to solve the user's problem. It used RAG, embeddings, and a real knowledge base so responses were grounded in actual data and model hallucinations were reduced.">System chatbotowy, w ktorym rozni agenci, na przyklad techniczny i billingowy, wspolpracuja, aby rozwiazac problem uzytkownika. Wykorzystywal RAG, embeddingi i baze wiedzy, aby odpowiadac na podstawie realnych danych i minimalizowac halucynacje modelu.</p>
+              <div class="grid gap-6 md:grid-cols-2">
+                <div>
+                  <p class="mb-3 font-label text-xs uppercase tracking-[0.18em] text-primary" data-pl="Impact" data-en="Impact">Impact</p>
+                  <ul class="space-y-2 text-sm text-on-surface-variant">
+                    <li data-pl="zwiekszenie trafnosci odpowiedzi AI" data-en="improved answer accuracy">zwiekszenie trafnosci odpowiedzi AI</li>
+                    <li data-pl="ograniczenie halucynacji" data-en="reduced hallucinations">ograniczenie halucynacji</li>
+                    <li data-pl="skalowalna architektura agentow" data-en="a scalable agent architecture">skalowalna architektura agentow</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="mb-3 font-label text-xs uppercase tracking-[0.18em] text-secondary" data-pl="Zakres" data-en="Scope">Zakres</p>
+                  <ul class="space-y-2 text-sm text-on-surface-variant">
+                    <li data-pl="architektura multi-agent" data-en="multi-agent architecture">architektura multi-agent</li>
+                    <li data-pl="embeddingi i vector DB" data-en="embeddings and vector DB">embeddingi i vector DB</li>
+                    <li data-pl="routing zapytan" data-en="query routing">routing zapytan</li>
+                    <li data-pl="integracja z LLM" data-en="LLM integration">integracja z LLM</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">Python</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">OpenAI API</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">Embeddings</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">Vector DB</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">FastAPI</span>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-card rounded-sm p-7">
+            <summary class="space-y-4">
+              <div class="flex items-start justify-between gap-6">
+                <div>
+                  <p class="font-mono text-xs uppercase tracking-[0.18em] text-secondary">Geo / Satellite data</p>
+                  <h3 class="mt-3 font-headline text-3xl font-bold" data-pl="SentinelHub - analiza danych satelitarnych" data-en="SentinelHub - satellite data analysis">SentinelHub - analiza danych satelitarnych</h3>
+                </div>
+                <span class="material-symbols-outlined text-secondary">unfold_more</span>
+              </div>
+              <p class="text-on-surface-variant" data-pl="System do przetwarzania i analizy danych satelitarnych." data-en="A system for processing and analyzing satellite data.">System do przetwarzania i analizy danych satelitarnych.</p>
+            </summary>
+            <div class="mt-6 space-y-6 border-t border-outline-variant/40 pt-6">
+              <p class="leading-relaxed text-on-surface-variant" data-pl="Projekt wykorzystywal dane Sentinel Hub do analizy obrazow satelitarnych i przetwarzania danych geoprzestrzennych. Skupial sie na ekstrakcji informacji oraz budowie pipeline'u danych pozwalajacego pracowac na wiekszych zbiorach i operacjach geospatial." data-en="This project used Sentinel Hub data to analyze satellite imagery and process geospatial data. It focused on information extraction and on building a data pipeline that could handle larger datasets and geospatial operations.">Projekt wykorzystywal dane Sentinel Hub do analizy obrazow satelitarnych i przetwarzania danych geoprzestrzennych. Skupial sie na ekstrakcji informacji oraz budowie pipeline'u danych pozwalajacego pracowac na wiekszych zbiorach i operacjach geospatial.</p>
+              <div class="grid gap-6 md:grid-cols-2">
+                <div>
+                  <p class="mb-3 font-label text-xs uppercase tracking-[0.18em] text-primary" data-pl="Impact" data-en="Impact">Impact</p>
+                  <ul class="space-y-2 text-sm text-on-surface-variant">
+                    <li data-pl="automatyzacja analizy danych satelitarnych" data-en="automation of satellite data analysis">automatyzacja analizy danych satelitarnych</li>
+                    <li data-pl="przetwarzanie duzych zbiorow danych" data-en="processing large datasets">przetwarzanie duzych zbiorow danych</li>
+                    <li data-pl="zastosowanie w analizie srodowiskowej" data-en="application in environmental analysis">zastosowanie w analizie srodowiskowej</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="mb-3 font-label text-xs uppercase tracking-[0.18em] text-secondary" data-pl="Zakres" data-en="Scope">Zakres</p>
+                  <ul class="space-y-2 text-sm text-on-surface-variant">
+                    <li data-pl="integracja z API Sentinel Hub" data-en="Sentinel Hub API integration">integracja z API Sentinel Hub</li>
+                    <li data-pl="przetwarzanie obrazow" data-en="image processing">przetwarzanie obrazow</li>
+                    <li data-pl="operacje geospatial" data-en="geospatial operations">operacje geospatial</li>
+                    <li data-pl="pipeline danych" data-en="data pipeline">pipeline danych</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">Python</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">SentinelHub API</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">NumPy</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">GeoPandas</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">Shapely</span>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-card rounded-sm p-7">
+            <summary class="space-y-4">
+              <div class="flex items-start justify-between gap-6">
+                <div>
+                  <p class="font-mono text-xs uppercase tracking-[0.18em] text-tertiary">Web / Storytelling</p>
+                  <h3 class="mt-3 font-headline text-3xl font-bold">Kawiarka</h3>
+                </div>
+                <span class="material-symbols-outlined text-tertiary">unfold_more</span>
+              </div>
+              <p class="text-on-surface-variant" data-pl="Strona kawiarni spolecznej oparta na storytellingu i emocjach." data-en="A social cafe website built around storytelling and emotion.">Strona kawiarni spolecznej oparta na storytellingu i emocjach.</p>
+            </summary>
+            <div class="mt-6 space-y-6 border-t border-outline-variant/40 pt-6">
+              <p class="leading-relaxed text-on-surface-variant" data-pl="Projekt strony internetowej dla kawiarni prowadzonej przez osoby z niepelnosprawnoscia intelektualna. Kluczowe bylo zbudowanie prostej, autentycznej komunikacji i strony, ktora bardziej buduje relacje z odbiorca niz tylko pokazuje oferte." data-en="A website project for a social cafe run by people with intellectual disabilities. The key was to build simple, authentic communication and a page that creates a relationship with the audience instead of just listing an offer.">Projekt strony internetowej dla kawiarni prowadzonej przez osoby z niepelnosprawnoscia intelektualna. Kluczowe bylo zbudowanie prostej, autentycznej komunikacji i strony, ktora bardziej buduje relacje z odbiorca niz tylko pokazuje oferte.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">HTML</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">CSS</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">JS</span>
+              </div>
+            </div>
+          </details>
+
+          <details class="project-card rounded-sm p-7">
+            <summary class="space-y-4">
+              <div class="flex items-start justify-between gap-6">
+                <div>
+                  <p class="font-mono text-xs uppercase tracking-[0.18em] text-primary-container">Web / Business</p>
+                  <h3 class="mt-3 font-headline text-3xl font-bold">Ovile</h3>
+                </div>
+                <span class="material-symbols-outlined text-primary">unfold_more</span>
+              </div>
+              <p class="text-on-surface-variant" data-pl="Nowoczesny landing page zaprojektowany pod konwersje." data-en="A modern landing page designed for conversion.">Nowoczesny landing page zaprojektowany pod konwersje.</p>
+            </summary>
+            <div class="mt-6 space-y-6 border-t border-outline-variant/40 pt-6">
+              <p class="leading-relaxed text-on-surface-variant" data-pl="Strona biznesowa skupiona na czytelnej prezentacji oferty, szybkosci dzialania i UX. Projekt laczyl estetyke z funkcjonalnoscia i byl robiony z mysla o realnym zastosowaniu biznesowym, a nie tylko efekcie wizualnym." data-en="A business website focused on clear offer presentation, speed, and UX. The project combined aesthetics with functionality and was built for a real business outcome, not just for visual effect.">Strona biznesowa skupiona na czytelnej prezentacji oferty, szybkosci dzialania i UX. Projekt laczyl estetyke z funkcjonalnoscia i byl robiony z mysla o realnym zastosowaniu biznesowym, a nie tylko efekcie wizualnym.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">HTML</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">CSS</span>
+                <span class="rounded-full bg-surface-container-highest px-3 py-1 text-[10px] uppercase tracking-widest">JS</span>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-surface-container-low px-8 py-24">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-14 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h2 class="font-headline text-4xl font-bold" data-pl="Kursy i rozwoj" data-en="Courses and development">Kursy i rozwoj</h2>
+            <p class="mt-3 max-w-3xl text-on-surface-variant" data-pl="Kursy, ktore najbardziej przelozyly sie na praktyke: chmura AWS oraz budowa systemow RAG i agentow AI." data-en="The courses that translated most directly into practical work: AWS cloud foundations and building RAG and AI agent systems.">Kursy, ktore najbardziej przelozyly sie na praktyke: chmura AWS oraz budowa systemow RAG i agentow AI.</p>
           </div>
+          <span class="font-mono text-sm text-primary">LEARNING_LOG</span>
+        </div>
+        <div class="grid gap-6 xl:grid-cols-3">
+          <article class="rounded-sm border border-outline-variant/40 bg-surface-container p-8">
+            <p class="font-mono text-xs uppercase tracking-[0.18em] text-primary">AWS Academy</p>
+            <h3 class="mt-4 font-headline text-3xl font-bold">AWS Cloud Foundations</h3>
+            <p class="mt-4 text-on-surface-variant" data-pl="Podstawy architektury chmury AWS." data-en="Fundamentals of AWS cloud architecture.">Podstawy architektury chmury AWS.</p>
+            <p class="mt-5 text-sm leading-relaxed text-on-surface-variant" data-pl="Kurs obejmowal fundamenty chmury: modele wdrozen, bezpieczenstwo, zarzadzanie zasobami oraz dobre praktyki projektowania systemow." data-en="This course covered cloud fundamentals: deployment models, security, resource management, and good practices for system design.">Kurs obejmowal fundamenty chmury: modele wdrozen, bezpieczenstwo, zarzadzanie zasobami oraz dobre praktyki projektowania systemow.</p>
+          </article>
+          <article class="rounded-sm border border-outline-variant/40 bg-surface-container p-8">
+            <p class="font-mono text-xs uppercase tracking-[0.18em] text-secondary">AWS Academy</p>
+            <h3 class="mt-4 font-headline text-3xl font-bold">AWS Cloud Developing</h3>
+            <p class="mt-4 text-on-surface-variant" data-pl="Tworzenie aplikacji serverless w AWS." data-en="Building serverless applications in AWS.">Tworzenie aplikacji serverless w AWS.</p>
+            <p class="mt-5 text-sm leading-relaxed text-on-surface-variant" data-pl="Kurs skupial sie na praktycznym developmencie w AWS: budowie aplikacji serverless z uzyciem Lambda, API Gateway, DynamoDB i S3 oraz integracji uslug." data-en="This course focused on practical AWS development: building serverless applications with Lambda, API Gateway, DynamoDB, and S3, plus service integration.">Kurs skupial sie na praktycznym developmencie w AWS: budowie aplikacji serverless z uzyciem Lambda, API Gateway, DynamoDB i S3 oraz integracji uslug.</p>
+          </article>
+          <article class="rounded-sm border border-outline-variant/40 bg-surface-container p-8">
+            <p class="font-mono text-xs uppercase tracking-[0.18em] text-tertiary">Intel + Politechnika Poznanska</p>
+            <h3 class="mt-4 font-headline text-3xl font-bold" data-pl="RAG i budowa agentow AI" data-en="RAG and AI agent systems">RAG i budowa agentow AI</h3>
+            <p class="mt-4 text-on-surface-variant" data-pl="Systemy AI oparte na retrieval i embeddingach." data-en="AI systems based on retrieval and embeddings.">Systemy AI oparte na retrieval i embeddingach.</p>
+            <p class="mt-5 text-sm leading-relaxed text-on-surface-variant" data-pl="Szkolenie obejmowalo projektowanie systemow RAG, embeddingi, bazy wektorowe i integracje z modelami jezykowymi." data-en="This training covered designing RAG systems, embeddings, vector databases, and integration with language models.">Szkolenie obejmowalo projektowanie systemow RAG, embeddingi, bazy wektorowe i integracje z modelami jezykowymi.</p>
+          </article>
         </div>
       </div>
     </section>

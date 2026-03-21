@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Kontakt do Adama Sapiechy - email, telefon, GitHub i CV."
+  />
+  <title>Adam Sapiecha - Kontakt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="contact" data-title-pl="Adam Sapiecha - Kontakt" data-title-en="Adam Sapiecha - Contact">
+  <div class="site-shell">
+    <header class="site-header">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="brand" href="index.html">Adam<span>.</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-pl="Menu" data-en="Menu">Menu</button>
+        <div class="nav-links" id="nav-links">
+          <a data-nav="home" href="index.html" data-pl="Start" data-en="Home">Start</a>
+          <a data-nav="projects" href="projects.html" data-pl="Projekty" data-en="Projects">Projekty</a>
+          <a data-nav="about" href="about.html" data-pl="O mnie" data-en="About">O mnie</a>
+          <a data-nav="contact" href="contact.html" data-pl="Kontakt" data-en="Contact">Kontakt</a>
+          <a class="nav-cta" href="assets/Adam_Sapiecha_CV.pdf" target="_blank" rel="noreferrer" data-pl="Pobierz CV" data-en="Download CV">Pobierz CV</a>
+        </div>
+        <div class="lang-switch" aria-label="Language switcher">
+          <button class="lang-btn" type="button" data-lang="pl">PL</button>
+          <button class="lang-btn" type="button" data-lang="en">EN</button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container page-layout">
+      <section class="page-intro">
+        <p class="eyebrow" data-pl="Kontakt" data-en="Contact">Kontakt</p>
+        <h1 data-pl="Jesli masz projekt, pytanie albo chcesz pogadac o wspolpracy, napisz." data-en="If you have a project, a question, or want to talk about working together, reach out.">Jesli masz projekt, pytanie albo chcesz pogadac o wspolpracy, napisz.</h1>
+        <p class="lead" data-pl="Najlepiej skontaktowac sie mailowo albo przez formularz. Mozesz tez od razu sprawdzic moje CV lub GitHub." data-en="Email or the contact form is the best way to reach me. You can also open my CV or check my GitHub directly.">Najlepiej skontaktowac sie mailowo albo przez formularz. Mozesz tez od razu sprawdzic moje CV lub GitHub.</p>
+      </section>
+
+      <section class="contact-grid">
+        <form class="contact-form" id="contactFormElement">
+          <label>
+            <span data-pl="Imie i nazwisko" data-en="Name and surname">Imie i nazwisko</span>
+            <input type="text" name="name" required data-pl-placeholder="Twoje imie" data-en-placeholder="Your name" placeholder="Twoje imie" />
+          </label>
+          <label>
+            <span data-pl="Adres e-mail" data-en="Email address">Adres e-mail</span>
+            <input type="email" name="email" required data-pl-placeholder="twoj@email.com" data-en-placeholder="your@email.com" placeholder="twoj@email.com" />
+          </label>
+          <label>
+            <span data-pl="Temat" data-en="Subject">Temat</span>
+            <input type="text" name="subject" required data-pl-placeholder="W czym moge pomoc?" data-en-placeholder="How can I help?" placeholder="W czym moge pomoc?" />
+          </label>
+          <label>
+            <span data-pl="Wiadomosc" data-en="Message">Wiadomosc</span>
+            <textarea name="message" rows="6" required data-pl-placeholder="Opisz projekt, potrzebe albo pomysl." data-en-placeholder="Describe your project, need, or idea." placeholder="Opisz projekt, potrzebe albo pomysl."></textarea>
+          </label>
+          <button class="button button-primary" type="submit" data-pl="Wyslij wiadomosc" data-en="Send message">Wyslij wiadomosc</button>
+          <p id="formMessage" class="form-message" aria-live="polite"></p>
+        </form>
+
+        <aside class="contact-card">
+          <h2 data-pl="Dane kontaktowe" data-en="Contact details">Dane kontaktowe</h2>
+          <ul class="contact-list">
+            <li><span data-pl="Email" data-en="Email">Email</span><strong><a href="mailto:adam.sapiecha05@gmail.com">adam.sapiecha05@gmail.com</a></strong></li>
+            <li><span data-pl="Telefon" data-en="Phone">Telefon</span><strong><a href="tel:+48507593289">+48 507 593 289</a></strong></li>
+            <li><span>GitHub</span><strong><a href="https://github.com/Adam-Sapiecha" target="_blank" rel="noreferrer">Adam-Sapiecha</a></strong></li>
+            <li><span data-pl="Lokalizacja" data-en="Location">Lokalizacja</span><strong data-pl="Warszawa, Polska" data-en="Warsaw, Poland">Warszawa, Polska</strong></li>
+          </ul>
+          <div class="contact-actions">
+            <a class="button button-secondary" href="assets/Adam_Sapiecha_CV.pdf" target="_blank" rel="noreferrer" data-pl="Otworz CV" data-en="Open CV">Otworz CV</a>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p data-pl="(c) 2026 Adam Sapiecha. Wszelkie prawa zastrzezone." data-en="(c) 2026 Adam Sapiecha. All rights reserved.">(c) 2026 Adam Sapiecha. Wszelkie prawa zastrzezone.</p>
+        <div class="footer-links">
+          <a href="https://github.com/Adam-Sapiecha" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="projects.html" data-pl="Projekty" data-en="Projects">Projekty</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

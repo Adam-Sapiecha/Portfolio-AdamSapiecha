@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Wybrane projekty Adama Sapiechy - aplikacje webowe, dane, automatyzacja i AI."
+  />
+  <title>Adam Sapiecha - Projekty</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="projects" data-title-pl="Adam Sapiecha - Projekty" data-title-en="Adam Sapiecha - Projects">
+  <div class="site-shell">
+    <header class="site-header">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="brand" href="index.html">Adam<span>.</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-pl="Menu" data-en="Menu">Menu</button>
+        <div class="nav-links" id="nav-links">
+          <a data-nav="home" href="index.html" data-pl="Start" data-en="Home">Start</a>
+          <a data-nav="projects" href="projects.html" data-pl="Projekty" data-en="Projects">Projekty</a>
+          <a data-nav="about" href="about.html" data-pl="O mnie" data-en="About">O mnie</a>
+          <a data-nav="contact" href="contact.html" data-pl="Kontakt" data-en="Contact">Kontakt</a>
+          <a class="nav-cta" href="assets/Adam_Sapiecha_CV.pdf" target="_blank" rel="noreferrer" data-pl="Pobierz CV" data-en="Download CV">Pobierz CV</a>
+        </div>
+        <div class="lang-switch" aria-label="Language switcher">
+          <button class="lang-btn" type="button" data-lang="pl">PL</button>
+          <button class="lang-btn" type="button" data-lang="en">EN</button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container page-layout">
+      <section class="page-intro">
+        <p class="eyebrow" data-pl="Projekty" data-en="Projects">Projekty</p>
+        <h1 data-pl="Wybrane realizacje i kierunki, nad ktorymi pracuje." data-en="Selected work and the kinds of systems I build.">Wybrane realizacje i kierunki, nad ktorymi pracuje.</h1>
+        <p class="lead" data-pl="To przekroj projektow produktowych, integracyjnych i AI, opartych na realnej pracy z klientami, danymi i wdrozeniami." data-en="This is a cross-section of product, integration, and AI work built around real clients, data flows, and production-oriented implementation.">To przekroj projektow produktowych, integracyjnych i AI, opartych na realnej pracy z klientami, danymi i wdrozeniami.</p>
+      </section>
+
+      <section class="projects-stack">
+        <article class="project-card project-card-featured">
+          <p class="project-type" data-pl="Fundacja Sorno" data-en="Fundacja Sorno">Fundacja Sorno</p>
+          <h2 data-pl="Portal klienta dla wynikow badan i platnosci" data-en="Client portal for medical results and payments">Portal klienta dla wynikow badan i platnosci</h2>
+          <p data-pl="Samodzielnie zaprojektowalem i wdrozylem portal klienta obejmujacy logike backendowa, frontend, aplikacje mobilna, platnosci i integracje z danymi medycznymi. System korzysta z FastAPI, Node.js, Firebase, MongoDB, Stripe oraz GCP." data-en="I independently designed and shipped a client portal covering backend logic, frontend, mobile app integration, payments, and medical-data workflows. The system uses FastAPI, Node.js, Firebase, MongoDB, Stripe, and GCP.">Samodzielnie zaprojektowalem i wdrozylem portal klienta obejmujacy logike backendowa, frontend, aplikacje mobilna, platnosci i integracje z danymi medycznymi. System korzysta z FastAPI, Node.js, Firebase, MongoDB, Stripe oraz GCP.</p>
+          <ul class="detail-list">
+            <li data-pl="Backend obslugujacy aplikacje mobilna i webowa." data-en="Backend supporting both mobile and web applications.">Backend obslugujacy aplikacje mobilna i webowa.</li>
+            <li data-pl="Automatyczne sortowanie i publikowanie wynikow badan." data-en="Automated sorting and publishing of medical test results.">Automatyczne sortowanie i publikowanie wynikow badan.</li>
+            <li data-pl="Odpowiedzialnosc za architekture, stabilnosc i dalszy rozwoj systemu." data-en="Ownership of architecture, system stability, and ongoing development.">Odpowiedzialnosc za architekture, stabilnosc i dalszy rozwoj systemu.</li>
+          </ul>
+          <p class="tags">FastAPI | Node.js | Firebase | MongoDB | Stripe | GCP</p>
+        </article>
+
+        <article class="project-card">
+          <p class="project-type">Tikrow</p>
+          <h2 data-pl="QA, analiza danych i modele ML" data-en="QA, data analysis, and ML models">QA, analiza danych i modele ML</h2>
+          <p data-pl="W Tikrow analizuje logike procesow systemu, pracuje z API oraz danymi, a dodatkowo buduje modele ML do wykrywania wzorcow i anomalii." data-en="At Tikrow, I analyze system process logic, work with APIs and data, and build ML models for pattern and anomaly detection.">W Tikrow analizuje logike procesow systemu, pracuje z API oraz danymi, a dodatkowo buduje modele ML do wykrywania wzorcow i anomalii.</p>
+          <p class="tags">Python | API | ML | Data analysis</p>
+        </article>
+
+        <article class="project-card">
+          <p class="project-type" data-pl="Projekt wlasny" data-en="Personal project">Projekt wlasny</p>
+          <h2 data-pl="System analizy wad postawy" data-en="Posture analysis system">System analizy wad postawy</h2>
+          <p data-pl="Rozwijam prototyp oparty o Raspberry Pi 5 i kamere glebi Luxonis OAK-D. System laczy dane przestrzenne z detekcja punktow ciala i generuje raporty wspierajace diagnostyke." data-en="I am building a prototype based on Raspberry Pi 5 and a Luxonis OAK-D depth camera. The system combines spatial data with body-point detection and generates reports to support diagnostics.">Rozwijam prototyp oparty o Raspberry Pi 5 i kamere glebi Luxonis OAK-D. System laczy dane przestrzenne z detekcja punktow ciala i generuje raporty wspierajace diagnostyke.</p>
+          <p class="tags">YOLOv8-Pose | BlazePose | PyTorch | OpenVINO</p>
+        </article>
+
+        <article class="project-card">
+          <p class="project-type" data-pl="RAG i agenci AI" data-en="RAG and AI agents">RAG i agenci AI</p>
+          <h2 data-pl="Systemy oparte na kontrolowanej bazie wiedzy" data-en="Systems grounded in controlled knowledge bases">Systemy oparte na kontrolowanej bazie wiedzy</h2>
+          <p data-pl="W ramach szkolenia Intel i Politechniki Poznanskiej pracowalem nad rozwiazaniami RAG, embeddingami, bazami wektorowymi i przeplywem informacji w agentach AI." data-en="As part of Intel and Poznan University of Technology training, I worked on RAG systems, embeddings, vector databases, and information flow for AI agents.">W ramach szkolenia Intel i Politechniki Poznanskiej pracowalem nad rozwiazaniami RAG, embeddingami, bazami wektorowymi i przeplywem informacji w agentach AI.</p>
+          <p class="tags">RAG | Embeddings | Vector DB | Agents</p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p data-pl="(c) 2026 Adam Sapiecha. Wszelkie prawa zastrzezone." data-en="(c) 2026 Adam Sapiecha. All rights reserved.">(c) 2026 Adam Sapiecha. Wszelkie prawa zastrzezone.</p>
+        <div class="footer-links">
+          <a href="https://github.com/Adam-Sapiecha" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="contact.html" data-pl="Kontakt" data-en="Contact">Kontakt</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

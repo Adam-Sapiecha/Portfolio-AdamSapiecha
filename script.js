@@ -1,95 +1,84 @@
-// ================= PAGE NAVIGATION =================
-function navigatePage(pageName) {
-  // Hide all pages
-  document.querySelectorAll(".page").forEach(page => {
-    page.classList.remove("active");
-  });
-  
-  // Show selected page
-  const targetPage = document.getElementById(pageName);
-  if (targetPage) {
-    targetPage.classList.add("active");
-    window.scrollTo({top: 0, behavior: "smooth"});
-  }
-  
-  // Update nav links
-  document.querySelectorAll(".nav-link").forEach(link => {
-    link.classList.remove("active", "border-b-2", "border-[#abcec1]");
-    link.classList.add("text-[#d7e8f2]/60");
-    if (link.dataset.page === pageName) {
-      link.classList.add("active", "border-b-2", "border-[#abcec1]");
-      link.classList.remove("text-[#d7e8f2]/60");
-    }
-  });
-  
-  history.replaceState(null, "", `#${pageName}`);
+const STORAGE_KEY = "portfolio-language";
+const body = document.body;
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinksContainer = document.querySelector("#nav-links");
+const languageButtons = Array.from(document.querySelectorAll(".lang-btn"));
+const pageKey = body.dataset.page;
+const form = document.querySelector("#contactFormElement");
+const formMessage = document.querySelector("#formMessage");
+
+function getInitialLanguage() {
+  const stored = localStorage.getItem(STORAGE_KEY);
+  return stored === "en" ? "en" : "pl";
 }
 
-// ================= FORM HANDLING =================
-function handleFormSubmit(e) {
-  e.preventDefault();
-  
-  const form = e.target;
-  const formData = new FormData(form);
-  const message = document.getElementById("formMessage");
-  
-  // Collect form data
-  const data = {
-    name: formData.get("name"),
-    email: formData.get("email"),
-    subject: formData.get("subject"),
-    message: formData.get("message")
-  };
-  
-  // Show processing
-  message.classList.remove("hidden");
-  message.textContent = "Sending...";
-  
-  // Simulate sending (in a real app, send to backend/email service)
-  setTimeout(() => {
-    message.textContent = "✓ Message received! I'll get back to you soon.";
-    message.classList.add("text-green-400");
+function applyLanguage(lang) {
+  document.documentElement.lang = lang;
+  localStorage.setItem(STORAGE_KEY, lang);
+
+  languageButtons.forEach((button) => {
+    const selected = button.dataset.lang === lang;
+    button.classList.toggle("is-selected", selected);
+    button.setAttribute("aria-pressed", String(selected));
+  });
+
+  document.querySelectorAll("[data-pl][data-en]").forEach((element) => {
+    element.textContent = element.dataset[lang];
+  });
+
+  document.querySelectorAll("[data-pl-placeholder][data-en-placeholder]").forEach((element) => {
+    element.placeholder = element.dataset[`${lang}Placeholder`];
+  });
+
+  const title = lang === "en" ? body.dataset.titleEn : body.dataset.titlePl;
+  if (title) {
+    document.title = title;
+  }
+}
+
+function closeMenu() {
+  if (!menuToggle || !navLinksContainer) {
+    return;
+  }
+
+  navLinksContainer.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  document.body.classList.remove("menu-open");
+}
+
+function setupNavigation() {
+  document.querySelectorAll("[data-nav]").forEach((link) => {
+    link.classList.toggle("is-active", link.dataset.nav === pageKey);
+    link.addEventListener("click", closeMenu);
+  });
+}
+
+if (menuToggle && navLinksContainer) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = navLinksContainer.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    document.body.classList.toggle("menu-open", isOpen);
+  });
+}
+
+languageButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    applyLanguage(button.dataset.lang);
+  });
+});
+
+if (form && formMessage) {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const lang = localStorage.getItem(STORAGE_KEY) === "en" ? "en" : "pl";
+    formMessage.textContent =
+      lang === "en"
+        ? "Thanks. Your message is ready and I will get back to you as soon as possible."
+        : "Dziekuje. Twoja wiadomosc jest gotowa i odezwe sie najszybciej jak to mozliwe.";
+    formMessage.classList.add("is-success");
     form.reset();
-    
-    // Hide message after 5 seconds
-    setTimeout(() => {
-      message.classList.add("hidden");
-      message.classList.remove("text-green-400");
-    }, 5000);
-  }, 800);
+  });
 }
 
-// ================= INITIALIZATION =================
-document.addEventListener("DOMContentLoaded", () => {
-  // Set year in footer
-  const yearElement = document.querySelector("footer .font-\\[\\'Inter\\'\\]");
-  
-  // Navigation links
-  document.querySelectorAll(".nav-link").forEach(link => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const page = link.dataset.page || link.getAttribute("href").replace("#", "");
-      navigatePage(page);
-    });
-  });
-  
-  // Form submission
-  const contactForm = document.getElementById("contactFormElement");
-  if (contactForm) {
-    contactForm.addEventListener("submit", handleFormSubmit);
-  }
-  
-  // Handle initial hash-based navigation
-  const initialPage = window.location.hash.replace("#", "") || "main";
-  if (["main", "projects", "about", "contact"].includes(initialPage)) {
-    navigatePage(initialPage);
-  }
-});
-
-// Handle browser back/forward
-window.addEventListener("hashchange", () => {
-  const page = window.location.hash.replace("#", "") || "main";
-  if (["main", "projects", "about", "contact"].includes(page)) {
-    navigatePage(page);
-  }
-});
+setupNavigation();
+applyLanguage(getInitialLanguage());

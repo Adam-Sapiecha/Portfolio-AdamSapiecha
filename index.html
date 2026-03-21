@@ -36,114 +36,214 @@
       </nav>
     </header>
 
-    <main>
-      <section class="hero container page-hero hero-home">
-        <div class="hero-photo-card">
+    <main class="page-layout">
+      <section class="container hero-layout" data-reveal="up">
+        <div class="hero-photo-card" data-reveal="left">
           <div class="photo-placeholder">
             <span data-pl="Miejsce na zdjecie" data-en="Photo placeholder">Miejsce na zdjecie</span>
           </div>
         </div>
-        <div class="hero-copy">
-          <p class="eyebrow" data-pl="Adam Sapiecha" data-en="Adam Sapiecha">Adam Sapiecha</p>
-          <h1 data-pl="Robie web, backend i AI bez zbędnego nadęcia." data-en="I build web, backend, and AI work without the fluff.">Robie web, backend i AI bez zbędnego nadęcia.</h1>
-          <p class="lead" data-pl="Najlepiej czuje się w projektach, w których trzeba coś sensownie zaplanować, zbudować i potem normalnie utrzymać. Pracuję przekrojowo: od logiki systemu i integracji po interfejs i elementy AI." data-en="I do my best work in projects that need to be planned well, built properly, and then maintained without drama. I work across the stack: system logic, integrations, interface work, and AI components.">Najlepiej czuje się w projektach, w których trzeba coś sensownie zaplanować, zbudować i potem normalnie utrzymać. Pracuję przekrojowo: od logiki systemu i integracji po interfejs i elementy AI.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="projects.html" data-pl="Zobacz projekty" data-en="View projects">Zobacz projekty</a>
-            <a class="button button-secondary" href="contact.html" data-pl="Skontaktuj sie" data-en="Get in touch">Skontaktuj sie</a>
+
+        <div class="hero-stack">
+          <section class="hero-copy" data-reveal="right">
+            <p class="eyebrow" data-pl="Adam Sapiecha" data-en="Adam Sapiecha">Adam Sapiecha</p>
+            <h1 data-pl="Web, backend i AI zrobione tak, zeby dalo sie z tego normalnie korzystac." data-en="Web, backend, and AI built in a way that people can actually use.">Web, backend i AI zrobione tak, zeby dalo sie z tego normalnie korzystac.</h1>
+            <p class="lead" data-pl="Najlepiej czuje sie przy projektach, ktore trzeba dobrze przemyslec, zbudowac bez chaosu i potem spokojnie rozwijac. Pracuje przekrojowo: od logiki systemu i integracji po interfejs i elementy AI." data-en="I do my best work on projects that need to be thought through properly, built without chaos, and then developed further without drama. I work across the stack: system logic, integrations, interface work, and AI components.">Najlepiej czuje sie przy projektach, ktore trzeba dobrze przemyslec, zbudowac bez chaosu i potem spokojnie rozwijac. Pracuje przekrojowo: od logiki systemu i integracji po interfejs i elementy AI.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="projects.html" data-pl="Zobacz projekty" data-en="View projects">Zobacz projekty</a>
+              <a class="button button-secondary" href="contact.html" data-pl="Skontaktuj sie" data-en="Get in touch">Skontaktuj sie</a>
+            </div>
+          </section>
+
+          <aside class="hero-side" data-reveal="right">
+            <p class="meta-kicker" data-pl="Na szybko" data-en="Quick facts">Na szybko</p>
+            <div class="quick-points">
+              <span class="meta-pill" data-pl="Warszawa" data-en="Warsaw">Warszawa</span>
+              <span class="meta-pill">Python / JS</span>
+              <span class="meta-pill" data-pl="AI i dane" data-en="AI and data">AI i dane</span>
+            </div>
+            <ul class="stats-list">
+              <li>
+                <strong data-pl="Obecnie" data-en="Currently">Obecnie</strong>
+                <div data-pl="Fundacja Sorno i Tikrow" data-en="Fundacja Sorno and Tikrow">Fundacja Sorno i Tikrow</div>
+              </li>
+              <li>
+                <strong data-pl="Najmocniejsze obszary" data-en="Strongest areas">Najmocniejsze obszary</strong>
+                <div data-pl="Backend, API, dane, AI" data-en="Backend, APIs, data, AI">Backend, API, dane, AI</div>
+              </li>
+              <li>
+                <strong data-pl="Tryb pracy" data-en="Work style">Tryb pracy</strong>
+                <div data-pl="Od pomyslu do wdrozenia" data-en="From concept to delivery">Od pomyslu do wdrozenia</div>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="container section" data-reveal="up">
+        <div class="section-shell green">
+          <div class="section-heading">
+            <p class="eyebrow" data-pl="W skrocie" data-en="In short">W skrocie</p>
+            <h2 data-pl="Najwazniejsze rzeczy bez sciany tekstu." data-en="The important stuff without a wall of text.">Najwazniejsze rzeczy bez sciany tekstu.</h2>
+          </div>
+          <div class="cards-grid">
+            <article class="surface accent" data-reveal="up">
+              <h3 data-pl="Co robie" data-en="What I do">Co robie</h3>
+              <p data-pl="Buduje aplikacje webowe i backendowe, pracuje z API, danymi i automatyzacja, a kiedy ma to sens - dokladam AI." data-en="I build web and backend applications, work with APIs, data, and automation, and when it makes sense, I add AI on top.">Buduje aplikacje webowe i backendowe, pracuje z API, danymi i automatyzacja, a kiedy ma to sens - dokladam AI.</p>
+              <div class="chips">
+                <span class="chip">Python</span>
+                <span class="chip">FastAPI</span>
+                <span class="chip">AI</span>
+              </div>
+            </article>
+            <article class="surface blue" data-reveal="up">
+              <h3 data-pl="Jak pracuje" data-en="How I work">Jak pracuje</h3>
+              <p data-pl="Lobie rozumiec po co cos powstaje. Dzieki temu latwiej dowiezc rozwiazanie, ktore jest sensowne technicznie i nieprzekombinowane." data-en="I like understanding why something is being built. That makes it easier to deliver something technically sound without overcomplicating it.">Lobie rozumiec po co cos powstaje. Dzieki temu latwiej dowiezc rozwiazanie, ktore jest sensowne technicznie i nieprzekombinowane.</p>
+              <div class="chips">
+                <span class="chip">Architektura</span>
+                <span class="chip">Implementacja</span>
+                <span class="chip">Utrzymanie</span>
+              </div>
+            </article>
+            <article class="surface warm" data-reveal="up">
+              <h3 data-pl="Na czym mi zalezy" data-en="What matters to me">Na czym mi zalezy</h3>
+              <p data-pl="Najbardziej cenie rozwiazania, ktore sa czytelne, stabilne i po prostu przydatne. Mniej popisu, wiecej porzadnej roboty." data-en="I care most about solutions that are clear, stable, and actually useful. Less show, more solid work.">Najbardziej cenie rozwiazania, ktore sa czytelne, stabilne i po prostu przydatne. Mniej popisu, wiecej porzadnej roboty.</p>
+              <div class="chips">
+                <span class="chip">Jakosc</span>
+                <span class="chip">Prostota</span>
+                <span class="chip">Rozwoj</span>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="container section section-band section-band-green">
-        <div class="section-heading">
-          <p class="eyebrow" data-pl="W skrócie" data-en="In short">W skrócie</p>
-          <h2 data-pl="To, czym się zajmuję i jak podchodzę do pracy." data-en="What I do and how I approach the work.">To, czym się zajmuję i jak podchodzę do pracy.</h2>
-        </div>
-        <div class="cards-grid">
-          <article class="card card-accent">
-            <h3 data-pl="Czym się zajmuję" data-en="What I do">Czym się zajmuję</h3>
-            <p data-pl="Buduję aplikacje webowe i backendowe, pracuję z API i danymi, a kiedy trzeba, dokładam do tego AI albo automatyzację." data-en="I build web and backend applications, work with APIs and data, and when it makes sense, I add AI or automation on top.">Buduję aplikacje webowe i backendowe, pracuję z API i danymi, a kiedy trzeba, dokładam do tego AI albo automatyzację.</p>
-            <p class="tags">Python | FastAPI | JS/TS | AI</p>
-          </article>
-          <article class="card card-blue">
-            <h3 data-pl="Jak pracuję" data-en="How I work">Jak pracuję</h3>
-            <p data-pl="Lubię rozumieć po co coś powstaje, a nie tylko dowozić taski. Dzięki temu łatwiej mi podejmować dobre decyzje techniczne i nie komplikować rzeczy bez potrzeby." data-en="I like understanding why something is being built, not just shipping tasks. That helps me make better technical calls and avoid unnecessary complexity.">Lubię rozumieć po co coś powstaje, a nie tylko dowozić taski. Dzięki temu łatwiej mi podejmować dobre decyzje techniczne i nie komplikować rzeczy bez potrzeby.</p>
-            <p class="tags">Architektura | Wdrozenie | Utrzymanie</p>
-          </article>
-          <article class="card card-warm">
-            <h3 data-pl="Na czym mi zależy" data-en="What matters to me">Na czym mi zależy</h3>
-            <p data-pl="Najbardziej lubię rozwiązania, które są czytelne, sensownie zrobione i dają się normalnie rozwijać. Mniej efektu wow, więcej porządnej roboty." data-en="I care most about solutions that are clear, well built, and easy to keep developing. Less empty wow effect, more solid work.">Najbardziej lubię rozwiązania, które są czytelne, sensownie zrobione i dają się normalnie rozwijać. Mniej efektu wow, więcej porządnej roboty.</p>
-            <p class="tags">Jakosc | Prostota | Rozwoj</p>
-          </article>
+      <section class="container section" data-reveal="up">
+        <div class="section-shell blue">
+          <div class="section-heading">
+            <p class="eyebrow">Work experience</p>
+            <h2 data-pl="Kliknij i rozwin szczegoly." data-en="Click to expand the details.">Kliknij i rozwin szczegoly.</h2>
+          </div>
+          <div class="accordion-group">
+            <article class="accordion-item blue is-open" data-reveal="up">
+              <button class="accordion-toggle" type="button" data-accordion-toggle aria-expanded="true">
+                <div class="accordion-summary">
+                  <p class="accordion-meta">08.2024 - obecnie</p>
+                  <h3>Fundacja Sorno</h3>
+                  <p data-pl="Portal klienta do wynikow badan, dokumentacji i platnosci." data-en="Client portal for medical results, documentation, and payments.">Portal klienta do wynikow badan, dokumentacji i platnosci.</p>
+                </div>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-panel">
+                <div class="accordion-panel-inner">
+                  <div class="accordion-content">
+                    <p data-pl="To projekt, w ktorym odpowiadalem szeroko: od rozmow o wymaganiach i architekturze po implementacje i utrzymanie." data-en="This was a project where I had broad ownership: from requirements and architecture to implementation and maintenance.">To projekt, w ktorym odpowiadalem szeroko: od rozmow o wymaganiach i architekturze po implementacje i utrzymanie.</p>
+                    <ul class="accordion-list">
+                      <li data-pl="Backend do aplikacji mobilnej i webowej oraz logika uzytkownikow i dokumentacji." data-en="Backend for the mobile and web app plus user and documentation logic.">Backend do aplikacji mobilnej i webowej oraz logika uzytkownikow i dokumentacji.</li>
+                      <li data-pl="Integracje platnosci, subskrypcji, bazy danych i uslug chmurowych." data-en="Integrations for payments, subscriptions, database, and cloud services.">Integracje platnosci, subskrypcji, bazy danych i uslug chmurowych.</li>
+                      <li data-pl="Automatyzacja sortowania wynikow badan i dalsze utrzymanie systemu." data-en="Automation for sorting test results and continued maintenance of the system.">Automatyzacja sortowania wynikow badan i dalsze utrzymanie systemu.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-item green" data-reveal="up">
+              <button class="accordion-toggle" type="button" data-accordion-toggle aria-expanded="false">
+                <div class="accordion-summary">
+                  <p class="accordion-meta">07.2025 - obecnie</p>
+                  <h3>Tikrow</h3>
+                  <p data-pl="QA, analiza danych i modele ML wspierajace procesy." data-en="QA, data analysis, and ML models supporting processes.">QA, analiza danych i modele ML wspierajace procesy.</p>
+                </div>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-panel">
+                <div class="accordion-panel-inner">
+                  <div class="accordion-content">
+                    <p data-pl="Tutaj siedze blizej procesow, danych i jakości dzialania systemu. To bardziej analityczna robota niz klasyczny dev." data-en="Here I work closer to processes, data, and system quality. It is more analytical work than classic development.">Tutaj siedze blizej procesow, danych i jakosci dzialania systemu. To bardziej analityczna robota niz klasyczny dev.</p>
+                    <ul class="accordion-list">
+                      <li data-pl="Weryfikacja procesow w CRM, obiegu zlecen i finansach." data-en="Verification of processes across CRM, order flow, and finance.">Weryfikacja procesow w CRM, obiegu zlecen i finansach.</li>
+                      <li data-pl="Tworzenie modeli ML do wykrywania wzorcow i anomalii." data-en="Building ML models to detect patterns and anomalies.">Tworzenie modeli ML do wykrywania wzorcow i anomalii.</li>
+                      <li data-pl="Wsparcie modelowania procesow pod nowe funkcje." data-en="Supporting process modeling for new features.">Wsparcie modelowania procesow pod nowe funkcje.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="container section section-band section-band-blue">
-        <div class="section-heading">
-          <p class="eyebrow">Work experience</p>
-          <h2 data-pl="Doswiadczenie zawodowe" data-en="Professional experience">Doswiadczenie zawodowe</h2>
-        </div>
-        <div class="split-grid">
-          <article class="panel card-blue">
-            <p class="panel-label">08.2024 - obecnie</p>
-            <h3>Fundacja Sorno</h3>
-            <ul class="detail-list">
-              <li data-pl="Fullstack Developer odpowiedzialny za portal klienta do wydawania wynikow badan i obslugi platnosci." data-en="Fullstack Developer responsible for a client portal for test results and payment handling.">Fullstack Developer odpowiedzialny za portal klienta do wydawania wynikow badan i obslugi platnosci.</li>
-              <li data-pl="Praca nad backendem, logika systemu, integracjami i dalszym utrzymaniem produktu." data-en="Worked on backend architecture, system logic, integrations, and ongoing maintenance.">Praca nad backendem, logika systemu, integracjami i dalszym utrzymaniem produktu.</li>
-            </ul>
-          </article>
-          <article class="panel card-accent">
-            <p class="panel-label">07.2025 - obecnie</p>
-            <h3>Tikrow</h3>
-            <ul class="detail-list">
-              <li data-pl="QA Tester i Data Analyst pracujacy z logika procesow systemowych, API i danymi." data-en="QA Tester and Data Analyst working with system process logic, APIs, and data.">QA Tester i Data Analyst pracujacy z logika procesow systemowych, API i danymi.</li>
-              <li data-pl="Tworzenie modeli ML do wykrywania wzorcow oraz wsparcie modelowania procesow." data-en="Built ML models for pattern detection and supported process modeling.">Tworzenie modeli ML do wykrywania wzorcow oraz wsparcie modelowania procesow.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
+      <section class="container section" data-reveal="up">
+        <div class="section-shell warm">
+          <div class="section-heading">
+            <p class="eyebrow" data-pl="Edukacja i kursy" data-en="Education and courses">Edukacja i kursy</p>
+            <h2 data-pl="Krotko, ale z mozliwoscia rozwiniecia." data-en="Compact first, expandable when needed.">Krotko, ale z mozliwoscia rozwiniecia.</h2>
+          </div>
+          <div class="accordion-group">
+            <article class="accordion-item warm is-open" data-reveal="up">
+              <button class="accordion-toggle" type="button" data-accordion-toggle aria-expanded="true">
+                <div class="accordion-summary">
+                  <p class="accordion-meta">09.2023 - obecnie</p>
+                  <h3 data-pl="PJATK - Informatyka" data-en="PJAIT - Computer Science">PJATK - Informatyka</h3>
+                  <p data-pl="Studia inzynierskie i techniczne zaplecze pod backend, dane i AI." data-en="Engineering studies and technical foundations for backend, data, and AI work.">Studia inzynierskie i techniczne zaplecze pod backend, dane i AI.</p>
+                </div>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-panel">
+                <div class="accordion-panel-inner">
+                  <div class="accordion-content">
+                    <ul class="accordion-list">
+                      <li data-pl="Praca z C++, C#, Java, Python, SQL, Docker, Git, REST API i .NET." data-en="Work with C++, C#, Java, Python, SQL, Docker, Git, REST APIs, and .NET.">Praca z C++, C#, Java, Python, SQL, Docker, Git, REST API i .NET.</li>
+                      <li data-pl="Projekty z danych, klasyfikacji i trenowania modeli." data-en="Projects around data, classification, and model training.">Projekty z danych, klasyfikacji i trenowania modeli.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
 
-      <section class="container section section-band section-band-warm">
-        <div class="section-heading">
-          <p class="eyebrow" data-pl="Edukacja" data-en="Education">Edukacja</p>
-          <h2 data-pl="Studia i zaplecze techniczne" data-en="Studies and technical background">Studia i zaplecze techniczne</h2>
-        </div>
-        <div class="split-grid">
-          <article class="panel card-warm">
-            <p class="panel-label">09.2023 - obecnie</p>
-            <h3 data-pl="Polsko-Japonska Akademia Technik Komputerowych" data-en="Polish-Japanese Academy of Information Technology">Polsko-Japonska Akademia Technik Komputerowych</h3>
-            <p data-pl="Studia inzynierskie na kierunku informatyka. W trakcie studiow pracowalem z C++, C#, Java, Pythonem, SQL, Dockerem, Git, REST API i .NET." data-en="Engineering studies in computer science. During my studies I worked with C++, C#, Java, Python, SQL, Docker, Git, REST APIs, and .NET.">Studia inzynierskie na kierunku informatyka. W trakcie studiow pracowalem z C++, C#, Java, Pythonem, SQL, Dockerem, Git, REST API i .NET.</p>
-          </article>
-          <article class="panel card-accent">
-            <p class="panel-label" data-pl="Najwazniejsze obszary" data-en="Main focus areas">Najwazniejsze obszary</p>
-            <ul class="detail-list">
-              <li data-pl="Programowanie i podstawy architektury systemow." data-en="Programming and system architecture fundamentals.">Programowanie i podstawy architektury systemow.</li>
-              <li data-pl="Praca z danymi, modelami i rozwiazaniami AI." data-en="Working with data, models, and AI solutions.">Praca z danymi, modelami i rozwiazaniami AI.</li>
-              <li data-pl="Laczenie zaplecza technicznego z praktycznym wykorzystaniem produktowym." data-en="Combining technical foundations with practical product use.">Laczenie zaplecza technicznego z praktycznym wykorzystaniem produktowym.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
+            <article class="accordion-item blue" data-reveal="up">
+              <button class="accordion-toggle" type="button" data-accordion-toggle aria-expanded="false">
+                <div class="accordion-summary">
+                  <p class="accordion-meta">AWS Academy</p>
+                  <h3 data-pl="Cloud Foundations i Cloud Developing" data-en="Cloud Foundations and Cloud Developing">Cloud Foundations i Cloud Developing</h3>
+                  <p data-pl="Serverless, AWS SDK i podstawy sensownej pracy z chmura." data-en="Serverless, AWS SDK, and practical cloud fundamentals.">Serverless, AWS SDK i podstawy sensownej pracy z chmura.</p>
+                </div>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-panel">
+                <div class="accordion-panel-inner">
+                  <div class="accordion-content">
+                    <ul class="accordion-list">
+                      <li>Lambda, API Gateway, DynamoDB, S3</li>
+                      <li data-pl="Podstawy projektowania rozwiazan serverless." data-en="Foundations of designing serverless solutions.">Podstawy projektowania rozwiazan serverless.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
 
-      <section class="container section section-band section-band-green">
-        <div class="section-heading">
-          <p class="eyebrow" data-pl="Kursy" data-en="Courses">Kursy</p>
-          <h2 data-pl="Szkolenia i certyfikaty" data-en="Training and certificates">Szkolenia i certyfikaty</h2>
-        </div>
-        <div class="split-grid">
-          <article class="panel card-green">
-            <p class="panel-label">AWS Academy</p>
-            <ul class="detail-list">
-              <li>AWS Cloud Foundations</li>
-              <li>AWS Cloud Developing</li>
-              <li data-pl="Serverless, Lambda, API Gateway, DynamoDB, S3 i praca z AWS SDK." data-en="Serverless, Lambda, API Gateway, DynamoDB, S3, and AWS SDK work.">Serverless, Lambda, API Gateway, DynamoDB, S3 i praca z AWS SDK.</li>
-            </ul>
-          </article>
-          <article class="panel card-blue">
-            <p class="panel-label">11.2024</p>
-            <h3 data-pl="RAG i budowa agentow AI" data-en="RAG and AI agents">RAG i budowa agentow AI</h3>
-            <p data-pl="Szkolenie obejmujace embeddingi, bazy wektorowe, przeplyw informacji i budowe agentow opartych na kontrolowanej bazie wiedzy." data-en="Training covering embeddings, vector databases, information flow, and building agents grounded in controlled knowledge bases.">Szkolenie obejmujace embeddingi, bazy wektorowe, przeplyw informacji i budowe agentow opartych na kontrolowanej bazie wiedzy.</p>
-          </article>
+            <article class="accordion-item green" data-reveal="up">
+              <button class="accordion-toggle" type="button" data-accordion-toggle aria-expanded="false">
+                <div class="accordion-summary">
+                  <p class="accordion-meta">11.2024</p>
+                  <h3 data-pl="RAG i budowa agentow AI" data-en="RAG and AI agents">RAG i budowa agentow AI</h3>
+                  <p data-pl="Embeddingi, bazy wektorowe i skladanie sensownego przeplywu informacji." data-en="Embeddings, vector databases, and building a sensible information flow.">Embeddingi, bazy wektorowe i skladanie sensownego przeplywu informacji.</p>
+                </div>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-panel">
+                <div class="accordion-panel-inner">
+                  <div class="accordion-content">
+                    <ul class="accordion-list">
+                      <li data-pl="Projektowanie agentow opartych na kontrolowanej bazie wiedzy." data-en="Designing agents grounded in a controlled knowledge base.">Projektowanie agentow opartych na kontrolowanej bazie wiedzy.</li>
+                      <li data-pl="Laczenie RAG, modeli jezykowych i warstwy kontekstowej." data-en="Combining RAG, language models, and context orchestration.">Laczenie RAG, modeli jezykowych i warstwy kontekstowej.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
     </main>

@@ -4,8 +4,8 @@ const menuToggle = document.querySelector(".menu-toggle");
 const navLinksContainer = document.querySelector("#nav-links");
 const languageButtons = Array.from(document.querySelectorAll(".lang-btn"));
 const pageKey = body.dataset.page;
-const form = document.querySelector("#contactFormElement");
-const formMessage = document.querySelector("#formMessage");
+const revealNodes = Array.from(document.querySelectorAll("[data-reveal]"));
+const accordionButtons = Array.from(document.querySelectorAll("[data-accordion-toggle]"));
 
 function getInitialLanguage() {
   const stored = localStorage.getItem(STORAGE_KEY);
@@ -24,10 +24,6 @@ function applyLanguage(lang) {
 
   document.querySelectorAll("[data-pl][data-en]").forEach((element) => {
     element.textContent = element.dataset[lang];
-  });
-
-  document.querySelectorAll("[data-pl-placeholder][data-en-placeholder]").forEach((element) => {
-    element.placeholder = element.dataset[`${lang}Placeholder`];
   });
 
   const title = lang === "en" ? body.dataset.titleEn : body.dataset.titlePl;
@@ -53,6 +49,37 @@ function setupNavigation() {
   });
 }
 
+function setupReveal() {
+  if (!("IntersectionObserver" in window)) {
+    revealNodes.forEach((node) => node.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.16, rootMargin: "0px 0px -40px 0px" }
+  );
+
+  revealNodes.forEach((node) => observer.observe(node));
+}
+
+function toggleAccordion(button) {
+  const item = button.closest(".accordion-item");
+  if (!item) {
+    return;
+  }
+
+  const expanded = item.classList.toggle("is-open");
+  button.setAttribute("aria-expanded", String(expanded));
+}
+
 if (menuToggle && navLinksContainer) {
   menuToggle.addEventListener("click", () => {
     const isOpen = navLinksContainer.classList.toggle("open");
@@ -67,18 +94,12 @@ languageButtons.forEach((button) => {
   });
 });
 
-if (form && formMessage) {
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const lang = localStorage.getItem(STORAGE_KEY) === "en" ? "en" : "pl";
-    formMessage.textContent =
-      lang === "en"
-        ? "Thanks. Your message is ready and I will get back to you as soon as possible."
-        : "Dziekuje. Twoja wiadomosc jest gotowa i odezwe sie najszybciej jak to mozliwe.";
-    formMessage.classList.add("is-success");
-    form.reset();
+accordionButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    toggleAccordion(button);
   });
-}
+});
 
 setupNavigation();
+setupReveal();
 applyLanguage(getInitialLanguage());

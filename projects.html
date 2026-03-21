@@ -37,47 +37,80 @@
     </header>
 
     <main class="container page-layout">
-      <section class="page-intro">
+      <section class="page-intro" data-reveal="up">
         <p class="eyebrow" data-pl="Projekty" data-en="Projects">Projekty</p>
-        <h1 data-pl="Kilka projektów, przy których faktycznie zrobiłem konkretną robotę." data-en="A few projects where I did real, hands-on work.">Kilka projektów, przy których faktycznie zrobiłem konkretną robotę.</h1>
-        <p class="lead" data-pl="Skupiam się tu bardziej na tym, za co odpowiadałem i jak wyglądała praca, niż na samym wypisywaniu technologii." data-en="Here I focus more on what I was responsible for and what the work looked like than on just listing technologies.">Skupiam się tu bardziej na tym, za co odpowiadałem i jak wyglądała praca, niż na samym wypisywaniu technologii.</p>
+        <h1 data-pl="Tu sa projekty, a nie tylko lista technologii." data-en="This is about projects, not just a list of technologies.">Tu sa projekty, a nie tylko lista technologii.</h1>
+        <p class="lead" data-pl="Kazdy blok mozna rozwinac. Zostawilem krotkie podsumowanie na start, a szczegoly sa dopiero po kliknieciu, zeby strona byla lzejsza i latwiejsza do czytania." data-en="Each block can be expanded. I left a short summary up front and put the details behind a click so the page stays lighter and easier to read.">Kazdy blok mozna rozwinac. Zostawilem krotkie podsumowanie na start, a szczegoly sa dopiero po kliknieciu, zeby strona byla lzejsza i latwiejsza do czytania.</p>
       </section>
 
-      <section class="projects-stack">
-        <article class="project-card project-card-featured">
-          <p class="project-type">Fundacja Sorno</p>
-          <h2 data-pl="Portal klienta do wynikow badan, dokumentacji i platnosci" data-en="Client portal for medical results, documentation, and payments">Portal klienta do wynikow badan, dokumentacji i platnosci</h2>
-          <p data-pl="To był projekt, w którym praktycznie od początku do końca brałem odpowiedzialność za to, jak system ma działać. Rozmawiałem o wymaganiach, układałem architekturę i budowałem portal klienta łączący warstwę użytkownika, backend, dokumentację medyczną i płatności." data-en="This was a project where I was responsible for how the system should work almost end to end. I discussed requirements, shaped the architecture, and built a client portal combining the user layer, backend, medical documentation, and payments.">To był projekt, w którym praktycznie od początku do końca brałem odpowiedzialność za to, jak system ma działać. Rozmawiałem o wymaganiach, układałem architekturę i budowałem portal klienta łączący warstwę użytkownika, backend, dokumentację medyczną i płatności.</p>
-          <ul class="detail-list">
-            <li data-pl="Postawiłem backend dla aplikacji mobilnej i webowej oraz logikę użytkowników i dokumentacji." data-en="I built the backend for the mobile and web application, including user and documentation logic.">Postawiłem backend dla aplikacji mobilnej i webowej oraz logikę użytkowników i dokumentacji.</li>
-            <li data-pl="Spiąłem płatności, subskrypcje, bazę danych i usługi chmurowe w jeden działający proces." data-en="I tied payments, subscriptions, the database, and cloud services into one working flow.">Spiąłem płatności, subskrypcje, bazę danych i usługi chmurowe w jeden działający proces.</li>
-            <li data-pl="Dodałem automatyczne sortowanie wyników badań i dalej zajmuję się utrzymaniem systemu." data-en="I added automatic test-result sorting and continue to maintain the system.">Dodałem automatyczne sortowanie wyników badań i dalej zajmuję się utrzymaniem systemu.</li>
-          </ul>
-          <p class="tags">FastAPI | Node.js | Firebase | MongoDB | Stripe | GCP</p>
+      <section class="accordion-group" data-reveal="up">
+        <article class="accordion-item blue is-open">
+          <button class="accordion-toggle" type="button" data-accordion-toggle aria-expanded="true">
+            <div class="accordion-summary">
+              <span class="project-badge">Fundacja Sorno</span>
+              <h3 data-pl="Portal klienta do wynikow badan, dokumentacji i platnosci" data-en="Client portal for medical results, documentation, and payments">Portal klienta do wynikow badan, dokumentacji i platnosci</h3>
+              <p data-pl="Projekt od rozmowy o potrzebach po wdrozenie i utrzymanie." data-en="A project spanning requirements, implementation, and maintenance.">Projekt od rozmowy o potrzebach po wdrozenie i utrzymanie.</p>
+            </div>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-panel">
+            <div class="accordion-panel-inner">
+              <div class="accordion-content">
+                <p data-pl="W tym projekcie odpowiadalem za duza czesc calego procesu. Rozmawialem z klientem, ukladlem architekture i budowalem portal klienta laczacy frontend, backend, dokumentacje medyczna i rozliczenia." data-en="In this project I owned a large part of the whole process. I worked with the client, shaped the architecture, and built a client portal combining frontend, backend, medical documentation, and billing.">W tym projekcie odpowiadalem za duza czesc calego procesu. Rozmawialem z klientem, ukladlem architekture i budowalem portal klienta laczacy frontend, backend, dokumentacje medyczna i rozliczenia.</p>
+                <ul class="accordion-list">
+                  <li data-pl="Backend dla aplikacji mobilnej i webowej oraz logika uzytkownikow i dokumentacji." data-en="Backend for the mobile and web app plus user and documentation logic.">Backend dla aplikacji mobilnej i webowej oraz logika uzytkownikow i dokumentacji.</li>
+                  <li data-pl="Integracje platnosci, subskrypcji, bazy danych i uslug chmurowych." data-en="Integrations for payments, subscriptions, database, and cloud services.">Integracje platnosci, subskrypcji, bazy danych i uslug chmurowych.</li>
+                  <li data-pl="Automatyczne sortowanie wynikow badan i utrzymanie systemu po wdrozeniu." data-en="Automatic sorting of test results and maintenance after launch.">Automatyczne sortowanie wynikow badan i utrzymanie systemu po wdrozeniu.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </article>
 
-        <article class="project-card card-blue">
-          <p class="project-type">Tikrow</p>
-          <h2 data-pl="Analiza danych, QA i modele ML wspierajace procesy" data-en="Data analysis, QA, and ML models supporting processes">Analiza danych, QA i modele ML wspierajace procesy</h2>
-          <p data-pl="W Tikrow siedzę bliżej procesów, danych i jakości działania systemu. To praca bardziej analityczna: trzeba dobrze zrozumieć, co się dzieje, znaleźć problem albo wzorzec i przełożyć to na konkretny wniosek." data-en="At Tikrow I work closer to processes, data, and system quality. It is more analytical work: understand what is happening, find the issue or pattern, and turn that into a concrete conclusion.">W Tikrow siedzę bliżej procesów, danych i jakości działania systemu. To praca bardziej analityczna: trzeba dobrze zrozumieć, co się dzieje, znaleźć problem albo wzorzec i przełożyć to na konkretny wniosek.</p>
-          <ul class="detail-list">
-            <li data-pl="Sprawdzam procesy w CRM, obiegu zleceń i finansach." data-en="I verify processes across CRM, order flow, and finance.">Sprawdzam procesy w CRM, obiegu zleceń i finansach.</li>
-            <li data-pl="Trenuję modele ML do wykrywania wzorców i anomalii." data-en="I train ML models to detect patterns and anomalies.">Trenuję modele ML do wykrywania wzorców i anomalii.</li>
-            <li data-pl="Wspieram układanie procesów pod nowe funkcje." data-en="I help shape processes for new features.">Wspieram układanie procesów pod nowe funkcje.</li>
-          </ul>
-          <p class="tags">Python | Data analysis | API | ML</p>
+        <article class="accordion-item green">
+          <button class="accordion-toggle" type="button" data-accordion-toggle aria-expanded="false">
+            <div class="accordion-summary">
+              <span class="project-badge">Tikrow</span>
+              <h3 data-pl="QA, analiza danych i modele ML wspierajace procesy" data-en="QA, data analysis, and ML models supporting processes">QA, analiza danych i modele ML wspierajace procesy</h3>
+              <p data-pl="Bardziej analityczna rola: procesy, dane, API i wykrywanie wzorcow." data-en="A more analytical role: processes, data, APIs, and pattern detection.">Bardziej analityczna rola: procesy, dane, API i wykrywanie wzorcow.</p>
+            </div>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-panel">
+            <div class="accordion-panel-inner">
+              <div class="accordion-content">
+                <p data-pl="W Tikrow pracuje blizej logiki procesow i jakosci dzialania calego systemu. To duzo analizy, laczenia faktow i wyciagania konkretnych wnioskow z danych." data-en="At Tikrow I work closer to process logic and overall system quality. It involves a lot of analysis, connecting facts, and turning data into concrete conclusions.">W Tikrow pracuje blizej logiki procesow i jakosci dzialania calego systemu. To duzo analizy, laczenia faktow i wyciagania konkretnych wnioskow z danych.</p>
+                <ul class="accordion-list">
+                  <li data-pl="Weryfikacja procesow w CRM, obiegu zlecen i finansach." data-en="Verification of processes across CRM, order flow, and finance.">Weryfikacja procesow w CRM, obiegu zlecen i finansach.</li>
+                  <li data-pl="Modele ML do wykrywania wzorcow i anomalii." data-en="ML models for pattern and anomaly detection.">Modele ML do wykrywania wzorcow i anomalii.</li>
+                  <li data-pl="Wsparcie modelowania procesow pod nowe funkcje." data-en="Support for shaping processes behind new features.">Wsparcie modelowania procesow pod nowe funkcje.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </article>
 
-        <article class="project-card card-warm">
-          <p class="project-type" data-pl="Projekt wlasny" data-en="Personal project">Projekt wlasny</p>
-          <h2 data-pl="System analizy wad postawy" data-en="Posture defect analysis system">System analizy wad postawy</h2>
-          <p data-pl="To mój własny projekt, w którym łączę computer vision, dane z kamery głębi i praktyczne użycie AI. Chodzi nie tylko o sam model, ale o cały sensowny przepływ: od odczytu danych po wynik, który da się wykorzystać dalej." data-en="This is my own project where I combine computer vision, depth-camera data, and practical AI usage. It is not just about the model itself, but about the whole workflow: from reading the data to producing an output that can actually be used.">To mój własny projekt, w którym łączę computer vision, dane z kamery głębi i praktyczne użycie AI. Chodzi nie tylko o sam model, ale o cały sensowny przepływ: od odczytu danych po wynik, który da się wykorzystać dalej.</p>
-          <ul class="detail-list">
-            <li data-pl="Bazuję na Raspberry Pi 5 i kamerze głębi Luxonis OAK-D." data-en="It is built around Raspberry Pi 5 and a Luxonis OAK-D depth camera.">Bazuję na Raspberry Pi 5 i kamerze głębi Luxonis OAK-D.</li>
-            <li data-pl="Łączę dane przestrzenne z detekcją punktów ciała z modeli YOLOv8-Pose i BlazePose." data-en="I combine spatial data with body-point detection from YOLOv8-Pose and BlazePose.">Łączę dane przestrzenne z detekcją punktów ciała z modeli YOLOv8-Pose i BlazePose.</li>
-            <li data-pl="Na końcu generuję raport, który może przydać się dalej w diagnostyce albo przesiewie." data-en="At the end, it generates a report that can be useful in diagnostics or screening.">Na końcu generuję raport, który może przydać się dalej w diagnostyce albo przesiewie.</li>
-          </ul>
-          <p class="tags">YOLOv8-Pose | BlazePose | PyTorch | OpenVINO</p>
+        <article class="accordion-item warm">
+          <button class="accordion-toggle" type="button" data-accordion-toggle aria-expanded="false">
+            <div class="accordion-summary">
+              <span class="project-badge" data-pl="Projekt wlasny" data-en="Personal project">Projekt wlasny</span>
+              <h3 data-pl="System analizy wad postawy" data-en="Posture defect analysis system">System analizy wad postawy</h3>
+              <p data-pl="Computer vision, kamera glebi i AI w bardziej praktycznym wydaniu." data-en="Computer vision, depth camera work, and AI in a more practical form.">Computer vision, kamera glebi i AI w bardziej praktycznym wydaniu.</p>
+            </div>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-panel">
+            <div class="accordion-panel-inner">
+              <div class="accordion-content">
+                <p data-pl="To moj wlasny projekt, w ktorym lacze obraz, dane przestrzenne i AI. Chodzi nie tylko o sam model, ale o caly przeplyw od odczytu danych do raportu, z ktorego da sie skorzystac." data-en="This is my own project where I combine visual data, spatial data, and AI. It is not only about the model itself, but about the whole flow from input to a report that can be used.">To moj wlasny projekt, w ktorym lacze obraz, dane przestrzenne i AI. Chodzi nie tylko o sam model, ale o caly przeplyw od odczytu danych do raportu, z ktorego da sie skorzystac.</p>
+                <ul class="accordion-list">
+                  <li data-pl="Raspberry Pi 5 i kamera glebi Luxonis OAK-D." data-en="Raspberry Pi 5 and a Luxonis OAK-D depth camera.">Raspberry Pi 5 i kamera glebi Luxonis OAK-D.</li>
+                  <li data-pl="Laczenie danych przestrzennych z detekcja punktow ciala z modeli YOLOv8-Pose i BlazePose." data-en="Combining spatial data with body-point detection from YOLOv8-Pose and BlazePose.">Laczenie danych przestrzennych z detekcja punktow ciala z modeli YOLOv8-Pose i BlazePose.</li>
+                  <li data-pl="Raport, ktory moze przydac sie w diagnostyce albo przesiewie." data-en="A report that can be useful in diagnostics or screening.">Raport, ktory moze przydac sie w diagnostyce albo przesiewie.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </article>
       </section>
     </main>

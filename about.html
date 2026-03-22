@@ -37,6 +37,23 @@
     .material-symbols-outlined {
       font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
     }
+    .glass-panel {
+      background: rgba(32, 38, 47, 0.4);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(68, 72, 79, 0.15);
+    }
+    .kinetic-border {
+      position: relative;
+    }
+    .kinetic-border::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: #a1ffc2;
+    }
   </style>
 </head>
 <body class="bg-surface text-on-background font-body" data-page="about" data-title-pl="Adam Sapiecha - O mnie" data-title-en="Adam Sapiecha - About">
@@ -65,37 +82,142 @@
     </div>
   </nav>
 
-  <main class="mx-auto max-w-7xl px-8 py-32 pt-28">
-    <div class="grid grid-cols-1 gap-12 lg:grid-cols-12">
-      <div class="space-y-8 lg:col-span-7">
-        <span class="font-label text-sm uppercase tracking-[0.2em] text-primary" data-pl="Poza praca" data-en="Beyond work">Poza praca</span>
-        <h1 class="font-headline text-6xl font-bold leading-[0.9] tracking-tighter md:text-8xl" data-pl="Spokoj, ciekawosc i rzeczy, ktore da sie zrozumiec od srodka." data-en="Calm, curiosity, and things that can be understood from the inside.">Spokoj, ciekawosc i rzeczy, ktore da sie zrozumiec od srodka.</h1>
-        <p class="max-w-2xl text-lg leading-relaxed text-on-surface-variant" data-pl="Jestem raczej spokojny niz glosny. Lubie konkrety, ale nie kosztem dobrej komunikacji. Po pracy ciagnie mnie do zeglarstwa, motoryzacji, elektroniki i wszystkiego, co mozna rozlozyc na czesci i zrozumiec." data-en="I am more calm than loud. I like being concrete, but not at the expense of good communication. Outside work I drift toward sailing, motoring, electronics, and anything that can be taken apart and understood.">Jestem raczej spokojny niz glosny. Lubie konkrety, ale nie kosztem dobrej komunikacji. Po pracy ciagnie mnie do zeglarstwa, motoryzacji, elektroniki i wszystkiego, co mozna rozlozyc na czesci i zrozumiec.</p>
-      </div>
-      <div class="lg:col-span-5">
-        <div class="aspect-[4/5] overflow-hidden rounded-sm bg-surface-container-high p-6">
-          <img class="h-full w-full rounded-sm object-cover object-center" src="assets/Adam Sapiecha (2).jpeg" alt="Adam Sapiecha portrait" />
+  <main class="mx-auto max-w-7xl overflow-hidden px-8 py-32 pt-28">
+    <header class="relative mb-32">
+      <div class="grid grid-cols-1 items-end gap-8 md:grid-cols-12">
+        <div class="md:col-span-8">
+          <span class="mb-4 block font-label text-sm uppercase tracking-[0.3em] text-primary" data-pl="Poza praca" data-en="Beyond work">Poza praca</span>
+          <h1 class="font-headline text-6xl font-bold leading-none tracking-tighter md:text-8xl" data-pl="Lubie rzeczy, ktore czegos ucza i troche wyrywaja z komfortu." data-en="I like things that teach you something and pull you a bit out of your comfort zone.">Lubie rzeczy, ktore czegos ucza i troche wyrywaja z komfortu.</h1>
+          <p class="mt-8 max-w-2xl text-xl font-light leading-relaxed text-on-surface-variant" data-pl="Poza praca po prostu lubie robic rzeczy, ktore cos daja i troche wyrywaja z komfortu." data-en="Outside work, I simply like doing things that matter and pull me a little out of my comfort zone.">Poza praca po prostu lubie robic rzeczy, ktore cos daja i troche wyrywaja z komfortu.</p>
+        </div>
+        <div class="md:col-span-4 flex justify-end">
+          <div class="hidden h-px w-full bg-outline-variant/30 md:block"></div>
         </div>
       </div>
-    </div>
+      <div class="absolute -right-20 -top-20 -z-10 h-96 w-96 rounded-full bg-primary/5 blur-[120px]"></div>
+    </header>
 
-    <section class="mt-20 grid grid-cols-1 gap-4 md:grid-cols-4 md:grid-rows-2">
-      <div class="rounded-sm bg-surface-container-high p-10 md:col-span-2 md:row-span-2">
-        <h3 class="mb-6 font-headline text-4xl font-bold" data-pl="Jakim jestem typem osoby" data-en="What kind of person I am">Jakim jestem typem osoby</h3>
-        <p class="max-w-md text-on-surface-variant" data-pl="Najbardziej lubie moment, kiedy cos z teorii zaczyna miec sens w praktyce. To samo mam z technologia, sprzetem i hobby poza praca. Dobrze czuje sie tam, gdzie mozna myslec spokojnie, robic cos porzadnie i nie komplikowac rzeczy na sile." data-en="What I enjoy most is the moment when something from theory starts to make sense in practice. I feel the same about technology, hardware, and hobbies outside work. I feel best where things can be thought through calmly, built properly, and not overcomplicated for the sake of it.">Najbardziej lubie moment, kiedy cos z teorii zaczyna miec sens w praktyce. To samo mam z technologia, sprzetem i hobby poza praca. Dobrze czuje sie tam, gdzie mozna myslec spokojnie, robic cos porzadnie i nie komplikowac rzeczy na sile.</p>
+    <section class="space-y-32">
+      <div class="grid grid-cols-1 items-start gap-12 md:grid-cols-12">
+        <div class="group md:col-span-7">
+          <div class="relative mb-8 aspect-[16/9] overflow-hidden rounded-lg bg-surface-container-low">
+            <img class="h-full w-full object-cover object-center opacity-70 transition-transform duration-700 group-hover:scale-105" src="assets/Adam Sapiecha (2).jpeg" alt="Adam Sapiecha portrait" />
+            <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">sailing</span>
+              <span class="font-label text-xs uppercase tracking-widest text-primary" data-pl="Baltyk i Morze Srodziemne" data-en="Baltic and Mediterranean">Baltyk i Morze Srodziemne</span>
+            </div>
+          </div>
+          <div class="max-w-xl">
+            <h3 class="mb-4 font-headline text-2xl font-bold" data-pl="Plywam na jachtach" data-en="I sail yachts">Plywam na jachtach</h3>
+            <p class="leading-relaxed text-on-surface-variant" data-pl="Bylem na Baltyku i Morzu Srodziemnym, mam kurs SRC i koncze patent na plywanie po morzu. To jedna z tych rzeczy, gdzie naprawde czujesz odpowiedzialnosc i uczysz sie podejmowac decyzje w praktyce." data-en="I have sailed on the Baltic Sea and the Mediterranean, I hold an SRC certificate, and I am finishing my offshore sailing qualification. It is one of those things where you really feel responsibility and learn to make decisions in practice.">Bylem na Baltyku i Morzu Srodziemnym, mam kurs SRC i koncze patent na plywanie po morzu. To jedna z tych rzeczy, gdzie naprawde czujesz odpowiedzialnosc i uczysz sie podejmowac decyzje w praktyce.</p>
+          </div>
+        </div>
+
+        <div class="md:col-span-5 md:mt-24">
+          <div class="glass-panel kinetic-border rounded-lg p-8">
+            <div class="mb-6 h-48 overflow-hidden rounded bg-surface-container-high">
+              <div class="flex h-full w-full items-center justify-center bg-[radial-gradient(circle_at_top_left,_rgba(161,255,194,0.18),_transparent_35%),linear-gradient(180deg,#1b2028_0%,#11161d_100%)] text-on-surface-variant">
+                <span class="font-label text-xs uppercase tracking-[0.3em]" data-pl="Gory i wyprawy" data-en="Mountains and expeditions">Gory i wyprawy</span>
+              </div>
+            </div>
+            <h3 class="mb-4 font-headline text-2xl font-bold" data-pl="Uwielbiam gory" data-en="I love the mountains">Uwielbiam gory</h3>
+            <p class="mb-6 leading-relaxed text-on-surface-variant" data-pl="Szczegolnie Tatry, ale lubie tez wyjazdy dalej. Bylem w Maroku i wszedlem na najwyzszy szczyt Afryki Polnocnej, ponad 4000 m. Lubie takie wyjazdy, gdzie cos sie dzieje, a nie tylko ladne widoki." data-en="Especially the Tatras, but I also like going further. I was in Morocco and climbed the highest peak in North Africa, above 4,000 meters. I enjoy trips where something is happening, not only nice views.">Szczegolnie Tatry, ale lubie tez wyjazdy dalej. Bylem w Maroku i wszedlem na najwyzszy szczyt Afryki Polnocnej, ponad 4000 m. Lubie takie wyjazdy, gdzie cos sie dzieje, a nie tylko ladne widoki.</p>
+            <div class="flex items-center gap-4">
+              <div class="flex items-center gap-1 text-xs uppercase text-primary font-label">
+                <span class="material-symbols-outlined text-sm">terrain</span>
+                Toubkal 4167m
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="rounded-sm border-t border-outline-variant bg-surface-container p-8">
-        <span class="material-symbols-outlined text-secondary text-4xl">sailing</span>
-        <h4 class="mt-10 font-headline text-xl font-bold" data-pl="Zeglarstwo" data-en="Sailing">Zeglarstwo</h4>
+
+      <div class="-mx-8 bg-surface-container-low/50 px-8 py-24">
+        <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 md:grid-cols-2">
+          <div class="order-2 md:order-1">
+            <span class="mb-4 block font-label text-xs uppercase tracking-[0.3em] text-secondary" data-pl="Endless Journey" data-en="Endless Journey">Endless Journey</span>
+            <h2 class="mb-8 font-headline text-4xl font-bold leading-tight md:text-5xl" data-pl="Podroze autostopem" data-en="Hitchhiking journeys">Podroze autostopem</h2>
+            <p class="mb-8 text-lg leading-relaxed text-on-surface-variant" data-pl="Przejechalem dziesiatki tysiecy kilometrow. Spalem u losowo poznanych ludzi, w namiotach, w hamaku, na dziko na pustyni w Jordanii i nawet w centrum Paryza. Z czesci wyjazdow nagralem vlogi. To byly doswiadczenia, ktore naprawde ucza radzenia sobie w kazdej sytuacji." data-en="I have traveled tens of thousands of kilometers by hitchhiking. I slept at random people's places, in tents, in a hammock, in the Jordanian desert, and even in the center of Paris. I filmed vlogs from part of those trips. Those were the kinds of experiences that truly teach you how to handle any situation.">Przejechalem dziesiatki tysiecy kilometrow. Spalem u losowo poznanych ludzi, w namiotach, w hamaku, na dziko na pustyni w Jordanii i nawet w centrum Paryza. Z czesci wyjazdow nagralem vlogi. To byly doswiadczenia, ktore naprawde ucza radzenia sobie w kazdej sytuacji.</p>
+            <div class="flex flex-wrap gap-4">
+              <span class="flex items-center gap-2 rounded-full border border-outline-variant/20 bg-surface-container-high px-4 py-2 text-xs uppercase font-label">
+                <span class="h-1.5 w-1.5 rounded-full bg-primary"></span>
+                <span data-pl="dziesiatki tys. km" data-en="tens of thousands of km">dziesiatki tys. km</span>
+              </span>
+              <span class="flex items-center gap-2 rounded-full border border-outline-variant/20 bg-surface-container-high px-4 py-2 text-xs uppercase font-label">
+                <span class="h-1.5 w-1.5 rounded-full bg-secondary"></span>
+                <span data-pl="Jordania i Francja" data-en="Jordan and France">Jordania i Francja</span>
+              </span>
+            </div>
+          </div>
+          <div class="order-1 grid grid-cols-2 gap-4 md:order-2">
+            <div class="translate-y-8 overflow-hidden rounded-lg aspect-[3/4]">
+              <div class="flex h-full w-full items-center justify-center bg-[linear-gradient(180deg,#242b35_0%,#11161d_100%)] text-on-surface-variant">
+                <span class="font-label text-xs uppercase tracking-[0.3em]" data-pl="Droga" data-en="Road">Droga</span>
+              </div>
+            </div>
+            <div class="overflow-hidden rounded-lg aspect-[3/4]">
+              <div class="flex h-full w-full items-center justify-center bg-[linear-gradient(180deg,#1b2028_0%,#0c1016_100%)] text-on-surface-variant">
+                <span class="font-label text-xs uppercase tracking-[0.3em]" data-pl="Nocleg" data-en="Camp">Nocleg</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="rounded-sm border-t border-outline-variant bg-surface-container p-8">
-        <span class="material-symbols-outlined text-primary text-4xl">memory</span>
-        <h4 class="mt-10 font-headline text-xl font-bold" data-pl="Elektronika" data-en="Electronics">Elektronika</h4>
+
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div class="glass-panel rounded-lg p-10 group md:col-span-2">
+          <div class="mb-8 flex items-start justify-between">
+            <div>
+              <h3 class="mb-2 font-headline text-3xl font-bold" data-pl="Sportowa dyscyplina" data-en="Sport and discipline">Sportowa dyscyplina</h3>
+              <p class="font-label text-xs uppercase tracking-widest text-primary/70" data-pl="Ruch byl ze mna od zawsze" data-en="Movement has always been there">Ruch byl ze mna od zawsze</p>
+            </div>
+            <span class="material-symbols-outlined text-4xl text-primary opacity-20">fitness_center</span>
+          </div>
+          <p class="mb-10 max-w-2xl leading-relaxed text-on-surface-variant" data-pl="Sport zawsze byl duza czescia mojego zycia. Trenowalem tenis, waterpolo, skoki do wody, pilke, jujitsu, kickboxing i trojboj. Dzis bardziej dla siebie, ale dalej lubie sie ruszac, szczegolnie siatkowka, squash i badminton." data-en="Sport has always been a big part of my life. I trained tennis, water polo, diving, football, jujitsu, kickboxing, and powerlifting. These days it is more for myself, but I still enjoy moving, especially volleyball, squash, and badminton.">Sport zawsze byl duza czescia mojego zycia. Trenowalem tenis, waterpolo, skoki do wody, pilke, jujitsu, kickboxing i trojboj. Dzis bardziej dla siebie, ale dalej lubie sie ruszac, szczegolnie siatkowka, squash i badminton.</p>
+          <div class="grid grid-cols-2 gap-4 opacity-50 transition-opacity group-hover:opacity-100 sm:grid-cols-4">
+            <div class="border-t border-outline-variant/30 pt-2 text-[10px] uppercase font-label">Waterpolo</div>
+            <div class="border-t border-outline-variant/30 pt-2 text-[10px] uppercase font-label">Kickboxing</div>
+            <div class="border-t border-outline-variant/30 pt-2 text-[10px] uppercase font-label">Jujitsu</div>
+            <div class="border-t border-outline-variant/30 pt-2 text-[10px] uppercase font-label">Squash</div>
+          </div>
+        </div>
+
+        <div class="relative overflow-hidden rounded-lg bg-surface-container-high p-10 group">
+          <div class="relative z-10 flex h-full flex-col justify-between">
+            <div>
+              <span class="material-symbols-outlined mb-6 block text-4xl text-secondary">precision_manufacturing</span>
+              <h3 class="mb-4 font-headline text-2xl font-bold" data-pl="Motoryzacja" data-en="Automotive">Motoryzacja</h3>
+              <p class="text-sm leading-relaxed text-on-surface-variant" data-pl="Interesuje mnie motoryzacja, lubie auta i silniki. Zlozylem sam minicrossa, czasem cos naprawiam, jak ogarne temat. Bardziej zajawka niz teoria." data-en="I am into cars and engines. I built a minicross bike myself and sometimes fix things when I understand the problem well enough. It is more of a practical passion than pure theory.">Interesuje mnie motoryzacja, lubie auta i silniki. Zlozylem sam minicrossa, czasem cos naprawiam, jak ogarne temat. Bardziej zajawka niz teoria.</p>
+            </div>
+            <div class="mt-8 flex items-center justify-between border-t border-outline-variant/20 pt-8">
+              <span class="text-xs uppercase font-label text-secondary" data-pl="Mechanical tinkering" data-en="Mechanical tinkering">Mechanical tinkering</span>
+              <span class="material-symbols-outlined text-sm text-secondary">settings</span>
+            </div>
+          </div>
+          <div class="absolute -bottom-10 -right-10 opacity-5 transition-transform duration-1000 group-hover:rotate-12">
+            <span class="material-symbols-outlined text-[12rem]">settings_suggest</span>
+          </div>
+        </div>
       </div>
-      <div class="rounded-sm bg-primary-container p-8 md:col-span-2">
-        <div class="text-on-primary">
-          <h4 class="font-headline text-2xl font-bold" data-pl="Lubie rzeczy praktyczne" data-en="I like practical things">Lubie rzeczy praktyczne</h4>
-          <p class="opacity-80" data-pl="Mniej pozowania, wiecej sensownego dzialania." data-en="Less posing, more sensible action.">Mniej pozowania, wiecej sensownego dzialania.</p>
+
+      <div class="grid grid-cols-1 gap-12 border-t border-outline-variant/20 pt-16 md:grid-cols-12">
+        <div class="md:col-span-4">
+          <h4 class="mb-4 font-headline text-lg font-bold uppercase tracking-widest text-primary" data-pl="Korzenie i logika" data-en="Roots and logic">Korzenie i logika</h4>
+          <p class="mb-6 text-sm leading-relaxed text-on-surface-variant" data-pl="Mam czworke rodzenstwa: trzech braci i siostre, jestem gdzies po srodku. Wychowalem sie w domu, gdzie oboje rodzice sa matematykami, wiec od zawsze bylo duzo logicznego myslenia i dyskusji." data-en="I have four siblings, three brothers and a sister, and I am somewhere in the middle. I grew up in a home where both of my parents are mathematicians, so there was always a lot of logical thinking and discussion.">Mam czworke rodzenstwa: trzech braci i siostre, jestem gdzies po srodku. Wychowalem sie w domu, gdzie oboje rodzice sa matematykami, wiec od zawsze bylo duzo logicznego myslenia i dyskusji.</p>
+          <div class="flex gap-2 text-primary/40">
+            <span class="material-symbols-outlined">calculate</span>
+            <span class="material-symbols-outlined">functions</span>
+            <span class="material-symbols-outlined">analytics</span>
+          </div>
+        </div>
+        <div class="md:col-span-4">
+          <h4 class="mb-4 font-headline text-lg font-bold uppercase tracking-widest text-primary" data-pl="Szachy" data-en="Chess">Szachy</h4>
+          <p class="text-sm leading-relaxed text-on-surface-variant" data-pl="Kiedys gralem w szachy bardziej na serio i bralem udzial w konkursach, dzis gram raczej dla przyjemnosci. Dalej lubie to za myslenie do przodu i spokojna rywalizacje." data-en="I used to play chess more seriously and took part in competitions, while today I mostly play for enjoyment. I still value it for forward thinking and calm competition.">Kiedys gralem w szachy bardziej na serio i bralem udzial w konkursach, dzis gram raczej dla przyjemnosci. Dalej lubie to za myslenie do przodu i spokojna rywalizacje.</p>
+        </div>
+        <div class="md:col-span-4">
+          <h4 class="mb-4 font-headline text-lg font-bold uppercase tracking-widest text-primary" data-pl="Historia" data-en="History">Historia</h4>
+          <p class="text-sm leading-relaxed text-on-surface-variant" data-pl="Interesuje mnie historia, glownie XIX i XX wiek. Lubie patrzec, jak decyzje ludzi wplywaly na to, jak wygladal swiat pozniej." data-en="I am interested in history, mainly the nineteenth and twentieth centuries. I like looking at how people's decisions shaped the world later on.">Interesuje mnie historia, glownie XIX i XX wiek. Lubie patrzec, jak decyzje ludzi wplywaly na to, jak wygladal swiat pozniej.</p>
         </div>
       </div>
     </section>

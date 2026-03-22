@@ -65,49 +65,99 @@
   </nav>
 
   <main class="bg-surface-container-low px-8 py-32 pt-28">
-    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-24 lg:grid-cols-2">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-24 lg:grid-cols-[1.05fr_0.95fr]">
       <div class="space-y-12">
         <div class="space-y-6">
           <h1 class="font-headline text-6xl font-bold tracking-tight" data-pl="Zbudujmy cos porzadnego razem." data-en="Let's build something solid together.">Zbudujmy cos porzadnego razem.</h1>
-          <p class="max-w-md text-xl leading-relaxed text-on-surface-variant" data-pl="Jesli masz projekt, pomysl albo po prostu chcesz pogadac o wspolpracy, tutaj sa najprostsze drogi kontaktu." data-en="If you have a project, an idea, or just want to talk about working together, these are the simplest ways to reach me.">Jesli masz projekt, pomysl albo po prostu chcesz pogadac o wspolpracy, tutaj sa najprostsze drogi kontaktu.</p>
+          <p class="max-w-xl text-xl leading-relaxed text-on-surface-variant" data-pl="Jesli masz projekt, role, wspolprace albo po prostu chcesz sie odezwac, tutaj sa najprostsze drogi kontaktu. Najszybciej lapie maila i LinkedIna." data-en="If you have a project, a role, a collaboration idea, or simply want to reach out, these are the easiest ways to contact me. Email and LinkedIn are usually the fastest.">Jesli masz projekt, role, wspolprace albo po prostu chcesz sie odezwac, tutaj sa najprostsze drogi kontaktu. Najszybciej lapie maila i LinkedIna.</p>
         </div>
-        <div class="flex flex-col gap-6">
-          <a class="group flex items-center gap-4" href="mailto:adam.sapiecha05@gmail.com">
-            <div class="flex h-12 w-12 items-center justify-center rounded-sm bg-surface-container transition-colors group-hover:bg-primary">
-              <span class="material-symbols-outlined group-hover:text-on-primary">mail</span>
+        <div class="grid gap-5">
+          <a class="group grid gap-4 rounded-sm border border-outline-variant/40 bg-surface-container p-6 transition-colors hover:border-primary/60 hover:bg-surface" href="mailto:adam.sapiecha05@gmail.com">
+            <div class="flex items-center gap-4">
+              <div class="flex h-12 w-12 items-center justify-center rounded-sm bg-surface-container-low transition-colors group-hover:bg-primary">
+                <span class="material-symbols-outlined group-hover:text-on-primary">mail</span>
+              </div>
+              <div>
+                <p class="text-xs uppercase tracking-[0.2em] text-on-surface-variant" data-pl="Email" data-en="Email">Email</p>
+                <span class="text-lg font-mono">adam.sapiecha05@gmail.com</span>
+              </div>
             </div>
-            <span class="text-lg font-mono">adam.sapiecha05@gmail.com</span>
+            <p class="text-sm leading-relaxed text-on-surface-variant" data-pl="Najlepsza opcja, jesli chcesz opisac projekt albo wyslac wiecej szczegolow." data-en="The best option if you want to describe a project or send more details.">Najlepsza opcja, jesli chcesz opisac projekt albo wyslac wiecej szczegolow.</p>
           </a>
-          <a class="group flex items-center gap-4" href="tel:+48507593289">
-            <div class="flex h-12 w-12 items-center justify-center rounded-sm bg-surface-container transition-colors group-hover:bg-secondary">
-              <span class="material-symbols-outlined">call</span>
+          <a class="group grid gap-4 rounded-sm border border-outline-variant/40 bg-surface-container p-6 transition-colors hover:border-secondary/60 hover:bg-surface" href="tel:+48507593289">
+            <div class="flex items-center gap-4">
+              <div class="flex h-12 w-12 items-center justify-center rounded-sm bg-surface-container-low transition-colors group-hover:bg-secondary">
+                <span class="material-symbols-outlined">call</span>
+              </div>
+              <div>
+                <p class="text-xs uppercase tracking-[0.2em] text-on-surface-variant" data-pl="Telefon" data-en="Phone">Telefon</p>
+                <span class="text-lg font-mono">+48 507 593 289</span>
+              </div>
             </div>
-            <span class="text-lg font-mono">+48 507 593 289</span>
+            <p class="text-sm leading-relaxed text-on-surface-variant" data-pl="Dobra opcja, kiedy temat trzeba szybko dopiac albo omowic krocej." data-en="A good option when something needs to be discussed quickly or wrapped up fast.">Dobra opcja, kiedy temat trzeba szybko dopiac albo omowic krocej.</p>
           </a>
-          <div class="group flex items-center gap-4">
-            <div class="flex h-12 w-12 items-center justify-center rounded-sm bg-surface-container transition-colors group-hover:bg-primary">
-              <span class="material-symbols-outlined group-hover:text-on-primary">location_on</span>
+          <div class="grid gap-4 rounded-sm border border-outline-variant/40 bg-surface-container p-6">
+            <div class="flex items-center gap-4">
+              <div class="flex h-12 w-12 items-center justify-center rounded-sm bg-surface-container-low">
+                <span class="material-symbols-outlined text-primary">location_on</span>
+              </div>
+              <div>
+                <p class="text-xs uppercase tracking-[0.2em] text-on-surface-variant" data-pl="Lokalizacja" data-en="Location">Lokalizacja</p>
+                <span class="text-lg font-mono" data-pl="Warszawa, Polska" data-en="Warsaw, Poland">Warszawa, Polska</span>
+              </div>
             </div>
-            <span class="text-lg font-mono" data-pl="Warszawa, Polska" data-en="Warsaw, Poland">Warszawa, Polska</span>
+            <p class="text-sm leading-relaxed text-on-surface-variant" data-pl="Pracuje z Warszawy, ale jestem otwarty na wspolprace zdalna i hybrydowa." data-en="I work from Warsaw, but I am open to remote and hybrid collaboration.">Pracuje z Warszawy, ale jestem otwarty na wspolprace zdalna i hybrydowa.</p>
           </div>
         </div>
         <div class="pt-8">
-          <a class="flex w-fit items-center gap-4 border-2 border-primary px-10 py-4 font-label font-bold text-primary transition-all hover:bg-primary hover:text-on-primary" href="assets/Adam_Sapiecha_CV.pdf" target="_blank" rel="noreferrer">
-            DOWNLOAD CV
+          <a class="flex w-fit items-center gap-4 border-2 border-primary px-10 py-4 font-label font-bold text-primary transition-all hover:bg-primary hover:text-on-primary" href="assets/Adam_Sapiecha_CV.pdf" target="_blank" rel="noreferrer" data-pl="Pobierz CV" data-en="Download CV">
+            Pobierz CV
             <span class="material-symbols-outlined">download</span>
           </a>
         </div>
       </div>
 
-      <div class="rounded-sm bg-surface-container p-10">
+      <div class="rounded-sm border border-outline-variant/40 bg-surface-container p-10">
         <div class="space-y-8">
-          <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-            <a class="border-b border-outline-variant py-3 text-on-background transition-colors hover:border-primary hover:text-primary" href="https://github.com/Adam-Sapiecha" target="_blank" rel="noreferrer">GitHub</a>
-            <a class="border-b border-outline-variant py-3 text-on-background transition-colors hover:border-primary hover:text-primary" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+          <div>
+            <p class="text-xs uppercase tracking-[0.22em] text-on-surface-variant" data-pl="Sociale i linki" data-en="Socials and links">Sociale i linki</p>
+            <h2 class="mt-3 font-headline text-4xl font-bold" data-pl="Znajdz mnie tez tutaj" data-en="You can also find me here">Znajdz mnie tez tutaj</h2>
           </div>
-          <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-            <a class="border-b border-outline-variant py-3 text-on-background transition-colors hover:border-primary hover:text-primary" href="assets/Adam_Sapiecha_CV.pdf" target="_blank" rel="noreferrer">Resume</a>
-            <a class="border-b border-outline-variant py-3 text-on-background transition-colors hover:border-primary hover:text-primary" href="projects.html">Projects</a>
+          <div class="grid gap-4">
+            <a class="group rounded-sm border border-outline-variant/30 bg-surface px-5 py-5 transition-colors hover:border-primary/60 hover:bg-surface-container-low" href="https://github.com/Adam-Sapiecha" target="_blank" rel="noreferrer">
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <p class="text-xs uppercase tracking-[0.18em] text-on-surface-variant" data-pl="Kod i projekty" data-en="Code and projects">Kod i projekty</p>
+                  <p class="mt-2 text-xl font-semibold">GitHub</p>
+                </div>
+                <span class="material-symbols-outlined text-primary transition-transform group-hover:translate-x-1">north_east</span>
+              </div>
+              <p class="mt-3 text-sm text-on-surface-variant">github.com/Adam-Sapiecha</p>
+            </a>
+            <a class="group rounded-sm border border-outline-variant/30 bg-surface px-5 py-5 transition-colors hover:border-secondary/60 hover:bg-surface-container-low" href="https://www.linkedin.com/in/adam-sapiecha-686057314/" target="_blank" rel="noreferrer">
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <p class="text-xs uppercase tracking-[0.18em] text-on-surface-variant" data-pl="Doswiadczenie i kontakt" data-en="Experience and networking">Doswiadczenie i kontakt</p>
+                  <p class="mt-2 text-xl font-semibold">LinkedIn</p>
+                </div>
+                <span class="material-symbols-outlined text-secondary transition-transform group-hover:translate-x-1">north_east</span>
+              </div>
+              <p class="mt-3 text-sm text-on-surface-variant">linkedin.com/in/adam-sapiecha-686057314</p>
+            </a>
+          </div>
+          <div class="grid gap-4 md:grid-cols-2">
+            <a class="rounded-sm border border-outline-variant/30 bg-surface px-5 py-4 transition-colors hover:border-primary/60 hover:bg-surface-container-low" href="assets/Adam_Sapiecha_CV.pdf" target="_blank" rel="noreferrer">
+              <p class="text-xs uppercase tracking-[0.18em] text-on-surface-variant" data-pl="Dokumenty" data-en="Documents">Dokumenty</p>
+              <p class="mt-2 font-semibold" data-pl="CV" data-en="Resume">CV</p>
+            </a>
+            <a class="rounded-sm border border-outline-variant/30 bg-surface px-5 py-4 transition-colors hover:border-primary/60 hover:bg-surface-container-low" href="projects.html">
+              <p class="text-xs uppercase tracking-[0.18em] text-on-surface-variant" data-pl="Portfolio" data-en="Portfolio">Portfolio</p>
+              <p class="mt-2 font-semibold" data-pl="Projekty i praca" data-en="Projects and work">Projekty i praca</p>
+            </a>
+          </div>
+          <div class="rounded-sm border border-primary/20 bg-[radial-gradient(circle_at_top_left,_rgba(0,252,154,0.12),_transparent_45%),linear-gradient(180deg,#131920_0%,#0d1117_100%)] p-6">
+            <p class="text-xs uppercase tracking-[0.22em] text-primary" data-pl="Szybka odpowiedz" data-en="Quick reply">Szybka odpowiedz</p>
+            <p class="mt-3 leading-relaxed text-on-surface-variant" data-pl="Jesli napiszesz z konkretnym kontekstem, na przyklad rola, projekt, stack albo zakres wspolpracy, latwiej mi szybko i sensownie odpowiedziec." data-en="If you message me with a bit of context, like a role, project, stack, or scope of collaboration, it is much easier for me to reply quickly and clearly.">Jesli napiszesz z konkretnym kontekstem, na przyklad rola, projekt, stack albo zakres wspolpracy, latwiej mi szybko i sensownie odpowiedziec.</p>
           </div>
         </div>
       </div>
@@ -119,7 +169,7 @@
       <div class="font-['Inter'] text-sm uppercase tracking-widest text-[#f1f3fc]/50" data-pl="Copyright 2026 Adam Sapiecha" data-en="Copyright 2026 Adam Sapiecha">Copyright 2026 Adam Sapiecha</div>
       <div class="flex gap-8">
         <a class="font-['Inter'] text-sm uppercase tracking-widest text-[#f1f3fc]/50 opacity-80 transition-colors hover:text-[#00FF9C] hover:opacity-100" href="https://github.com/Adam-Sapiecha" target="_blank" rel="noreferrer">GitHub</a>
-        <a class="font-['Inter'] text-sm uppercase tracking-widest text-[#f1f3fc]/50 opacity-80 transition-colors hover:text-[#00FF9C] hover:opacity-100" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="font-['Inter'] text-sm uppercase tracking-widest text-[#f1f3fc]/50 opacity-80 transition-colors hover:text-[#00FF9C] hover:opacity-100" href="https://www.linkedin.com/in/adam-sapiecha-686057314/" target="_blank" rel="noreferrer">LinkedIn</a>
         <a class="font-['Inter'] text-sm uppercase tracking-widest text-[#f1f3fc]/50 opacity-80 transition-colors hover:text-[#00FF9C] hover:opacity-100" href="assets/Adam_Sapiecha_CV.pdf" target="_blank" rel="noreferrer">CV</a>
       </div>
     </div>

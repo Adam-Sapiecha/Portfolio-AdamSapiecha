@@ -197,7 +197,6 @@ function injectMotionStyles() {
 
   document.head.appendChild(style);
 }
-
 function setupPageEntrance() {
   requestAnimationFrame(() => {
     body.classList.add("page-ready");

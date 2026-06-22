@@ -16,9 +16,7 @@ Statyczna strona portfolio/CV Adama Sapiechy. Projekt prezentuje profil IT, doś
 - ciemny interfejs z zielonymi akcentami,
 - przełączanie języka PL/EN zapisywane w `localStorage`,
 - responsywna nawigacja z menu mobilnym,
-- sekcja hero z CTA do projektów, kontaktu, CV, GitHuba i LinkedIna,
 - karty projektów rozwijane po kliknięciu,
-- statyczny formularz kontaktowy przygotowujący wiadomość mailową,
 - metadane SEO, Open Graph, Twitter Card i dane strukturalne,
 - poprawione focus states oraz obsługa `prefers-reduced-motion`.
 
@@ -70,7 +68,3 @@ https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/
 ## Link do działającej strony
 
 TODO: Po włączeniu GitHub Pages uzupełnić link, jeśli finalny adres różni się od przewidywanego adresu powyżej.
-
-## Uwagi
-
-Formularz kontaktowy nie wysyła danych do backendu. Po walidacji przygotowuje wiadomość w kliencie poczty użytkownika przez `mailto:`. Do prawdziwej wysyłki formularza należy dodać zweryfikowany endpoint lub usługę obsługującą formularze statyczne.

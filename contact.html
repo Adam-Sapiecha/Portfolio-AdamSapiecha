@@ -146,14 +146,14 @@
       </div>
 
       <div class="space-y-6">
-        <section class="rounded-lg border border-outline-variant/30 bg-[linear-gradient(180deg,#151a21_0%,#11161d_100%)] p-8 shadow-[0_22px_60px_rgba(0,0,0,0.18)]" aria-labelledby="social-heading">
+        <section class="rounded-[1.75rem] border border-outline-variant/30 bg-[linear-gradient(180deg,#151a21_0%,#11161d_100%)] p-8 shadow-[0_22px_60px_rgba(0,0,0,0.18)]" aria-labelledby="social-heading">
           <div class="space-y-6">
           <div>
             <p class="text-xs uppercase tracking-[0.22em] text-on-surface-variant" data-pl="Sociale i linki" data-en="Socials and links">Sociale i linki</p>
             <h2 id="social-heading" class="mt-3 font-headline text-4xl font-bold" data-pl="Znajdź mnie też tutaj" data-en="You can also find me here">Znajdź mnie też tutaj</h2>
           </div>
           <div class="grid gap-3">
-            <a class="group rounded-lg border border-outline-variant/20 bg-black/10 px-5 py-5 transition-colors hover:border-primary/50 hover:bg-surface-container-low" href="https://github.com/Adam-Sapiecha" target="_blank" rel="noreferrer">
+            <a class="group rounded-[1.25rem] border border-outline-variant/20 bg-black/10 px-5 py-5 transition-colors hover:border-primary/50 hover:bg-surface-container-low" href="https://github.com/Adam-Sapiecha" target="_blank" rel="noreferrer">
               <div class="flex items-center justify-between gap-4">
                 <div>
                   <p class="text-xs uppercase tracking-[0.18em] text-on-surface-variant" data-pl="Kod i projekty" data-en="Code and projects">Kod i projekty</p>
@@ -163,7 +163,7 @@
               </div>
               <p class="mt-3 text-sm text-on-surface-variant">github.com/Adam-Sapiecha</p>
             </a>
-            <a class="group rounded-lg border border-outline-variant/20 bg-black/10 px-5 py-5 transition-colors hover:border-secondary/50 hover:bg-surface-container-low" href="https://www.linkedin.com/in/adam-sapiecha-686057314/" target="_blank" rel="noreferrer">
+            <a class="group rounded-[1.25rem] border border-outline-variant/20 bg-black/10 px-5 py-5 transition-colors hover:border-secondary/50 hover:bg-surface-container-low" href="https://www.linkedin.com/in/adam-sapiecha-686057314/" target="_blank" rel="noreferrer">
               <div class="flex items-center justify-between gap-4">
                 <div>
                   <p class="text-xs uppercase tracking-[0.18em] text-on-surface-variant" data-pl="Doświadczenie i kontakt" data-en="Experience and networking">Doświadczenie i kontakt</p>
@@ -181,37 +181,6 @@
             </a>
           </div>
           </div>
-        </section>
-
-        <section class="rounded-lg border border-outline-variant/30 bg-surface-container p-8 shadow-[0_22px_60px_rgba(0,0,0,0.16)]" aria-labelledby="contact-form-heading">
-          <div class="mb-6">
-            <p class="text-xs uppercase tracking-[0.22em] text-on-surface-variant" data-pl="Szybka wiadomość" data-en="Quick message">Szybka wiadomość</p>
-            <h2 id="contact-form-heading" class="mt-3 font-headline text-3xl font-bold" data-pl="Napisz w kilku zdaniach" data-en="Write a few lines">Napisz w kilku zdaniach</h2>
-            <p class="mt-3 text-sm leading-relaxed text-on-surface-variant" data-pl="Formularz działa bez backendu: po poprawnym uzupełnieniu przygotuje wiadomość w Twoim kliencie poczty." data-en="This form has no backend: after validation it prepares an email in your mail client.">Formularz działa bez backendu: po poprawnym uzupełnieniu przygotuje wiadomość w Twoim kliencie poczty.</p>
-          </div>
-          <!-- TODO: Replace the mailto-only flow with a verified static-form service or backend endpoint if one is added later. -->
-          <form class="contact-form" data-contact-form data-mailto="adam.sapiecha05@gmail.com" novalidate>
-            <div class="form-field">
-              <label for="contact-name" data-pl="Imię" data-en="Name">Imię</label>
-              <input id="contact-name" name="name" type="text" autocomplete="name" required aria-describedby="contact-name-error" data-error-required-pl="Podaj imię." data-error-required-en="Enter your name." data-placeholder-pl="Jak się nazywasz?" data-placeholder-en="What is your name?" />
-              <p id="contact-name-error" class="field-error" aria-live="polite"></p>
-            </div>
-            <div class="form-field">
-              <label for="contact-email" data-pl="Email" data-en="Email">Email</label>
-              <input id="contact-email" name="email" type="email" autocomplete="email" required aria-describedby="contact-email-error" data-error-required-pl="Podaj adres email." data-error-required-en="Enter your email address." data-error-email-pl="Podaj poprawny adres email." data-error-email-en="Enter a valid email address." data-placeholder-pl="twoj@email.pl" data-placeholder-en="you@example.com" />
-              <p id="contact-email-error" class="field-error" aria-live="polite"></p>
-            </div>
-            <div class="form-field">
-              <label for="contact-message" data-pl="Wiadomość" data-en="Message">Wiadomość</label>
-              <textarea id="contact-message" name="message" required aria-describedby="contact-message-error" data-error-required-pl="Napisz krótką wiadomość." data-error-required-en="Write a short message." data-placeholder-pl="Opisz temat, projekt albo pytanie." data-placeholder-en="Describe the topic, project, or question."></textarea>
-              <p id="contact-message-error" class="field-error" aria-live="polite"></p>
-            </div>
-            <button class="button-primary w-full disabled:cursor-not-allowed disabled:opacity-60" type="submit">
-              <span class="material-symbols-outlined text-base" aria-hidden="true">outgoing_mail</span>
-              <span data-pl="Przygotuj maila" data-en="Prepare email">Przygotuj maila</span>
-            </button>
-            <p class="form-status" data-form-status aria-live="polite" data-success-pl="Wiadomość została przygotowana w kliencie poczty. Jeśli okno się nie otworzyło, napisz bezpośrednio na adres email widoczny obok." data-success-en="The message has been prepared in your email client. If no window opened, email me directly using the address shown nearby." data-error-pl="Uzupełnij poprawnie zaznaczone pola." data-error-en="Please correct the highlighted fields."></p>
-          </form>
         </section>
       </div>
     </div>

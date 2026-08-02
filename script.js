@@ -93,6 +93,14 @@
       element.setAttribute("placeholder", element.dataset[`placeholder${suffix}`]);
     });
 
+    document.querySelectorAll("[data-href-pl][data-href-en]").forEach((element) => {
+      element.setAttribute("href", getDatasetValue(element, normalizedLang, "href"));
+    });
+
+    document.querySelectorAll("[data-download-pl][data-download-en]").forEach((element) => {
+      element.setAttribute("download", getDatasetValue(element, normalizedLang, "download"));
+    });
+
     const title = normalizedLang === "en" ? body.dataset.titleEn : body.dataset.titlePl;
     const description = normalizedLang === "en" ? body.dataset.descriptionEn : body.dataset.descriptionPl;
 

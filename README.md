@@ -42,6 +42,13 @@ Statyczna strona portfolio/CV Adama Sapiechy. Projekt prezentuje profil IT, doś
 └── README.md
 ```
 
+## Pliki CV
+
+Linki do CV przełączają się razem z językiem strony. Docelowo dodaj do `assets/` dwa pliki:
+
+- `Adam_Sapiecha_CV_PL.pdf`
+- `Adam_Sapiecha_CV_EN.pdf`
+
 ## Uruchomienie lokalne
 
 Strona nie wymaga procesu build ani backendu. Możesz otworzyć `index.html` bezpośrednio w przeglądarce albo uruchomić prosty serwer statyczny, na przykład:

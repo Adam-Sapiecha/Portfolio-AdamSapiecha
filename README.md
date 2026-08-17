@@ -2,6 +2,11 @@
 
 Statyczna strona portfolio/CV Adama Sapiechy. Projekt prezentuje profil IT, doświadczenie, projekty, zainteresowania oraz dane kontaktowe w dwóch wersjach językowych: PL i EN.
 
+Repozytorium ma dwa warianty prowadzone na osobnych branchach:
+
+- `main` - wersja ogólna,
+- `hpc` - wersja sprofilowana pod C++, Linux, performance engineering, GPU i HPC.
+
 ## Technologie
 
 - HTML5
@@ -44,10 +49,11 @@ Statyczna strona portfolio/CV Adama Sapiechy. Projekt prezentuje profil IT, doś
 
 ## Pliki CV
 
-Linki do CV przełączają się razem z językiem strony. Docelowo dodaj do `assets/` dwa pliki:
+Linki do CV wskazują na istniejący plik:
 
-- `Adam_Sapiecha_CV_PL.pdf`
-- `Adam_Sapiecha_CV_EN.pdf`
+- `assets/Adam_Sapiecha_CV.pdf`
+
+Branch `hpc` ma własną kopię tego pliku w `assets/`.
 
 ## Uruchomienie lokalne
 

@@ -110,6 +110,25 @@ main a[href^="tel"] {
   overflow-wrap: anywhere;
 }
 
+@media (max-width: 1023px) {
+  [data-mobile-nav] {
+    position: fixed;
+    top: 80px;
+    left: 2rem;
+    right: 2rem;
+    z-index: 49;
+    border: 1px solid rgba(68, 72, 79, 0.72);
+    border-radius: 1rem;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.36);
+  }
+
+  [data-mobile-nav] a {
+    display: block;
+    min-height: 44px;
+    padding: 0.55rem 0;
+  }
+}
+
 @media (max-width: 767px) {
   .site-nav > div,
   main > section,
@@ -139,20 +158,9 @@ main a[href^="tel"] {
   }
 
   [data-mobile-nav] {
-    position: fixed;
     top: 72px;
     left: 0.75rem;
     right: 0.75rem;
-    z-index: 49;
-    border: 1px solid rgba(68, 72, 79, 0.72);
-    border-radius: 1rem;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.36);
-  }
-
-  [data-mobile-nav] a {
-    display: block;
-    min-height: 44px;
-    padding: 0.55rem 0;
   }
 }
 

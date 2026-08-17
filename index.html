@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Adam Sapiecha - Portfolio IT i developer</title>
-  <meta name="description" content="Portfolio Adama Sapiechy: developer i specjalista IT łączący backend, QA, Linux embedded, dane oraz AI." />
+  <title>Adam Sapiecha - Profil HPC i Performance</title>
+  <meta name="description" content="Sprofilowana wersja portfolio Adama Sapiechy pod C++, Linux, performance engineering, GPU, CUDA, HPC i ML systems." />
   <link rel="canonical" href="https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <meta property="og:type" content="profile" />
   <meta property="og:locale" content="pl_PL" />
-  <meta property="og:title" content="Adam Sapiecha - Portfolio IT i developer" />
-  <meta property="og:description" content="Portfolio Adama Sapiechy: developer i specjalista IT łączący backend, QA, Linux embedded, dane oraz AI." />
+  <meta property="og:title" content="Adam Sapiecha - Profil HPC i Performance" />
+  <meta property="og:description" content="Sprofilowana wersja portfolio Adama Sapiechy pod C++, Linux, performance engineering, GPU, CUDA, HPC i ML systems." />
   <meta property="og:url" content="https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/" />
   <meta property="og:image" content="https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/assets/Adam%20Sapiecha%20(1).jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Adam Sapiecha - Portfolio IT i developer" />
-  <meta name="twitter:description" content="Portfolio Adama Sapiechy: developer i specjalista IT łączący backend, QA, Linux embedded, dane oraz AI." />
+  <meta name="twitter:title" content="Adam Sapiecha - Profil HPC i Performance" />
+  <meta name="twitter:description" content="Sprofilowana wersja portfolio Adama Sapiechy pod C++, Linux, performance engineering, GPU, CUDA, HPC i ML systems." />
   <meta name="twitter:image" content="https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/assets/Adam%20Sapiecha%20(1).jpg" />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -27,68 +27,25 @@
       theme: {
         extend: {
           colors: {
-            "primary-dim": "#00ec90",
-            "on-error": "#490006",
-            "surface-bright": "#262c36",
-            "secondary-fixed-dim": "#37d4ff",
-            "on-secondary-container": "#eef9ff",
-            "surface-container-low": "#0f141a",
-            "on-background": "#f1f3fc",
-            "on-primary-fixed": "#004627",
-            "primary-container": "#00fc9a",
-            "tertiary-container": "#7000ff",
-            "on-secondary": "#004050",
-            "on-tertiary-fixed": "#1f0052",
-            "on-tertiary": "#290067",
-            "inverse-primary": "#006d40",
-            "on-primary-fixed-variant": "#00653b",
-            "surface-container-lowest": "#000000",
-            "error-container": "#9f0519",
             "surface": "#0a0e14",
-            "on-secondary-fixed": "#003a48",
-            "secondary-fixed": "#80deff",
             "surface-container": "#151a21",
-            "primary-fixed-dim": "#00ec90",
-            "tertiary-fixed": "#bda1ff",
-            "secondary": "#00cffc",
-            "surface-dim": "#0a0e14",
-            "inverse-on-surface": "#51555c",
-            "secondary-dim": "#00c0ea",
-            "on-tertiary-container": "#f8f1ff",
-            "secondary-container": "#00677f",
-            "on-tertiary-fixed-variant": "#4700a7",
-            "surface-container-highest": "#20262f",
-            "tertiary-fixed-dim": "#b190ff",
-            "outline": "#72757d",
-            "surface-variant": "#20262f",
-            "background": "#0a0e14",
-            "tertiary-dim": "#874cff",
-            "on-surface-variant": "#a8abb3",
+            "surface-container-low": "#0f141a",
             "surface-container-high": "#1b2028",
-            "error": "#ff716c",
-            "on-primary-container": "#005b34",
-            "tertiary": "#ac89ff",
-            "outline-variant": "#44484f",
-            "on-error-container": "#ffa8a3",
-            "primary-fixed": "#00fc9a",
-            "error-dim": "#d7383b",
-            "on-secondary-fixed-variant": "#00586d",
-            "surface-tint": "#a1ffc2",
+            "surface-container-highest": "#20262f",
+            "on-background": "#f1f3fc",
             "on-surface": "#f1f3fc",
-            "inverse-surface": "#f8f9ff",
+            "on-surface-variant": "#a8abb3",
             "primary": "#a1ffc2",
-            "on-primary": "#00643a"
+            "primary-container": "#00fc9a",
+            "on-primary": "#00643a",
+            "secondary": "#00cffc",
+            "tertiary": "#ac89ff",
+            "outline-variant": "#44484f"
           },
           fontFamily: {
             "headline": ["Space Grotesk"],
             "body": ["Inter"],
             "label": ["Space Grotesk"]
-          },
-          borderRadius: {
-            "DEFAULT": "0.125rem",
-            "lg": "0.25rem",
-            "xl": "0.5rem",
-            "full": "0.75rem"
           }
         }
       }
@@ -98,41 +55,54 @@
     .material-symbols-outlined {
       font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
     }
-    .glass-card {
-      background: rgba(32, 38, 47, 0.4);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(68, 72, 79, 0.15);
+
+    .system-grid {
+      background-image:
+        linear-gradient(rgba(68, 72, 79, 0.22) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(68, 72, 79, 0.22) 1px, transparent 1px);
+      background-size: 42px 42px;
     }
-    .tonal-shift {
-      transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+
+    .signal-panel {
+      border: 1px solid rgba(68, 72, 79, 0.46);
+      background: rgba(21, 26, 33, 0.86);
     }
-    .tonal-shift:hover {
-      transform: translateY(-4px);
+
+    .skill-chip {
+      border: 1px solid rgba(68, 72, 79, 0.52);
+      background: rgba(27, 32, 40, 0.78);
+      color: #f1f3fc;
+    }
+
+    .track-card {
+      border: 1px solid rgba(68, 72, 79, 0.42);
+      background: linear-gradient(180deg, rgba(27, 32, 40, 0.92), rgba(15, 20, 26, 0.92));
+    }
+
+    .roadmap-item {
+      border-left: 2px solid rgba(0, 252, 154, 0.48);
     }
   </style>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Adam Sapiecha",
+      "@type": "ProfilePage",
       "url": "https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/",
-      "image": "https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/assets/Adam%20Sapiecha%20(1).jpg",
-      "email": "mailto:adam.sapiecha05@gmail.com",
-      "telephone": "+48507593289",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Warszawa",
-        "addressCountry": "PL"
-      },
-      "sameAs": [
-        "https://github.com/Adam-Sapiecha",
-        "https://www.linkedin.com/in/adam-sapiecha-686057314/"
-      ],
-      "knowsAbout": ["Python", "FastAPI", "Node.js", "QA", "Linux", "Embedded Linux", "Linux kernel", "SoC", "Data Analysis", "AI", "RAG", "Flutter"]
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Adam Sapiecha",
+        "url": "https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/",
+        "image": "https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/assets/Adam%20Sapiecha%20(1).jpg",
+        "sameAs": [
+          "https://github.com/Adam-Sapiecha",
+          "https://www.linkedin.com/in/adam-sapiecha-686057314/"
+        ],
+        "knowsAbout": ["C++", "Python", "Linux", "Embedded Linux", "Linux kernel", "Computer Architecture", "Concurrency", "Performance Engineering", "CUDA", "Parallel Computing", "HPC", "Numerical Computing", "ML Systems"]
+      }
     }
   </script>
 </head>
-<body class="bg-surface text-on-background font-body selection:bg-primary-container selection:text-on-primary-container" data-page="home" data-title-pl="Adam Sapiecha - Portfolio IT i developer" data-title-en="Adam Sapiecha - IT portfolio and developer" data-description-pl="Portfolio Adama Sapiechy: developer i specjalista IT łączący backend, QA, Linux embedded, dane oraz AI." data-description-en="Adam Sapiecha's portfolio: an IT specialist and developer combining backend, QA, embedded Linux, data, and AI.">
+<body class="bg-surface text-on-background font-body" data-page="home" data-title-pl="Adam Sapiecha - Profil HPC i Performance" data-title-en="Adam Sapiecha - HPC and Performance profile" data-description-pl="Sprofilowana wersja portfolio Adama Sapiechy pod C++, Linux, performance engineering, GPU, CUDA, HPC i ML systems." data-description-en="A focused version of Adam Sapiecha's portfolio for C++, Linux, performance engineering, GPU, CUDA, HPC, and ML systems.">
   <a class="skip-link" href="#main-content" data-pl="Przejdź do treści" data-en="Skip to content">Przejdź do treści</a>
   <nav class="site-nav fixed top-0 z-50 w-full bg-[#0a0e14]/80 backdrop-blur-xl shadow-[0_0_20px_rgba(0,255,156,0.1)]" aria-label="Główna nawigacja" data-aria-label-pl="Główna nawigacja" data-aria-label-en="Main navigation">
     <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-8">
@@ -160,63 +130,37 @@
   </nav>
 
   <main id="main-content" class="pt-20">
-    <section class="mx-auto flex min-h-screen max-w-7xl items-center px-8 py-24">
-      <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
-        <div class="space-y-8 lg:col-span-7">
-          <div class="space-y-4">
-            <span class="font-label text-sm uppercase tracking-[0.2em] text-primary" data-pl="Specjalista IT i developer" data-en="IT Specialist and Developer">Specjalista IT i developer</span>
-            <h1 class="font-headline text-6xl font-bold leading-[0.9] tracking-tighter text-on-surface md:text-8xl" data-pl="Adam Sapiecha" data-en="Adam Sapiecha">Adam Sapiecha</h1>
-            <p class="max-w-2xl text-lg leading-relaxed text-on-surface-variant" data-pl="Łączę development, QA, Linux embedded, dane i AI. Pracuję w środowisku Linux przy projektach automotive/SoC, a wcześniej rozwijałem backend, aplikacje webowe i rozwiązania oparte o AI." data-en="I combine development, QA, embedded Linux, data, and AI. I work in Linux environments on automotive/SoC projects, and previously built backend systems, web apps, and AI-based solutions.">Łączę development, QA, Linux embedded, dane i AI. Pracuję w środowisku Linux przy projektach automotive/SoC, a wcześniej rozwijałem backend, aplikacje webowe i rozwiązania oparte o AI.</p>
+    <section class="system-grid px-8 py-24">
+      <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div class="space-y-8">
+          <div class="space-y-5">
+            <span class="font-label text-sm uppercase tracking-[0.26em] text-primary" data-pl="Sprofilowany kierunek zawodowy" data-en="Focused career direction">Sprofilowany kierunek zawodowy</span>
+            <h1 class="font-headline text-5xl font-bold leading-[0.92] tracking-tighter text-on-surface md:text-7xl" data-pl="C++ / Linux / Performance / GPU / HPC" data-en="C++ / Linux / Performance / GPU / HPC">C++ / Linux / Performance / GPU / HPC</h1>
+            <p class="max-w-3xl text-lg leading-relaxed text-on-surface-variant" data-pl="Ta wersja portfolio pokazuje mnie pod przejście w stronę performance engineering, GPU i HPC: mocny C++, Python jako narzędzie analityczne, Linux jako główne środowisko pracy oraz zainteresowanie architekturą komputerów, równoległością i systemami ML." data-en="This version of the portfolio is focused on moving toward performance engineering, GPU, and HPC: strong C++, Python as an analysis tool, Linux as the primary working environment, and an interest in computer architecture, parallelism, and ML systems.">Ta wersja portfolio pokazuje mnie pod przejście w stronę performance engineering, GPU i HPC: mocny C++, Python jako narzędzie analityczne, Linux jako główne środowisko pracy oraz zainteresowanie architekturą komputerów, równoległością i systemami ML.</p>
           </div>
-          <div class="grid grid-cols-1 gap-8 pt-8 md:grid-cols-3">
-            <div class="space-y-4">
-              <h3 class="border-l-2 border-primary-container pl-4 text-xs uppercase tracking-widest text-on-surface-variant font-label" data-pl="Edukacja" data-en="Education">Edukacja</h3>
-              <div class="space-y-2">
-                <p class="font-bold text-on-surface" data-pl="Polsko-Japońska Akademia Technik Komputerowych" data-en="Polish-Japanese Academy of Information Technology">Polsko-Japońska Akademia Technik Komputerowych</p>
-                <p class="text-sm text-on-surface-variant" data-pl="Informatyka, inżynier" data-en="Computer Science, Engineer">Informatyka, inżynier</p>
-                <p class="font-mono text-xs text-primary" data-pl="2023 - obecnie" data-en="2023 - present">2023 - obecnie</p>
-              </div>
+          <div class="grid gap-4 sm:grid-cols-3">
+            <div class="signal-panel rounded-sm p-5">
+              <p class="font-mono text-xs uppercase tracking-[0.18em] text-primary">TARGET</p>
+              <p class="mt-3 font-headline text-2xl font-bold" data-pl="GPU / HPC Engineer" data-en="GPU / HPC Engineer">GPU / HPC Engineer</p>
             </div>
-            <div class="space-y-4">
-              <h3 class="border-l-2 border-secondary pl-4 text-xs uppercase tracking-widest text-on-surface-variant font-label" data-pl="Doświadczenie" data-en="Experience">Doświadczenie</h3>
-              <div class="space-y-5">
-                <div class="space-y-1">
-                  <p class="font-bold text-on-surface">Samsung R&amp;D Institute</p>
-                  <p class="text-sm text-on-surface-variant" data-pl="Automotive Software Tester with Python, Linux i SoC" data-en="Automotive Software Tester with Python, Linux, and SoC">Automotive Software Tester with Python, Linux i SoC</p>
-                  <p class="font-mono text-xs text-secondary" data-pl="od 1 kwietnia 2026" data-en="from April 1, 2026">od 1 kwietnia 2026</p>
-                </div>
-                <div class="space-y-1 border-t border-outline-variant/40 pt-4">
-                  <p class="font-bold text-on-surface">Fundacja Sorno</p>
-                  <p class="text-sm text-on-surface-variant" data-pl="Fullstack Developer" data-en="Fullstack Developer">Fullstack Developer</p>
-                  <p class="font-mono text-xs text-on-surface-variant" data-pl="2024 - 31 marca 2026" data-en="2024 - March 31, 2026">2024 - 31 marca 2026</p>
-                </div>
-                <div class="space-y-1 border-t border-outline-variant/40 pt-4">
-                  <p class="font-bold text-on-surface">Tikrow</p>
-                  <p class="text-sm text-on-surface-variant" data-pl="QA Tester i analiza danych" data-en="QA Tester and data analysis">QA Tester i analiza danych</p>
-                  <p class="font-mono text-xs text-on-surface-variant" data-pl="2024 - 31 marca 2026" data-en="2024 - March 31, 2026">2024 - 31 marca 2026</p>
-                </div>
-              </div>
+            <div class="signal-panel rounded-sm p-5">
+              <p class="font-mono text-xs uppercase tracking-[0.18em] text-secondary">BASE</p>
+              <p class="mt-3 font-headline text-2xl font-bold" data-pl="C++ + Linux" data-en="C++ + Linux">C++ + Linux</p>
             </div>
-            <div class="space-y-4">
-              <h3 class="border-l-2 border-tertiary pl-4 text-xs uppercase tracking-widest text-on-surface-variant font-label" data-pl="Kursy" data-en="Courses">Kursy</h3>
-              <div class="space-y-5">
-                <div class="space-y-1">
-                  <p class="font-bold text-on-surface">AWS Academy</p>
-                  <p class="text-sm text-on-surface-variant" data-pl="Cloud Foundations i rozwiązania chmurowe" data-en="Cloud foundations and cloud solutions">Cloud Foundations i rozwiązania chmurowe</p>
-                </div>
-                <div class="space-y-1 border-t border-outline-variant/40 pt-4">
-                  <p class="font-bold text-on-surface" data-pl="Intel + Politechnika Poznańska" data-en="Intel + Poznan University of Technology">Intel + Politechnika Poznańska</p>
-                  <p class="text-sm text-on-surface-variant" data-pl="RAG i budowa agentów AI" data-en="RAG and AI agent systems">RAG i budowa agentów AI</p>
-                </div>
-              </div>
+            <div class="signal-panel rounded-sm p-5">
+              <p class="font-mono text-xs uppercase tracking-[0.18em] text-tertiary">NEXT</p>
+              <p class="mt-3 font-headline text-2xl font-bold" data-pl="CUDA + HPC" data-en="CUDA + HPC">CUDA + HPC</p>
             </div>
           </div>
         </div>
-        <div class="relative lg:col-span-5">
-          <div class="group relative aspect-[4/5] overflow-hidden rounded-sm bg-surface-container-high">
-            <img class="h-full w-full object-cover object-center opacity-95 transition-all duration-700 group-hover:scale-[1.02] group-hover:opacity-100" src="assets/Adam Sapiecha (1).jpg" width="1068" height="1556" loading="eager" fetchpriority="high" decoding="async" alt="Portret Adama Sapiechy" data-alt-pl="Portret Adama Sapiechy" data-alt-en="Adam Sapiecha portrait" />
-            <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
-            <div class="absolute -bottom-4 -right-4 h-32 w-32 border-b-2 border-r-2 border-primary-container opacity-50"></div>
+
+        <div class="grid gap-6 md:grid-cols-[0.78fr_1fr] lg:grid-cols-1">
+          <div class="overflow-hidden rounded-sm border border-outline-variant/40 bg-surface-container-high">
+            <img class="h-full w-full object-cover object-center opacity-90" src="assets/Adam Sapiecha (1).jpg" width="1068" height="1556" loading="eager" fetchpriority="high" decoding="async" alt="Portret Adama Sapiechy" data-alt-pl="Portret Adama Sapiechy" data-alt-en="Adam Sapiecha portrait" />
+          </div>
+          <div class="signal-panel rounded-sm p-6">
+            <p class="font-label text-xs uppercase tracking-[0.22em] text-on-surface-variant" data-pl="Ścieżka" data-en="Path">Ścieżka</p>
+            <p class="mt-4 font-headline text-3xl font-bold leading-tight" data-pl="C++ Engineer → Performance Engineer → GPU / HPC Engineer → ML Systems" data-en="C++ Engineer → Performance Engineer → GPU / HPC Engineer → ML Systems">C++ Engineer → Performance Engineer → GPU / HPC Engineer → ML Systems</p>
           </div>
         </div>
       </div>
@@ -224,51 +168,163 @@
 
     <section class="bg-surface-container-low px-8 py-20">
       <div class="mx-auto max-w-7xl">
-        <div class="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div class="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <h2 class="font-headline text-4xl font-bold" data-pl="Stack technologii" data-en="Tech stack">Stack technologii</h2>
-            <p class="mt-3 max-w-3xl text-on-surface-variant" data-pl="Technologie, w których najczęściej pracuję przy backendzie, webie, Linuxie, embedded, danych, AI i testowaniu." data-en="The technologies I use most often across backend, web, Linux, embedded, data, AI, and testing.">Technologie, w których najczęściej pracuję przy backendzie, webie, Linuxie, embedded, danych, AI i testowaniu.</p>
+            <h2 class="font-headline text-4xl font-bold" data-pl="Profil techniczny" data-en="Technical profile">Profil techniczny</h2>
+            <p class="mt-3 max-w-3xl text-on-surface-variant" data-pl="Rdzeń profilu jest systemsowy: języki niskopoziomowe, Linux, rozumienie sprzętu, równoległość i mierzalna wydajność." data-en="The core of the profile is systems-oriented: low-level languages, Linux, hardware understanding, parallelism, and measurable performance.">Rdzeń profilu jest systemsowy: języki niskopoziomowe, Linux, rozumienie sprzętu, równoległość i mierzalna wydajność.</p>
           </div>
-          <span class="font-mono text-sm text-primary">STACK_OVERVIEW</span>
+          <span class="font-mono text-sm text-primary">SYSTEMS_PROFILE</span>
         </div>
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <article class="rounded-sm border border-outline-variant/40 bg-surface-container p-8">
-            <p class="mb-4 font-label text-xs uppercase tracking-[0.18em] text-primary" data-pl="Backend & Cloud" data-en="Backend & Cloud">Backend & Cloud</p>
-            <div class="space-y-3 text-sm leading-relaxed text-on-surface-variant">
-              <p>Python • FastAPI • Node.js • REST API</p>
-              <p>SQL • MongoDB • Firebase</p>
-              <p>GCP • AWS • Docker</p>
-            </div>
+        <div class="grid gap-6 lg:grid-cols-3">
+          <article class="track-card rounded-sm p-8">
+            <p class="mb-4 font-label text-xs uppercase tracking-[0.18em] text-primary">C++ / Systems</p>
+            <p class="text-sm leading-relaxed text-on-surface-variant" data-pl="Priorytet: C++17/20, RAII, ownership, move semantics, STL, templates, memory layout, atomics, memory model i multithreading." data-en="Priority: C++17/20, RAII, ownership, move semantics, STL, templates, memory layout, atomics, memory model, and multithreading.">Priorytet: C++17/20, RAII, ownership, move semantics, STL, templates, memory layout, atomics, memory model i multithreading.</p>
           </article>
-
-          <article class="rounded-sm border border-outline-variant/40 bg-surface-container p-8">
-            <p class="mb-4 font-label text-xs uppercase tracking-[0.18em] text-secondary" data-pl="Frontend & Mobile" data-en="Frontend & Mobile">Frontend & Mobile</p>
-            <div class="space-y-3 text-sm leading-relaxed text-on-surface-variant">
-              <p>JavaScript • HTML • CSS • Flutter</p>
-            </div>
+          <article class="track-card rounded-sm p-8">
+            <p class="mb-4 font-label text-xs uppercase tracking-[0.18em] text-secondary">Linux / Embedded</p>
+            <p class="text-sm leading-relaxed text-on-surface-variant" data-pl="Główne środowisko pracy: Linux, Bash, SSH, procesy, wątki, file descriptors, /proc, logi, diagnostyka i praca z płytkami SoC." data-en="Primary working environment: Linux, Bash, SSH, processes, threads, file descriptors, /proc, logs, diagnostics, and work with SoC boards.">Główne środowisko pracy: Linux, Bash, SSH, procesy, wątki, file descriptors, /proc, logi, diagnostyka i praca z płytkami SoC.</p>
           </article>
-
-          <article class="rounded-sm border border-outline-variant/40 bg-surface-container p-8">
-            <p class="mb-4 font-label text-xs uppercase tracking-[0.18em] text-primary" data-pl="Linux & Embedded" data-en="Linux & Embedded">Linux & Embedded</p>
-            <div class="space-y-3 text-sm leading-relaxed text-on-surface-variant">
-              <p>Linux • Bash • SSH • Git</p>
-              <p data-pl="SoC • Embedded Linux • Linux kernel" data-en="SoC • Embedded Linux • Linux kernel">SoC • Embedded Linux • Linux kernel</p>
-              <p data-pl="płytki testowe • logi • diagnostyka" data-en="test boards • logs • diagnostics">płytki testowe • logi • diagnostyka</p>
-            </div>
-          </article>
-
-          <article class="rounded-sm border border-outline-variant/40 bg-surface-container p-8">
-            <p class="mb-4 font-label text-xs uppercase tracking-[0.18em] text-tertiary" data-pl="Data & AI" data-en="Data & AI">Data & AI</p>
-            <div class="space-y-3 text-sm leading-relaxed text-on-surface-variant">
-              <p data-pl="Data Analysis" data-en="Data Analysis">Data Analysis</p>
-              <p>OpenAI API • Embeddings • RAG</p>
-              <p>YOLOv8 • BlazePose • OpenVINO • PyTorch</p>
-            </div>
+          <article class="track-card rounded-sm p-8">
+            <p class="mb-4 font-label text-xs uppercase tracking-[0.18em] text-tertiary">Performance / HPC</p>
+            <p class="text-sm leading-relaxed text-on-surface-variant" data-pl="Kierunek: profiling, benchmarking, cache, SIMD, OpenMP, oneTBB, CUDA, Nsight, MPI i numeryka obliczeniowa." data-en="Direction: profiling, benchmarking, cache, SIMD, OpenMP, oneTBB, CUDA, Nsight, MPI, and numerical computing.">Kierunek: profiling, benchmarking, cache, SIMD, OpenMP, oneTBB, CUDA, Nsight, MPI i numeryka obliczeniowa.</p>
           </article>
         </div>
       </div>
     </section>
 
+    <section class="px-8 py-20">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-12">
+          <h2 class="font-headline text-4xl font-bold" data-pl="Stack docelowy" data-en="Target stack">Stack docelowy</h2>
+          <p class="mt-3 max-w-3xl text-on-surface-variant" data-pl="Najważniejsze obszary, które budują spójny profil pod performance, GPU i HPC." data-en="The main areas that form a coherent profile for performance, GPU, and HPC work.">Najważniejsze obszary, które budują spójny profil pod performance, GPU i HPC.</p>
+        </div>
+        <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <div class="signal-panel rounded-sm p-6">
+            <p class="mb-4 font-label text-xs uppercase tracking-[0.18em] text-primary">Languages</p>
+            <div class="flex flex-wrap gap-2 text-xs uppercase tracking-widest">
+              <span class="skill-chip rounded-full px-3 py-2">C++17/20</span>
+              <span class="skill-chip rounded-full px-3 py-2">Python</span>
+              <span class="skill-chip rounded-full px-3 py-2">Bash</span>
+            </div>
+          </div>
+          <div class="signal-panel rounded-sm p-6">
+            <p class="mb-4 font-label text-xs uppercase tracking-[0.18em] text-secondary">Systems</p>
+            <div class="flex flex-wrap gap-2 text-xs uppercase tracking-widest">
+              <span class="skill-chip rounded-full px-3 py-2">Linux</span>
+              <span class="skill-chip rounded-full px-3 py-2">Embedded</span>
+              <span class="skill-chip rounded-full px-3 py-2">Kernel</span>
+              <span class="skill-chip rounded-full px-3 py-2">SoC</span>
+            </div>
+          </div>
+          <div class="signal-panel rounded-sm p-6">
+            <p class="mb-4 font-label text-xs uppercase tracking-[0.18em] text-tertiary">Performance</p>
+            <div class="flex flex-wrap gap-2 text-xs uppercase tracking-widest">
+              <span class="skill-chip rounded-full px-3 py-2">perf</span>
+              <span class="skill-chip rounded-full px-3 py-2">GDB</span>
+              <span class="skill-chip rounded-full px-3 py-2">Valgrind</span>
+              <span class="skill-chip rounded-full px-3 py-2">VTune</span>
+            </div>
+          </div>
+          <div class="signal-panel rounded-sm p-6">
+            <p class="mb-4 font-label text-xs uppercase tracking-[0.18em] text-primary">GPU / HPC</p>
+            <div class="flex flex-wrap gap-2 text-xs uppercase tracking-widest">
+              <span class="skill-chip rounded-full px-3 py-2">CUDA</span>
+              <span class="skill-chip rounded-full px-3 py-2">OpenMP</span>
+              <span class="skill-chip rounded-full px-3 py-2">MPI</span>
+              <span class="skill-chip rounded-full px-3 py-2">Nsight</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-surface-container-low px-8 py-20">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+          <div>
+            <span class="font-label text-sm uppercase tracking-[0.25em] text-primary" data-pl="Kierunek rozwoju" data-en="Development direction">Kierunek rozwoju</span>
+            <h2 class="mt-4 font-headline text-4xl font-bold leading-tight" data-pl="Od obecnej pracy systemsowej do projektów wydajnościowych." data-en="From current systems work toward performance projects.">Od obecnej pracy systemsowej do projektów wydajnościowych.</h2>
+            <p class="mt-5 text-on-surface-variant" data-pl="Obecne doświadczenie w Linuxie, testach automotive, płytkach i automatyzacji traktuję jako bazę pod bardziej niskopoziomowe i wydajnościowe projekty w C++." data-en="I treat my current experience with Linux, automotive testing, boards, and automation as a base for more low-level and performance-oriented C++ projects.">Obecne doświadczenie w Linuxie, testach automotive, płytkach i automatyzacji traktuję jako bazę pod bardziej niskopoziomowe i wydajnościowe projekty w C++.</p>
+          </div>
+          <div class="grid gap-5">
+            <article class="roadmap-item bg-surface-container p-6">
+              <p class="font-mono text-xs uppercase tracking-[0.18em] text-primary">01 / BASE</p>
+              <h3 class="mt-3 font-headline text-2xl font-bold" data-pl="C++, Linux, OS, architektura komputerów" data-en="C++, Linux, OS, computer architecture">C++, Linux, OS, architektura komputerów</h3>
+              <p class="mt-3 text-sm leading-relaxed text-on-surface-variant" data-pl="Budowanie fundamentu: pamięć, cache, procesy, wątki, synchronizacja, syscalls, debugowanie i narzędzia systemsowe." data-en="Building the foundation: memory, cache, processes, threads, synchronization, syscalls, debugging, and systems tools.">Budowanie fundamentu: pamięć, cache, procesy, wątki, synchronizacja, syscalls, debugowanie i narzędzia systemsowe.</p>
+            </article>
+            <article class="roadmap-item bg-surface-container p-6">
+              <p class="font-mono text-xs uppercase tracking-[0.18em] text-secondary">02 / PERFORMANCE</p>
+              <h3 class="mt-3 font-headline text-2xl font-bold" data-pl="Profilowanie, benchmarki, SIMD i równoległość" data-en="Profiling, benchmarks, SIMD, and parallelism">Profilowanie, benchmarki, SIMD i równoległość</h3>
+              <p class="mt-3 text-sm leading-relaxed text-on-surface-variant" data-pl="Umiejętność odpowiedzi na pytanie: dlaczego program jest wolny, czy ogranicza go CPU, pamięć, I/O, synchronizacja albo sieć." data-en="The ability to answer why a program is slow, and whether it is limited by CPU, memory, I/O, synchronization, or networking.">Umiejętność odpowiedzi na pytanie: dlaczego program jest wolny, czy ogranicza go CPU, pamięć, I/O, synchronizacja albo sieć.</p>
+            </article>
+            <article class="roadmap-item bg-surface-container p-6">
+              <p class="font-mono text-xs uppercase tracking-[0.18em] text-tertiary">03 / GPU + HPC</p>
+              <h3 class="mt-3 font-headline text-2xl font-bold" data-pl="CUDA, OpenMP, MPI i numeryka" data-en="CUDA, OpenMP, MPI, and numerical computing">CUDA, OpenMP, MPI i numeryka</h3>
+              <p class="mt-3 text-sm leading-relaxed text-on-surface-variant" data-pl="Rozszerzenie projektów na GPU i klastry: kernel launch, occupancy, memory bandwidth, reductions, scaling i komunikacja między procesami." data-en="Extending projects to GPUs and clusters: kernel launch, occupancy, memory bandwidth, reductions, scaling, and inter-process communication.">Rozszerzenie projektów na GPU i klastry: kernel launch, occupancy, memory bandwidth, reductions, scaling i komunikacja między procesami.</p>
+            </article>
+            <article class="roadmap-item bg-surface-container p-6">
+              <p class="font-mono text-xs uppercase tracking-[0.18em] text-primary">04 / ML SYSTEMS</p>
+              <h3 class="mt-3 font-headline text-2xl font-bold" data-pl="Inference, TensorRT, Triton i NCCL" data-en="Inference, TensorRT, Triton, and NCCL">Inference, TensorRT, Triton i NCCL</h3>
+              <p class="mt-3 text-sm leading-relaxed text-on-surface-variant" data-pl="Dalszy kierunek po solidnym C++/systems/CUDA: optymalizacja inference, batching, mixed precision, throughput vs latency i pamięć GPU." data-en="A later direction after solid C++/systems/CUDA foundations: inference optimization, batching, mixed precision, throughput vs latency, and GPU memory.">Dalszy kierunek po solidnym C++/systems/CUDA: optymalizacja inference, batching, mixed precision, throughput vs latency i pamięć GPU.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-8 py-20">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h2 class="font-headline text-4xl font-bold" data-pl="Projekty pod ten profil" data-en="Projects for this profile">Projekty pod ten profil</h2>
+            <p class="mt-3 max-w-3xl text-on-surface-variant" data-pl="Docelowo portfolio ma pokazać drogę od prostego baseline'u do mierzalnej optymalizacji CPU, GPU i rozproszonego HPC." data-en="The portfolio should ultimately show the path from a simple baseline to measurable CPU, GPU, and distributed HPC optimization.">Docelowo portfolio ma pokazać drogę od prostego baseline'u do mierzalnej optymalizacji CPU, GPU i rozproszonego HPC.</p>
+          </div>
+          <span class="font-mono text-sm text-primary">PROJECT_ROADMAP</span>
+        </div>
+        <div class="grid gap-6 lg:grid-cols-2">
+          <article class="track-card rounded-sm p-8">
+            <p class="font-mono text-xs uppercase tracking-[0.18em] text-primary">CPU PERFORMANCE</p>
+            <h3 class="mt-4 font-headline text-3xl font-bold" data-pl="Symulator N-body / particle simulator" data-en="N-body / particle simulator">Symulator N-body / particle simulator</h3>
+            <p class="mt-4 text-sm leading-relaxed text-on-surface-variant" data-pl="Python baseline, C++ baseline, optymalizacja cache, multithreading, SIMD i benchmarki pokazujące realny wpływ zmian." data-en="Python baseline, C++ baseline, cache optimization, multithreading, SIMD, and benchmarks showing the real impact of changes.">Python baseline, C++ baseline, optymalizacja cache, multithreading, SIMD i benchmarki pokazujące realny wpływ zmian.</p>
+          </article>
+          <article class="track-card rounded-sm p-8">
+            <p class="font-mono text-xs uppercase tracking-[0.18em] text-secondary">GPU / CUDA</p>
+            <h3 class="mt-4 font-headline text-3xl font-bold" data-pl="Rozszerzenie obliczeń na GPU" data-en="Moving computation to GPU">Rozszerzenie obliczeń na GPU</h3>
+            <p class="mt-4 text-sm leading-relaxed text-on-surface-variant" data-pl="CUDA kernels, memory coalescing, occupancy, CPU vs GPU, profilowanie w Nsight Systems i Nsight Compute." data-en="CUDA kernels, memory coalescing, occupancy, CPU vs GPU, and profiling in Nsight Systems and Nsight Compute.">CUDA kernels, memory coalescing, occupancy, CPU vs GPU, profilowanie w Nsight Systems i Nsight Compute.</p>
+          </article>
+          <article class="track-card rounded-sm p-8">
+            <p class="font-mono text-xs uppercase tracking-[0.18em] text-tertiary">SCIENTIFIC COMPUTING</p>
+            <h3 class="mt-4 font-headline text-3xl font-bold" data-pl="Heat equation / wave equation" data-en="Heat equation / wave equation">Heat equation / wave equation</h3>
+            <p class="mt-4 text-sm leading-relaxed text-on-surface-variant" data-pl="C++, Eigen, OpenMP, CUDA, stabilność numeryczna, sparse matrices i porównanie skalowania dla różnych rozmiarów problemu." data-en="C++, Eigen, OpenMP, CUDA, numerical stability, sparse matrices, and scaling comparison across different problem sizes.">C++, Eigen, OpenMP, CUDA, stabilność numeryczna, sparse matrices i porównanie skalowania dla różnych rozmiarów problemu.</p>
+          </article>
+          <article class="track-card rounded-sm p-8">
+            <p class="font-mono text-xs uppercase tracking-[0.18em] text-primary">ML SYSTEMS</p>
+            <h3 class="mt-4 font-headline text-3xl font-bold" data-pl="Optymalizacja inference modelu PyTorch" data-en="PyTorch inference optimization">Optymalizacja inference modelu PyTorch</h3>
+            <p class="mt-4 text-sm leading-relaxed text-on-surface-variant" data-pl="Baseline PyTorch, mixed precision, batching, TensorRT/Triton, latency, throughput, użycie pamięci GPU i metryki wykorzystania." data-en="PyTorch baseline, mixed precision, batching, TensorRT/Triton, latency, throughput, GPU memory usage, and utilization metrics.">Baseline PyTorch, mixed precision, batching, TensorRT/Triton, latency, throughput, użycie pamięci GPU i metryki wykorzystania.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-surface-container-low px-8 py-20">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-center">
+          <div>
+            <p class="font-label text-xs uppercase tracking-[0.22em] text-primary" data-pl="Wersja sprofilowana" data-en="Focused version">Wersja sprofilowana</p>
+            <h2 class="mt-4 font-headline text-4xl font-bold" data-pl="Najkrótszy opis docelowego profilu" data-en="Shortest target-profile summary">Najkrótszy opis docelowego profilu</h2>
+            <p class="mt-5 max-w-3xl text-lg leading-relaxed text-on-surface-variant" data-pl="C++ / GPU / HPC Software Engineer. Languages: C++, Python. Systems: Linux, embedded, multithreading, operating systems. Performance: profiling, SIMD, CPU/GPU optimization. HPC: CUDA, OpenMP, MPI. Scientific computing: Eigen, BLAS/LAPACK, NumPy, SciPy. Tools: Git, CMake, GDB, perf, Nsight, Docker." data-en="C++ / GPU / HPC Software Engineer. Languages: C++, Python. Systems: Linux, embedded, multithreading, operating systems. Performance: profiling, SIMD, CPU/GPU optimization. HPC: CUDA, OpenMP, MPI. Scientific computing: Eigen, BLAS/LAPACK, NumPy, SciPy. Tools: Git, CMake, GDB, perf, Nsight, Docker.">C++ / GPU / HPC Software Engineer. Languages: C++, Python. Systems: Linux, embedded, multithreading, operating systems. Performance: profiling, SIMD, CPU/GPU optimization. HPC: CUDA, OpenMP, MPI. Scientific computing: Eigen, BLAS/LAPACK, NumPy, SciPy. Tools: Git, CMake, GDB, perf, Nsight, Docker.</p>
+          </div>
+          <div class="signal-panel rounded-sm p-8">
+            <p class="font-mono text-xs uppercase tracking-[0.18em] text-secondary">CURRENT_ANCHOR</p>
+            <p class="mt-4 text-sm leading-relaxed text-on-surface-variant" data-pl="Aktualna baza zawodowa: automotive, Python automation, Jenkins, Linux, płytki testowe, SoC, logi i diagnostyka. To praktyczny punkt startu do głębszych projektów C++/systems." data-en="Current professional base: automotive, Python automation, Jenkins, Linux, test boards, SoC, logs, and diagnostics. This is a practical starting point for deeper C++/systems projects.">Aktualna baza zawodowa: automotive, Python automation, Jenkins, Linux, płytki testowe, SoC, logi i diagnostyka. To praktyczny punkt startu do głębszych projektów C++/systems.</p>
+            <a class="mt-6 inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-primary transition-colors hover:text-on-background" href="projects.html">
+              <span data-pl="Zobacz projekty i doświadczenie" data-en="See projects and experience">Zobacz projekty i doświadczenie</span>
+              <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="w-full border-t border-[#1b2028] bg-[#0a0e14] py-12">

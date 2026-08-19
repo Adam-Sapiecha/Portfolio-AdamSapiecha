@@ -35,7 +35,6 @@ Repozytorium ma dwa warianty prowadzone na osobnych branchach:
 ├── contact.html
 ├── favicon.svg
 ├── style.css
-├── projects.css
 ├── script.js
 ├── assets/
 │   ├── Adam Sapiecha (1).jpg

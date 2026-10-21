@@ -1,19 +1,15 @@
 # Strona projektu w portfolio
 
-Rzeczowy opis kodu i działania: repozytorium, moduły, fragment funkcji,
-oryginalne ujęcie pleców oraz wynik walidacji tego zapisu. Jasny, prosty układ,
-bez JavaScriptu i z odnośnikiem do działającej aplikacji na Pi.
+Rzeczowy opis repozytorium, modułów i działania. Użytkownik wybrał ujęcia w
+czerwonej bluzie; aktualne pliki pochodzą z `outputs/report_20260406_180413`.
+RGB, nakładka, depth, wynik JSON i PDF dotyczą tego samego zapisu. Piksele
+i wyniki pozostają oryginalne, bez ponownego przeliczania.
 
-RGB, nakładka i depth mają wspólny kadr sylwetki w CSS: x=520..1000,
-y=55..720 oryginału 1280×720. Kadrowanie dotyczy prezentacji; kliknięcie
-otwiera pełny plik, a oryginalne piksele i współrzędne pomiarowe pozostają bez zmian.
+Wspólny kadr prezentacji w CSS: x=320..695, y=0..540 oryginału 960×540.
+Kliknięcie obrazu otwiera pełny plik. Współrzędne w JSON odnoszą się do oryginału.
+Zgodę na publikację potwierdzono w rozmowie. Źródła i SHA-256: `data/sources.json`.
 
-Fotografie pochodzą z `outputs/rejected_20260622_135701`. Zgodę na publikację
-potwierdzono w rozmowie. Ujęcie odrzucono z powodu synchronizacji; strona nie
-przedstawia go jako zaakceptowanego pomiaru. PDF kontrolny pochodzi z osobnego
-testu aplikacji na syntetycznych danych. Powiązania i SHA-256: `data/sources.json`.
-
-`python scripts/build_case_study.py` odtwarza wybrane artefakty; wymaga lokalnych
-oryginałów. Opublikowany katalog jest samowystarczalny: HTML, CSS i zwykłe pliki.
-Wdrożenie: podkatalog `posture-lab/` w repozytorium portfolio, a także `/process/`
-w obrazie aplikacji. Ścieżki zasobów są względne.
+`python scripts/build_case_study.py` odtwarza artefakty z lokalnego archiwum.
+Osobny verification-report.pdf pochodzi z testu WWW na syntetycznych danych.
+Katalog jest samowystarczalny: HTML, CSS i pliki; bez JavaScriptu.
+Publikacja w `posture-lab/` portfolio i `/process/` aplikacji na Pi.

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="System Analizy Postury: repozytorium Python, pipeline OAK-D, detekcja punktów, przetwarzanie depth i rzeczywisty zapis z kamery.">
   <title>System Analizy Postury — kod i działanie</title>
-  <link rel="stylesheet" href="./style.css?v=body-crop-3">
+  <link rel="stylesheet" href="./style.css?v=red-capture-4">
 </head>
 <body>
 <header><a href="https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/projects.html#backscan">← Portfolio</a><a href="https://github.com/Adam-Sapiecha/SystemAnalizyWadPostawy">GitHub / SystemAnalizyWadPostawy</a></header>
@@ -17,26 +17,28 @@
 
   <section id="zapis">
     <h2>Zapis z kamery</h2>
-    <p>Ujęcie pleców z 22 czerwca 2026 r. Obraz wejściowy, nakładka punktów i wizualizacja głębi z jednego uruchomienia programu, wykadrowane do sylwetki.</p>
+    <p>Ujęcie pleców z 6 kwietnia 2026 r. Obraz wejściowy, nakładka punktów i wizualizacja głębi z jednego uruchomienia programu, wykadrowane do sylwetki.</p>
     <div class="images">
-      <figure><a class="body-crop" href="./media/rgb_raw.png?capture=20260622-135701"><img src="./media/rgb_raw.png?capture=20260622-135701" alt="Kadr odkrytych pleców osoby stojącej przed kamerą OAK-D" width="1280" height="720"></a><figcaption>rgb_raw.png — obraz wejściowy.</figcaption></figure>
-      <figure><a class="body-crop" href="./media/rgb_pose.png?capture=20260622-135701"><img src="./media/rgb_pose.png?capture=20260622-135701" alt="Kadr sylwetki z punktami barków, bioder, łokci i nadgarstków" width="1280" height="720" loading="lazy"></a><figcaption>rgb_pose.png — wykryte punkty i jakość odczytu depth.</figcaption></figure>
-      <figure><a class="body-crop" href="./media/depth_pose.png?capture=20260622-135701"><img src="./media/depth_pose.png?capture=20260622-135701" alt="Ten sam kadr sylwetki na mapie głębi z punktami pomiarowymi" width="1280" height="720" loading="lazy"></a><figcaption>depth_pose.png — głębia i punkty pomiarowe.</figcaption></figure>
+      <figure><a class="body-crop" href="./media/rgb_raw.png?capture=20260406-180413"><img src="./media/rgb_raw.png?capture=20260406-180413" alt="Kadr pleców osoby w czerwonej bluzie stojącej przed kamerą OAK-D" width="960" height="540"></a><figcaption>rgb_raw.png — obraz wejściowy.</figcaption></figure>
+      <figure><a class="body-crop" href="./media/rgb_pose.png?capture=20260406-180413"><img src="./media/rgb_pose.png?capture=20260406-180413" alt="Kadr sylwetki z punktami barków, bioder, łokci i nadgarstków" width="960" height="540" loading="lazy"></a><figcaption>rgb_pose.png — wykryte punkty i jakość odczytu depth.</figcaption></figure>
+      <figure><a class="body-crop" href="./media/depth_pose.png?capture=20260406-180413"><img src="./media/depth_pose.png?capture=20260406-180413" alt="Ten sam kadr sylwetki na mapie głębi z punktami pomiarowymi" width="960" height="540" loading="lazy"></a><figcaption>depth_pose.png — głębia i punkty pomiarowe.</figcaption></figure>
     </div>
-    <p class="caption">Wspólny kadr dla trzech obrazów. Kliknięcie otwiera pełny plik źródłowy; współrzędne w JSON odnoszą się do oryginału 1280 × 720 px.</p>
+    <p class="caption">Wspólny kadr dla trzech obrazów. Kliknięcie otwiera pełny plik źródłowy; współrzędne w JSON odnoszą się do oryginału 960 × 540 px.</p>
     <h3>Co zwrócił program dla tego ujęcia</h3>
-    <p>Detektor znalazł sylwetkę i cztery wymagane punkty barków oraz bioder miały odczyt głębi. Program <strong>odrzucił ujęcie</strong>, ponieważ klatki RGB i depth były przesunięte w czasie o 1375,1 ms. Nie powstał raport PDF dla tego zapisu.</p>
+    <p>W archiwalnym zapisie odczyt głębi był dostępny dla 8 z 8 punktów, w tym czterech wymaganych punktów barków i bioder. Ocena jakości nie zgłosiła błędów ani ostrzeżeń; program zapisał wynik i raport PDF.</p>
     <pre><code>{
-  "created_at": "2026-06-22T13:57:01",
-  "valid_required_points": 4,
-  "valid_depth_points": 6,
-  "total_points": 8,
-  "rgb_depth_sync_delta_ms_max": 1375.1100000000001,
-  "errors": [
-    "RGB i depth sa zbyt mocno rozjechane czasowo w capture (1375.1 ms)."
-  ]
+  "created_at": "2026-04-06T18:04:13",
+  "profile": "accuracy",
+  "assessment": {
+    "errors": [],
+    "warnings": [],
+    "valid_depth_points": 8,
+    "total_points": 8,
+    "valid_required_points": 4
+  }
 }</code></pre>
-    <p class="caption">Wyciąg z pól <code>assessment</code> i <code>capture_metadata</code>. <a href="./data/rejected-capture.json">Pełny zapis JSON</a> · <a href="./data/sources.json">Pliki źródłowe i sumy SHA-256</a>.</p>
+    <p><a href="./data/capture-result.json">Pełny wynik JSON</a> · <a href="./media/capture-report.pdf">Raport PDF tego ujęcia</a> · <a href="./data/sources.json">Pliki źródłowe i sumy SHA-256</a>.</p>
+    <p class="caption">Wynik pochodzi z archiwalnej wersji programu. Nie przeliczano go ponownie. Poprawny odczyt depth nie potwierdza dokładności anatomicznej punktów wyznaczonych na ubraniu.</p>
   </section>
 
   <section id="kod">
@@ -69,7 +71,7 @@ camera_y_mm = ((keypoint.y_px - cy) * camera_z_mm) / fy</code></pre>
       <tr><td>Kontrola obliczeń</td><td>Dane syntetyczne: ΔY = 18 px, Z = 2000 mm, fy = 600 px → różnica wysokości 6 cm.</td></tr>
       <tr><td>Trwałość i uprawnienia</td><td>Odczyt po odtworzeniu kontenera; odmowa pobrania plików przez inną sesję. Backup i odtworzenie bazy sprawdzone na Pi.</td></tr>
     </tbody></table></div>
-    <p><a href="./media/verification-report.pdf">Raport PDF z testu obliczeń</a> · <a href="./data/asymmetry-sample.json">Wynik kontrolny JSON</a>. Te dwa pliki dotyczą syntetycznych danych testowych, nie zdjęcia pleców powyżej.</p>
+    <p><a href="./media/verification-report.pdf">Raport PDF z testu obliczeń</a> · <a href="./data/asymmetry-sample.json">Wynik kontrolny JSON</a>. Te dwa pliki dotyczą syntetycznych danych testowych, nie ujęcia w czerwonej bluzie powyżej.</p>
     <h3>Ograniczenia</h3>
     <p>To prototyp analizy geometrii, bez walidacji klinicznej. MediaPipe nie wyznacza bezpośrednio C7, łopatek ani PSIS. Poprawność pomiarów wymaga kalibracji, synchronizacji i odpowiedniej jakości depth. Nowa ścieżka akwizycji nie została jeszcze sprawdzona pełnym pomiarem człowieka; potwierdzone testy WWW korzystają z kontrolnych danych.</p>
   </section>

@@ -1,23 +1,27 @@
 {
   "data_mode": "recorded",
-  "source_directory": "outputs/rejected_20260622_135701",
-  "notice": "Oryginalne ujęcie pleców. Zgoda na publikację potwierdzona w rozmowie. Zapis odrzucony przez walidację synchronizacji; bez ponownego przeliczania.",
+  "source_directory": "outputs/report_20260406_180413",
+  "notice": "Wybrane przez użytkownika ujęcie w czerwonej bluzie. Oryginalne obrazy i archiwalne wyniki, bez ponownego przeliczania. Zgoda na publikację potwierdzona w rozmowie.",
   "files": [
     {
       "file": "media/rgb_raw.png",
-      "sha256": "9e22e1d368f8f6ddba7d92924f5e03475eb2663eed99cde325d61b702bf632e5"
+      "sha256": "0b1ac31e63424dfb81f99ef3e63355c7a3dfbd1030a9992bca04a013daa89f4b"
     },
     {
       "file": "media/rgb_pose.png",
-      "sha256": "fce3b4bc0301fae650e4d140e7b1f3f9f3ece767f763bb0f628d96d3f50a2ca3"
+      "sha256": "0140c62b4350fa393d21a3689cfc649b86b1aede181555549b380cb16bf50312"
     },
     {
       "file": "media/depth_pose.png",
-      "sha256": "844168783417872c945f87beb119440859107c19e66a3460fedbf0f7c8c38b4a"
+      "sha256": "7c61456425a9c207d86f21e293d1cec9fdc44014d95d617b7e290db1b538b458"
     },
     {
-      "file": "data/rejected-capture.json",
-      "sha256": "a875c4e37c0a05b8e490eed04c500a92451e6f0495a3e3116c30eddd0a55fdc3"
+      "file": "data/capture-result.json",
+      "sha256": "48d5710c1aa1aeca5679a5802b93ec8d4864117ad81d75fba4778a039f5c6317"
+    },
+    {
+      "file": "media/capture-report.pdf",
+      "sha256": "8e6546beb511ddc893fd8b90c4f4ae8e85a23ceac7b58795c14bc6657df735b3"
     }
   ]
 }

@@ -1,0 +1,287 @@
+{
+  "created_at": "2026-04-06T18:04:13",
+  "profile": "accuracy",
+  "assessment": {
+    "errors": [],
+    "warnings": [],
+    "valid_depth_points": 8,
+    "total_points": 8,
+    "valid_required_points": 4
+  },
+  "summary": {
+    "overall_status": "warning",
+    "ok_metrics": 12,
+    "warning_metrics": 1,
+    "alert_metrics": 0,
+    "unavailable_metrics": 0
+  },
+  "derived_points": [
+    {
+      "name": "shoulder_center",
+      "label": "Srodek barkow",
+      "x_px": 450,
+      "y_px": 188,
+      "camera_x_mm": -50.70677289934071,
+      "camera_y_mm": -163.48960595798792,
+      "camera_z_mm": 1467.5
+    },
+    {
+      "name": "pelvis_center",
+      "label": "Srodek miednicy",
+      "x_px": 452,
+      "y_px": 421,
+      "camera_x_mm": -46.527237958660315,
+      "camera_y_mm": 285.0105127830669,
+      "camera_z_mm": 1486.5
+    }
+  ],
+  "metrics": [
+    {
+      "name": "shoulder_height_diff_cm",
+      "label": "Roznica wysokosci barkow",
+      "group": "asymmetry",
+      "value": 0.13481671959631,
+      "unit": "cm",
+      "severity": "ok",
+      "description": "Bezwzgledna roznica wysokosci barkow w przestrzeni kamery."
+    },
+    {
+      "name": "hip_height_diff_cm",
+      "label": "Roznica wysokosci bioder",
+      "group": "asymmetry",
+      "value": 0.17506370099029028,
+      "unit": "cm",
+      "severity": "ok",
+      "description": "Bezwzgledna roznica wysokosci bioder w przestrzeni kamery."
+    },
+    {
+      "name": "shoulder_tilt_deg",
+      "label": "Kat linii barkow",
+      "group": "tilt",
+      "value": 0.24154470133784806,
+      "unit": "deg",
+      "severity": "ok",
+      "description": "Odchylenie linii barkow od poziomu."
+    },
+    {
+      "name": "hip_tilt_deg",
+      "label": "Kat linii bioder",
+      "group": "tilt",
+      "value": 0.643279503156351,
+      "unit": "deg",
+      "severity": "ok",
+      "description": "Odchylenie linii bioder od poziomu."
+    },
+    {
+      "name": "trunk_axis_tilt_deg",
+      "label": "Kat osi tulowia do pionu",
+      "group": "stability",
+      "value": 0.5339191022659726,
+      "unit": "deg",
+      "severity": "ok",
+      "description": "Odchylenie osi srodka barkow do srodka miednicy od pionu."
+    },
+    {
+      "name": "trunk_shift_cm",
+      "label": "Przesuniecie osi tulowia",
+      "group": "stability",
+      "value": 0.4179534940680398,
+      "unit": "cm",
+      "severity": "ok",
+      "description": "Poziome przesuniecie srodka barkow wzgledem srodka bioder."
+    },
+    {
+      "name": "shoulder_depth_diff_cm",
+      "label": "Roznica glebokosci barkow",
+      "group": "rotation",
+      "value": 0.5,
+      "unit": "cm",
+      "severity": "ok",
+      "description": "Bezwzgledna roznica glebokosci barkow."
+    },
+    {
+      "name": "hip_depth_diff_cm",
+      "label": "Roznica glebokosci bioder",
+      "group": "rotation",
+      "value": 1.1,
+      "unit": "cm",
+      "severity": "ok",
+      "description": "Bezwzgledna roznica glebokosci bioder."
+    },
+    {
+      "name": "shoulder_pelvis_tilt_diff_deg",
+      "label": "Roznica pochylen barki vs biodra",
+      "group": "rotation",
+      "value": 0.4017348018185029,
+      "unit": "deg",
+      "severity": "ok",
+      "description": "Roznica miedzy katem linii barkow i linii bioder."
+    },
+    {
+      "name": "shoulder_pelvis_rotation_diff_cm",
+      "label": "Rotacja barki vs miednica",
+      "group": "rotation",
+      "value": 0.6000000000000001,
+      "unit": "cm",
+      "severity": "ok",
+      "description": "Roznica miedzy asymetria depth barkow i bioder."
+    },
+    {
+      "name": "waist_triangle_left_pct",
+      "label": "Lewy trojkat talii",
+      "group": "waist",
+      "value": 13.448580741882324,
+      "unit": "% bbox",
+      "severity": "ok",
+      "description": "Pole lewego trojkata talii znormalizowane do pola obwiedni punktow."
+    },
+    {
+      "name": "waist_triangle_right_pct",
+      "label": "Prawy trojkat talii",
+      "group": "waist",
+      "value": 15.012664794921875,
+      "unit": "% bbox",
+      "severity": "ok",
+      "description": "Pole prawego trojkata talii znormalizowane do pola obwiedni punktow."
+    },
+    {
+      "name": "waist_triangle_asymmetry_pct",
+      "label": "Asymetria trojkatow talii",
+      "group": "waist",
+      "value": 1.5640840530395508,
+      "unit": "% bbox",
+      "severity": "warning",
+      "description": "Roznica pola lewego i prawego trojkata talii."
+    }
+  ],
+  "points": [
+    {
+      "name": "left_shoulder",
+      "label": "L Bark",
+      "visibility": 0.9955571293830872,
+      "x_px": 366,
+      "y_px": 187,
+      "depth_mm": 1465,
+      "camera_x_mm": -210.6022961067198,
+      "camera_y_mm": -164.16368955596948,
+      "camera_z_mm": 1465.0,
+      "valid_count": 117,
+      "fill_ratio": 0.9669421487603306,
+      "depth_spread_mm": 19.40000000000009,
+      "quality": "good",
+      "note": "Punkt ma stabilny i gesty odczyt depth."
+    },
+    {
+      "name": "right_shoulder",
+      "label": "P Bark",
+      "visibility": 0.9959827661514282,
+      "x_px": 534,
+      "y_px": 188,
+      "depth_mm": 1470,
+      "camera_x_mm": 109.18875030803837,
+      "camera_y_mm": -162.81552236000638,
+      "camera_z_mm": 1470.0,
+      "valid_count": 105,
+      "fill_ratio": 0.8677685950413223,
+      "depth_spread_mm": 17.0,
+      "quality": "good",
+      "note": "Punkt ma stabilny i gesty odczyt depth."
+    },
+    {
+      "name": "left_elbow",
+      "label": "L Lokiec",
+      "visibility": 0.8938327431678772,
+      "x_px": 349,
+      "y_px": 331,
+      "depth_mm": 1518,
+      "camera_x_mm": -251.71291893317292,
+      "camera_y_mm": 113.68811277238532,
+      "camera_z_mm": 1518.0,
+      "valid_count": 121,
+      "fill_ratio": 1.0,
+      "depth_spread_mm": 26.0,
+      "quality": "good",
+      "note": "Punkt ma stabilny i gesty odczyt depth."
+    },
+    {
+      "name": "right_elbow",
+      "label": "P Lokiec",
+      "visibility": 0.9563193917274475,
+      "x_px": 560,
+      "y_px": 330,
+      "depth_mm": 1522,
+      "camera_x_mm": 164.40857433069826,
+      "camera_y_mm": 112.01172347034817,
+      "camera_z_mm": 1522.0,
+      "valid_count": 121,
+      "fill_ratio": 1.0,
+      "depth_spread_mm": 33.0,
+      "quality": "good",
+      "note": "Punkt ma stabilny i gesty odczyt depth."
+    },
+    {
+      "name": "left_wrist",
+      "label": "L Nadgarstek",
+      "visibility": 0.3833923637866974,
+      "x_px": 349,
+      "y_px": 448,
+      "depth_mm": 1629,
+      "camera_x_mm": -270.1188043097093,
+      "camera_y_mm": 369.44192104405283,
+      "camera_z_mm": 1629.0,
+      "valid_count": 121,
+      "fill_ratio": 1.0,
+      "depth_spread_mm": 40.0,
+      "quality": "good",
+      "note": "Punkt ma stabilny i gesty odczyt depth."
+    },
+    {
+      "name": "right_wrist",
+      "label": "P Nadgarstek",
+      "visibility": 0.8773506879806519,
+      "x_px": 560,
+      "y_px": 446,
+      "depth_mm": 1531,
+      "camera_x_mm": 165.38076695157625,
+      "camera_y_mm": 343.24114596647297,
+      "camera_z_mm": 1531.0,
+      "valid_count": 65,
+      "fill_ratio": 0.5371900826446281,
+      "depth_spread_mm": 53.700000000000045,
+      "quality": "good",
+      "note": "Punkt ma stabilny i gesty odczyt depth."
+    },
+    {
+      "name": "left_hip",
+      "label": "L Biodro",
+      "visibility": 0.9891281723976135,
+      "x_px": 412,
+      "y_px": 422,
+      "depth_mm": 1481,
+      "camera_x_mm": -124.4870493975914,
+      "camera_y_mm": 285.8858312880183,
+      "camera_z_mm": 1481.0,
+      "valid_count": 121,
+      "fill_ratio": 1.0,
+      "depth_spread_mm": 3.0,
+      "quality": "good",
+      "note": "Punkt ma stabilny i gesty odczyt depth."
+    },
+    {
+      "name": "right_hip",
+      "label": "P Biodro",
+      "visibility": 0.9820507764816284,
+      "x_px": 493,
+      "y_px": 420,
+      "depth_mm": 1492,
+      "camera_x_mm": 31.432573480270772,
+      "camera_y_mm": 284.1351942781154,
+      "camera_z_mm": 1492.0,
+      "valid_count": 121,
+      "fill_ratio": 1.0,
+      "depth_spread_mm": 12.0,
+      "quality": "good",
+      "note": "Punkt ma stabilny i gesty odczyt depth."
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+.case-main { max-width: 1060px; }
+.case-hero { padding: 64px 0 42px; max-width: 850px; }
+.case-hero h1 { font-size: clamp(48px, 9vw, 88px); line-height: 1.08; margin: 18px 0 24px; letter-spacing: -.055em; }
+.case-eyebrow { color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: .09em; margin: 28px 0 12px; }
+.case-lead { font-size: clamp(23px, 3vw, 32px); line-height: 1.35; letter-spacing: -.025em; color: var(--text); }
+.case-hero > p:not(.case-lead):not(.case-eyebrow) { max-width: 740px; color: var(--muted); }
+.case-hero .tags { margin-top: 24px; }
+.case-toc { display: flex; flex-wrap: wrap; gap: 12px 26px; padding: 22px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 14px; }
+.case-toc a { text-underline-offset: 5px; }
+.case-section { padding: 48px 0; border-bottom: 1px solid var(--line); }
+.case-section > p { max-width: 800px; color: var(--muted); }
+.case-section h2 { max-width: 800px; font-size: clamp(26px, 4vw, 35px); line-height: 1.25; margin-bottom: 26px; }
+.case-section h3 { font-size: 18px; line-height: 1.4; margin-bottom: 12px; }
+.flow { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin: 32px 0; }
+.flow li { border-top: 3px solid var(--accent); padding-top: 18px; }
+.flow h3 { color: var(--accent-dark); }
+.flow p, .test-grid p, .delivery p { font-size: 15px; color: var(--muted); }
+.case-note, .example { background: var(--accent-soft); padding: 26px; margin: 28px 0 0; border-radius: var(--radius); }
+.case-note p { margin-bottom: 0; }
+.deliveries { display: grid; grid-template-columns: 1fr 1fr; gap: 34px 44px; }
+.delivery { border-top: 1px solid var(--line-strong); padding-top: 20px; }
+.delivery p.skill { color: var(--accent-dark); font-weight: 600; border-left: 3px solid var(--accent); padding-left: 14px; margin-bottom: 0; }
+.example { margin-bottom: 24px; }
+.example-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.example .case-eyebrow { margin-top: 0; }
+.example pre { font-size: 16px; margin: 0; white-space: pre-wrap; }
+.test-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 44px; }
+.case-end { border-bottom: 0; }
+.case-footer { padding-top: 24px; padding-bottom: 32px; color: var(--muted); font-size: 13px; }
+.case-study-link { margin-bottom: 28px; }
+@media(max-width: 760px) {
+  .flow { grid-template-columns: 1fr 1fr; }
+  .deliveries, .test-grid { grid-template-columns: 1fr; gap: 26px; }
+  .case-hero { padding-top: 34px; }
+  .case-section { padding: 34px 0; }
+}
+@media(max-width: 460px) {
+  .flow, .example-columns { grid-template-columns: 1fr; }
+  .case-note, .example { padding: 20px; }
+  .case-toc { flex-direction: column; }
+  .case-hero .button, .case-end .button { width: 100%; justify-content: center; }
+}
+
+/* Capture and source-code presentation; all case layout rules above match TaskMesh. */
+.source-link { margin-top:24px; }
+.capture-gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; margin:32px 0; }
+.capture-gallery figure { min-width:0; }
+.capture-gallery figcaption, .capture-caption { color:var(--muted); font-size:13px; margin-top:12px; }
+/* Original ROI: x=320..695, y=0..540; same viewport, unchanged source coordinates. */
+.body-crop { display:block; position:relative; overflow:hidden; aspect-ratio:375/540; border:1px solid var(--line); border-radius:var(--radius); }
+.body-crop img { position:absolute; width:256%; height:100%; max-width:none; left:-85.333333%; top:0; }
+.case-main code { overflow-wrap:anywhere; }
+.case-main .example pre { font-size:14px; overflow-wrap:anywhere; }
+.example .text-link { margin-top:16px; }
+.case-main .capture-caption { max-width:800px; }
+@media(max-width:760px) { .capture-gallery { grid-template-columns:1fr; max-width:420px; } }

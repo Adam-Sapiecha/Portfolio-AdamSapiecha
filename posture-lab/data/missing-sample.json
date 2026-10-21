@@ -1,0 +1,324 @@
+{
+  "measured_points": [
+    {
+      "name": "left_shoulder",
+      "label": "L shoulder",
+      "visibility": 0.99,
+      "x_px": 210,
+      "y_px": 130,
+      "depth_mm": null,
+      "camera_x_mm": null,
+      "camera_y_mm": null,
+      "camera_z_mm": null,
+      "valid_count": 0,
+      "fill_ratio": 0.0,
+      "depth_spread_mm": null,
+      "quality": "missing",
+      "note": "Brak poprawnych pikseli depth w oknie pomiarowym."
+    },
+    {
+      "name": "right_shoulder",
+      "label": "R shoulder",
+      "visibility": 0.99,
+      "x_px": 430,
+      "y_px": 130,
+      "depth_mm": null,
+      "camera_x_mm": null,
+      "camera_y_mm": null,
+      "camera_z_mm": null,
+      "valid_count": 0,
+      "fill_ratio": 0.0,
+      "depth_spread_mm": null,
+      "quality": "missing",
+      "note": "Brak poprawnych pikseli depth w oknie pomiarowym."
+    },
+    {
+      "name": "left_elbow",
+      "label": "L elbow",
+      "visibility": 0.99,
+      "x_px": 185,
+      "y_px": 230,
+      "depth_mm": 2000,
+      "camera_x_mm": -450.0,
+      "camera_y_mm": -33.333333333333336,
+      "camera_z_mm": 2000.0,
+      "valid_count": 225,
+      "fill_ratio": 1.0,
+      "depth_spread_mm": 0.0,
+      "quality": "good",
+      "note": "Punkt ma stabilny i gesty odczyt depth."
+    },
+    {
+      "name": "right_elbow",
+      "label": "R elbow",
+      "visibility": 0.99,
+      "x_px": 455,
+      "y_px": 230,
+      "depth_mm": 2000,
+      "camera_x_mm": 450.0,
+      "camera_y_mm": -33.333333333333336,
+      "camera_z_mm": 2000.0,
+      "valid_count": 225,
+      "fill_ratio": 1.0,
+      "depth_spread_mm": 0.0,
+      "quality": "good",
+      "note": "Punkt ma stabilny i gesty odczyt depth."
+    },
+    {
+      "name": "left_wrist",
+      "label": "L wrist",
+      "visibility": 0.99,
+      "x_px": 175,
+      "y_px": 325,
+      "depth_mm": 2000,
+      "camera_x_mm": -483.3333333333333,
+      "camera_y_mm": 283.3333333333333,
+      "camera_z_mm": 2000.0,
+      "valid_count": 225,
+      "fill_ratio": 1.0,
+      "depth_spread_mm": 0.0,
+      "quality": "good",
+      "note": "Punkt ma stabilny i gesty odczyt depth."
+    },
+    {
+      "name": "right_wrist",
+      "label": "R wrist",
+      "visibility": 0.99,
+      "x_px": 465,
+      "y_px": 325,
+      "depth_mm": 2000,
+      "camera_x_mm": 483.3333333333333,
+      "camera_y_mm": 283.3333333333333,
+      "camera_z_mm": 2000.0,
+      "valid_count": 225,
+      "fill_ratio": 1.0,
+      "depth_spread_mm": 0.0,
+      "quality": "good",
+      "note": "Punkt ma stabilny i gesty odczyt depth."
+    },
+    {
+      "name": "left_hip",
+      "label": "L hip",
+      "visibility": 0.99,
+      "x_px": 240,
+      "y_px": 350,
+      "depth_mm": 2000,
+      "camera_x_mm": -266.6666666666667,
+      "camera_y_mm": 366.6666666666667,
+      "camera_z_mm": 2000.0,
+      "valid_count": 225,
+      "fill_ratio": 1.0,
+      "depth_spread_mm": 0.0,
+      "quality": "good",
+      "note": "Punkt ma stabilny i gesty odczyt depth."
+    },
+    {
+      "name": "right_hip",
+      "label": "R hip",
+      "visibility": 0.99,
+      "x_px": 400,
+      "y_px": 350,
+      "depth_mm": 2000,
+      "camera_x_mm": 266.6666666666667,
+      "camera_y_mm": 366.6666666666667,
+      "camera_z_mm": 2000.0,
+      "valid_count": 225,
+      "fill_ratio": 1.0,
+      "depth_spread_mm": 0.0,
+      "quality": "good",
+      "note": "Punkt ma stabilny i gesty odczyt depth."
+    }
+  ],
+  "derived_points": [
+    {
+      "name": "shoulder_center",
+      "label": "Srodek barkow",
+      "x_px": 320,
+      "y_px": 130,
+      "camera_x_mm": null,
+      "camera_y_mm": null,
+      "camera_z_mm": null
+    },
+    {
+      "name": "pelvis_center",
+      "label": "Srodek miednicy",
+      "x_px": 320,
+      "y_px": 350,
+      "camera_x_mm": 0.0,
+      "camera_y_mm": 366.6666666666667,
+      "camera_z_mm": 2000.0
+    }
+  ],
+  "metrics": [
+    {
+      "name": "shoulder_height_diff_cm",
+      "label": "Roznica wysokosci barkow",
+      "group": "asymmetry",
+      "value": null,
+      "unit": "cm",
+      "severity": "unavailable",
+      "description": "Bezwzgledna roznica wysokosci barkow w przestrzeni kamery."
+    },
+    {
+      "name": "hip_height_diff_cm",
+      "label": "Roznica wysokosci bioder",
+      "group": "asymmetry",
+      "value": null,
+      "unit": "cm",
+      "severity": "unavailable",
+      "description": "Bezwzgledna roznica wysokosci bioder w przestrzeni kamery."
+    },
+    {
+      "name": "shoulder_tilt_deg",
+      "label": "Kat linii barkow",
+      "group": "tilt",
+      "value": null,
+      "unit": "deg",
+      "severity": "unavailable",
+      "description": "Odchylenie linii barkow od poziomu."
+    },
+    {
+      "name": "hip_tilt_deg",
+      "label": "Kat linii bioder",
+      "group": "tilt",
+      "value": null,
+      "unit": "deg",
+      "severity": "unavailable",
+      "description": "Odchylenie linii bioder od poziomu."
+    },
+    {
+      "name": "trunk_axis_tilt_deg",
+      "label": "Kat osi tulowia do pionu",
+      "group": "stability",
+      "value": null,
+      "unit": "deg",
+      "severity": "unavailable",
+      "description": "Odchylenie osi srodka barkow do srodka miednicy od pionu."
+    },
+    {
+      "name": "trunk_shift_cm",
+      "label": "Przesuniecie osi tulowia",
+      "group": "stability",
+      "value": null,
+      "unit": "cm",
+      "severity": "unavailable",
+      "description": "Poziome przesuniecie srodka barkow wzgledem srodka bioder."
+    },
+    {
+      "name": "shoulder_depth_diff_cm",
+      "label": "Roznica glebokosci barkow",
+      "group": "rotation",
+      "value": null,
+      "unit": "cm",
+      "severity": "unavailable",
+      "description": "Bezwzgledna roznica glebokosci barkow."
+    },
+    {
+      "name": "hip_depth_diff_cm",
+      "label": "Roznica glebokosci bioder",
+      "group": "rotation",
+      "value": null,
+      "unit": "cm",
+      "severity": "unavailable",
+      "description": "Bezwzgledna roznica glebokosci bioder."
+    },
+    {
+      "name": "shoulder_pelvis_tilt_diff_deg",
+      "label": "Roznica pochylen barki vs biodra",
+      "group": "rotation",
+      "value": null,
+      "unit": "deg",
+      "severity": "unavailable",
+      "description": "Roznica miedzy katem linii barkow i linii bioder."
+    },
+    {
+      "name": "shoulder_pelvis_rotation_diff_cm",
+      "label": "Rotacja barki vs miednica",
+      "group": "rotation",
+      "value": null,
+      "unit": "cm",
+      "severity": "unavailable",
+      "description": "Roznica miedzy asymetria depth barkow i bioder."
+    },
+    {
+      "name": "waist_triangle_left_pct",
+      "label": "Lewy trojkat talii",
+      "group": "waist",
+      "value": null,
+      "unit": "% bbox",
+      "severity": "unavailable",
+      "description": "Pole lewego trojkata talii znormalizowane do pola obwiedni punktow."
+    },
+    {
+      "name": "waist_triangle_right_pct",
+      "label": "Prawy trojkat talii",
+      "group": "waist",
+      "value": null,
+      "unit": "% bbox",
+      "severity": "unavailable",
+      "description": "Pole prawego trojkata talii znormalizowane do pola obwiedni punktow."
+    },
+    {
+      "name": "waist_triangle_asymmetry_pct",
+      "label": "Asymetria trojkatow talii",
+      "group": "waist",
+      "value": null,
+      "unit": "% bbox",
+      "severity": "unavailable",
+      "description": "Roznica pola lewego i prawego trojkata talii."
+    }
+  ],
+  "assessment": {
+    "errors": [
+      "Brakuje wiarygodnego depth dla kluczowych punktow: left_shoulder, right_shoulder"
+    ],
+    "warnings": [
+      "Obraz RGB jest ciemny. Detekcja punktow i depth moga byc mniej stabilne."
+    ],
+    "valid_depth_points": 6,
+    "total_points": 8,
+    "valid_required_points": 2,
+    "camera_roll_deg": null,
+    "camera_pitch_deg": null,
+    "pose_count": 1,
+    "depth_valid_ratio": 0.90234375,
+    "person_depth_valid_ratio": null,
+    "person_mask_coverage": null,
+    "rgb_brightness_mean": 29.839375,
+    "rgb_focus_score": 84.84306049245198,
+    "motion_score_px": null,
+    "capture_frames": null
+  },
+  "summary": {
+    "overall_status": "alert",
+    "ok_metrics": 0,
+    "warning_metrics": 0,
+    "alert_metrics": 0,
+    "unavailable_metrics": 13
+  },
+  "data_mode": "sample",
+  "scenario": "missing",
+  "accepted": false,
+  "input": {
+    "offset_px": 18,
+    "depth_mm": 2000,
+    "intrinsics": [
+      [
+        600.0,
+        0.0,
+        320.0
+      ],
+      [
+        0.0,
+        600.0,
+        240.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "notice": "Dane syntetyczne. Punkty są zadane, nie wykryte przez AI. Progi są eksperymentalne; wynik nie jest diagnozą."
+}

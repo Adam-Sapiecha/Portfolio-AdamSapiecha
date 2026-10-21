@@ -1,0 +1,272 @@
+{
+  "created_at": "2026-04-06T17:53:49",
+  "profile": "accuracy",
+  "assessment": {
+    "errors": [],
+    "warnings": [
+      "Sylwetka jest blisko gornej lub dolnej krawedzi kadru.",
+      "Sylwetka jest waska w kadrze. Upewnij sie, ze postawa jest dobrze widoczna."
+    ],
+    "valid_depth_points": 7,
+    "total_points": 8,
+    "valid_required_points": 4
+  },
+  "summary": {
+    "overall_status": "alert",
+    "ok_metrics": 2,
+    "warning_metrics": 1,
+    "alert_metrics": 8,
+    "unavailable_metrics": 2
+  },
+  "metrics": [
+    {
+      "name": "shoulder_height_diff_cm",
+      "label": "Roznica wysokosci barkow",
+      "group": "asymmetry",
+      "value": 14.70308460100074,
+      "unit": "cm",
+      "severity": "alert",
+      "description": "Bezwzgledna roznica wysokosci barkow w przestrzeni kamery."
+    },
+    {
+      "name": "hip_height_diff_cm",
+      "label": "Roznica wysokosci bioder",
+      "group": "asymmetry",
+      "value": 0.5797714212904083,
+      "unit": "cm",
+      "severity": "ok",
+      "description": "Bezwzgledna roznica wysokosci bioder w przestrzeni kamery."
+    },
+    {
+      "name": "shoulder_tilt_deg",
+      "label": "Kat linii barkow",
+      "group": "tilt",
+      "value": 12.757441541742914,
+      "unit": "deg",
+      "severity": "alert",
+      "description": "Odchylenie linii barkow od poziomu."
+    },
+    {
+      "name": "hip_tilt_deg",
+      "label": "Kat linii bioder",
+      "group": "tilt",
+      "value": 2.5587785656680393,
+      "unit": "deg",
+      "severity": "warning",
+      "description": "Odchylenie linii bioder od poziomu."
+    },
+    {
+      "name": "trunk_axis_tilt_deg",
+      "label": "Kat osi tulowia do pionu",
+      "group": "stability",
+      "value": 29.647340965801316,
+      "unit": "deg",
+      "severity": "alert",
+      "description": "Odchylenie osi srodka barkow do srodka miednicy od pionu."
+    },
+    {
+      "name": "trunk_shift_cm",
+      "label": "Przesuniecie osi tulowia",
+      "group": "stability",
+      "value": 23.55406348057891,
+      "unit": "cm",
+      "severity": "alert",
+      "description": "Poziome przesuniecie srodka barkow wzgledem srodka bioder."
+    },
+    {
+      "name": "shoulder_depth_diff_cm",
+      "label": "Roznica glebokosci barkow",
+      "group": "rotation",
+      "value": 161.3,
+      "unit": "cm",
+      "severity": "alert",
+      "description": "Bezwzgledna roznica glebokosci barkow."
+    },
+    {
+      "name": "hip_depth_diff_cm",
+      "label": "Roznica glebokosci bioder",
+      "group": "rotation",
+      "value": 5.2,
+      "unit": "cm",
+      "severity": "alert",
+      "description": "Bezwzgledna roznica glebokosci bioder."
+    },
+    {
+      "name": "shoulder_pelvis_tilt_diff_deg",
+      "label": "Roznica pochylen barki vs biodra",
+      "group": "rotation",
+      "value": 10.198662976074875,
+      "unit": "deg",
+      "severity": "alert",
+      "description": "Roznica miedzy katem linii barkow i linii bioder."
+    },
+    {
+      "name": "shoulder_pelvis_rotation_diff_cm",
+      "label": "Rotacja barki vs miednica",
+      "group": "rotation",
+      "value": 156.10000000000002,
+      "unit": "cm",
+      "severity": "alert",
+      "description": "Roznica miedzy asymetria depth barkow i bioder."
+    },
+    {
+      "name": "waist_triangle_left_pct",
+      "label": "Lewy trojkat talii",
+      "group": "waist",
+      "value": null,
+      "unit": "% bbox",
+      "severity": "unavailable",
+      "description": "Pole lewego trojkata talii znormalizowane do pola obwiedni punktow."
+    },
+    {
+      "name": "waist_triangle_right_pct",
+      "label": "Prawy trojkat talii",
+      "group": "waist",
+      "value": 10.994136810302734,
+      "unit": "% bbox",
+      "severity": "ok",
+      "description": "Pole prawego trojkata talii znormalizowane do pola obwiedni punktow."
+    },
+    {
+      "name": "waist_triangle_asymmetry_pct",
+      "label": "Asymetria trojkatow talii",
+      "group": "waist",
+      "value": null,
+      "unit": "% bbox",
+      "severity": "unavailable",
+      "description": "Roznica pola lewego i prawego trojkata talii."
+    }
+  ],
+  "points": [
+    {
+      "name": "left_shoulder",
+      "label": "L Bark",
+      "visibility": 0.9992254972457886,
+      "x_px": 265,
+      "y_px": 184,
+      "depth_mm": 2798,
+      "camera_x_mm": -768.990385559082,
+      "camera_y_mm": -324.4334935987597,
+      "camera_z_mm": 2798.0,
+      "valid_count": 63,
+      "fill_ratio": 0.5206611570247934,
+      "depth_spread_mm": 27.0,
+      "quality": "good",
+      "note": "Punkt ma stabilny i gesty odczyt depth."
+    },
+    {
+      "name": "right_shoulder",
+      "label": "P Bark",
+      "visibility": 0.9997393488883972,
+      "x_px": 399,
+      "y_px": 158,
+      "depth_mm": 1185,
+      "camera_x_mm": -119.59938020818522,
+      "camera_y_mm": -177.4026475887523,
+      "camera_z_mm": 1185.0,
+      "valid_count": 113,
+      "fill_ratio": 0.9338842975206612,
+      "depth_spread_mm": 28.399999999999864,
+      "quality": "good",
+      "note": "Punkt ma stabilny i gesty odczyt depth."
+    },
+    {
+      "name": "right_elbow",
+      "label": "P Lokiec",
+      "visibility": 0.8093449473381042,
+      "x_px": 419,
+      "y_px": 264,
+      "depth_mm": 1143,
+      "camera_x_mm": -85.69223127033638,
+      "camera_y_mm": -13.819497946813833,
+      "camera_z_mm": 1143.0,
+      "valid_count": 121,
+      "fill_ratio": 1.0,
+      "depth_spread_mm": 9.0,
+      "quality": "good",
+      "note": "Punkt ma stabilny i gesty odczyt depth."
+    },
+    {
+      "name": "left_hip",
+      "label": "L Biodro",
+      "visibility": 0.9979426264762878,
+      "x_px": 299,
+      "y_px": 381,
+      "depth_mm": 1186,
+      "camera_x_mm": -273.62185522628334,
+      "camera_y_mm": 165.81076558621947,
+      "camera_z_mm": 1186.0,
+      "valid_count": 121,
+      "fill_ratio": 1.0,
+      "depth_spread_mm": 37.40000000000009,
+      "quality": "good",
+      "note": "Punkt ma stabilny i gesty odczyt depth."
+    },
+    {
+      "name": "right_hip",
+      "label": "P Biodro",
+      "visibility": 0.9980176687240601,
+      "x_px": 379,
+      "y_px": 382,
+      "depth_mm": 1134,
+      "camera_x_mm": -143.88664092940573,
+      "camera_y_mm": 160.0130513733154,
+      "camera_z_mm": 1134.0,
+      "valid_count": 121,
+      "fill_ratio": 1.0,
+      "depth_spread_mm": 12.0,
+      "quality": "good",
+      "note": "Punkt ma stabilny i gesty odczyt depth."
+    },
+    {
+      "name": "left_knee",
+      "label": "L Kolano",
+      "visibility": 0.19272510707378387,
+      "x_px": 329,
+      "y_px": 444,
+      "depth_mm": 1152,
+      "camera_x_mm": -220.92503413473082,
+      "camera_y_mm": 255.28037960370202,
+      "camera_z_mm": 1152.0,
+      "valid_count": 121,
+      "fill_ratio": 1.0,
+      "depth_spread_mm": 5.0,
+      "quality": "good",
+      "note": "Punkt ma stabilny i gesty odczyt depth."
+    },
+    {
+      "name": "right_knee",
+      "label": "P Kolano",
+      "visibility": 0.4133871793746948,
+      "x_px": 408,
+      "y_px": 457,
+      "depth_mm": 1147,
+      "camera_x_mm": -102.366721669322,
+      "camera_y_mm": 273.5308544886813,
+      "camera_z_mm": 1147.0,
+      "valid_count": 110,
+      "fill_ratio": 0.9090909090909091,
+      "depth_spread_mm": 28.0,
+      "quality": "good",
+      "note": "Punkt ma stabilny i gesty odczyt depth."
+    },
+    {
+      "name": "left_ankle",
+      "label": "L Kostka",
+      "visibility": 0.06866171211004257,
+      "x_px": 270,
+      "y_px": 518,
+      "depth_mm": null,
+      "camera_x_mm": null,
+      "camera_y_mm": null,
+      "camera_z_mm": null,
+      "valid_count": 0,
+      "fill_ratio": 0.0,
+      "depth_spread_mm": null,
+      "quality": "missing",
+      "note": "Brak poprawnych pikseli depth w oknie pomiarowym."
+    }
+  ],
+  "data_mode": "recorded",
+  "notice": "Archiwalny wynik starszej wersji. Brak ponownej walidacji tego ujęcia. Progi nie mają walidacji klinicznej."
+}

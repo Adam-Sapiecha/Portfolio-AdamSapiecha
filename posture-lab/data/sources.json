@@ -1,0 +1,31 @@
+{
+  "data_mode": "recorded",
+  "source_directory": "outputs/report_depth_upgrade_20260622_113401",
+  "notice": "Archiwalne pliki projektu; nie są wynikiem aktualnego uruchomienia. Użytkownik potwierdził zgodę na publikację zdjęć 2026-10-21.",
+  "files": [
+    {
+      "file": "media/rgb_raw.png",
+      "sha256": "5884092c4b31397a1b9b241004b12525cd7b4a0635230c20e1278ba75f3ca85b"
+    },
+    {
+      "file": "media/rgb_pose.png",
+      "sha256": "78ca566c2ef9eba172dd5a6e7f5eaaf4144c054f6a7661ec8b8d6ba65041ea11"
+    },
+    {
+      "file": "media/depth_visual.png",
+      "sha256": "2981acbd8c8823a045825a3f6e81c54a055d15736e0594ec6215349136e4663d"
+    },
+    {
+      "file": "media/depth_pose.png",
+      "sha256": "bb1011cd74e7a323b7cf097e2cd476fb3e411b66a13cdfe929252fb25a482416"
+    },
+    {
+      "file": "media/depth_valid_mask.png",
+      "sha256": "913a50540cfe75ed97bed4389922b08653a79413782d57365e2a2e03fb2853a7"
+    },
+    {
+      "file": "media/report.pdf",
+      "sha256": "59e183869e7c8ba59055d9b0cb379a7e48dc01abb0013d54d8ed74a5a083ce0a"
+    }
+  ]
+}

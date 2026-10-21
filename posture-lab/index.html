@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="System Analizy Postury: repozytorium Python, pipeline OAK-D, detekcja punktów, przetwarzanie depth i rzeczywisty zapis z kamery.">
   <title>System Analizy Postury — kod i działanie</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css?v=technical-2">
 </head>
 <body>
 <header><a href="https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/projects.html#backscan">← Portfolio</a><a href="https://github.com/Adam-Sapiecha/SystemAnalizyWadPostawy">GitHub / SystemAnalizyWadPostawy</a></header>
@@ -18,8 +18,8 @@
   <section id="zapis">
     <h2>Zapis z kamery</h2>
     <p>Ujęcie pleców z 22 czerwca 2026 r. Poniżej są oryginalne pliki z jednego uruchomienia programu: obraz wejściowy, nakładka punktów i wizualizacja głębi.</p>
-    <figure class="wide"><a href="./media/rgb_raw.png"><img src="./media/rgb_raw.png" alt="Rzeczywiste zdjęcie odkrytych pleców osoby stojącej przed kamerą OAK-D" width="1280" height="720"></a><figcaption>rgb_raw.png — obraz wejściowy, 1280 × 720 px.</figcaption></figure>
-    <div class="images"><figure><a href="./media/rgb_pose.png"><img src="./media/rgb_pose.png" alt="To samo ujęcie pleców z punktami barków, bioder, łokci i nadgarstków" width="1280" height="720" loading="lazy"></a><figcaption>rgb_pose.png — punkty wykryte w RGB; kolory opisują jakość odczytu depth.</figcaption></figure><figure><a href="./media/depth_pose.png"><img src="./media/depth_pose.png" alt="Mapa głębi z punktami dla tego samego zapisanego ujęcia" width="1280" height="720" loading="lazy"></a><figcaption>depth_pose.png — wizualizacja depth i punktów pomiarowych.</figcaption></figure></div>
+    <figure class="wide"><a href="./media/rgb_raw.png?capture=20260622-135701"><img src="./media/rgb_raw.png?capture=20260622-135701" alt="Rzeczywiste zdjęcie odkrytych pleców osoby stojącej przed kamerą OAK-D" width="1280" height="720"></a><figcaption>rgb_raw.png — obraz wejściowy, 1280 × 720 px.</figcaption></figure>
+    <div class="images"><figure><a href="./media/rgb_pose.png?capture=20260622-135701"><img src="./media/rgb_pose.png?capture=20260622-135701" alt="To samo ujęcie pleców z punktami barków, bioder, łokci i nadgarstków" width="1280" height="720" loading="lazy"></a><figcaption>rgb_pose.png — punkty wykryte w RGB; kolory opisują jakość odczytu depth.</figcaption></figure><figure><a href="./media/depth_pose.png?capture=20260622-135701"><img src="./media/depth_pose.png?capture=20260622-135701" alt="Mapa głębi z punktami dla tego samego zapisanego ujęcia" width="1280" height="720" loading="lazy"></a><figcaption>depth_pose.png — wizualizacja depth i punktów pomiarowych.</figcaption></figure></div>
     <h3>Co zwrócił program dla tego ujęcia</h3>
     <p>Detektor znalazł sylwetkę i cztery wymagane punkty barków oraz bioder miały odczyt głębi. Program <strong>odrzucił ujęcie</strong>, ponieważ klatki RGB i depth były przesunięte w czasie o 1375,1 ms. Nie powstał raport PDF dla tego zapisu.</p>
     <pre><code>{

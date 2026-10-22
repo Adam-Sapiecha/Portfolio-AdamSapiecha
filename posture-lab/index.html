@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Posture Analysis System — code and implementation | Adam Sapiecha</title><meta name="description" content="Python, OAK-D and RGB-D geometry: source code, an actual camera capture, quality checks and a working Raspberry Pi application.">
+<title>Posture Analysis System: code and implementation | Adam Sapiecha</title><meta name="description" content="Python, OAK-D and RGB-D geometry: source code, an actual camera capture, quality checks and a working Raspberry Pi application.">
 <link rel="canonical" href="https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/posture-lab/">
 <meta property="og:type" content="article"><meta property="og:locale" content="en_US">
-<meta property="og:title" content="Posture Analysis System — code and implementation | Adam Sapiecha"><meta property="og:description" content="Python, OAK-D and RGB-D geometry: source code, an actual camera capture, quality checks and a working Raspberry Pi application."><meta property="og:url" content="https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/posture-lab/">
+<meta property="og:title" content="Posture Analysis System: code and implementation | Adam Sapiecha"><meta property="og:description" content="Python, OAK-D and RGB-D geometry: source code, an actual camera capture, quality checks and a working Raspberry Pi application."><meta property="og:url" content="https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/posture-lab/">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="./case.css?v=taskmesh-1">
-</head><body data-page="projects" data-title-pl="System Analizy Postury — kod i działanie | Adam Sapiecha" data-title-en="Posture Analysis System — code and implementation | Adam Sapiecha" data-description-pl="Python, OAK-D i geometria RGB-D: kod, oryginalny zapis z kamery, kontrola jakości i działająca aplikacja na Raspberry Pi." data-description-en="Python, OAK-D and RGB-D geometry: source code, an actual camera capture, quality checks and a working Raspberry Pi application.">
+</head><body data-page="projects" data-title-pl="System Analizy Postury: kod i działanie | Adam Sapiecha" data-title-en="Posture Analysis System: code and implementation | Adam Sapiecha" data-description-pl="Python, OAK-D i geometria RGB-D: kod, oryginalny zapis z kamery, kontrola jakości i działająca aplikacja na Raspberry Pi." data-description-en="Python, OAK-D and RGB-D geometry: source code, an actual camera capture, quality checks and a working Raspberry Pi application.">
 <a class="skip-link" href="#main-content" data-pl="Przejdź do treści" data-en="Skip to content">Skip to content</a>  <header class="site-header">
     <nav class="nav-inner" aria-label="Main navigation" data-aria-label-pl="Główna nawigacja" data-aria-label-en="Main navigation">
       <a class="nav-brand" href="../index.html" aria-label="Adam Sapiecha">Adam Sapiecha</a>
@@ -110,16 +110,16 @@ camera_y_mm = ((keypoint.y_px - cy) * camera_z_mm) / fy</code></pre>
 <p  data-pl="Wybrane ujęcie w czerwonej bluzie pochodzi z 6 kwietnia 2026 r. RGB, nakładka punktów, depth, JSON i PDF dotyczą tego samego uruchomienia. Pokazuję wspólny kadr sylwetki; kliknięcie otwiera pełny plik źródłowy." data-en="The selected red-sweatshirt capture is from 6 April 2026. RGB, landmarks, depth, JSON and PDF all belong to the same run. The images use the same body crop; clicking opens the full source file.">The selected red-sweatshirt capture is from 6 April 2026. RGB, landmarks, depth, JSON and PDF all belong to the same run. The images use the same body crop; clicking opens the full source file.</p>
 <div class="capture-gallery">
 <figure>
-<a class="body-crop" href="./media/rgb_raw.png?capture=20260406-180413"><img src="./media/rgb_raw.png?capture=20260406-180413" width="960" height="540" loading="lazy" alt="RGB — input image" data-alt-pl="RGB — obraz wejściowy" data-alt-en="RGB — input image"></a>
-<figcaption  data-pl="RGB — obraz wejściowy" data-en="RGB — input image">RGB — input image</figcaption>
+<a class="body-crop" href="./media/rgb_raw.png?capture=20260406-180413"><img src="./media/rgb_raw.png?capture=20260406-180413" width="960" height="540" loading="lazy" alt="RGB: input image" data-alt-pl="RGB: obraz wejściowy" data-alt-en="RGB: input image"></a>
+<figcaption  data-pl="RGB: obraz wejściowy" data-en="RGB: input image">RGB: input image</figcaption>
 </figure>
 <figure>
-<a class="body-crop" href="./media/rgb_pose.png?capture=20260406-180413"><img src="./media/rgb_pose.png?capture=20260406-180413" width="960" height="540" loading="lazy" alt="RGB — landmarks and depth quality" data-alt-pl="RGB — punkty i jakość depth" data-alt-en="RGB — landmarks and depth quality"></a>
-<figcaption  data-pl="RGB — punkty i jakość depth" data-en="RGB — landmarks and depth quality">RGB — landmarks and depth quality</figcaption>
+<a class="body-crop" href="./media/rgb_pose.png?capture=20260406-180413"><img src="./media/rgb_pose.png?capture=20260406-180413" width="960" height="540" loading="lazy" alt="RGB: landmarks and depth quality" data-alt-pl="RGB: punkty i jakość depth" data-alt-en="RGB: landmarks and depth quality"></a>
+<figcaption  data-pl="RGB: punkty i jakość depth" data-en="RGB: landmarks and depth quality">RGB: landmarks and depth quality</figcaption>
 </figure>
 <figure>
-<a class="body-crop" href="./media/depth_pose.png?capture=20260406-180413"><img src="./media/depth_pose.png?capture=20260406-180413" width="960" height="540" loading="lazy" alt="Depth — depth map and landmarks" data-alt-pl="Depth — mapa głębi i punkty" data-alt-en="Depth — depth map and landmarks"></a>
-<figcaption  data-pl="Depth — mapa głębi i punkty" data-en="Depth — depth map and landmarks">Depth — depth map and landmarks</figcaption>
+<a class="body-crop" href="./media/depth_pose.png?capture=20260406-180413"><img src="./media/depth_pose.png?capture=20260406-180413" width="960" height="540" loading="lazy" alt="Depth: depth map and landmarks" data-alt-pl="Depth: mapa głębi i punkty" data-alt-en="Depth: depth map and landmarks"></a>
+<figcaption  data-pl="Depth: mapa głębi i punkty" data-en="Depth: depth map and landmarks">Depth: depth map and landmarks</figcaption>
 </figure>
 </div><div class="example">
 <h3  data-pl="Wynik zapisany przez program" data-en="The recorded result">The recorded result</h3>

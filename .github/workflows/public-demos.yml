@@ -1,0 +1,36 @@
+name: Public demo flows
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, codex/portfolio-audit-fixes]
+    paths: ['scripts/**', 'package*.json', '.github/workflows/public-demos.yml']
+permissions:
+  contents: read
+concurrency:
+  group: public-demos
+  cancel-in-progress: false
+jobs:
+  external-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:links
+      - name: DNS, HTTPS and API preflight
+        run: node scripts/audit-public-demos.mjs > network-audit-external.json
+      - name: Browser operations from a hosted runner without VPN or SSH
+        run: npm run test:public
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: external-demo-evidence
+          path: |
+            test-results/
+            network-audit-external.json
+          retention-days: 7

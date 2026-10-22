@@ -31,4 +31,7 @@ and the previous releases remain on the host. Existing visitor data was preserve
 - Posture: 41 unittest tests, including guest deletion isolation, CSRF, owner
   protection, preserved rate limits and overlapping admission windows.
 - Portfolio local links and anchors checked on 11 pages; test script syntax checked.
-- Public end-to-end result will be recorded after the independent GitHub runner completes.
+- Independent public end-to-end run #27 passed all scenarios, including cleanup:
+  https://github.com/Adam-Sapiecha/Portfolio-AdamSapiecha/actions/runs/39867732142
+- SentinelHub independent quality workflow passed:
+  https://github.com/Adam-Sapiecha/SentinelHub/actions/runs/39866765453

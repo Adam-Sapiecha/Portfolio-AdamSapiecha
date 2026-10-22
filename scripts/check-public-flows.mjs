@@ -9,7 +9,7 @@ const origin = 'https://luxonis.tail6ad453.ts.net:8443';
 const portfolio = process.env.PORTFOLIO_URL || 'https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/';
 const output = path.resolve('test-results');
 await fs.mkdir(output,{recursive:true});
-const report = { checkedAt:new Date().toISOString(), vantagePoint:process.env.GITHUB_ACTIONS ? 'Independent GitHub-hosted runner; no VPN, SSH or server credentials' : 'Local run; network independence is not established', runUrl:process.env.GITHUB_RUN_ID ? `https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}` : null, projects:[] };
+const report = { checkedAt:new Date().toISOString(), portfolioUrl:portfolio, vantagePoint:process.env.GITHUB_ACTIONS ? 'Independent GitHub-hosted runner; no VPN, SSH or server credentials' : 'Local run; network independence is not established', runUrl:process.env.GITHUB_RUN_ID ? `https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}` : null, projects:[] };
 const browser = await chromium.launch();
 const errors = [];
 async function checkLayout(page,name) {
@@ -25,6 +25,7 @@ async function checkLayout(page,name) {
       return result.violations.map(v=>({id:v.id,impact:v.impact,description:v.description,nodes:v.nodes.map(n=>({target:n.target,summary:n.failureSummary,html:n.html}))}));
     });
     await fs.writeFile(path.join(output,`${name}-accessibility-${width}.json`),JSON.stringify(accessibility,null,2));
+    if(accessibility.length) console.log(JSON.stringify({name,width,accessibility},null,2));
     assert.equal(accessibility.length,0,`${name}: accessibility issues at ${width}px: ${accessibility.map(v=>v.id).join(', ')}`);
   }
   await page.setViewportSize({width:1280,height:900});
@@ -72,7 +73,7 @@ try {
     assert(await dialog.locator('button').first().evaluate(el=>el===document.activeElement),'Dialog must receive focus');
     await page.keyboard.press('Escape');
     assert.equal(await page.getByRole('dialog').count(),0);
-    assert(await page.getByRole('button',{name:/[a-f0-9]{8} text\.analyze/}).first().evaluate(el=>el===document.activeElement),'Return focus to the job');
+    await page.waitForFunction(()=>document.activeElement?.matches('button.job-link'),{timeout:5000});
     await page.reload();await page.getByRole('button',{name:/[a-f0-9]{8} text\.analyze/}).first().waitFor();
     const other=await browser.newContext();
     const anonymous=await other.request.get(`${origin}/taskmesh/public/v1/jobs`);
@@ -151,7 +152,14 @@ try {
   });
   // Check portfolio separately; it needs no backend response of its own.
   const context=await browser.newContext();const page=await context.newPage();
-  await page.goto(new URL('projects.html',portfolio).href);
+  const projectsUrl=new URL('projects.html',portfolio).href;
+  await page.goto(projectsUrl);
+  if(process.env.GITHUB_REF_NAME==='main') {
+    // Pages publication is asynchronous; wait for the already-reviewed link update.
+    for(let attempt=0;attempt<18&&!await page.locator(`a[href="${origin}/sentinelhub/"]`).count();attempt++) {
+      await new Promise(resolve=>setTimeout(resolve,10000));await page.reload();
+    }
+  }
   for(const suffix of ['/taskmesh/','/sentinelhub/','/support/','/lab']) assert(await page.locator(`a[href="${origin}${suffix}"]`).count(),`Portfolio link missing: ${suffix}`);
   await page.locator('[data-lang="pl"]').click();assert.equal(await page.locator('html').getAttribute('lang'),'pl');
   await page.locator('[data-lang="en"]').click();assert.equal(await page.locator('html').getAttribute('lang'),'en');

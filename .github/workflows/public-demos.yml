@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main, codex/portfolio-audit-fixes]
-    paths: ['scripts/**', 'package*.json', '.github/workflows/public-demos.yml']
+    paths: ['**.html', '**.css', 'script.js', 'scripts/**', 'package*.json', '.github/workflows/public-demos.yml']
 permissions:
   contents: read
 concurrency:
@@ -25,7 +25,13 @@ jobs:
       - name: DNS, HTTPS and API preflight
         run: node scripts/audit-public-demos.mjs > network-audit-external.json
       - name: Browser operations from a hosted runner without VPN or SSH
-        run: npm run test:public
+        env:
+          PORTFOLIO_URL: ${{ github.ref_name == 'main' && 'https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/' || 'http://127.0.0.1:4173/' }}
+        run: |
+          if [ "$GITHUB_REF_NAME" != main ]; then
+            python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/portfolio-preview.log 2>&1 &
+          fi
+          npm run test:public
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -30,10 +30,28 @@ async function checkLayout(page,name) {
   }
   await page.setViewportSize({width:1280,height:900});
 }
+async function deleteTestGuest(context) {
+  const response = await context.request.get(`${origin}/api/private/session`);
+  assert.equal(response.status(), 200, 'Read the test guest before cleanup');
+  const state = await response.json();
+  if (!state.guest) return;
+  const removed = await context.request.delete(`${origin}/api/private/guest`, {
+    headers: { 'X-CSRF-Token': state.csrf },
+  });
+  assert.equal(removed.status(), 204, 'Delete only this test context guest and its captures');
+}
 async function scenario(name,url,run) {
   const context=await browser.newContext({viewport:{width:1280,height:900},acceptDownloads:true});
   let page=await context.newPage();
   const pageErrors=[], apiResponses=[];
+  const ownedWorkspaces=[], resourceReads=[];
+  // Capture capabilities immediately, including when a later UI assertion fails.
+  context.on('response', response => {
+    if (name === 'sentinelhub' && response.request().method() === 'POST' &&
+        new URL(response.url()).pathname === '/sentinelhub/api/workspaces' && response.status() === 201) {
+      resourceReads.push(response.json().then(owner => ownedWorkspaces.push(owner)));
+    }
+  });
   let details;
   page.on('pageerror',error=>pageErrors.push(error.message));
   page.on('response',response=>{
@@ -66,7 +84,20 @@ async function scenario(name,url,run) {
     await page.screenshot({path:path.join(output,`${name}-failure.png`),fullPage:true}).catch(()=>{});
     report.projects.push({name,status:'failed',url,error:error.message,details,apiResponses,pageErrors});
     errors.push(`${name}: ${error.message}`);
-  } finally { await context.close(); }
+  } finally {
+    try {
+      await Promise.all(resourceReads);
+      for (const owner of ownedWorkspaces) {
+        const removed = await context.request.delete(`${origin}/sentinelhub/api/workspaces/${owner.id}`, {
+          headers: { Authorization: `Bearer ${owner.key}` },
+        });
+        assert.equal(removed.status(), 204, 'Delete the workspace created by this test');
+      }
+      if (name === 'posture') await deleteTestGuest(context);
+    } catch (error) {
+      errors.push(`${name} cleanup: ${error.message}`);
+    } finally { await context.close(); }
+  }
 }
 
 // Generate known synthetic RGB-D; this contains no photograph or personal data.
@@ -103,7 +134,11 @@ try {
     return {characters:22,lines:2,words:4,reload:true,keyboard:true,separateVisitorIsolation:true};
   });
   await scenario('sentinelhub',`${origin}/sentinelhub/`,async(page,context)=>{
+    const createdWorkspace = page.waitForResponse(response =>
+      response.request().method() === 'POST' && new URL(response.url()).pathname === '/sentinelhub/api/workspaces');
     await page.getByRole('button',{name:'Wczytaj przykład',exact:true}).click();
+    const workspaceResponse = await createdWorkspace;
+    assert.equal(workspaceResponse.status(),201,`Create sample workspace: ${await workspaceResponse.text()}`);
     await page.getByRole('button',{name:'Oblicz i zapisz analizę ↗',exact:true}).waitFor();
     await page.getByRole('button',{name:'Oblicz i zapisz analizę ↗',exact:true}).click();
     await page.locator('#analysis-status').filter({hasText:'Znaleziono przejazd'}).waitFor({timeout:30000});
@@ -154,7 +189,11 @@ try {
     return {technicalSource:true,billing:true,sampleRefund:true};
   });
   await scenario('posture',`${origin}/`,async(page,context)=>{
+    const guestResponse = page.waitForResponse(response =>
+      response.request().method() === 'POST' && new URL(response.url()).pathname === '/api/private/guest');
     await page.getByRole('button',{name:'Wejdź jako gość →',exact:true}).click();
+    const guest = await guestResponse;
+    assert.equal(guest.status(),201,`Create test guest: ${await guest.text()}`);
     await page.locator('#application').waitFor({state:'visible',timeout:15000});
     await page.locator('#rgb').setInputFiles({name:'synthetic-rgb.png',mimeType:'image/png',buffer:png(false)});
     await page.locator('#depth').setInputFiles({name:'synthetic-depth.png',mimeType:'image/png',buffer:png(true)});
@@ -171,12 +210,15 @@ try {
     const captureUrl=await page.getByRole('link',{name:'Wynik JSON',exact:true}).getAttribute('href');
     const other=await browser.newContext();
     const denied=await other.request.get(new URL(captureUrl,origin).href);assert([401,403,404].includes(denied.status()));
-    const otherState=await (await other.request.get(`${origin}/api/private/session`)).json();
-    const otherGuest=await other.request.post(`${origin}/api/private/guest`,{headers:{'X-CSRF-Token':otherState.csrf}});
-    assert.equal(otherGuest.status(),201);
-    const foreignCapture=await other.request.get(new URL(captureUrl,origin).href);
-    assert.equal(foreignCapture.status(),404,'A second guest must not read the first guest capture');
-    await other.close();
+    try {
+      const otherState=await (await other.request.get(`${origin}/api/private/session`)).json();
+      const otherGuest=await other.request.post(`${origin}/api/private/guest`,{headers:{'X-CSRF-Token':otherState.csrf}});
+      assert.equal(otherGuest.status(),201);
+      const foreignCapture=await other.request.get(new URL(captureUrl,origin).href);
+      assert.equal(foreignCapture.status(),404,'A second guest must not read the first guest capture');
+    } finally {
+      try { await deleteTestGuest(other); } finally { await other.close(); }
+    }
     const csrf=(await (await context.request.get(`${origin}/api/private/session`)).json()).csrf;
     const ownerLogin=await context.request.post(`${origin}/api/private/login`,{headers:{'X-CSRF-Token':csrf},data:{username:'no-owner',password:'not-a-real-password'}});
     assert.equal(ownerLogin.status(),404,'Owner login is disabled on public instance');

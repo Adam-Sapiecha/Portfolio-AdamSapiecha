@@ -85,6 +85,7 @@ try {
     await dialog.locator('.status.succeeded').waitFor({timeout:30000});
     await dialog.locator('.result-block').filter({hasText:'"characters": 22'}).waitFor({timeout:30000});
     const text=await dialog.innerText();
+    const jobId=await dialog.locator('.full-id').innerText();
     assert.match(text, /"characters": 22/);assert.match(text,/"lines": 2/);assert.match(text,/"words": 4/);
     assert(await dialog.locator('button').first().evaluate(el=>el===document.activeElement),'Dialog must receive focus');
     await page.keyboard.press('Escape');
@@ -94,8 +95,12 @@ try {
     const other=await browser.newContext();
     const anonymous=await other.request.get(`${origin}/taskmesh/public/v1/jobs`);
     assert([401,403].includes(anonymous.status()),'Anonymous request must not see jobs');
+    const otherSession=await other.request.post(`${origin}/taskmesh/public/v1/session`,{headers:{Origin:origin},data:{}});
+    assert.equal(otherSession.status(),201);
+    const foreignJob=await other.request.get(`${origin}/taskmesh/public/v1/jobs/${jobId}`);
+    assert.equal(foreignJob.status(),404,'A second valid session must not read this job');
     await other.close();
-    return {characters:22,lines:2,words:4,reload:true,keyboard:true};
+    return {characters:22,lines:2,words:4,reload:true,keyboard:true,separateVisitorIsolation:true};
   });
   await scenario('sentinelhub',`${origin}/sentinelhub/`,async(page,context)=>{
     await page.getByRole('button',{name:'Wczytaj przykład',exact:true}).click();
@@ -120,7 +125,18 @@ try {
     assert([401,403,404].includes(denied.status()));
     const operator=await context.request.post(`${origin}/sentinelhub/api/workspaces/${id}/imports`,{data:{}});
     assert.equal(operator.status(),404,'Operator route must be absent from public ingress');
-    return {detourMetres:582,history:true,reopen:true,privateAccess:true};
+    const other=await browser.newContext();
+    const created=await other.request.post(`${origin}/sentinelhub/api/workspaces`,{data:{name:'Synthetic isolation check'}});
+    assert.equal(created.status(),201);
+    const otherOwner=await created.json();
+    try {
+      const foreign=await other.request.get(`${origin}/sentinelhub/api/workspaces/${id}`,{headers:{Authorization:`Bearer ${otherOwner.key}`}});
+      assert.equal(foreign.status(),401,'Another workspace owner must not read this workspace');
+    } finally {
+      const removed=await other.request.delete(`${origin}/sentinelhub/api/workspaces/${otherOwner.id}`,{headers:{Authorization:`Bearer ${otherOwner.key}`}});
+      assert.equal(removed.status(),204);await other.close();
+    }
+    return {detourMetres:582,history:true,reopen:true,privateAccess:true,separateVisitorIsolation:true};
   });
   await scenario('support',`${origin}/support/`,async(page)=>{
     await page.getByRole('button',{name:'HTTP 401',exact:true}).click();
@@ -154,13 +170,18 @@ try {
     const captureUrl=await page.getByRole('link',{name:'Wynik JSON',exact:true}).getAttribute('href');
     const other=await browser.newContext();
     const denied=await other.request.get(new URL(captureUrl,origin).href);assert([401,403,404].includes(denied.status()));
+    const otherState=await (await other.request.get(`${origin}/api/private/session`)).json();
+    const otherGuest=await other.request.post(`${origin}/api/private/guest`,{headers:{'X-CSRF-Token':otherState.csrf}});
+    assert.equal(otherGuest.status(),201);
+    const foreignCapture=await other.request.get(new URL(captureUrl,origin).href);
+    assert.equal(foreignCapture.status(),404,'A second guest must not read the first guest capture');
     await other.close();
     const csrf=(await (await context.request.get(`${origin}/api/private/session`)).json()).csrf;
     const ownerLogin=await context.request.post(`${origin}/api/private/login`,{headers:{'X-CSRF-Token':csrf},data:{username:'no-owner',password:'not-a-real-password'}});
     assert.equal(ownerLogin.status(),404,'Owner login is disabled on public instance');
     await page.reload();await page.locator('#history button').first().click();
     await page.locator('#result-title').waitFor();
-    return {syntheticShoulderHeightCm:6,pdf:true,reload:true,privateAccess:true,ownerLoginDisabled:true};
+    return {syntheticShoulderHeightCm:6,pdf:true,reload:true,privateAccess:true,separateVisitorIsolation:true,ownerLoginDisabled:true};
   });
   await scenario('posture-sample',`${origin}/lab`,async(page)=>{
     await page.getByRole('button',{name:'Uruchom analizę →',exact:true}).click();

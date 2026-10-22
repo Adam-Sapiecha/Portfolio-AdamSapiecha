@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 const root = process.cwd();
-const pages = ['index.html','projects.html','about.html','contact.html','taskmesh/index.html','sentinelhub/index.html','dual-agent/index.html','posture-lab/index.html'];
+const pages = ['index.html','projects.html','about.html','contact.html','taskmesh/index.html','sentinelhub/index.html','dual-agent/index.html','posture-lab/index.html','samsung/index.html','sorno/index.html','tikrow/index.html'];
 for (const page of pages) {
   const source = fs.readFileSync(page,'utf8');
   assert(!/<<<<<<<|=======\n|>>>>>>>/.test(source), `Merge markers: ${page}`);

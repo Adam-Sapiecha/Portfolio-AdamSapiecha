@@ -113,6 +113,9 @@ try {
     await page.locator('#workspace-id').fill(id);await page.locator('#workspace-key').fill(key);
     await page.getByRole('button',{name:'Otwórz / odśwież',exact:true}).click();
     await page.locator('#history-list button').first().waitFor();
+    await page.locator('#history-list button').first().click();
+    await page.locator('#workspace-status').filter({hasText:'Odczytano zapisany wynik'}).waitFor();
+    assert.match(await page.locator('#own-route').innerText(),/582/);
     const denied=await context.request.get(`${origin}/sentinelhub/api/workspaces/${id}`);
     assert([401,403,404].includes(denied.status()));
     const operator=await context.request.post(`${origin}/sentinelhub/api/workspaces/${id}/imports`,{data:{}});

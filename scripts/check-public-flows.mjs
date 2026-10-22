@@ -134,6 +134,7 @@ try {
   });
   await scenario('posture',`${origin}/`,async(page,context)=>{
     await page.getByRole('button',{name:'Wejdź jako gość →',exact:true}).click();
+    await page.locator('#application').waitFor({state:'visible',timeout:15000});
     await page.locator('#rgb').setInputFiles({name:'synthetic-rgb.png',mimeType:'image/png',buffer:png(false)});
     await page.locator('#depth').setInputFiles({name:'synthetic-depth.png',mimeType:'image/png',buffer:png(true)});
     await page.locator('#metadata').setInputFiles({name:'synthetic-capture.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(metadata))});

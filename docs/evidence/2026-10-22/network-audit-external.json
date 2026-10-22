@@ -1,0 +1,543 @@
+{
+  "checkedAt": "2026-10-22T00:43:32.793Z",
+  "vantagePoint": "The machine running this command; independent network must be confirmed by the operator.",
+  "limitation": "DNS/TLS/HTTP and cross-origin preflight only. No browser operations, restart, idle or isolation test. Missing cross-origin permission is expected for same-origin apps.",
+  "results": [
+    {
+      "url": "https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/index.html",
+      "method": "GET",
+      "status": 200,
+      "bytes": 19741,
+      "elapsedMs": 322,
+      "publicDns": [
+        "185.199.108.153",
+        "185.199.109.153",
+        "185.199.110.153",
+        "185.199.111.153"
+      ],
+      "remoteAddress": "185.199.108.153",
+      "tlsAuthorized": true,
+      "tlsProtocol": "TLSv1.3",
+      "certificate": {
+        "subject": "*.github.io",
+        "issuer": "YR1",
+        "validFrom": "Sep 30 23:44:46 2026 GMT",
+        "validTo": "Dec 29 23:44:45 2026 GMT"
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "strict-transport-security": "max-age=31556952",
+        "access-control-allow-origin": "*",
+        "vary": "Accept-Encoding",
+        "cache-control": "max-age=600"
+      }
+    },
+    {
+      "url": "https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/projects.html",
+      "method": "GET",
+      "status": 200,
+      "bytes": 47280,
+      "elapsedMs": 161,
+      "publicDns": [
+        "185.199.108.153",
+        "185.199.109.153",
+        "185.199.110.153",
+        "185.199.111.153"
+      ],
+      "remoteAddress": "185.199.108.153",
+      "tlsAuthorized": true,
+      "tlsProtocol": "TLSv1.3",
+      "certificate": {
+        "subject": "*.github.io",
+        "issuer": "YR1",
+        "validFrom": "Sep 30 23:44:46 2026 GMT",
+        "validTo": "Dec 29 23:44:45 2026 GMT"
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "strict-transport-security": "max-age=31556952",
+        "access-control-allow-origin": "*",
+        "vary": "Accept-Encoding",
+        "cache-control": "max-age=600"
+      }
+    },
+    {
+      "url": "https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/taskmesh/",
+      "method": "GET",
+      "status": 200,
+      "bytes": 28492,
+      "elapsedMs": 120,
+      "publicDns": [
+        "185.199.108.153",
+        "185.199.109.153",
+        "185.199.110.153",
+        "185.199.111.153"
+      ],
+      "remoteAddress": "185.199.108.153",
+      "tlsAuthorized": true,
+      "tlsProtocol": "TLSv1.3",
+      "certificate": {
+        "subject": "*.github.io",
+        "issuer": "YR1",
+        "validFrom": "Sep 30 23:44:46 2026 GMT",
+        "validTo": "Dec 29 23:44:45 2026 GMT"
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "strict-transport-security": "max-age=31556952",
+        "access-control-allow-origin": "*",
+        "vary": "Accept-Encoding",
+        "cache-control": "max-age=600"
+      }
+    },
+    {
+      "url": "https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/sentinelhub/",
+      "method": "GET",
+      "status": 200,
+      "bytes": 25796,
+      "elapsedMs": 138,
+      "publicDns": [
+        "185.199.108.153",
+        "185.199.109.153",
+        "185.199.110.153",
+        "185.199.111.153"
+      ],
+      "remoteAddress": "185.199.108.153",
+      "tlsAuthorized": true,
+      "tlsProtocol": "TLSv1.3",
+      "certificate": {
+        "subject": "*.github.io",
+        "issuer": "YR1",
+        "validFrom": "Sep 30 23:44:46 2026 GMT",
+        "validTo": "Dec 29 23:44:45 2026 GMT"
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "strict-transport-security": "max-age=31556952",
+        "access-control-allow-origin": "*",
+        "vary": "Accept-Encoding",
+        "cache-control": "max-age=600"
+      }
+    },
+    {
+      "url": "https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/dual-agent/",
+      "method": "GET",
+      "status": 200,
+      "bytes": 24801,
+      "elapsedMs": 107,
+      "publicDns": [
+        "185.199.108.153",
+        "185.199.109.153",
+        "185.199.110.153",
+        "185.199.111.153"
+      ],
+      "remoteAddress": "185.199.108.153",
+      "tlsAuthorized": true,
+      "tlsProtocol": "TLSv1.3",
+      "certificate": {
+        "subject": "*.github.io",
+        "issuer": "YR1",
+        "validFrom": "Sep 30 23:44:46 2026 GMT",
+        "validTo": "Dec 29 23:44:45 2026 GMT"
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "strict-transport-security": "max-age=31556952",
+        "access-control-allow-origin": "*",
+        "vary": "Accept-Encoding",
+        "cache-control": "max-age=600"
+      }
+    },
+    {
+      "url": "https://luxonis.tail6ad453.ts.net:8443/taskmesh/",
+      "method": "GET",
+      "status": 200,
+      "bytes": 642,
+      "elapsedMs": 538,
+      "publicDns": [
+        "185.40.234.37",
+        "185.40.234.172",
+        "185.40.234.210"
+      ],
+      "remoteAddress": "185.40.234.37",
+      "tlsAuthorized": true,
+      "tlsProtocol": "TLSv1.3",
+      "certificate": {
+        "subject": "luxonis.tail6ad453.ts.net",
+        "issuer": "YE1",
+        "validFrom": "Oct 18 14:22:40 2026 GMT",
+        "validTo": "Jan 16 14:22:39 2027 GMT"
+      },
+      "headers": {
+        "content-type": "text/html",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store"
+      }
+    },
+    {
+      "url": "https://luxonis.tail6ad453.ts.net:8443/support/",
+      "method": "GET",
+      "status": 200,
+      "bytes": 3580,
+      "elapsedMs": 169,
+      "publicDns": [
+        "185.40.234.37",
+        "185.40.234.172",
+        "185.40.234.210"
+      ],
+      "remoteAddress": "185.40.234.37",
+      "tlsAuthorized": true,
+      "tlsProtocol": "TLSv1.3",
+      "certificate": {
+        "subject": "luxonis.tail6ad453.ts.net",
+        "issuer": "YE1",
+        "validFrom": "Oct 18 14:22:40 2026 GMT",
+        "validTo": "Jan 16 14:22:39 2027 GMT"
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer"
+      }
+    },
+    {
+      "url": "https://luxonis.tail6ad453.ts.net:8443/support/api/health",
+      "method": "GET",
+      "status": 200,
+      "bytes": 31,
+      "elapsedMs": 168,
+      "publicDns": [
+        "185.40.234.37",
+        "185.40.234.172",
+        "185.40.234.210"
+      ],
+      "remoteAddress": "185.40.234.37",
+      "tlsAuthorized": true,
+      "tlsProtocol": "TLSv1.3",
+      "certificate": {
+        "subject": "luxonis.tail6ad453.ts.net",
+        "issuer": "YE1",
+        "validFrom": "Oct 18 14:22:40 2026 GMT",
+        "validTo": "Jan 16 14:22:39 2027 GMT"
+      },
+      "headers": {
+        "content-type": "application/json",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store"
+      }
+    },
+    {
+      "url": "https://luxonis.tail6ad453.ts.net:8443/",
+      "method": "GET",
+      "status": 200,
+      "bytes": 5472,
+      "elapsedMs": 168,
+      "publicDns": [
+        "185.40.234.37",
+        "185.40.234.172",
+        "185.40.234.210"
+      ],
+      "remoteAddress": "185.40.234.37",
+      "tlsAuthorized": true,
+      "tlsProtocol": "TLSv1.3",
+      "certificate": {
+        "subject": "luxonis.tail6ad453.ts.net",
+        "issuer": "YE1",
+        "validFrom": "Oct 18 14:22:40 2026 GMT",
+        "validTo": "Jan 16 14:22:39 2027 GMT"
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-security-policy": "default-src 'self'; img-src 'self' data: blob:; style-src 'self'; script-src 'self'; frame-ancestors 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store"
+      }
+    },
+    {
+      "url": "https://luxonis.tail6ad453.ts.net:8443/lab",
+      "method": "GET",
+      "status": 200,
+      "bytes": 2487,
+      "elapsedMs": 164,
+      "publicDns": [
+        "185.40.234.37",
+        "185.40.234.172",
+        "185.40.234.210"
+      ],
+      "remoteAddress": "185.40.234.37",
+      "tlsAuthorized": true,
+      "tlsProtocol": "TLSv1.3",
+      "certificate": {
+        "subject": "luxonis.tail6ad453.ts.net",
+        "issuer": "YE1",
+        "validFrom": "Oct 18 14:22:40 2026 GMT",
+        "validTo": "Jan 16 14:22:39 2027 GMT"
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-security-policy": "default-src 'self'; img-src 'self' data: blob:; style-src 'self'; script-src 'self'; frame-ancestors 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store"
+      }
+    },
+    {
+      "url": "https://luxonis.tail6ad453.ts.net:8443/process/",
+      "method": "GET",
+      "status": 200,
+      "bytes": 7673,
+      "elapsedMs": 167,
+      "publicDns": [
+        "185.40.234.37",
+        "185.40.234.172",
+        "185.40.234.210"
+      ],
+      "remoteAddress": "185.40.234.37",
+      "tlsAuthorized": true,
+      "tlsProtocol": "TLSv1.3",
+      "certificate": {
+        "subject": "luxonis.tail6ad453.ts.net",
+        "issuer": "YE1",
+        "validFrom": "Oct 18 14:22:40 2026 GMT",
+        "validTo": "Jan 16 14:22:39 2027 GMT"
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-security-policy": "default-src 'self'; img-src 'self' data: blob:; style-src 'self'; script-src 'self'; frame-ancestors 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store"
+      }
+    },
+    {
+      "url": "https://luxonis.tail6ad453.ts.net:8443/sentinelhub/",
+      "method": "GET",
+      "status": 200,
+      "bytes": 7537,
+      "elapsedMs": 167,
+      "publicDns": [
+        "185.40.234.37",
+        "185.40.234.172",
+        "185.40.234.210"
+      ],
+      "remoteAddress": "185.40.234.37",
+      "tlsAuthorized": true,
+      "tlsProtocol": "TLSv1.3",
+      "certificate": {
+        "subject": "luxonis.tail6ad453.ts.net",
+        "issuer": "YE1",
+        "validFrom": "Oct 18 14:22:40 2026 GMT",
+        "validTo": "Jan 16 14:22:39 2027 GMT"
+      },
+      "headers": {
+        "content-type": "text/html",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer"
+      }
+    },
+    {
+      "url": "https://luxonis.tail6ad453.ts.net:8443/sentinelhub/sample.html",
+      "method": "GET",
+      "status": 200,
+      "bytes": 4989,
+      "elapsedMs": 166,
+      "publicDns": [
+        "185.40.234.37",
+        "185.40.234.172",
+        "185.40.234.210"
+      ],
+      "remoteAddress": "185.40.234.37",
+      "tlsAuthorized": true,
+      "tlsProtocol": "TLSv1.3",
+      "certificate": {
+        "subject": "luxonis.tail6ad453.ts.net",
+        "issuer": "YE1",
+        "validFrom": "Oct 18 14:22:40 2026 GMT",
+        "validTo": "Jan 16 14:22:39 2027 GMT"
+      },
+      "headers": {
+        "content-type": "text/html",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer"
+      }
+    },
+    {
+      "url": "https://luxonis.tail6ad453.ts.net:8443/sentinelhub/examples/roads.geojson",
+      "method": "GET",
+      "status": 200,
+      "bytes": 1391,
+      "elapsedMs": 166,
+      "publicDns": [
+        "185.40.234.37",
+        "185.40.234.172",
+        "185.40.234.210"
+      ],
+      "remoteAddress": "185.40.234.37",
+      "tlsAuthorized": true,
+      "tlsProtocol": "TLSv1.3",
+      "certificate": {
+        "subject": "luxonis.tail6ad453.ts.net",
+        "issuer": "YE1",
+        "validFrom": "Oct 18 14:22:40 2026 GMT",
+        "validTo": "Jan 16 14:22:39 2027 GMT"
+      },
+      "headers": {
+        "content-type": "application/octet-stream",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer"
+      }
+    },
+    {
+      "url": "https://luxonis.tail6ad453.ts.net:8443/sentinelhub/examples/flood.geojson",
+      "method": "GET",
+      "status": 200,
+      "bytes": 635,
+      "elapsedMs": 164,
+      "publicDns": [
+        "185.40.234.37",
+        "185.40.234.172",
+        "185.40.234.210"
+      ],
+      "remoteAddress": "185.40.234.37",
+      "tlsAuthorized": true,
+      "tlsProtocol": "TLSv1.3",
+      "certificate": {
+        "subject": "luxonis.tail6ad453.ts.net",
+        "issuer": "YE1",
+        "validFrom": "Oct 18 14:22:40 2026 GMT",
+        "validTo": "Jan 16 14:22:39 2027 GMT"
+      },
+      "headers": {
+        "content-type": "application/octet-stream",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer"
+      }
+    }
+  ],
+  "corsPreflight": [
+    {
+      "url": "https://luxonis.tail6ad453.ts.net:8443/taskmesh/public/v1/jobs",
+      "method": "OPTIONS",
+      "status": 403,
+      "bytes": 38,
+      "elapsedMs": 163,
+      "publicDns": [
+        "185.40.234.37",
+        "185.40.234.172",
+        "185.40.234.210"
+      ],
+      "remoteAddress": "185.40.234.37",
+      "tlsAuthorized": true,
+      "tlsProtocol": "TLSv1.3",
+      "certificate": {
+        "subject": "luxonis.tail6ad453.ts.net",
+        "issuer": "YE1",
+        "validFrom": "Oct 18 14:22:40 2026 GMT",
+        "validTo": "Jan 16 14:22:39 2027 GMT"
+      },
+      "headers": {
+        "content-type": "application/json",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store"
+      }
+    },
+    {
+      "url": "https://luxonis.tail6ad453.ts.net:8443/support/api/chat",
+      "method": "OPTIONS",
+      "status": 200,
+      "bytes": 0,
+      "elapsedMs": 167,
+      "publicDns": [
+        "185.40.234.37",
+        "185.40.234.172",
+        "185.40.234.210"
+      ],
+      "remoteAddress": "185.40.234.37",
+      "tlsAuthorized": true,
+      "tlsProtocol": "TLSv1.3",
+      "certificate": {
+        "subject": "luxonis.tail6ad453.ts.net",
+        "issuer": "YE1",
+        "validFrom": "Oct 18 14:22:40 2026 GMT",
+        "validTo": "Jan 16 14:22:39 2027 GMT"
+      },
+      "headers": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store"
+      }
+    },
+    {
+      "url": "https://luxonis.tail6ad453.ts.net:8443/api/private/captures",
+      "method": "OPTIONS",
+      "status": 200,
+      "bytes": 0,
+      "elapsedMs": 168,
+      "publicDns": [
+        "185.40.234.37",
+        "185.40.234.172",
+        "185.40.234.210"
+      ],
+      "remoteAddress": "185.40.234.37",
+      "tlsAuthorized": true,
+      "tlsProtocol": "TLSv1.3",
+      "certificate": {
+        "subject": "luxonis.tail6ad453.ts.net",
+        "issuer": "YE1",
+        "validFrom": "Oct 18 14:22:40 2026 GMT",
+        "validTo": "Jan 16 14:22:39 2027 GMT"
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-security-policy": "default-src 'self'; img-src 'self' data: blob:; style-src 'self'; script-src 'self'; frame-ancestors 'none'",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store"
+      }
+    },
+    {
+      "url": "https://luxonis.tail6ad453.ts.net:8443/sentinelhub/api/workspaces",
+      "method": "OPTIONS",
+      "status": 400,
+      "bytes": 22,
+      "elapsedMs": 170,
+      "publicDns": [
+        "185.40.234.37",
+        "185.40.234.172",
+        "185.40.234.210"
+      ],
+      "remoteAddress": "185.40.234.37",
+      "tlsAuthorized": true,
+      "tlsProtocol": "TLSv1.3",
+      "certificate": {
+        "subject": "luxonis.tail6ad453.ts.net",
+        "issuer": "YE1",
+        "validFrom": "Oct 18 14:22:40 2026 GMT",
+        "validTo": "Jan 16 14:22:39 2027 GMT"
+      },
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'",
+        "access-control-allow-methods": "GET, POST, PUT, DELETE",
+        "access-control-allow-headers": "Accept, Accept-Language, Authorization, Content-Language, Content-Type, X-Admin-Key",
+        "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Access-Control-Request-Private-Network",
+        "x-content-type-options": "nosniff, nosniff",
+        "referrer-policy": "no-referrer, no-referrer",
+        "cache-control": "no-store"
+      }
+    }
+  ]
+}

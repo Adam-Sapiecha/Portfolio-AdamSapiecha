@@ -1,3 +1,5 @@
+> **Raport historyczny z 21.10.2026.** Poprawki i aktualny odbiór publiczny: [wdrożenie 22.10.2026](audit-implementation.md). Strony wolontariackie wyłączono z poprawek na polecenie użytkownika.
+
 # Audyt portfolio i publicznych demonstracji — 21.10.2026
 
 **Werdykt: brak podstaw do oznaczenia całego portfolio jako gotowego według wymaganego kryterium publicznej dostępności.** Cztery aplikacje wykonały rzeczywiste operacje w przeglądarce. Nie wykonano jednak ich pełnych scenariuszy z niezależnej sieci. SentinelHub korzysta dodatkowo z adresu, który zmienia się po odtworzeniu tymczasowego tunelu. To otwarte kryteria odbioru o priorytecie krytycznym, a nie dowód, że aplikacje obecnie nie działają.

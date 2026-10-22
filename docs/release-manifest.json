@@ -1,0 +1,96 @@
+{
+  "deployedAt": "2026-10-22",
+  "projects": [
+    {
+      "project": "taskmesh",
+      "repository": "TaskMesh",
+      "visibility": "public",
+      "sourceCommit": "39db9f03b9bd4bdf62f47f419f9b299b2a460876",
+      "release": "audit-20261022",
+      "archive": "taskmesh-audit-20261022.tar.gz",
+      "archiveSha256": "061324769ea02e21d4b8c4a6962f46260a0067c4fae248cc3d5dee52eab9e06d",
+      "files": 28,
+      "verifiedSourceFiles": 28,
+      "serverRelease": "/home/pi/apps/taskmesh-public/releases/audit-20261022",
+      "images": [
+        {
+          "service": "taskmesh-public-console-1",
+          "image": "taskmesh:audit-20261022",
+          "imageId": "sha256:7d274ec26667b3cc2dfee9e133cc683fc1cb0d848c7310d35f98db758ef73008",
+          "healthy": true
+        }
+      ]
+    },
+    {
+      "project": "support",
+      "repository": "Dual-agent-support-chatbot",
+      "visibility": "public",
+      "sourceCommit": "61c7834eb52d3ef48f09998eb3489cacb117f717",
+      "release": "audit-20261022",
+      "archive": "support-audit-20261022.tar.gz",
+      "archiveSha256": "1ca58d0623fc9345014b4788d9712bae603f3ce846b950738f612553e95fda8c",
+      "files": 43,
+      "verifiedSourceFiles": 43,
+      "serverRelease": "/home/pi/apps/dual-agent-support/releases/audit-20261022",
+      "images": [
+        {
+          "service": "dual-agent-support-web-1",
+          "image": "dual-agent-support:audit-20261022",
+          "imageId": "sha256:88b1cc3ba008df06c1ee164c7ce6da31f4341e336a6550ee78df07a22a285208",
+          "healthy": true
+        }
+      ]
+    },
+    {
+      "project": "sentinelhub",
+      "repository": "SentinelHub",
+      "visibility": "public",
+      "sourceCommit": "523d2002484d26847283a9b01da5bd26223dfcbc",
+      "release": "audit-20261022",
+      "archive": "sentinelhub-audit-20261022.tar.gz",
+      "archiveSha256": "b5b755d4f8004179727a5bcb2be517c97088b20d6e665f1576033df3a3bedcf2",
+      "files": 43,
+      "verifiedSourceFiles": 43,
+      "serverRelease": "/opt/stacks/sentinelhub/releases/audit-20261022",
+      "images": [
+        {
+          "service": "sentinelhub-api-1",
+          "image": "sentinelhub-api:audit-20261022",
+          "imageId": "sha256:9c96553027f4e2d7a301651cc2a58296415eb02434797c81a1e30d7d57ae7ed9",
+          "healthy": true
+        },
+        {
+          "service": "sentinelhub-web-1",
+          "image": "sentinelhub-web:audit-20261022",
+          "imageId": "sha256:db9cfa090a57f65d060d45b1528ecd85d799dd4c338c3033da6176b7ff90cc64",
+          "healthy": true
+        }
+      ]
+    },
+    {
+      "project": "posture",
+      "repository": "SystemAnalizyWadPostawy",
+      "visibility": "private",
+      "sourceCommit": "e9ba15870c09e82d066511eae922a7500b6a1a78",
+      "release": "audit-20261022",
+      "archive": "posture-audit-20261022.tar.gz",
+      "archiveSha256": "117deff292fcad413f1e6708a5668bd5119c1bf4b4e1a34772caed59ba9bc62d",
+      "files": 43,
+      "verifiedSourceFiles": 43,
+      "serverRelease": "/home/pi/posture-lab/releases/audit-20261022",
+      "images": [
+        {
+          "service": "posture-lab-posture-app-1",
+          "image": "posture-lab:audit-20261022",
+          "imageId": "sha256:85636397701ebd834b3827ac89210e2e4dcbd2db94add013ec85c654a54d8f85",
+          "healthy": true
+        }
+      ]
+    }
+  ],
+  "privateServicesPreserved": 12,
+  "privateIngressUnchanged": true,
+  "externalVerification": "https://github.com/Adam-Sapiecha/Portfolio-AdamSapiecha/actions/runs/39701337064",
+  "verifiedAt": "2026-10-22T00:42:13.943207+00:00",
+  "portfolioVerifiedCommit": "2338deb48d55051418291cd0a98895c326de28b5"
+}

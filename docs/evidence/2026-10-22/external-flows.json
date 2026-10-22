@@ -1,0 +1,252 @@
+{
+  "checkedAt": "2026-10-22T00:43:33.288Z",
+  "portfolioUrl": "https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/",
+  "vantagePoint": "Independent GitHub-hosted runner; no VPN, SSH or server credentials",
+  "runUrl": "https://github.com/Adam-Sapiecha/Portfolio-AdamSapiecha/actions/runs/39701337064",
+  "projects": [
+    {
+      "name": "taskmesh",
+      "status": "passed",
+      "url": "https://luxonis.tail6ad453.ts.net:8443/taskmesh/",
+      "details": {
+        "characters": 22,
+        "lines": 2,
+        "words": 4,
+        "reload": true,
+        "keyboard": true,
+        "separateVisitorIsolation": true
+      },
+      "apiResponses": [
+        {
+          "path": "/taskmesh/public/v1/session",
+          "status": 201
+        },
+        {
+          "path": "/taskmesh/public/v1/jobs",
+          "status": 200
+        },
+        {
+          "path": "/taskmesh/public/v1/workers",
+          "status": 200
+        },
+        {
+          "path": "/taskmesh/public/v1/jobs",
+          "status": 201
+        },
+        {
+          "path": "/taskmesh/public/v1/session",
+          "status": 200
+        },
+        {
+          "path": "/taskmesh/public/v1/workers",
+          "status": 200
+        },
+        {
+          "path": "/taskmesh/public/v1/jobs",
+          "status": 200
+        },
+        {
+          "path": "/taskmesh/public/v1/jobs/4d9b88cc-bcea-4e33-aaaa-22edc2114a7d/events",
+          "status": 200
+        },
+        {
+          "path": "/taskmesh/public/v1/jobs/4d9b88cc-bcea-4e33-aaaa-22edc2114a7d/attempts",
+          "status": 200
+        },
+        {
+          "path": "/taskmesh/public/v1/session",
+          "status": 200
+        },
+        {
+          "path": "/taskmesh/public/v1/jobs",
+          "status": 200
+        },
+        {
+          "path": "/taskmesh/public/v1/workers",
+          "status": 200
+        },
+        {
+          "path": "/taskmesh/public/v1/jobs",
+          "status": 200
+        },
+        {
+          "path": "/taskmesh/public/v1/workers",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "sentinelhub",
+      "status": "passed",
+      "url": "https://luxonis.tail6ad453.ts.net:8443/sentinelhub/",
+      "details": {
+        "detourMetres": 582,
+        "history": true,
+        "reopen": true,
+        "privateAccess": true,
+        "separateVisitorIsolation": true
+      },
+      "apiResponses": [
+        {
+          "path": "/sentinelhub/api/workspaces",
+          "status": 201
+        },
+        {
+          "path": "/sentinelhub/api/workspaces/e660e1db6399ab0623264c2090621997",
+          "status": 200
+        },
+        {
+          "path": "/sentinelhub/api/workspaces/e660e1db6399ab0623264c2090621997/datasets",
+          "status": 200
+        },
+        {
+          "path": "/sentinelhub/api/workspaces/e660e1db6399ab0623264c2090621997/analyses",
+          "status": 200
+        },
+        {
+          "path": "/sentinelhub/api/workspaces/e660e1db6399ab0623264c2090621997/analyses",
+          "status": 201
+        },
+        {
+          "path": "/sentinelhub/api/workspaces/e660e1db6399ab0623264c2090621997/analyses",
+          "status": 200
+        },
+        {
+          "path": "/sentinelhub/api/workspaces/e660e1db6399ab0623264c2090621997/analyses/694f3e9d1d0ff972da2488034f271b10",
+          "status": 200
+        },
+        {
+          "path": "/sentinelhub/api/workspaces/e660e1db6399ab0623264c2090621997",
+          "status": 200
+        },
+        {
+          "path": "/sentinelhub/api/workspaces/e660e1db6399ab0623264c2090621997/analyses",
+          "status": 200
+        },
+        {
+          "path": "/sentinelhub/api/workspaces/e660e1db6399ab0623264c2090621997/analyses/694f3e9d1d0ff972da2488034f271b10",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "support",
+      "status": "passed",
+      "url": "https://luxonis.tail6ad453.ts.net:8443/support/",
+      "details": {
+        "technicalSource": true,
+        "billing": true,
+        "sampleRefund": true
+      },
+      "apiResponses": [
+        {
+          "path": "/support/api/health",
+          "status": 200
+        },
+        {
+          "path": "/support/api/chat",
+          "status": 200
+        },
+        {
+          "path": "/support/api/chat",
+          "status": 200
+        },
+        {
+          "path": "/support/api/chat",
+          "status": 200
+        },
+        {
+          "path": "/support/api/chat",
+          "status": 200
+        },
+        {
+          "path": "/support/api/chat",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "posture",
+      "status": "passed",
+      "url": "https://luxonis.tail6ad453.ts.net:8443/",
+      "details": {
+        "syntheticShoulderHeightCm": 6,
+        "pdf": true,
+        "reload": true,
+        "privateAccess": true,
+        "separateVisitorIsolation": true,
+        "ownerLoginDisabled": true
+      },
+      "apiResponses": [
+        {
+          "path": "/api/private/session",
+          "status": 200
+        },
+        {
+          "path": "/api/private/guest",
+          "status": 201
+        },
+        {
+          "path": "/api/private/session",
+          "status": 200
+        },
+        {
+          "path": "/api/private/captures",
+          "status": 200
+        },
+        {
+          "path": "/api/private/captures",
+          "status": 201
+        },
+        {
+          "path": "/api/private/captures",
+          "status": 200
+        },
+        {
+          "path": "/api/private/captures/4ba175f79fc44ad4a68ff0e9b9ac0a51",
+          "status": 200
+        },
+        {
+          "path": "/api/private/captures/4ba175f79fc44ad4a68ff0e9b9ac0a51/overlay.png",
+          "status": 200
+        },
+        {
+          "path": "/api/private/session",
+          "status": 200
+        },
+        {
+          "path": "/api/private/captures",
+          "status": 200
+        },
+        {
+          "path": "/api/private/captures/4ba175f79fc44ad4a68ff0e9b9ac0a51",
+          "status": 200
+        },
+        {
+          "path": "/api/private/captures/4ba175f79fc44ad4a68ff0e9b9ac0a51/overlay.png",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "posture-sample",
+      "status": "passed",
+      "url": "https://luxonis.tail6ad453.ts.net:8443/lab",
+      "details": {
+        "acceptedAndRejected": true
+      },
+      "apiResponses": [
+        {
+          "path": "/api/analyze",
+          "status": 200
+        },
+        {
+          "path": "/api/analyze",
+          "status": 200
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

@@ -82,7 +82,8 @@ try {
     await page.getByRole('button',{name:/[a-f0-9]{8} text\.analyze/}).first().waitFor({timeout:30000});
     await page.getByRole('button',{name:/[a-f0-9]{8} text\.analyze/}).first().click();
     const dialog=page.getByRole('dialog');
-    await dialog.getByText('Completed',{exact:true}).waitFor({timeout:30000});
+    await dialog.locator('.status.succeeded').waitFor({timeout:30000});
+    await dialog.locator('.result-block').filter({hasText:'"characters": 22'}).waitFor({timeout:30000});
     const text=await dialog.innerText();
     assert.match(text, /"characters": 22/);assert.match(text,/"lines": 2/);assert.match(text,/"words": 4/);
     assert(await dialog.locator('button').first().evaluate(el=>el===document.activeElement),'Dialog must receive focus');

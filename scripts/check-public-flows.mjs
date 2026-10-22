@@ -32,7 +32,7 @@ async function checkLayout(page,name) {
 }
 async function scenario(name,url,run) {
   const context=await browser.newContext({viewport:{width:1280,height:900},acceptDownloads:true});
-  const page=await context.newPage();
+  let page=await context.newPage();
   const pageErrors=[], apiResponses=[];
   let details;
   page.on('pageerror',error=>pageErrors.push(error.message));
@@ -41,7 +41,22 @@ async function scenario(name,url,run) {
     if (/\/api\/|\/public\/v1\//.test(pathname)) apiResponses.push({path:pathname,status:response.status()});
   });
   try {
-    await page.goto(url,{waitUntil:'domcontentloaded',timeout:45000});
+    const section={taskmesh:'taskmesh',sentinelhub:'flood-routing',support:'dual-agent',posture:'backscan','posture-sample':'backscan'}[name];
+    await page.goto(new URL(`projects.html#${section}`,portfolio).href,{waitUntil:'domcontentloaded',timeout:45000});
+    if(process.env.GITHUB_REF_NAME==='main') {
+      for(let attempt=0;attempt<18&&!await page.locator(`a[href="${origin}/sentinelhub/"]`).count();attempt++) {
+        await new Promise(resolve=>setTimeout(resolve,10000));await page.reload();
+      }
+    }
+    const entry=page.locator(`#${section} a[href="${url}"]`).first();
+    if(!await entry.isVisible()) await page.locator(`#${section} summary`).click();
+    if(await entry.getAttribute('target')==='_blank') {
+      const popup=context.waitForEvent('page');await entry.click();page=await popup;
+      page.on('pageerror',error=>pageErrors.push(error.message));
+      page.on('response',response=>{const pathname=new URL(response.url()).pathname;if(/\/api\/|\/public\/v1\//.test(pathname))apiResponses.push({path:pathname,status:response.status()});});
+    } else await entry.click();
+    await page.waitForLoadState('domcontentloaded');
+    assert.equal(page.url(),url,`${name}: portfolio link must open the actual demo`);
     details=await run(page,context);
     await checkLayout(page,name);
     assert.deepEqual(pageErrors,[],`${name}: JavaScript errors`);
@@ -73,7 +88,7 @@ try {
     assert(await dialog.locator('button').first().evaluate(el=>el===document.activeElement),'Dialog must receive focus');
     await page.keyboard.press('Escape');
     assert.equal(await page.getByRole('dialog').count(),0);
-    await page.waitForFunction(()=>document.activeElement?.matches('button.job-link'),{timeout:5000});
+    await page.waitForFunction(()=>document.activeElement?.matches('button.job-link'),null,{timeout:5000});
     await page.reload();await page.getByRole('button',{name:/[a-f0-9]{8} text\.analyze/}).first().waitFor();
     const other=await browser.newContext();
     const anonymous=await other.request.get(`${origin}/taskmesh/public/v1/jobs`);

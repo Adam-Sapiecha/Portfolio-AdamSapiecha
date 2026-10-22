@@ -42,7 +42,7 @@
 <p  data-pl="Zbudowałem pipeline kamery OAK-D, detekcję punktów i obliczenia 3D w Pythonie. Osobna aplikacja WWW pozwala przetworzyć własne dane RGB-D, zapisać historię i pobrać raport. Całość działa na moim Raspberry Pi 5." data-en="I built an OAK-D camera pipeline, landmark detection and 3D calculations in Python. A separate web application processes user-supplied RGB-D data, saves capture history and exports reports. It runs on my Raspberry Pi 5.">I built an OAK-D camera pipeline, landmark detection and 3D calculations in Python. A separate web application processes user-supplied RGB-D data, saves capture history and exports reports. It runs on my Raspberry Pi 5.</p>
 <div class="button-row"><a class="button" href="https://luxonis.tail6ad453.ts.net:8443/" data-pl="Wypróbuj aplikację" data-en="Try the application">Try the application</a><a class="button button--secondary" href="#implementation" data-pl="Co zaimplementowałem" data-en="What I implemented">What I implemented</a></div>
 <div class="tags"><span class="tag">Python</span><span class="tag">DepthAI / MediaPipe</span><span class="tag">OpenCV / NumPy</span><span class="tag">Flask / SQLite</span><span class="tag">Docker / ARM64</span></div>
-<p class="source-link"><a class="text-link" href="https://github.com/Adam-Sapiecha/SystemAnalizyWadPostawy" data-pl="Kod źródłowy" data-en="Source code">Source code</a></p></header>
+<p class="source-link"><span class="meta" data-pl="Kod prywatny" data-en="Private source">Private source</span></p></header>
 <nav class="case-toc" aria-label="Project sections" data-aria-label-pl="Sekcje projektu" data-aria-label-en="Project sections">
 <a class="" href="#purpose" data-pl="Zastosowanie" data-en="Purpose">Purpose</a>
 <a class="" href="#flow" data-pl="Jak działa" data-en="How it works">How it works</a>
@@ -82,12 +82,12 @@
 <article class="delivery">
 <h3  data-pl="Pipeline i detekcja" data-en="Pipeline and detection">Pipeline and detection</h3>
 <p  data-pl="Konfiguracja kamer mono, StereoDepth i RGB, profile filtracji oraz integracja MediaPipe. Tryby doctor, preview i report rozdzielają diagnostykę, podgląd i akwizycję." data-en="Mono camera, StereoDepth and RGB configuration, filtering profiles, and MediaPipe integration. The doctor, preview and report modes separate diagnostics, preview and capture.">Mono camera, StereoDepth and RGB configuration, filtering profiles, and MediaPipe integration. The doctor, preview and report modes separate diagnostics, preview and capture.</p>
-<p class="skill"><a href="https://github.com/Adam-Sapiecha/SystemAnalizyWadPostawy/blob/3ac01a947c17429bb212d7d7e1931950edad4784/src/system_analizy_postury/pipeline.py">pipeline.py</a> · <a href="https://github.com/Adam-Sapiecha/SystemAnalizyWadPostawy/blob/3ac01a947c17429bb212d7d7e1931950edad4784/src/system_analizy_postury/pose.py">pose.py</a> · <a href="https://github.com/Adam-Sapiecha/SystemAnalizyWadPostawy/blob/3ac01a947c17429bb212d7d7e1931950edad4784/src/system_analizy_postury/app.py">app.py</a></p>
+<p class="skill"><code>pipeline.py</code> · <code>pose.py</code> · <code>app.py</code></p>
 </article>
 <article class="delivery">
 <h3  data-pl="Obliczenia i walidacja" data-en="Calculations and validation">Calculations and validation</h3>
 <p  data-pl="Próbkowanie depth w otoczeniu punktu, odrzucanie odstających próbek, współrzędne kamery i metryki. Osobna ocena jakości przechowuje błędy oraz ostrzeżenia." data-en="Depth sampling around landmarks, outlier rejection, camera coordinates and metrics. A separate quality assessment retains errors and warnings.">Depth sampling around landmarks, outlier rejection, camera coordinates and metrics. A separate quality assessment retains errors and warnings.</p>
-<p class="skill"><a href="https://github.com/Adam-Sapiecha/SystemAnalizyWadPostawy/blob/3ac01a947c17429bb212d7d7e1931950edad4784/src/system_analizy_postury/reporting.py">reporting.py</a> · <a href="https://github.com/Adam-Sapiecha/SystemAnalizyWadPostawy/blob/3ac01a947c17429bb212d7d7e1931950edad4784/src/system_analizy_postury/config.py">config.py</a></p>
+<p class="skill"><code>reporting.py</code> · <code>config.py</code></p>
 </article>
 <article class="delivery">
 <h3  data-pl="WWW i trwała historia" data-en="Web application and persistent history">Web application and persistent history</h3>
@@ -101,7 +101,7 @@
 <h3  data-pl="Fragment kodu: piksele i depth → współrzędne kamery" data-en="Code excerpt: pixels and depth → camera coordinates">Code excerpt: pixels and depth → camera coordinates</h3>
 <pre><code>camera_x_mm = ((keypoint.x_px - cx) * camera_z_mm) / fx
 camera_y_mm = ((keypoint.y_px - cy) * camera_z_mm) / fy</code></pre>
-<a class="text-link" href="https://github.com/Adam-Sapiecha/SystemAnalizyWadPostawy/blob/3ac01a947c17429bb212d7d7e1931950edad4784/src/system_analizy_postury/reporting.py#L378-L379" data-pl="Zobacz fragment w reporting.py" data-en="View the excerpt in reporting.py">View the excerpt in reporting.py</a>
+<span class="meta" data-pl="Fragment reporting.py pokazano poniżej" data-en="An excerpt from reporting.py is shown below">An excerpt from reporting.py is shown below</span>
 </div>
 <p class="capture-caption" data-pl="Odnośniki do modułów wskazują wersję 3ac01a9 publicznego repozytorium części sprzętowej." data-en="Module links point to version 3ac01a9 of the public hardware repository.">Module links point to version 3ac01a9 of the public hardware repository.</p>
 </section>

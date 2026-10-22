@@ -613,6 +613,46 @@ p:last-child {
   border-top: 1px solid var(--line);
 }
 
+.project-case-study {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 24px;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  text-decoration: none;
+}
+
+.project-case-study:hover {
+  background: var(--surface-muted);
+}
+
+.project-case-study-copy {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.project-case-study strong {
+  font-size: 1.12rem;
+  line-height: 1.4;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.project-case-study-copy > span {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.project-case-study > .material-symbols-outlined {
+  flex: 0 0 auto;
+}
+
 .project-story {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1156,6 +1196,11 @@ a.contact-item:hover .contact-value {
 
   .project-detail-body {
     padding: 0 20px 24px;
+  }
+
+  .project-case-study {
+    gap: 12px;
+    padding: 18px 16px;
   }
 
   .project-detail + .project-detail {

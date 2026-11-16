@@ -538,7 +538,8 @@ p:last-child {
 .projects-intro { padding: 64px 0 20px; }
 .project-jump-links { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 20px; }
 .project-jump-links a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: var(--accent-dark); text-underline-offset: 5px; }
-.project-catalog { padding-top: 24px; }
+.section.professional-catalog { padding-top: 24px; }
+.project-jump-links a[href="#work-heading"] { font-weight: 700; }
 .project-section-header { margin-bottom: 20px; }
 .project-section-header h2 { font-size: 1.6rem; }
 .project-grid { border-top: 1px solid var(--line-strong); }

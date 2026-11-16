@@ -62,12 +62,12 @@ async function scenario(name,url,run) {
     const section={taskmesh:'taskmesh',sentinelhub:'flood-routing',support:'dual-agent',posture:'backscan','posture-sample':'backscan'}[name];
     await page.goto(new URL(`projects.html#${section}`,portfolio).href,{waitUntil:'domcontentloaded',timeout:45000});
     if(process.env.GITHUB_REF_NAME==='main') {
-      for(let attempt=0;attempt<18&&!await page.locator(`a[href="${origin}/sentinelhub/"]`).count();attempt++) {
+      for(let attempt=0;attempt<18&&!await page.locator(`#${section}.project-card`).count();attempt++) {
         await new Promise(resolve=>setTimeout(resolve,10000));await page.reload();
       }
     }
     const entry=page.locator(`#${section} a[href="${url}"]`).first();
-    if(!await entry.isVisible()) await page.locator(`#${section} summary`).click();
+    assert(await entry.isVisible(),`${name}: demo link must be visible in the project list`);
     if(await entry.getAttribute('target')==='_blank') {
       const popup=context.waitForEvent('page');await entry.click();page=await popup;
       page.on('pageerror',error=>pageErrors.push(error.message));

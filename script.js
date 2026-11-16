@@ -212,29 +212,6 @@
     });
   }
 
-  function setupProjectDetails() {
-    const openHashTarget = () => {
-      if (!window.location.hash) {
-        return;
-      }
-
-      let id;
-      try {
-        id = decodeURIComponent(window.location.hash.slice(1));
-      } catch {
-        return;
-      }
-
-      const target = document.getElementById(id);
-      if (target instanceof HTMLDetailsElement) {
-        target.open = true;
-      }
-    };
-
-    openHashTarget();
-    window.addEventListener("hashchange", openHashTarget);
-  }
-
   languageButtons.forEach((button) => {
     button.addEventListener("click", () => {
       applyLanguage(button.dataset.lang);
@@ -243,6 +220,5 @@
 
   setupActiveNav();
   setupMobileMenu();
-  setupProjectDetails();
   applyLanguage(getInitialLanguage());
 })();

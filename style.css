@@ -311,10 +311,11 @@ p:last-child {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 220px;
-  gap: 48px;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: 76px;
   align-items: center;
-  padding: 36px 0;
+  min-height: 650px;
+  padding: 68px 0 78px;
 }
 
 .hero-copy {
@@ -323,8 +324,8 @@ p:last-child {
 
 .hero-role {
   max-width: 780px;
-  margin: 12px 0 0;
-  font-size: 1.4rem;
+  margin: 26px 0 0;
+  font-size: 1.75rem;
   font-weight: 650;
   line-height: 1.35;
 }
@@ -333,6 +334,7 @@ p:last-child {
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--surface-muted);
+  box-shadow: var(--shadow);
 }
 
 .hero-photo img {
@@ -342,6 +344,9 @@ p:last-child {
   object-fit: cover;
   object-position: center 28%;
 }
+
+.hero h1 { font-size: 4.25rem; }
+.hero .button-row { margin-top: 34px; }
 
 .button-row {
   display: flex;
@@ -873,9 +878,12 @@ a.contact-item:hover .contact-value {
     font-size: 1.8rem;
   }
 
+  .hero h1 { font-size: 3.45rem; }
+
   .hero {
-    grid-template-columns: minmax(0, 1fr) 200px;
+    grid-template-columns: minmax(0, 1fr) 300px;
     gap: 48px;
+    min-height: 580px;
   }
 
   .section-header,
@@ -904,18 +912,14 @@ a.contact-item:hover .contact-value {
   }
 
   .hero {
-    grid-template-columns: minmax(0, 1fr) 140px;
-    grid-template-areas: "title photo" "role photo" "actions actions";
-    gap: 8px 24px;
-    padding: 16px 0;
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 62px 0 70px;
   }
 
-  .hero-copy { display: contents; }
-  .hero h1 { grid-area: title; align-self: end; }
-  .hero-role { grid-area: role; margin: 0; }
-  .hero .button-row { grid-area: actions; margin-top: 12px; gap: 8px; }
-  .hero .button-row .button { width: auto; flex: 1; padding: 10px 12px; }
-  .hero-photo { grid-area: photo; width: 140px; align-self: center; }
+  .hero-photo {
+    max-width: 420px;
+  }
 
 
   .experience-item,
@@ -1004,15 +1008,16 @@ a.contact-item:hover .contact-value {
     margin-bottom: 14px;
   }
 
+  .hero h1 { font-size: 2.45rem; }
+
   .hero {
-    grid-template-columns: minmax(0, 1fr) 96px;
-    gap: 8px 16px;
-    padding: 16px 0;
+    gap: 42px;
+    padding: 52px 0 58px;
   }
 
   .hero-role {
-    margin-top: 0;
-    font-size: 1.05rem;
+    margin-top: 20px;
+    font-size: 1.38rem;
   }
 
   .button-row,
@@ -1020,10 +1025,13 @@ a.contact-item:hover .contact-value {
     width: 100%;
   }
 
-  .hero-photo { width: 96px; }
+  .hero-photo {
+    width: 100%;
+    max-width: none;
+  }
 
   .hero-photo img {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 4 / 4.6;
   }
 
   .section-header {

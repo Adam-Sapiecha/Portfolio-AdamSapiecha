@@ -6,7 +6,7 @@
 <meta property="og:title" content="Posture Analysis System: code and implementation | Adam Sapiecha"><meta property="og:description" content="Python, OAK-D and RGB-D geometry: source code, an actual camera capture, quality checks and a working Raspberry Pi application."><meta property="og:url" content="https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/posture-lab/">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=compact-1"><link rel="stylesheet" href="../case-study.css?v=impeccable-1">
+<link rel="stylesheet" href="../style.css?v=compact-1"><link rel="stylesheet" href="./case.css?v=compact-1">
 </head><body data-page="projects" data-title-pl="System Analizy Postury: kod i działanie | Adam Sapiecha" data-title-en="Posture Analysis System: code and implementation | Adam Sapiecha" data-description-pl="Python, OAK-D i geometria RGB-D: kod, oryginalny zapis z kamery, kontrola jakości i działająca aplikacja na Raspberry Pi." data-description-en="Python, OAK-D and RGB-D geometry: source code, an actual camera capture, quality checks and a working Raspberry Pi application.">
 <a class="skip-link" href="#main-content" data-pl="Przejdź do treści" data-en="Skip to content">Skip to content</a>  <header class="site-header">
     <nav class="nav-inner" aria-label="Main navigation" data-aria-label-pl="Główna nawigacja" data-aria-label-en="Main navigation">
@@ -34,7 +34,7 @@
       </div>
     </div>
   </header><main id="main-content" class="page-shell case-main">
-<header class="case-hero"><div class="case-summary">
+<header class="case-hero">
 <a class="text-link" href="../projects.html#backscan" data-pl="← Projekty i praca" data-en="← Projects and work">← Projects and work</a>
 
 <h1  data-pl="System Analizy Postury" data-en="Posture Analysis System">Posture Analysis System</h1>
@@ -42,7 +42,7 @@
 <p  data-pl="Zbudowałem pipeline kamery OAK-D, detekcję punktów i obliczenia 3D w Pythonie. Osobna aplikacja WWW pozwala przetworzyć własne dane RGB-D, zapisać historię i pobrać raport. Całość działa na moim własnym serwerze Raspberry Pi 5 z systemem Debian." data-en="I built an OAK-D camera pipeline, landmark detection and 3D calculations in Python. A separate web application processes user-supplied RGB-D data, saves capture history and exports reports. It runs on my own Raspberry Pi 5 server running Debian.">I built an OAK-D camera pipeline, landmark detection and 3D calculations in Python. A separate web application processes user-supplied RGB-D data, saves capture history and exports reports. It runs on my own Raspberry Pi 5 server running Debian.</p>
 <div class="button-row"><a class="button" href="https://luxonis.tail6ad453.ts.net:8443/" data-pl="Wypróbuj aplikację" data-en="Try the application">Try the application</a></div>
 <div class="tags"><span class="tag">Python</span><span class="tag">DepthAI / MediaPipe</span><span class="tag">OpenCV / NumPy</span><span class="tag">Flask / SQLite</span><span class="tag">Docker / ARM64</span></div>
-<p class="source-link"><span class="meta" data-pl="Kod prywatny" data-en="Private source">Private source</span></p></div><figure class="case-preview case-preview--hero"><a href="https://luxonis.tail6ad453.ts.net:8443/lab"><img src="../assets/demos/posture-lab.png" width="1440" height="1000" alt="Posture Lab: synthetic body landmarks and calculated shoulder height difference" data-alt-pl="Posture Lab: syntetyczne punkty sylwetki i obliczona różnica wysokości barków" data-alt-en="Posture Lab: synthetic body landmarks and calculated shoulder height difference"></a><figcaption data-pl="Przykład syntetyczny: punkty, głębia i wynik obliczeń. Bez walidacji klinicznej." data-en="Synthetic example: landmarks, depth and calculation results. No clinical validation.">Synthetic example: landmarks, depth and calculation results. No clinical validation.</figcaption></figure></header>
+<p class="source-link"><span class="meta" data-pl="Kod prywatny" data-en="Private source">Private source</span></p></header>
 <nav class="case-toc" aria-label="Project sections" data-aria-label-pl="Sekcje projektu" data-aria-label-en="Project sections">
 <a class="" href="#purpose" data-pl="Zastosowanie" data-en="Purpose">Purpose</a>
 <a class="" href="#flow" data-pl="Jak działa" data-en="How it works">How it works</a>

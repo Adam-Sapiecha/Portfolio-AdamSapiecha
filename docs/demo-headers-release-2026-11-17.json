@@ -1,0 +1,130 @@
+{
+  "release": "demo-headers-20261117",
+  "verifiedAt": "2026-11-17T00:45:05.416693+00:00",
+  "archiveSha256": "f40fd0ab28baa5b78cc580aee79044ce7a6f08e940930bbd11c72dc437c16dd4",
+  "projects": [
+    {
+      "project": "taskmesh",
+      "sourceCommit": "a370a819d2942571ef8eaa9dbc2a49f5123d143f",
+      "release": "/home/pi/apps/taskmesh-public/releases/demo-headers-20261117",
+      "image": "taskmesh:demo-headers-20261117-a370a81",
+      "imageId": "sha256:458c81c774eca49a6e661c8b18d1e307d59e755ac7cf375238a729be3415f6d8",
+      "baseImageId": "sha256:c5b895d1c5c15bc9eb329b350e533b4a6b9b000a68ee8864a8985f7515a5ae6a",
+      "backendPreserved": true,
+      "health": "healthy",
+      "url": "https://luxonis.tail6ad453.ts.net:8443/taskmesh/",
+      "verifiedSourceFiles": 2
+    },
+    {
+      "project": "support",
+      "sourceCommit": "f50151116429ed97c3be89570fd0436e9fe63dca",
+      "release": "/home/pi/apps/dual-agent-support/releases/demo-headers-20261117",
+      "image": "dual-agent-support:demo-headers-20261117-f501511",
+      "imageId": "sha256:cbc76c7d9018ac9361e4b92878bfc017afdc9a32f156722240e1c186c3711f0b",
+      "baseImageId": "sha256:3f6b2e3b66f2695cd9279ce7410a33b28a43e8430c46def358c95f267bcdc6ac",
+      "backendPreserved": true,
+      "health": "healthy",
+      "url": "https://luxonis.tail6ad453.ts.net:8443/support/",
+      "verifiedSourceFiles": 2
+    },
+    {
+      "project": "sentinelhub",
+      "sourceCommit": "81c010fb33e5a3d361e2ce321dad4dfa7a5606d6",
+      "release": "/opt/stacks/sentinelhub/releases/demo-headers-20261117",
+      "image": "sentinelhub-web:demo-headers-20261117-81c010f",
+      "imageId": "sha256:78fa8885dccccdacd47349f15aa0ab467d6307b3379482461c842f75d32732ed",
+      "baseImageId": "sha256:6c3e305deb017f0d21f343afd0fd1c3ff0ca2d2620e35872efae4ee48c64815e",
+      "backendPreserved": true,
+      "health": "healthy",
+      "url": "https://luxonis.tail6ad453.ts.net:8443/sentinelhub/",
+      "verifiedSourceFiles": 4
+    },
+    {
+      "project": "posture",
+      "sourceCommit": "b3fd8b27277b5aaed0336eb8fdfff90edf45c3e0",
+      "release": "/home/pi/posture-lab/releases/demo-headers-20261117",
+      "image": "posture-lab:demo-headers-20261117-b3fd8b2",
+      "imageId": "sha256:3810c8e6bc864638cf8ce1084ba321bd73249ceab2e54e1c780d391d9ec5cf68",
+      "baseImageId": "sha256:4a3aaf6b798cf6fa316a88916fdfe46a26e77e412f90d6f177ae27c10047f8d1",
+      "backendPreserved": true,
+      "health": "healthy",
+      "url": "https://luxonis.tail6ad453.ts.net:8443/",
+      "verifiedSourceFiles": 4
+    },
+    {
+      "project": "spherex",
+      "sourceCommit": "388c09e98cd314376b7ab364d0da82a95a6074bf",
+      "release": "/home/pi/apps/spherex/releases/demo-headers-20261117",
+      "image": "spherex:demo-headers-20261117-388c09e",
+      "imageId": "sha256:7588b8fe1fb19212d8d89ab2b70b491fc0e11925084385e29c9917bd65f440ea",
+      "baseImageId": "sha256:aa75b8b5480306a53d47f4b068b28862146b55cd791541ffc20bfde80c19ef82",
+      "backendPreserved": true,
+      "health": "healthy",
+      "url": "https://luxonis.tail6ad453.ts.net:8443/spherex/",
+      "verifiedSourceFiles": 2
+    }
+  ],
+  "unrelatedServicesPreserved": 21,
+  "previousRelease": "impeccable-20261117",
+  "scope": "Removed promotional project wordmarks from demo headers and footer signatures.",
+  "publicVerification": {
+    "verifiedAt": "2026-11-17T00:48:30.261Z",
+    "applicationAssets": 43,
+    "applicationViews": 7,
+    "viewports": [
+      1440,
+      390
+    ],
+    "brandElementsInHeaders": 0,
+    "javascriptErrors": 0,
+    "detectedWcagViolations": 0,
+    "frontendResourceOverrides": false,
+    "headers": [
+      {
+        "view": "taskmesh",
+        "text": [
+          "Portfolio "
+        ]
+      },
+      {
+        "view": "support",
+        "text": [
+          "Source code ↗"
+        ]
+      },
+      {
+        "view": "sentinelhub",
+        "text": [
+          "Wypróbuj przykład ↗API ↗Kod ↗"
+        ]
+      },
+      {
+        "view": "posture",
+        "text": [
+          "Jak działa projektPrzykład syntetyczny"
+        ]
+      },
+      {
+        "view": "sample",
+        "text": [
+          "\nWłasne RGB-D\n\nKod prywatny\n"
+        ]
+      },
+      {
+        "view": "sentinel-sample",
+        "text": [
+          "\n\n    API ↗Kod źródłowy ↗\n  "
+        ]
+      },
+      {
+        "view": "spherex",
+        "text": [
+          "Language / JęzykEnglishPolskiHelp and data"
+        ]
+      }
+    ]
+  },
+  "portfolio": {
+    "screenshotsRefreshed": 5
+  }
+}

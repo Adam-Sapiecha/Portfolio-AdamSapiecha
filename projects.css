@@ -27,15 +27,13 @@
   text-decoration: none;
 }
 
-.projects-skip-link > span:first-child,
-.projects-page .work-project-link strong {
+.projects-skip-link > span:first-child {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;
 }
 
-.projects-skip-link:hover > span:first-child,
-.projects-page .work-project-link:hover strong {
+.projects-skip-link:hover > span:first-child {
   text-decoration-thickness: 2px;
 }
 
@@ -90,7 +88,17 @@
 }
 
 .projects-page .work-role-details {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 16px;
   min-width: 0;
+}
+
+.projects-page .work-detail-link {
+  width: auto;
+  margin: 0;
+  font-size: 0.8rem;
 }
 
 .projects-page .work-role-description {
@@ -100,33 +108,17 @@
   font-size: 0.9375rem;
 }
 
-.projects-page .work-project-links {
+.work-project-topics {
   display: flex;
   flex-wrap: wrap;
-  gap: 0 24px;
+  gap: 4px 16px;
   margin-top: 8px;
-}
-
-.projects-page .work-project-link {
-  justify-content: flex-start;
-  gap: 8px;
-  min-height: 44px;
-  max-width: 100%;
-  padding: 4px 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  font-size: 0.875rem;
-  text-decoration: none;
-}
-
-.projects-page .work-project-link strong {
-  font-size: inherit;
-  font-weight: 500;
-}
-
-.projects-page .work-project-link > .material-symbols-outlined {
-  font-size: 16px;
+  margin-bottom: 0;
+  padding: 0;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  list-style: none;
+  scroll-margin-top: 80px;
 }
 
 .projects-page .project-catalog {
@@ -138,7 +130,7 @@
 }
 
 .projects-page .project-card {
-  grid-template-columns: minmax(0, 1fr) 190px;
+  grid-template-columns: minmax(0, 1fr) 352px;
   gap: 16px 32px;
   padding: 20px 0;
 }
@@ -157,8 +149,11 @@
   font-size: 0.8125rem;
 }
 
-.projects-page .project-card-links a {
-  font-size: 0.8125rem;
+@media (max-width: 980px) {
+  .projects-page .project-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
 }
 
 @media (max-width: 760px) {
@@ -172,9 +167,12 @@
     gap: 4px;
   }
 
-  .projects-page .project-card {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 12px;
+  .projects-page .work-role-details {
+    display: block;
+  }
+
+  .projects-page .work-detail-link {
+    margin-top: 12px;
   }
 }
 

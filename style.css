@@ -159,13 +159,6 @@ p:last-child {
   margin: 0 auto;
 }
 
-.nav-brand {
-  color: var(--text);
-  font-size: 1.05rem;
-  font-weight: 750;
-  text-decoration: none;
-}
-
 .desktop-nav {
   display: flex;
   align-items: center;
@@ -204,6 +197,7 @@ p:last-child {
   display: flex;
   align-items: center;
   gap: 6px;
+  margin-left: auto;
 }
 
 .nav-social {
@@ -991,10 +985,6 @@ a.contact-item:hover .contact-value {
     width: min(calc(100% - 32px), var(--max-width));
   }
 
-  .nav-brand {
-    font-size: 0.96rem;
-  }
-
   .nav-actions {
     gap: 2px;
   }
@@ -1110,10 +1100,6 @@ a.contact-item:hover .contact-value {
 }
 
 @media (max-width: 360px) {
-  .nav-brand {
-    font-size: 0.88rem;
-  }
-
   .nav-social {
     width: 36px;
     height: 36px;

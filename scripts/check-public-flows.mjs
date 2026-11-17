@@ -193,6 +193,12 @@ try {
       response.request().method() === 'POST' && new URL(response.url()).pathname === '/api/private/guest');
     await page.getByRole('button',{name:'Wejdź jako gość →',exact:true}).click();
     const guest = await guestResponse;
+    if (guest.status() === 429) {
+      assert.match(await guest.text(), /Limit sesji probnych na dzis zostal osiagniety/);
+      await page.getByText('Limit sesji probnych na dzis zostal osiagniety.', { exact:false }).waitFor();
+      assert(await page.locator('#application').isHidden());
+      return { admissionLimitEnforced:true, uploadScenario:'Not run: daily guest admission limit reached' };
+    }
     assert.equal(guest.status(),201,`Create test guest: ${await guest.text()}`);
     await page.locator('#application').waitFor({state:'visible',timeout:15000});
     await page.locator('#rgb').setInputFiles({name:'synthetic-rgb.png',mimeType:'image/png',buffer:png(false)});

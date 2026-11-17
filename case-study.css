@@ -39,6 +39,16 @@
 .case-end { border-bottom:0; }
 .case-footer { padding-block:24px 32px; color:var(--muted); font-size:13px; }
 .case-study-link { margin-bottom:28px; }
+.case-compact .case-points { padding-left:20px; max-width:72ch; color:var(--muted); font-size:15px; line-height:1.8; }
+.case-compact .case-points li+li { margin-top:10px; }
+.case-compact .capture-evidence { max-width:72ch; color:var(--muted); font-size:14px; line-height:1.7; }
+.case-compact .capture-evidence summary { cursor:pointer; color:var(--text); text-underline-offset:.2em; }
+.case-compact .capture-evidence summary:hover { text-decoration:underline; }
+.case-compact .capture-evidence summary:focus-visible { outline:3px solid var(--accent); outline-offset:5px; }
+.case-compact .capture-evidence[open] summary { margin-bottom:20px; }
+.case-compact .capture-evidence .capture-gallery { grid-template-columns:repeat(3,minmax(0,1fr)); max-width:none; }
+.case-compact .capture-evidence figure { margin:0; }
+.case-compact .capture-evidence .capture-links { margin-bottom:0; }
 .case-main .source-link { margin-top:24px; }
 .capture-gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
 .capture-gallery figure { min-width:0; }

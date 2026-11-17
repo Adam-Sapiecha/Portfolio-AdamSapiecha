@@ -1,0 +1,68 @@
+{
+  "release": "concise-demos-20261117",
+  "verifiedAt": "2026-11-17T06:13:55.858755+00:00",
+  "archiveSha256": "2191707f31f6b73d1f839ad477e47de11948ac652dfaa914fe980e7d9eec940f",
+  "projects": [
+    {
+      "project": "taskmesh",
+      "sourceCommit": "134e4f5d020279935908ea75a67e34d809ab1da2",
+      "release": "/home/pi/apps/taskmesh-public/releases/concise-demos-20261117",
+      "image": "taskmesh:concise-demos-20261117-134e4f5",
+      "imageId": "sha256:7234c04c910b19be4fcb336057323dc306d8f3cbcd00ec0cb2c93c86e59f003a",
+      "baseImageId": "sha256:458c81c774eca49a6e661c8b18d1e307d59e755ac7cf375238a729be3415f6d8",
+      "backendPreserved": true,
+      "health": "healthy",
+      "url": "https://luxonis.tail6ad453.ts.net:8443/taskmesh/",
+      "verifiedSourceFiles": 2
+    },
+    {
+      "project": "support",
+      "sourceCommit": "7667c6dca1eb395675db453b8da91a83ccaaaafa",
+      "release": "/home/pi/apps/dual-agent-support/releases/concise-demos-20261117",
+      "image": "dual-agent-support:concise-demos-20261117-7667c6d",
+      "imageId": "sha256:e25123623e5e7779c7189f9bf502a4913df9034ae01949ad17b967e86ddbddb4",
+      "baseImageId": "sha256:cbc76c7d9018ac9361e4b92878bfc017afdc9a32f156722240e1c186c3711f0b",
+      "backendPreserved": true,
+      "health": "healthy",
+      "url": "https://luxonis.tail6ad453.ts.net:8443/support/",
+      "verifiedSourceFiles": 3
+    },
+    {
+      "project": "sentinelhub",
+      "sourceCommit": "e797d7f69d1d16704a36dc621fdc41eaba497742",
+      "release": "/opt/stacks/sentinelhub/releases/concise-demos-20261117",
+      "image": "sentinelhub-web:concise-demos-20261117-e797d7f",
+      "imageId": "sha256:cdde9e91dfcf13daf7f0bf1877d81cb3a37884a8dadd9b98077ef1850d987a0c",
+      "baseImageId": "sha256:78fa8885dccccdacd47349f15aa0ab467d6307b3379482461c842f75d32732ed",
+      "backendPreserved": true,
+      "health": "healthy",
+      "url": "https://luxonis.tail6ad453.ts.net:8443/sentinelhub/",
+      "verifiedSourceFiles": 5
+    },
+    {
+      "project": "posture",
+      "sourceCommit": "923e69ba8517b3519ecb2e1780bab6903ec1e2b4",
+      "release": "/home/pi/posture-lab/releases/concise-demos-20261117",
+      "image": "posture-lab:concise-demos-20261117-923e69b",
+      "imageId": "sha256:f1e499a1a7602fc30d118408de3230438abc24af7505debc5c99db364f634e62",
+      "baseImageId": "sha256:3810c8e6bc864638cf8ce1084ba321bd73249ceab2e54e1c780d391d9ec5cf68",
+      "backendPreserved": true,
+      "health": "healthy",
+      "url": "https://luxonis.tail6ad453.ts.net:8443/",
+      "verifiedSourceFiles": 4
+    },
+    {
+      "project": "spherex",
+      "sourceCommit": "3ad3abb5b98d0f7bac5fb076a0ad7745fd67094e",
+      "release": "/home/pi/apps/spherex/releases/concise-demos-20261117",
+      "image": "spherex:concise-demos-20261117-3ad3abb",
+      "imageId": "sha256:9f49b84a0bb8619d4ece5dac12d8770266adc9904136bddae74361f006561aa4",
+      "baseImageId": "sha256:7588b8fe1fb19212d8d89ab2b70b491fc0e11925084385e29c9917bd65f440ea",
+      "backendPreserved": true,
+      "health": "healthy",
+      "url": "https://luxonis.tail6ad453.ts.net:8443/spherex/",
+      "verifiedSourceFiles": 5
+    }
+  ],
+  "unrelatedServicesPreserved": 21
+}

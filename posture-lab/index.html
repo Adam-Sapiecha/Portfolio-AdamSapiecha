@@ -6,7 +6,7 @@
 <meta property="og:title" content="Posture Analysis System: code and implementation | Adam Sapiecha"><meta property="og:description" content="Python, OAK-D and RGB-D geometry: source code, an actual camera capture, quality checks and a working Raspberry Pi application."><meta property="og:url" content="https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/posture-lab/">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=navbar-1"><link rel="stylesheet" href="../case-study.css?v=links-1">
+<link rel="stylesheet" href="../style.css?v=navbar-1"><link rel="stylesheet" href="../case-study.css?v=concise-1">
 </head><body data-page="projects" data-title-pl="System Analizy Postury: kod i działanie | Adam Sapiecha" data-title-en="Posture Analysis System: code and implementation | Adam Sapiecha" data-description-pl="Python, OAK-D i geometria RGB-D: kod, oryginalny zapis z kamery, kontrola jakości i działająca aplikacja na Raspberry Pi." data-description-en="Python, OAK-D and RGB-D geometry: source code, an actual camera capture, quality checks and a working Raspberry Pi application.">
 <a class="skip-link" href="#main-content" data-pl="Przejdź do treści" data-en="Skip to content">Skip to content</a>  <header class="site-header">
     <nav class="nav-inner" aria-label="Main navigation" data-aria-label-pl="Główna nawigacja" data-aria-label-en="Main navigation">
@@ -32,134 +32,23 @@
         <a data-nav="contact" href="../contact.html" data-pl="Kontakt" data-en="Contact">Contact</a>
       </div>
     </div>
-  </header><main id="main-content" class="page-shell case-main">
-<header class="case-hero"><div class="case-summary">
-<a class="text-link" href="../projects.html#backscan" data-pl="← Projekty i praca" data-en="← Projects and work">← Projects and work</a>
-
-<h1  data-pl="System Analizy Postury" data-en="Posture Analysis System">Posture Analysis System</h1>
-<p class="case-lead" data-pl="Pomiar geometrii sylwetki z obrazu RGB i głębi stereo." data-en="Body geometry from RGB images and stereo depth.">Body geometry from RGB images and stereo depth.</p>
-<p  data-pl="Zbudowałem pipeline kamery OAK-D, detekcję punktów i obliczenia 3D w Pythonie. Osobna aplikacja WWW pozwala przetworzyć własne dane RGB-D, zapisać historię i pobrać raport. Całość działa na moim własnym serwerze Raspberry Pi 5 z systemem Debian." data-en="I built an OAK-D camera pipeline, landmark detection and 3D calculations in Python. A separate web application processes user-supplied RGB-D data, saves capture history and exports reports. It runs on my own Raspberry Pi 5 server running Debian.">I built an OAK-D camera pipeline, landmark detection and 3D calculations in Python. A separate web application processes user-supplied RGB-D data, saves capture history and exports reports. It runs on my own Raspberry Pi 5 server running Debian.</p>
-<div class="button-row"><a class="button" href="https://luxonis.tail6ad453.ts.net:8443/" data-pl="Wypróbuj aplikację" data-en="Try the application">Try the application</a></div>
-<div class="tags"><span class="tag">Python</span><span class="tag">DepthAI / MediaPipe</span><span class="tag">OpenCV / NumPy</span><span class="tag">Flask / SQLite</span><span class="tag">Docker / ARM64</span></div>
-<p class="source-link"><span class="meta" data-pl="Kod prywatny" data-en="Private source">Private source</span></p></div><figure class="case-preview case-preview--hero"><a href="https://luxonis.tail6ad453.ts.net:8443/lab" aria-label="Open Posture Lab example" data-aria-label-pl="Otwórz przykład Posture Lab" data-aria-label-en="Open Posture Lab example"><img src="../assets/demos/posture-lab.png" width="1440" height="1000" alt="Posture Lab: synthetic body landmarks and calculated shoulder height difference" data-alt-pl="Posture Lab: syntetyczne punkty sylwetki i obliczona różnica wysokości barków" data-alt-en="Posture Lab: synthetic body landmarks and calculated shoulder height difference"><span class="image-link-indicator material-symbols-outlined" aria-hidden="true">arrow_forward</span></a><figcaption data-pl="Przykład syntetyczny: punkty, głębia i wynik obliczeń. Bez walidacji klinicznej." data-en="Synthetic example: landmarks, depth and calculation results. No clinical validation.">Synthetic example: landmarks, depth and calculation results. No clinical validation.</figcaption></figure></header>
-<nav class="case-toc" aria-label="Project sections" data-aria-label-pl="Sekcje projektu" data-aria-label-en="Project sections">
-<a class="" href="#purpose" data-pl="Zastosowanie" data-en="Purpose">Purpose</a>
-<a class="" href="#flow" data-pl="Jak działa" data-en="How it works">How it works</a>
-<a class="" href="#implementation" data-pl="Co zaimplementowałem" data-en="Implementation">Implementation</a>
-<a class="" href="#capture" data-pl="Zapis z kamery" data-en="Camera capture">Camera capture</a>
-<a class="" href="#verification" data-pl="Testy i ograniczenia" data-en="Tests and limitations">Tests and limitations</a>
-</nav><section class="case-section" id="purpose">
-<h2  data-pl="Co robi program" data-en="What the application does">What the application does</h2>
-<p  data-pl="Samo położenie punktu na zdjęciu nie wystarcza do obliczenia odległości w centymetrach. Program łączy punkty sylwetki z głębią i kalibracją kamery, przelicza je do XYZ oraz wyznacza różnice wysokości, kąty i asymetrie. Ocena jakości wskazuje brakujące lub niewiarygodne dane." data-en="A landmark in an image is not enough to calculate a distance in centimetres. The program combines body landmarks with depth and camera calibration, converts them to XYZ, and calculates height differences, angles and asymmetries. Quality checks identify missing or unreliable input.">A landmark in an image is not enough to calculate a distance in centimetres. The program combines body landmarks with depth and camera calibration, converts them to XYZ, and calculates height differences, angles and asymmetries. Quality checks identify missing or unreliable input.</p>
-<p  data-pl="Projekt służy do dokumentowania i sprawdzania geometrii. Zapisane obrazy, punkty i wyniki pozwalają prześledzić obliczenia. To prototyp badawczo-edukacyjny bez walidacji klinicznej." data-en="The project documents and inspects geometry. Saved images, landmarks and results make the calculations traceable. It is a research and educational prototype without clinical validation.">The project documents and inspects geometry. Saved images, landmarks and results make the calculations traceable. It is a research and educational prototype without clinical validation.</p>
-</section><section class="case-section" id="flow">
-<h2  data-pl="Od obrazu do wyniku" data-en="From an image to a result">From an image to a result</h2>
-<ol class="flow">
-<li>
-<h3  data-pl="01 · Akwizycja" data-en="01 · Capture">01 · Capture</h3>
-<p  data-pl="OAK-D dostarcza RGB i stereo depth. Alternatywnie WWW przyjmuje zapisany RGB, 16-bitowy depth w mm i kalibrację." data-en="OAK-D provides RGB and stereo depth. Alternatively, the web application accepts saved RGB, 16-bit depth in mm, and calibration.">OAK-D provides RGB and stereo depth. Alternatively, the web application accepts saved RGB, 16-bit depth in mm, and calibration.</p>
-</li>
-<li>
-<h3  data-pl="02 · Punkty" data-en="02 · Landmarks">02 · Landmarks</h3>
-<p  data-pl="W ścieżce kamery MediaPipe wykrywa punkty. W aplikacji WWW można wczytać ich eksport lub oznaczyć cztery punkty ręcznie." data-en="The camera path uses MediaPipe to detect landmarks. The web application can import exported landmarks or let users mark four points manually.">The camera path uses MediaPipe to detect landmarks. The web application can import exported landmarks or let users mark four points manually.</p>
-</li>
-<li>
-<h3  data-pl="03 · Geometria i jakość" data-en="03 · Geometry and quality">03 · Geometry and quality</h3>
-<p  data-pl="Mediana głębi w otoczeniu punktu ogranicza wpływ odstających próbek. Kalibracja pozwala wyznaczyć XYZ; bramka jakości ocenia wejście." data-en="A median depth sample around each landmark reduces outlier influence. Calibration provides XYZ coordinates, while a quality gate evaluates the input.">A median depth sample around each landmark reduces outlier influence. Calibration provides XYZ coordinates, while a quality gate evaluates the input.</p>
-</li>
-<li>
-<h3  data-pl="04 · Zapis i eksport" data-en="04 · Save and export">04 · Save and export</h3>
-<p  data-pl="Wynik, obrazy i raport trafiają do prywatnej historii SQLite. Użytkownik może je odczytać, pobrać lub usunąć." data-en="Results, images and reports are stored in private SQLite history. Users can retrieve, download or delete their captures.">Results, images and reports are stored in private SQLite history. Users can retrieve, download or delete their captures.</p>
-</li>
-</ol><div class="case-note">
-<h3  data-pl="Co jest potrzebne do własnego pomiaru" data-en="What a custom measurement requires">What a custom measurement requires</h3>
-<p  data-pl="RGB i depth muszą przedstawiać tę samą scenę, być wyrównane i mieć zgodne rozdzielczości. Depth musi zawierać milimetry, a parametry fx, fy, cx i cy odpowiadać rozdzielczości. Samo zdjęcie lub kolorowa wizualizacja głębi nie wystarczą." data-en="RGB and depth must represent the same scene, be aligned, and have matching dimensions. Depth must contain millimetres, and fx, fy, cx and cy must match the resolution. A photo or a colour depth visualisation alone is not sufficient.">RGB and depth must represent the same scene, be aligned, and have matching dimensions. Depth must contain millimetres, and fx, fy, cx and cy must match the resolution. A photo or a colour depth visualisation alone is not sufficient.</p>
-</div></section>
-<section class="case-section" id="implementation">
-<h2  data-pl="Co zaimplementowałem" data-en="What I implemented">What I implemented</h2>
-<div class="deliveries">
-<article class="delivery">
-<h3  data-pl="Pipeline i detekcja" data-en="Pipeline and detection">Pipeline and detection</h3>
-<p  data-pl="Konfiguracja kamer mono, StereoDepth i RGB, profile filtracji oraz integracja MediaPipe. Tryby doctor, preview i report rozdzielają diagnostykę, podgląd i akwizycję." data-en="Mono camera, StereoDepth and RGB configuration, filtering profiles, and MediaPipe integration. The doctor, preview and report modes separate diagnostics, preview and capture.">Mono camera, StereoDepth and RGB configuration, filtering profiles, and MediaPipe integration. The doctor, preview and report modes separate diagnostics, preview and capture.</p>
-
-</article>
-<article class="delivery">
-<h3  data-pl="Obliczenia i walidacja" data-en="Calculations and validation">Calculations and validation</h3>
-<p  data-pl="Próbkowanie depth w otoczeniu punktu, odrzucanie odstających próbek, współrzędne kamery i metryki. Osobna ocena jakości przechowuje błędy oraz ostrzeżenia." data-en="Depth sampling around landmarks, outlier rejection, camera coordinates and metrics. A separate quality assessment retains errors and warnings.">Depth sampling around landmarks, outlier rejection, camera coordinates and metrics. A separate quality assessment retains errors and warnings.</p>
-
-</article>
-<article class="delivery">
-<h3  data-pl="WWW i trwała historia" data-en="Web application and persistent history">Web application and persistent history</h3>
-<p  data-pl="Flask obsługuje upload RGB/depth/JSON i rzeczywiste przetwarzanie. SQLite przechowuje wyniki i pliki, hash wejścia chroni przed zdublowaniem zapisu, a PDF i JSON są dostępne do pobrania." data-en="Flask handles RGB/depth/JSON uploads and actual processing. SQLite stores results and files, input hashes prevent duplicate captures, and PDF and JSON exports are available for download.">Flask handles RGB/depth/JSON uploads and actual processing. SQLite stores results and files, input hashes prevent duplicate captures, and PDF and JSON exports are available for download.</p>
-</article>
-<article class="delivery">
-<h3  data-pl="Dostęp i wdrożenie" data-en="Access and deployment">Access and deployment</h3>
-<p  data-pl="Sesje gościnne mają oddzielną historię i limity. Dostęp do każdego pliku jest sprawdzany po stronie backendu. Docker Compose ARM64 uruchamia aplikację na Pi z trwałym wolumenem, healthcheckiem i ograniczoną współbieżnością." data-en="Guest sessions have separate histories and limits. The backend checks ownership for every file. Docker Compose ARM64 runs the application on Pi with a persistent volume, a health check and bounded concurrency.">Guest sessions have separate histories and limits. The backend checks ownership for every file. Docker Compose ARM64 runs the application on Pi with a persistent volume, a health check and bounded concurrency.</p>
-</article>
-</div><div class="example">
-<h3  data-pl="Fragment kodu: piksele i depth → współrzędne kamery" data-en="Code excerpt: pixels and depth → camera coordinates">Code excerpt: pixels and depth → camera coordinates</h3>
-<pre><code>camera_x_mm = ((keypoint.x_px - cx) * camera_z_mm) / fx
-camera_y_mm = ((keypoint.y_px - cy) * camera_z_mm) / fy</code></pre>
-<span class="meta" data-pl="Fragment reporting.py pokazano poniżej" data-en="An excerpt from reporting.py is shown below">An excerpt from reporting.py is shown below</span>
-</div>
-</section>
-<section class="case-section" id="capture">
-<h2  data-pl="Rzeczywisty zapis z kamery" data-en="An actual camera capture">An actual camera capture</h2>
-<p  data-pl="Wybrane ujęcie w czerwonej bluzie pochodzi z 6 kwietnia 2026 r. RGB, nakładka punktów, depth, JSON i PDF dotyczą tego samego uruchomienia. Pokazuję wspólny kadr sylwetki; kliknięcie otwiera pełny plik źródłowy." data-en="The selected red-sweatshirt capture is from 6 April 2026. RGB, landmarks, depth, JSON and PDF all belong to the same run. The images use the same body crop; clicking opens the full source file.">The selected red-sweatshirt capture is from 6 April 2026. RGB, landmarks, depth, JSON and PDF all belong to the same run. The images use the same body crop; clicking opens the full source file.</p>
-<div class="capture-gallery">
+  </header><main id="main-content" class="page-shell case-main case-compact">
+<header class="case-hero"><div class="case-summary"><a class="text-link" href="../projects.html#backscan" data-pl="← Projekty i praca" data-en="← Projects and work">← Projects and work</a><h1 data-pl="System Analizy Postury" data-en="Posture Analysis System">Posture Analysis System</h1><p class="case-lead" data-pl="Pomiar geometrii sylwetki z obrazu RGB i głębi stereo." data-en="Body geometry from RGB images and stereo depth.">Body geometry from RGB images and stereo depth.</p><p id="purpose" data-pl="Pipeline OAK-D i MediaPipe łączy punkty sylwetki z głębią. Osobna aplikacja Flask analizuje własne RGB-D, zapisuje historię i eksportuje PDF/JSON." data-en="An OAK-D/MediaPipe pipeline combines body landmarks with depth. A separate Flask application processes uploaded RGB-D, stores history and exports PDF/JSON.">An OAK-D/MediaPipe pipeline combines body landmarks with depth. A separate Flask application processes uploaded RGB-D, stores history and exports PDF/JSON.</p><div id="try"><div class="button-row"><a class="button" href="https://luxonis.tail6ad453.ts.net:8443/" data-pl="Wypróbuj aplikację" data-en="Try the application">Try the application</a></div></div><div class="tags"><span class="tag">Python</span><span class="tag">DepthAI / MediaPipe</span><span class="tag">OpenCV / NumPy</span><span class="tag">Flask / SQLite</span><span class="tag">Docker / ARM64</span></div><p class="source-link"><span class="meta" data-pl="Kod prywatny" data-en="Private source">Private source</span></p></div><figure class="case-preview case-preview--hero"><a href="https://luxonis.tail6ad453.ts.net:8443/lab" aria-label="Open Posture Lab example" data-aria-label-pl="Otwórz przykład Posture Lab" data-aria-label-en="Open Posture Lab example"><img src="../assets/demos/posture-lab.png" width="1440" height="1000" alt="Posture Lab: synthetic body landmarks and calculated shoulder height difference" data-alt-pl="Posture Lab: syntetyczne punkty sylwetki i obliczona różnica wysokości barków" data-alt-en="Posture Lab: synthetic body landmarks and calculated shoulder height difference"><span class="image-link-indicator material-symbols-outlined" aria-hidden="true">arrow_forward</span></a><figcaption data-pl="Przykład syntetyczny: punkty, głębia i wynik obliczeń. Bez walidacji klinicznej." data-en="Synthetic example: landmarks, depth and calculation results. No clinical validation.">Synthetic example: landmarks, depth and calculation results. No clinical validation.</figcaption></figure></header>
+<section class="case-section" id="implementation"><h2><span id="flow"></span><span data-pl="Implementacja" data-en="Implementation">Implementation</span></h2><ul class="case-points"><li data-pl="Kalibracja kamery zamienia piksele i głębię na XYZ. Mediana próbek i ocena jakości wykrywają brakujące lub niewiarygodne dane." data-en="Camera calibration converts pixels and depth into XYZ. Median samples and quality checks identify missing or unreliable input.">Camera calibration converts pixels and depth into XYZ. Median samples and quality checks identify missing or unreliable input.</li><li data-pl="Ścieżka kamery wykrywa punkty przez MediaPipe. W aplikacji WWW można wczytać eksport lub oznaczyć cztery punkty ręcznie." data-en="The camera path uses MediaPipe. The web app accepts exported landmarks or four manually marked points.">The camera path uses MediaPipe. The web app accepts exported landmarks or four manually marked points.</li><li data-pl="SQLite przechowuje prywatne ujęcia, wyniki i raporty. Backend sprawdza właściciela pliku oraz limity danych i współbieżności." data-en="SQLite stores private captures, results and reports. The backend checks file ownership and data/concurrency limits.">SQLite stores private captures, results and reports. The backend checks file ownership and data/concurrency limits.</li></ul></section>
+<section class="case-section" id="verification"><h2 data-pl="Sprawdzone" data-en="Verification">Verification</h2><p data-pl="Kontrolne RGB-D daje różnicę barków 6 cm. Testy obejmują geometrię, odrzucenie danych, sesje, zapis historii i eksport PDF. Poniżej dostępny jest także archiwalny zapis z kamery." data-en="Controlled RGB-D gives a 6 cm shoulder-height difference. Tests cover geometry, rejection, sessions, saved history and PDF export. An archived camera capture is also available below.">Controlled RGB-D gives a 6 cm shoulder-height difference. Tests cover geometry, rejection, sessions, saved history and PDF export. An archived camera capture is also available below.</p><details class="capture-evidence" id="capture"><summary data-pl="Archiwalny zapis z OAK-D · 6.04.2026" data-en="Archived OAK-D capture · 6 Apr 2026">Archived OAK-D capture · 6 Apr 2026</summary><div class="capture-gallery">
 <figure>
 <a class="body-crop" href="./media/rgb_raw.png?capture=20260406-180413" aria-label="Enlarge RGB image" data-aria-label-pl="Powiększ obraz RGB" data-aria-label-en="Enlarge RGB image"><img src="./media/rgb_raw.png?capture=20260406-180413" width="960" height="540" loading="lazy" alt="RGB: input image" data-alt-pl="RGB: obraz wejściowy" data-alt-en="RGB: input image"><span class="image-link-indicator material-symbols-outlined" aria-hidden="true">zoom_in</span></a>
-<figcaption  data-pl="RGB: obraz wejściowy" data-en="RGB: input image">RGB: input image</figcaption>
+<figcaption data-pl="RGB: obraz wejściowy" data-en="RGB: input image">RGB: input image</figcaption>
 </figure>
 <figure>
 <a class="body-crop" href="./media/rgb_pose.png?capture=20260406-180413" aria-label="Enlarge landmarks image" data-aria-label-pl="Powiększ obraz z punktami sylwetki" data-aria-label-en="Enlarge landmarks image"><img src="./media/rgb_pose.png?capture=20260406-180413" width="960" height="540" loading="lazy" alt="RGB: landmarks and depth quality" data-alt-pl="RGB: punkty i jakość depth" data-alt-en="RGB: landmarks and depth quality"><span class="image-link-indicator material-symbols-outlined" aria-hidden="true">zoom_in</span></a>
-<figcaption  data-pl="RGB: punkty i jakość depth" data-en="RGB: landmarks and depth quality">RGB: landmarks and depth quality</figcaption>
+<figcaption data-pl="RGB: punkty i jakość depth" data-en="RGB: landmarks and depth quality">RGB: landmarks and depth quality</figcaption>
 </figure>
 <figure>
 <a class="body-crop" href="./media/depth_pose.png?capture=20260406-180413" aria-label="Enlarge depth map" data-aria-label-pl="Powiększ mapę głębi" data-aria-label-en="Enlarge depth map"><img src="./media/depth_pose.png?capture=20260406-180413" width="960" height="540" loading="lazy" alt="Depth: depth map and landmarks" data-alt-pl="Depth: mapa głębi i punkty" data-alt-en="Depth: depth map and landmarks"><span class="image-link-indicator material-symbols-outlined" aria-hidden="true">zoom_in</span></a>
-<figcaption  data-pl="Depth: mapa głębi i punkty" data-en="Depth: depth map and landmarks">Depth: depth map and landmarks</figcaption>
+<figcaption data-pl="Depth: mapa głębi i punkty" data-en="Depth: depth map and landmarks">Depth: depth map and landmarks</figcaption>
 </figure>
-</div><div class="example">
-<h3  data-pl="Wynik zapisany przez program" data-en="The recorded result">The recorded result</h3>
-<pre><code>created_at:            2026-04-06T18:04:13
-valid_depth_points:    8 / 8
-valid_required_points: 4 / 4
-assessment.errors:    []
-assessment.warnings:  []</code></pre>
-</div><div class="button-row">
-<a class="button button--secondary" href="./data/capture-result.json" data-pl="Wynik JSON" data-en="Result JSON">Result JSON</a>
-<a class="button button--secondary" href="./media/capture-report.pdf" data-pl="Raport PDF tego ujęcia" data-en="PDF report for this capture">PDF report for this capture</a>
-</div>
-<p class="capture-caption" data-pl="Wyniki i progi pochodzą z archiwalnej wersji programu; nie przeliczano ich ponownie. Odczyt depth nie potwierdza dokładności anatomicznej punktów wyznaczonych na ubraniu. Współrzędne w JSON odnoszą się do pełnego obrazu 960 × 540 px." data-en="Results and thresholds come from an archived version and have not been recalculated. A valid depth sample does not establish the anatomical accuracy of landmarks on clothing. JSON coordinates refer to the full 960 × 540 px image.">Results and thresholds come from an archived version and have not been recalculated. A valid depth sample does not establish the anatomical accuracy of landmarks on clothing. JSON coordinates refer to the full 960 × 540 px image.</p>
-<a class="text-link" href="./data/sources.json" data-pl="Pochodzenie plików i sumy SHA-256" data-en="File provenance and SHA-256 hashes">File provenance and SHA-256 hashes</a>
-</section>
-<section class="case-section" id="verification">
-<h2  data-pl="Jak sprawdziłem działanie" data-en="How I verified the application">How I verified the application</h2>
-<div class="test-grid">
-<article>
-<h3  data-pl="Silnik i API" data-en="Engine and API">Engine and API</h3>
-<p  data-pl="32 testy przeszły lokalnie i w natywnym obrazie ARM64. Obejmują geometrię, błędne wejście, migracje, limity i izolację sesji." data-en="32 tests passed locally and in a native ARM64 image. They cover geometry, invalid input, migrations, limits and session isolation.">32 tests passed locally and in a native ARM64 image. They cover geometry, invalid input, migrations, limits and session isolation.</p>
-</article>
-<article>
-<h3  data-pl="Kontrolna geometria" data-en="Known geometry">Known geometry</h3>
-<p  data-pl="Dla danych syntetycznych ΔY = 18 px, Z = 2000 mm i fy = 600 px aplikacja obliczyła 6 cm różnicy wysokości. To test obliczeń, niezależny od zdjęcia powyżej." data-en="With synthetic input ΔY = 18 px, Z = 2000 mm and fy = 600 px, the application calculated a 6 cm height difference. This calculation test is independent of the photo above.">With synthetic input ΔY = 18 px, Z = 2000 mm and fy = 600 px, the application calculated a 6 cm height difference. This calculation test is independent of the photo above.</p>
-</article>
-<article>
-<h3  data-pl="Publiczny HTTPS" data-en="Public HTTPS">Public HTTPS</h3>
-<p  data-pl="W przeglądarce sprawdziłem wejście gościa, upload PNG/JSON, obliczenie, zapis historii, PDF oraz odmowę odczytu pliku przez inną sesję." data-en="Browser checks covered guest access, PNG/JSON upload, calculation, saved history, PDF export and denial of access from another session.">Browser checks covered guest access, PNG/JSON upload, calculation, saved history, PDF export and denial of access from another session.</p>
-</article>
-<article>
-<h3  data-pl="Trwałość danych" data-en="Data persistence">Data persistence</h3>
-<p  data-pl="Na Raspberry Pi sprawdziłem odczyt po odtworzeniu kontenera, backup SQLite i uruchomienie na odtworzonej bazie. Artefakty zachowały zgodne sumy kontrolne." data-en="On Raspberry Pi I verified readback after container recreation, SQLite backup and startup against a restored database. Exported artifacts retained matching checksums.">On Raspberry Pi I verified readback after container recreation, SQLite backup and startup against a restored database. Exported artifacts retained matching checksums.</p>
-</article>
-</div><p>
-<a class="text-link" href="./media/verification-report.pdf" data-pl="PDF z testu obliczeń" data-en="PDF from the calculation test">PDF from the calculation test</a>
- ·
-<a class="text-link" href="./data/asymmetry-sample.json" data-pl="Kontrolny wynik JSON" data-en="Calculation test JSON">Calculation test JSON</a>
-</p>
-<div class="case-note">
-<h3  data-pl="Ograniczenia i zakres prób" data-en="Limitations and trial scope">Limitations and trial scope</h3>
-<p  data-pl="Nowa ścieżka akwizycji OAK-D nie została jeszcze sprawdzona pełnym pomiarem człowieka. MediaPipe nie wyznacza bezpośrednio C7, łopatek ani PSIS. Publiczne testy WWW korzystały z kontrolnych danych. Gość może przetworzyć własne RGB-D: limit to 3 ujęcia / 20 MiB; historia wygasa po 24 godzinach i jest usuwana przy kolejnym żądaniu do API." data-en="The new OAK-D acquisition path has not yet been verified with a complete human measurement. MediaPipe does not directly locate C7, shoulder blades or PSIS. Public web tests used controlled inputs. Guests can process their own RGB-D: the limit is 3 captures / 20 MiB; history expires after 24 hours and is removed on the next API request.">The new OAK-D acquisition path has not yet been verified with a complete human measurement. MediaPipe does not directly locate C7, shoulder blades or PSIS. Public web tests used controlled inputs. Guests can process their own RGB-D: the limit is 3 captures / 20 MiB; history expires after 24 hours and is removed on the next API request.</p>
-</div></section>
+</div><p class="capture-caption" data-pl="Obrazy i wynik pochodzą z jednego uruchomienia archiwalnej wersji; nie przeliczano ich ponownie. Punkty na ubraniu nie potwierdzają dokładności anatomicznej." data-en="Images and results come from one run of an archived version and were not recalculated. Landmarks on clothing do not establish anatomical accuracy.">Images and results come from one run of an archived version and were not recalculated. Landmarks on clothing do not establish anatomical accuracy.</p><p class="capture-links"><a href="./data/capture-result.json">JSON</a> · <a href="./media/capture-report.pdf">PDF</a> · <a href="./data/sources.json" data-pl="Źródła i SHA-256" data-en="Sources and SHA-256">Sources and SHA-256</a></p></details></section>
+<section class="case-section case-end" id="limitations"><h2 data-pl="Ograniczenia" data-en="Limitations">Limitations</h2><p data-pl="Prototyp bez walidacji klinicznej. Wymaga wyrównanego depth w mm i kalibracji zgodnej z RGB. Nowa ścieżka OAK-D nie ma pełnej weryfikacji pomiaru człowieka; MediaPipe nie wyznacza bezpośrednio C7, łopatek ani PSIS. Sesja gościa: 3 ujęcia / 20 MiB, do 24 godzin." data-en="A prototype without clinical validation. It requires aligned depth in mm and calibration matching RGB. The new OAK-D path has not completed human-measurement verification; MediaPipe does not directly locate C7, shoulder blades or PSIS. Guest session: 3 captures / 20 MiB, up to 24 hours.">A prototype without clinical validation. It requires aligned depth in mm and calibration matching RGB. The new OAK-D path has not completed human-measurement verification; MediaPipe does not directly locate C7, shoulder blades or PSIS. Guest session: 3 captures / 20 MiB, up to 24 hours.</p></section>
 </main>
 <footer class="case-footer page-shell">Adam Sapiecha · <span  data-pl="System Analizy Postury" data-en="Posture Analysis System">Posture Analysis System</span> · 2026</footer><script src="../script.js"></script></body></html>

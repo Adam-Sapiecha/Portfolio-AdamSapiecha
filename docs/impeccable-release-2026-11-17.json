@@ -1,0 +1,98 @@
+{
+  "release": "impeccable-20261117",
+  "verifiedAt": "2026-11-17T00:21:10.887927+00:00",
+  "archiveSha256": "03fb48ea539d0d8bb8024521d14f6ff4ec7d8e6e834e786aeb527487e9ed95a6",
+  "projects": [
+    {
+      "project": "taskmesh",
+      "sourceCommit": "291a7233fd725fd1293df7b550d3c9d3aec3f1a4",
+      "release": "/home/pi/apps/taskmesh-public/releases/impeccable-20261117",
+      "image": "taskmesh:impeccable-20261117-291a723",
+      "imageId": "sha256:c5b895d1c5c15bc9eb329b350e533b4a6b9b000a68ee8864a8985f7515a5ae6a",
+      "baseImageId": "sha256:7d274ec26667b3cc2dfee9e133cc683fc1cb0d848c7310d35f98db758ef73008",
+      "backendPreserved": true,
+      "health": "healthy",
+      "url": "https://luxonis.tail6ad453.ts.net:8443/taskmesh/",
+      "verifiedSourceFiles": 2
+    },
+    {
+      "project": "support",
+      "sourceCommit": "e5974cfc922268b95ecfac58a5484f13a7b6f5ee",
+      "release": "/home/pi/apps/dual-agent-support/releases/impeccable-20261117",
+      "image": "dual-agent-support:impeccable-20261117-e5974cf",
+      "imageId": "sha256:3f6b2e3b66f2695cd9279ce7410a33b28a43e8430c46def358c95f267bcdc6ac",
+      "baseImageId": "sha256:88b1cc3ba008df06c1ee164c7ce6da31f4341e336a6550ee78df07a22a285208",
+      "backendPreserved": true,
+      "health": "healthy",
+      "url": "https://luxonis.tail6ad453.ts.net:8443/support/",
+      "verifiedSourceFiles": 1
+    },
+    {
+      "project": "sentinelhub",
+      "sourceCommit": "48b6c790dac7aa3f01d341c973772dc5db02ba06",
+      "release": "/opt/stacks/sentinelhub/releases/impeccable-20261117",
+      "image": "sentinelhub-web:impeccable-20261117-48b6c79",
+      "imageId": "sha256:6c3e305deb017f0d21f343afd0fd1c3ff0ca2d2620e35872efae4ee48c64815e",
+      "baseImageId": "sha256:78874c9422cd71765ee36c0a8c5492ead7907f61cbbed902641a592fde933d66",
+      "backendPreserved": true,
+      "health": "healthy",
+      "url": "https://luxonis.tail6ad453.ts.net:8443/sentinelhub/",
+      "verifiedSourceFiles": 4
+    },
+    {
+      "project": "posture",
+      "sourceCommit": "a3e7f227deb545f72feedbef4fe7e3beeb970406",
+      "release": "/home/pi/posture-lab/releases/impeccable-20261117",
+      "image": "posture-lab:impeccable-20261117-a3e7f22",
+      "imageId": "sha256:4a3aaf6b798cf6fa316a88916fdfe46a26e77e412f90d6f177ae27c10047f8d1",
+      "baseImageId": "sha256:d5870858d7ff49c401c36086389ab28519715a1704f48481e4939183bb3ef8f2",
+      "backendPreserved": true,
+      "health": "healthy",
+      "url": "https://luxonis.tail6ad453.ts.net:8443/",
+      "verifiedSourceFiles": 4
+    },
+    {
+      "project": "spherex",
+      "sourceCommit": "c5128ea7a7ccba53b0569c7f95c5bf20b9a054a9",
+      "release": "/home/pi/apps/spherex/releases/impeccable-20261117",
+      "image": "spherex:impeccable-20261117-c5128ea",
+      "imageId": "sha256:aa75b8b5480306a53d47f4b068b28862146b55cd791541ffc20bfde80c19ef82",
+      "baseImageId": "sha256:5af832d7e60b154271e498c249b43db7c703b7e413766ad5fd58c1e0bfdc22b1",
+      "backendPreserved": true,
+      "health": "healthy",
+      "url": "https://luxonis.tail6ad453.ts.net:8443/spherex/",
+      "verifiedSourceFiles": 2
+    }
+  ],
+  "unrelatedServicesPreserved": 21,
+  "publicVerification": {
+    "verifiedAt": "2026-11-17T00:25:32.764Z",
+    "applicationAssets": 42,
+    "portfolioFiles": 11,
+    "applicationScenarios": 7,
+    "applicationViewports": [
+      1440,
+      390
+    ],
+    "casePages": 5,
+    "caseLanguages": [
+      "pl",
+      "en"
+    ],
+    "caseViewports": [
+      1440,
+      390
+    ],
+    "javascriptErrors": 0,
+    "detectedWcagViolations": 0,
+    "frontendResourceOverrides": false
+  },
+  "portfolio": {
+    "url": "https://adam-sapiecha.github.io/Portfolio-AdamSapiecha/",
+    "uiCommit": "acd486931621a0cca3601d6ff1e2a887f9b92c4c",
+    "pagesWorkflow": "https://github.com/Adam-Sapiecha/Portfolio-AdamSapiecha/actions/runs/43987127163",
+    "pagesStatus": "success",
+    "independentWorkflow": "https://github.com/Adam-Sapiecha/Portfolio-AdamSapiecha/actions/runs/43987128608",
+    "independentStatus": "success"
+  }
+}
